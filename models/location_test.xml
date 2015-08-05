@@ -1,0 +1,231 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="location_test" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.devel">
+    </property>
+    <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
+        <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{384.0, 311.0}">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 23, 1680, 1023}, maximized=true}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1446, 913]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{713.0, 446.5}">
+    </property>
+    <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[155.0, 415.0]">
+        </property>
+        <port name="output" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="false">
+            </property>
+        </port>
+        <port name="trigger" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="multiport"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="period" class="ptolemy.actor.parameters.ParameterPort">
+            <property name="input"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="start" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="stop" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="FakeLocationStream" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Generate a stream of made up location data.&#10; *&#10; *  Outputs an object that looks like:&#10; *&#10; *      {&#10; *        id: &lt;unique id per thing being localized&gt;&#10; *        X:  &lt;x coordinate&gt;&#10; *        Y:  &lt;x coordinate&gt;&#10; *        Z:  &lt;x coordinate&gt;&#10; *      }&#10; *&#10; *  @accessor FakeLocationStream&#10; *&#10;*/&#10;&#10;// Which ID we should be generating location data for&#10;var current_id;&#10;&#10;// Last location&#10;var x;&#10;var y;&#10;var z;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('ID', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;1&quot;&#10;  });&#10;  output('Location', {&#10;    type: 'JSON'&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // How often to generate a new location value in seconds&#10;  parameter('Period', {&#10;    value: 1,&#10;    type: 'number'&#10;  });&#10;&#10;  // Bounds of generated locations in meters&#10;  parameter('MinX', {value: 0, type: 'number'});&#10;  parameter('MaxX', {value: 10, type: 'number'});&#10;  parameter('MinY', {value: 0, type: 'number'});&#10;  parameter('MaxY', {value: 10, type: 'number'});&#10;  parameter('MinZ', {value: 1, type: 'number'});&#10;  parameter('MaxZ', {value: 2, type: 'number'});&#10;&#10;  // How much any one parameter can vary between updates&#10;  parameter('MaxVariance', {value: 0.2, type: 'number'});&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('ID', ID_in);&#10;&#10;  current_id = get('ID');&#10;  x = getParameter('MinX');&#10;  y = getParameter('MinY');&#10;  z = getParameter('MinZ');&#10;&#10;  // Use the period parameter to setup the loop that generates fake&#10;  // location data.&#10;  setInterval(update_location, getParameter('Period')*1000);&#10;}&#10;&#10;function getRandomArbitrary (min, max) {&#10;  return Math.random() * (max - min) + min;&#10;}&#10;&#10;function getRandomInt (min, max) {&#10;  return Math.floor(Math.random() * (max - min)) + min;&#10;}&#10;&#10;// Generates a new location value and sends to output based on parameters set&#10;function update_location () {&#10;&#10;  var j = getParameter('MaxVariance');&#10;  var alter = getRandomArbitrary(-1*j, j);&#10;&#10;  // Choose which axis to change on this iteration&#10;  var whichone = getRandomInt(0, 3);&#10;&#10;  if (whichone == 0) {&#10;    // ALTER X&#10;    var new_x = x + alter;&#10;    if (new_x &lt; getParameter('MinX')) new_x = getParameter('MinX');&#10;    if (new_x &gt; getParameter('MaxX')) new_x = getParameter('MaxX');&#10;    x = new_x;&#10;  &#10;  } else if (whichone == 1) {&#10;    // ALTER Y&#10;    var new_y = y + alter;&#10;    if (new_y &lt; getParameter('MinY')) new_y = getParameter('MinY');&#10;    if (new_y &gt; getParameter('MaxY')) new_y = getParameter('MaxY');&#10;    y = new_y;&#10;&#10;  } else if (whichone == 2) {&#10;    // ALTER Z&#10;    var new_z = z + alter;&#10;    if (new_z &lt; getParameter('MinZ')) new_z = getParameter('MinZ');&#10;    if (new_z &gt; getParameter('MaxZ')) new_z = getParameter('MaxZ');&#10;    z = new_z;&#10;&#10;  }&#10;&#10;  var loc = {&#10;    id: current_id,&#10;    X: x,&#10;    Y: y,&#10;    Z: z&#10;  };&#10;&#10;  send('Location', loc);&#10;&#10;}&#10;&#10;&#10;var ID_in  = function () {&#10;  current_id = get('ID');&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/FakeLocationStream.js">
+        </property>
+        <property name="ID" class="ptolemy.actor.parameters.PortParameter" value="&quot;myipod1&quot;">
+        </property>
+        <property name="Period" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="MinX" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="MaxX" class="ptolemy.data.expr.Parameter" value="10.0">
+        </property>
+        <property name="MinY" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="MaxY" class="ptolemy.data.expr.Parameter" value="10.0">
+        </property>
+        <property name="MinZ" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="MaxZ" class="ptolemy.data.expr.Parameter" value="2.0">
+        </property>
+        <property name="MaxVariance" class="ptolemy.data.expr.Parameter" value="0.2">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[515.0, 415.0]">
+        </property>
+        <port name="ID" class="ptolemy.actor.parameters.ParameterPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Location" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="StringConst" class="ptolemy.actor.lib.StringConst">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="myipod1">
+        </property>
+        <doc>Create a constant sequence with a string value.</doc>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="80">
+            </property>
+            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{330, 415}">
+        </property>
+        <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+    </entity>
+    <entity name="Display" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={650, 287, 759, 306}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[770.0, 415.0]">
+        </property>
+    </entity>
+    <entity name="OpFilter" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpFilter&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;var value;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;    type: 'JSON'&#10;  });&#10;  output('Output', {&#10;    type: 'JSON'&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;  parameter('value', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('Input', Input_in);&#10;&#10;  key = getParameter('key');&#10;  value = getParameter('value');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == value) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpFilter.js">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[655.0, 550.0]">
+        </property>
+        <property name="key" class="ptolemy.data.expr.StringParameter" value="id">
+        </property>
+        <property name="value" class="ptolemy.data.expr.StringParameter" value="pp1">
+        </property>
+        <port name="Input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Output" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+    </entity>
+    <entity name="FakeLocationStream2" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Generate a stream of made up location data.&#10; *&#10; *  Outputs an object that looks like:&#10; *&#10; *      {&#10; *        id: &lt;unique id per thing being localized&gt;&#10; *        X:  &lt;x coordinate&gt;&#10; *        Y:  &lt;x coordinate&gt;&#10; *        Z:  &lt;x coordinate&gt;&#10; *      }&#10; *&#10; *  @accessor FakeLocationStream&#10; *&#10;*/&#10;&#10;// Which ID we should be generating location data for&#10;var current_id;&#10;&#10;// Last location&#10;var x;&#10;var y;&#10;var z;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('ID', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;1&quot;&#10;  });&#10;  output('Location', {&#10;    type: 'JSON'&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // How often to generate a new location value in seconds&#10;  parameter('Period', {&#10;    value: 1,&#10;    type: 'number'&#10;  });&#10;&#10;  // Bounds of generated locations in meters&#10;  parameter('MinX', {value: 0, type: 'number'});&#10;  parameter('MaxX', {value: 10, type: 'number'});&#10;  parameter('MinY', {value: 0, type: 'number'});&#10;  parameter('MaxY', {value: 10, type: 'number'});&#10;  parameter('MinZ', {value: 1, type: 'number'});&#10;  parameter('MaxZ', {value: 2, type: 'number'});&#10;&#10;  // How much any one parameter can vary between updates&#10;  parameter('MaxVariance', {value: 0.2, type: 'number'});&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('ID', ID_in);&#10;&#10;  current_id = get('ID');&#10;  x = getParameter('MinX');&#10;  y = getParameter('MinY');&#10;  z = getParameter('MinZ');&#10;&#10;  // Use the period parameter to setup the loop that generates fake&#10;  // location data.&#10;  setInterval(update_location, getParameter('Period')*1000);&#10;}&#10;&#10;function getRandomArbitrary (min, max) {&#10;  return Math.random() * (max - min) + min;&#10;}&#10;&#10;function getRandomInt (min, max) {&#10;  return Math.floor(Math.random() * (max - min)) + min;&#10;}&#10;&#10;// Generates a new location value and sends to output based on parameters set&#10;function update_location () {&#10;&#10;  var j = getParameter('MaxVariance');&#10;  var alter = getRandomArbitrary(-1*j, j);&#10;&#10;  // Choose which axis to change on this iteration&#10;  var whichone = getRandomInt(0, 3);&#10;&#10;  if (whichone == 0) {&#10;    // ALTER X&#10;    var new_x = x + alter;&#10;    if (new_x &lt; getParameter('MinX')) new_x = getParameter('MinX');&#10;    if (new_x &gt; getParameter('MaxX')) new_x = getParameter('MaxX');&#10;    x = new_x;&#10;  &#10;  } else if (whichone == 1) {&#10;    // ALTER Y&#10;    var new_y = y + alter;&#10;    if (new_y &lt; getParameter('MinY')) new_y = getParameter('MinY');&#10;    if (new_y &gt; getParameter('MaxY')) new_y = getParameter('MaxY');&#10;    y = new_y;&#10;&#10;  } else if (whichone == 2) {&#10;    // ALTER Z&#10;    var new_z = z + alter;&#10;    if (new_z &lt; getParameter('MinZ')) new_z = getParameter('MinZ');&#10;    if (new_z &gt; getParameter('MaxZ')) new_z = getParameter('MaxZ');&#10;    z = new_z;&#10;&#10;  }&#10;&#10;  var loc = {&#10;    id: current_id,&#10;    X: x,&#10;    Y: y,&#10;    Z: z&#10;  };&#10;&#10;  send('Location', loc);&#10;&#10;}&#10;&#10;&#10;var ID_in  = function () {&#10;  current_id = get('ID');&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/FakeLocationStream.js">
+        </property>
+        <property name="ID" class="ptolemy.actor.parameters.PortParameter" value="&quot;pp1&quot;">
+        </property>
+        <property name="Period" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="MinX" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="MaxX" class="ptolemy.data.expr.Parameter" value="10.0">
+        </property>
+        <property name="MinY" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="MaxY" class="ptolemy.data.expr.Parameter" value="10.0">
+        </property>
+        <property name="MinZ" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="MaxZ" class="ptolemy.data.expr.Parameter" value="2.0">
+        </property>
+        <property name="MaxVariance" class="ptolemy.data.expr.Parameter" value="0.2">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[505.0, 525.0]">
+        </property>
+        <port name="ID" class="ptolemy.actor.parameters.ParameterPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Location" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="StringConst2" class="ptolemy.actor.lib.StringConst">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="pp1">
+        </property>
+        <doc>Create a constant sequence with a string value.</doc>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="80">
+            </property>
+            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[325.0, 560.0]">
+        </property>
+        <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+    </entity>
+    <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={674, 660, 759, 306}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[715.0, 300.0]">
+        </property>
+    </entity>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+        <vertex name="vertex1" value="[610.0, 475.0]">
+        </vertex>
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+        <vertex name="vertex1" value="{220.0, 470.0}">
+        </vertex>
+    </relation>
+    <link port="DiscreteClock.output" relation="relation6"/>
+    <link port="FakeLocationStream.ID" relation="relation"/>
+    <link port="FakeLocationStream.Location" relation="relation4"/>
+    <link port="StringConst.output" relation="relation"/>
+    <link port="StringConst.trigger" relation="relation6"/>
+    <link port="Display.input" relation="relation2"/>
+    <link port="OpFilter.Input" relation="relation4"/>
+    <link port="OpFilter.Output" relation="relation2"/>
+    <link port="FakeLocationStream2.ID" relation="relation5"/>
+    <link port="FakeLocationStream2.Location" relation="relation4"/>
+    <link port="StringConst2.output" relation="relation5"/>
+    <link port="StringConst2.trigger" relation="relation6"/>
+    <link port="Display2.input" relation="relation4"/>
+</entity>
