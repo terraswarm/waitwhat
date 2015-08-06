@@ -1,4 +1,6 @@
 [
     "FakeLocationStream.js",
-    "OpFilter.js"
+    "OpFilter.js",
+    "CoordinateLinearTransform.js",
+    "MoveActionGoalMessage.js"
 ]

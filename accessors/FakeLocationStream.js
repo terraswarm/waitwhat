@@ -83,7 +83,11 @@ function getRandomInt (min, max) {
 function update_location () {
 
   var j = getParameter('MaxVariance');
-  var alter = getRandomArbitrary(-1*j, j);
+  var alter = getRandomArbitrary(j/2, j);
+  var neg = getRandomInt(1, 3);
+  if (neg == 1) {
+    alter *= -1;
+  }
 
   // Choose which axis to change on this iteration
   var whichone = getRandomInt(0, 3);
