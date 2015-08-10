@@ -23,6 +23,7 @@ exports.setup = function() {
     type: 'string',
     value: '/scarab/lucy'
   });
+  input('cmd');
   output('battery', {
     type: 'int'
   });
@@ -35,6 +36,8 @@ exports.setup = function() {
 var batteryClient = null;
 var stateClient = null;
 var locationClient = null;
+
+var seq = 0;
 
 /** Initializes accessor by attaching functions to inputs. */
 exports.initialize = function() {
@@ -101,7 +104,47 @@ exports.initialize = function() {
   locationClient.on('error', function(message) {
     error(message)
   });
+
+  // Get location updates from the robot
+  cmdClient = new WebSocket.Client({
+    host: getParameter('server'),
+    port: getParameter('port')
+  });
+  cmdClient.on('open', function () {
+    // Subscribe to /scarab/name/pose
+    cmdClient.send({
+        op: 'advertise',
+        topic: getParameter('topicPrefix') + '/goal',
+        type: 'geometry_msgs/PoseStamped'
+    });
+  });
+  cmdClient.on('error', function(message) {
+    error(message)
+  });
+  addInputHandler('cmd', cmd_in);
 } 
+
+var cmd_in = function () {
+  var v = get('cmd');
+
+  out = {
+    op: 'publish',
+    topic: getParameter('topicPrefix') + '/goal',
+    msg: {
+      'header': {
+        'seq': seq++,
+        'stamp': {
+          'secs': 0,
+          'nsecs': 0
+        },
+        'frame_id': 'map_hokuyo'
+      },
+      'pose': v
+    }
+  };
+
+  cmdClient.send(out);
+}
 
 exports.wrapup = function() {
   if (stateClient) {
@@ -124,5 +167,12 @@ exports.wrapup = function() {
     locationClient.removeAllListeners('close');
     locationClient.close();
     locationClient = null;
+  }
+  if (cmdClient) {
+    cmdClient.removeAllListeners('open');
+    cmdClient.removeAllListeners('message');
+    cmdClient.removeAllListeners('close');
+    cmdClient.close();
+    cmdClient = null;
   }
 }

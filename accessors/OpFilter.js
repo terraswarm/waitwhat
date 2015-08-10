@@ -16,10 +16,8 @@ exports.setup = function() {
   // I/O
   //
   input('Input', {
-    type: 'JSON'
   });
   output('Output', {
-    type: 'JSON'
   });
 
   //

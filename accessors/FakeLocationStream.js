@@ -33,7 +33,6 @@ exports.setup = function() {
     value: "1"
   });
   output('Location', {
-    type: 'JSON'
   });
 
   //

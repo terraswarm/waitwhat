@@ -3,5 +3,6 @@
     "FakeLocationStream.js",
     "OpFilter.js",
     "CoordinateLinearTransform.js",
+    "GoalMessage.js",
     "MoveActionGoalMessage.js"
 ]
