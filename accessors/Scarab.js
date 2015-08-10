@@ -29,10 +29,12 @@ exports.setup = function() {
   output('state', {
     type: 'string'
   });
+  output('location');
 }
 
 var batteryClient = null;
 var stateClient = null;
+var locationClient = null;
 
 /** Initializes accessor by attaching functions to inputs. */
 exports.initialize = function() {
@@ -80,6 +82,25 @@ exports.initialize = function() {
   stateClient.on('error', function(message) {
     error(message)
   });
+
+  // Get location updates from the robot
+  locationClient = new WebSocket.Client({
+    host: getParameter('server'),
+    port: getParameter('port')
+  });
+  locationClient.on('open', function () {
+    // Subscribe to /scarab/name/pose
+    locationClient.send({
+        op: "subscribe",
+        topic: getParameter('topicPrefix') + '/pose'
+    });
+  });
+  locationClient.on('message', function (msg) {
+    send('location', msg.msg.pose.position);
+  });
+  locationClient.on('error', function(message) {
+    error(message)
+  });
 } 
 
 exports.wrapup = function() {
@@ -96,5 +117,12 @@ exports.wrapup = function() {
     batteryClient.removeAllListeners('close');
     batteryClient.close();
     batteryClient = null;
+  }
+  if (locationClient) {
+    locationClient.removeAllListeners('open');
+    locationClient.removeAllListeners('message');
+    locationClient.removeAllListeners('close');
+    locationClient.close();
+    locationClient = null;
   }
 }
