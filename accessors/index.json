@@ -1,4 +1,5 @@
 [
+    "Scarab.js",
     "FakeLocationStream.js",
     "OpFilter.js",
     "CoordinateLinearTransform.js",
