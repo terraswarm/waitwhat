@@ -2,6 +2,7 @@
     "Scarab.js",
     "FakeLocationStream.js",
     "OpFilter.js",
+    "OpMultiplexorKey.js",
     "CoordinateLinearTransform.js",
     "GoalMessage.js",
     "MoveActionGoalMessage.js"
