@@ -7,22 +7,22 @@
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
         <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="true">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{384.0, 311.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[105.0, 415.0]">
         </property>
     </property>
     <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 23, 1671, 1023}, maximized=true}">
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1437, 913]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8000000000000002">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{715.7762627180231, 667.1672783430231}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{715.7762627180234, 667.1672783430232}">
     </property>
     <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
         <property name="period" class="ptolemy.actor.parameters.PortParameter" value="3.0">
         </property>
         <doc>Create periodic timed events.</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[23.625137329101562, 631.7076416015625]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-135.0, 695.0]">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -52,7 +52,7 @@
         </port>
     </entity>
     <entity name="StringConst" class="ptolemy.actor.lib.StringConst">
-        <property name="value" class="ptolemy.data.expr.Parameter" value="loc0">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="B4068E22-2A7E-4F1A-8464-B8A59081934A">
         </property>
         <doc>Create a constant sequence with a string value.</doc>
         <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
@@ -63,7 +63,7 @@
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[158.62513732910156, 596.7076416015625]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[135.0, 645.0]">
         </property>
         <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
@@ -80,13 +80,13 @@
             <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[158.62513732910156, 671.7076416015625]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[260.0, 740.0]">
         </property>
         <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
     </entity>
     <entity name="Display4" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1256, 492, 391, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={921, 492, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -146,7 +146,7 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[650.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[850.0, 600.0]">
         </property>
     </entity>
     <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
@@ -154,7 +154,7 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1200.0, 285.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1200.0, 370.0]">
         </property>
     </entity>
     <entity name="CoordinateLinearTransform2" class="org.terraswarm.accessor.JSAccessor">
@@ -168,7 +168,7 @@
         </property>
         <property name="Zshift" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[485.0, 635.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[495.0, 690.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -183,11 +183,11 @@
         </port>
     </entity>
     <entity name="Display3" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={37, 811, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={37, 740, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[490.0, 495.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[460.0, 540.0]">
         </property>
     </entity>
     <entity name="FakeLocationStream5" class="org.terraswarm.accessor.JSAccessor">
@@ -195,7 +195,7 @@
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/FakeLocationStream.js">
         </property>
-        <property name="ID" class="ptolemy.actor.parameters.PortParameter" value="loc0">
+        <property name="ID" class="ptolemy.actor.parameters.PortParameter" value="B4068E22-2A7E-4F1A-8464-B8A59081934A">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -215,7 +215,7 @@
         </property>
         <property name="MaxVariance" class="ptolemy.data.expr.Parameter" value="0.5">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[258.62513732910156, 596.7076416015625]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[340.0, 645.0]">
         </property>
         <port name="ID" class="ptolemy.actor.parameters.ParameterPort">
             <property name="input"/>
@@ -277,13 +277,13 @@
         </port>
     </entity>
     <entity name="Display5" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1268, 530, 378, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={921, 530, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lady Location">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1340.0, 545.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1340.0, 555.0]">
         </property>
     </entity>
     <entity name="FakeLocationStream" class="org.terraswarm.accessor.JSAccessor">
@@ -311,7 +311,7 @@
         </property>
         <property name="MaxVariance" class="ptolemy.data.expr.Parameter" value="0.5">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[253.62513732910156, 671.7076416015625]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[340.0, 740.0]">
         </property>
         <port name="ID" class="ptolemy.actor.parameters.ParameterPort">
             <property name="input"/>
@@ -337,7 +337,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8081">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[165.0, 875.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[325.0, 920.0]">
         </property>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -355,68 +355,13 @@
             </property>
         </port>
     </entity>
-    <entity name="JavaScript" class="ptolemy.actor.lib.jjs.JavaScript">
-        <display name="ExtractMessageAsInt"/>
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Put your JavaScript program here.&#10;// Add ports and parameters.&#10;// Define JavaScript functions initialize(), fire(), and/or wrapup().&#10;// Refer to parameters in scope using dollar-sign{parameterName}.&#10;// In the fire() function, use get(parameterName, channel) to read inputs.&#10;// Send to output ports using send(value, portName, channel).&#10;&#10;exports.setup = function () {&#10;  input('input');&#10;  output('output', {&#10;type: 'int'});&#10;};&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('input', myin);&#10;}&#10;&#10;var myin = function () {&#10;  var i = get('input');&#10;  &#10;  if (typeof i === 'object' &amp;&amp; 'message' in i) {&#10;    send('output', parseInt(i.message));&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.TextStyle">
-                <property name="height" class="ptolemy.data.expr.Parameter" value="16">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="80">
-                </property>
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1185.0, 995.0]">
-        </property>
-        <port name="input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="_type" class="ptolemy.actor.TypeAttribute" value="string">
-            </property>
-        </port>
-    </entity>
     <entity name="Display6" class="ptolemy.actor.lib.gui.Display">
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={876, 529, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[860.0, 1050.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[775.0, 815.0]">
         </property>
-    </entity>
-    <entity name="OpMultiplexorKey" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpMultiplexorKey&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  input('Value');&#10;&#10;  output('Output');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;  var v = get('Value');&#10;&#10;  console.log(i);&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == v) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpMultiplexorKey.js">
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="id">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1195.0, 1070.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="multiport"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Value" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
     </entity>
     <entity name="OpKeySwitching" class="org.terraswarm.accessor.JSAccessor">
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Switching Network&#10; *&#10; * Takes in control assignments in the form of {input: key_value,&#10; *                                              output: output_index}&#10; * and maps inputs to outputs&#10; *&#10; *  @accessor OpSwitching&#10; *&#10;*/&#10;&#10;var key;&#10;&#10;var matrix = {};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;&#10;  input('Select');&#10;&#10;  output('Output0');&#10;  output('Output1');&#10;  output('Output2');&#10;  output('Output3');&#10;  output('Output4');&#10;  output('Output5');&#10;&#10;  parameter('Key', {&#10;    type: 'string',&#10;    value: 'id'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  key = getParameter('Key');&#10;&#10;  addInputHandler('Select', Select_in);&#10;  addInputHandler('Input', Input_in);&#10;}&#10;&#10;var Select_in = function () {&#10;  var s = get('Select');&#10;&#10;  var i = s['input'];&#10;  var o = s['output'];&#10;&#10;  if (typeof o == 'number' &amp;&amp; o &lt;= 5 &amp;&amp; o &gt;= 0) {&#10;    matrix[i] = 'Output' + o;&#10;  } else {&#10;    matrix[i] = null;&#10;  }&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    var val = i[key];&#10;    if (val in matrix &amp;&amp; matrix.hasOwnProperty(val)) {&#10;      var out = matrix[val];&#10;      if (out != null) {&#10;        send(out, i);&#10;      }&#10;    }&#10;  }&#10;}&#10;&#10;">
@@ -427,7 +372,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[830.0, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[830.0, 690.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -473,11 +418,11 @@
         </port>
     </entity>
     <entity name="RoboCafeController" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 3;&#10;&#10;// STATES&#10;var STATE_IDLE = 0; // Robot is currently just sitting there.&#10;var STATE_SERVING = 1; // Robot has been requested and is going servering a person.&#10;&#10;// MAPPING OF ITEM TO ROBOT NUM&#10;var ITEMS = {&#10;  Twix: 0,&#10;  SquirtGun: 1,&#10;  BouncyBalls: 2&#10;}&#10;&#10;// Array of robot structs&#10;var robots = [];&#10;&#10;&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;&#10;  output('SelectPhoneRobot');&#10;&#10;&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  // parameter('key', {&#10;  //   type: 'string'&#10;  // });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robots[i] = robot;&#10;  }&#10;&#10;&#10;&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;}&#10;&#10;function select_source_and_robot (phone_id, robot_index) {&#10;  var out = {&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  console.log('got choice');&#10;  console.log(ws_payload);&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Check what type of message this is&#10;    if (msg.type == 'selection') {&#10;      console.log('GOT SELE')&#10;      // Got a &quot;GET ME A SNACK&quot; message      &#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;        // Get the robot struct of the one that has what we are looking for&#10;        var rbt_idx = ITEMS[selection];&#10;        console.log(rbt_idx)&#10;        var rbt = robots[rbt_idx];&#10;&#10;        // Check its state&#10;        if (rbt.state == STATE_IDLE) {&#10;          // Ok great!&#10;          // Put this one into service&#10;          rbt.state = STATE_SERVING;&#10;          // Keep track of which user this robot is attached to&#10;          rbt.servicing = phone_id;&#10;          // And send the robot to the person&#10;          select_source_and_robot(phone_id, rbt_idx);&#10;        }&#10;      }&#10;&#10;    } else if (msg.type == 'finished') {&#10;      console.log(&quot;GOT FINI&quot;)&#10;      // Got a &quot;CANCEL&quot; or &quot;I GOT MY ITEM&quot; message&#10;&#10;      // Look up which robot was helping this user&#10;      for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;        var rbt = robots[i];&#10;        if (rbt.servicing == phone_id) {&#10;          // got it&#10;          rbt.state = STATE_IDLE;&#10;          rbt.servicing = null;&#10;          select_source_and_robot(phone_id, null);&#10;        }&#10;      }&#10;    }&#10;  }&#10;&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 3;&#10;&#10;// STATES&#10;var STATE_IDLE = 0; // Robot is currently just sitting there.&#10;var STATE_SERVING = 1; // Robot has been requested and is going servering a person.&#10;&#10;// MAPPING OF ITEM TO ROBOT NUM&#10;var ITEMS = {&#10;  Twix: 0,&#10;  SquirtGun: 1,&#10;  BouncyBalls: 2&#10;}&#10;&#10;// Array of robot structs&#10;var robots = [];&#10;&#10;&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;&#10;  output('SelectPhoneRobot');&#10;&#10;&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  // parameter('key', {&#10;  //   type: 'string'&#10;  // });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robots[i] = robot;&#10;  }&#10;&#10;&#10;&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;}&#10;&#10;function select_source_and_robot (phone_id, robot_index) {&#10;  var out = {&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  console.log('got choice');&#10;  console.log(ws_payload);&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Check what type of message this is&#10;    if (msg.type == 'selection') {&#10;      console.log('GOT SELE')&#10;      // Got a &quot;GET ME A SNACK&quot; message      &#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;        // Get the robot struct of the one that has what we are looking for&#10;        var rbt_idx = ITEMS[selection];&#10;        console.log(rbt_idx)&#10;        var rbt = robots[rbt_idx];&#10;&#10;        // Check its state&#10;        if (rbt.state == STATE_IDLE) {&#10;          // Ok great!&#10;          // Put this one into service&#10;          rbt.state = STATE_SERVING;&#10;          // Keep track of which user this robot is attached to&#10;          rbt.servicing = phone_id;&#10;          // And send the robot to the person&#10;          select_source_and_robot(phone_id, rbt_idx);&#10;        }&#10;      }&#10;&#10;    } else if (msg.type == 'finished' || msg.type == 'cancelled') {&#10;      console.log(&quot;GOT FINI&quot;)&#10;      // Got a &quot;CANCEL&quot; or &quot;I GOT MY ITEM&quot; message&#10;&#10;      // Look up which robot was helping this user&#10;      for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;        var rbt = robots[i];&#10;        if (rbt.servicing == phone_id) {&#10;          // got it&#10;          rbt.state = STATE_IDLE;&#10;          rbt.servicing = null;&#10;          select_source_and_robot(phone_id, null);&#10;        }&#10;      }&#10;    }&#10;  }&#10;&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/RoboCafeController.js">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[555.0, 865.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 910.0]">
         </property>
         <port name="UserChoice" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -491,11 +436,11 @@
         </port>
     </entity>
     <entity name="Display7" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={930, 866, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={921, 740, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[565.0, 1060.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[525.0, 830.0]">
         </property>
     </entity>
     <entity name="Scarab4" class="org.terraswarm.accessor.JSAccessor">
@@ -514,7 +459,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1215.0, 870.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1207.5, 840.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -559,7 +504,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[995.0, 480.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1045.0, 480.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -588,13 +533,13 @@
     <entity name="Discrete TimeDelay" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1365.0, 480.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1335.0, 480.0]">
         </property>
     </entity>
     <entity name="Discrete TimeDelay2" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1375.0, 645.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1335.0, 620.0]">
         </property>
     </entity>
     <entity name="Command2Pose2" class="org.terraswarm.accessor.JSAccessor">
@@ -612,7 +557,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1020.0, 600.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1045.0, 620.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -647,7 +592,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1025.0, 715.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1042.5, 735.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -670,7 +615,7 @@
     <entity name="Discrete TimeDelay3" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1350.0, 760.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1332.5, 735.0]">
         </property>
     </entity>
     <entity name="Command2Pose4" class="org.terraswarm.accessor.JSAccessor">
@@ -688,7 +633,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1000.0, 885.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1042.5, 850.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -711,7 +656,7 @@
     <entity name="Discrete TimeDelay4" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1330.9375, 892.1875]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1332.5, 850.0]">
         </property>
     </entity>
     <entity name="Location2Command" class="org.terraswarm.accessor.JSAccessor">
@@ -729,7 +674,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 650.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[670.0, 690.0]">
         </property>
         <port name="Location" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -762,7 +707,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1210.0, 755.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1207.5, 725.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -791,19 +736,19 @@
         </port>
     </entity>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="[103.62513732910156, 631.7076416015625]">
+        <vertex name="vertex1" value="[-50.0, 695.0]">
         </vertex>
     </relation>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1290.0, 480.0]">
+        <vertex name="vertex1" value="[1285.0, 480.0]">
         </vertex>
     </relation>
     <relation name="relation11" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[710.0, 625.0]">
+        <vertex name="vertex1" value="[770.0, 690.0]">
         </vertex>
     </relation>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
@@ -813,60 +758,84 @@
     <relation name="relation4" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[415.0, 635.0]">
+        <vertex name="vertex1" value="[420.0, 690.0]">
         </vertex>
     </relation>
     <relation name="relation2" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1095.0, 440.0]">
+        <vertex name="vertex1" value="[1120.0, 480.0]">
         </vertex>
     </relation>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[690.0, 865.0]">
+        <vertex name="vertex1" value="[840.0, 910.0]">
         </vertex>
     </relation>
     <relation name="relation16" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[370.0, 865.0]">
+        <vertex name="vertex1" value="[460.0, 910.0]">
         </vertex>
     </relation>
     <relation name="relation7" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1290.0, 630.0]">
+        <vertex name="vertex1" value="[1290.0, 620.0]">
         </vertex>
     </relation>
     <relation name="relation18" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation19" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation20" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation21" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation22" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation23" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation15" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation9" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation10" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation12" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation13" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation14" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation24" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation25" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[1200.0, 425.0]">
+        </vertex>
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[1210.0, 570.0]">
+        </vertex>
+    </relation>
+    <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[1207.5, 680.0]">
+        </vertex>
+    </relation>
+    <relation name="relation10" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[1202.5, 795.0]">
+        </vertex>
+    </relation>
+    <relation name="relation13" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[920.0, 480.0]">
+        </vertex>
+    </relation>
+    <relation name="relation20" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[920.0, 850.0]">
+        </vertex>
     </relation>
     <link port="DiscreteClock.output" relation="relation6"/>
     <link port="StringConst.output" relation="relation"/>
@@ -892,35 +861,35 @@
     <link port="Display6.input" relation="relation17"/>
     <link port="OpKeySwitching.Input" relation="relation11"/>
     <link port="OpKeySwitching.Select" relation="relation17"/>
-    <link port="OpKeySwitching.Output0" relation="relation20"/>
+    <link port="OpKeySwitching.Output0" relation="relation13"/>
     <link port="OpKeySwitching.Output1" relation="relation21"/>
     <link port="OpKeySwitching.Output2" relation="relation22"/>
-    <link port="OpKeySwitching.Output3" relation="relation23"/>
+    <link port="OpKeySwitching.Output3" relation="relation20"/>
     <link port="RoboCafeController.UserChoice" relation="relation16"/>
     <link port="RoboCafeController.SelectPhoneRobot" relation="relation17"/>
     <link port="Display7.input" relation="relation16"/>
     <link port="Scarab4.location" relation="relation12"/>
     <link port="Scarab4.pose" relation="relation24"/>
-    <link port="Command2Pose.Command" relation="relation20"/>
-    <link port="Command2Pose.Location" relation="relation3"/>
+    <link port="Command2Pose.Command" relation="relation13"/>
+    <link port="Command2Pose.Location" relation="relation25"/>
     <link port="Command2Pose.Pose" relation="relation2"/>
     <link port="Discrete TimeDelay.input" relation="relation8"/>
-    <link port="Discrete TimeDelay.output" relation="relation3"/>
+    <link port="Discrete TimeDelay.output" relation="relation25"/>
     <link port="Discrete TimeDelay2.input" relation="relation7"/>
-    <link port="Discrete TimeDelay2.output" relation="relation9"/>
+    <link port="Discrete TimeDelay2.output" relation="relation3"/>
     <link port="Command2Pose2.Command" relation="relation21"/>
-    <link port="Command2Pose2.Location" relation="relation9"/>
+    <link port="Command2Pose2.Location" relation="relation3"/>
     <link port="Command2Pose2.Pose" relation="relation18"/>
     <link port="Command2Pose3.Command" relation="relation22"/>
-    <link port="Command2Pose3.Location" relation="relation10"/>
+    <link port="Command2Pose3.Location" relation="relation9"/>
     <link port="Command2Pose3.Pose" relation="relation15"/>
     <link port="Discrete TimeDelay3.input" relation="relation14"/>
-    <link port="Discrete TimeDelay3.output" relation="relation10"/>
-    <link port="Command2Pose4.Command" relation="relation23"/>
-    <link port="Command2Pose4.Location" relation="relation13"/>
+    <link port="Discrete TimeDelay3.output" relation="relation9"/>
+    <link port="Command2Pose4.Command" relation="relation20"/>
+    <link port="Command2Pose4.Location" relation="relation10"/>
     <link port="Command2Pose4.Pose" relation="relation24"/>
     <link port="Discrete TimeDelay4.input" relation="relation12"/>
-    <link port="Discrete TimeDelay4.output" relation="relation13"/>
+    <link port="Discrete TimeDelay4.output" relation="relation10"/>
     <link port="Location2Command.Location" relation="relation19"/>
     <link port="Location2Command.Command" relation="relation11"/>
     <link port="Scarab3.location" relation="relation14"/>
