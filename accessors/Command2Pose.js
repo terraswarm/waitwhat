@@ -11,7 +11,7 @@ var last_location;
 // Variables for spin
 var timer = null;
 var steps;
-var last_rotation;
+var last_location_spin;
 
 /** Define inputs and outputs. */
 exports.setup = function() {
@@ -100,19 +100,18 @@ var Command_in = function () {
     steps = 0;
 
     function set_orientation () {
-      var out = last_location;
-
       if (steps == 0) {
-        last_rotation = out.orientation;
+        // Save where we are at the start
+        last_location_spin = last_location;
       }
 
-      if (steps < 3) {
+      if (steps < 6) {
         // Rotate by 1/3 of a circle
-        var rotated = multiply_quanterions(last_rotation, QUANTERION_THIRD);
-        last_rotation = normalize_quaternion(rotated);
-        out.orientation = last_rotation;
+        var rotated = multiply_quanterions(last_location_spin.orientation, QUANTERION_THIRD);
+        rotated = normalize_quaternion(rotated);
+        last_location_spin.orientation = rotated;
 
-        send('Pose', out);
+        send('Pose', last_location_spin);
       }
 
       steps++;
@@ -122,7 +121,7 @@ var Command_in = function () {
     }
 
     if (timer == null) {
-      timer = setInterval(set_orientation, 2000);
+      timer = setInterval(set_orientation, 5000);
       set_orientation();
     }
     
