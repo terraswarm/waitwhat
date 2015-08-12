@@ -1,0 +1,205 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="scarab_command_test" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.devel">
+    </property>
+    <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
+        <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{120, 80}">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 23, 1680, 1023}, maximized=true}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1446, 913]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{713.0, 446.5}">
+    </property>
+    <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="server" class="ptolemy.data.expr.Parameter" value="141.212.11.124">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="port" class="ptolemy.data.expr.Parameter" value="9090">
+        </property>
+        <property name="topicPrefix" class="ptolemy.data.expr.Parameter" value="/scarab/lane">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[575.0, 210.0]">
+        </property>
+        <port name="pose" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="battery" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="state" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="location" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="Command2Pose" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a MoveActionGoal ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor MoveActionGoalMessage&#10; *&#10;*/&#10;&#10;var last_location;&#10;&#10;// Variables for spin&#10;var timer = null;&#10;var steps;&#10;var last_w;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  // Input command of what the robot should do.&#10;  //  {&#10;  //    command: Go|Spin&#10;  //    X: Y: Z:   // only if Go command&#10;  //  }&#10;  input('Command');&#10;&#10;  // Current location of the robot&#10;  input('Location');&#10;&#10;  // Direct the robot&#10;  output('Pose');&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Command', Command_in);&#10;  addInputHandler('Location', Location_in);&#10;}&#10;&#10;var Command_in = function () {&#10;  // Upon new command we need to stop any internal timers&#10;  if (timer != null) {&#10;    console.log('CLEAR AFTER NEW CMD')&#10;    clearInterval(timer);&#10;    timer = null;&#10;  }&#10;&#10;  // Now parse the incoming command&#10;  var cmd = get('Command');&#10;&#10;  if (cmd.command == 'Go') {&#10;    // Send the robot to the given location&#10;  &#10;    var x = cmd.X || 0; &#10;    var y = cmd.Y || 0; &#10;    var z = cmd.Z || 0; &#10;&#10;    out = {&#10;      'position': {&#10;        'x': x,&#10;        'y': y,&#10;        'z': 0.0&#10;      },&#10;      'orientation': last_location.orientation&#10;    }&#10;    send('Pose', out);&#10;&#10;  } else if (cmd.command == 'Spin') {&#10;    // Start the spin&#10;    steps = 0;&#10;&#10;    function set_orientation () {&#10;      var out = last_location;&#10;&#10;      if (steps == 0) {&#10;        last_w = out.orientation.w;&#10;      }&#10;&#10;      // 15 degrees in radians&#10;      last_w += Math.cos(0.2617);&#10;      out.orientation.z = 0.5;&#10;      out.orientation.y = 0.5;&#10;      // out.orientation.w = last_w;&#10;      out.orientation.w = 1;&#10;      send('Pose', out);&#10;&#10;      steps++;&#10;      if (steps &gt;= 24) {&#10;        console.log('QUITING');&#10;        clearInterval(timer);&#10;      }&#10;    }&#10;&#10;    console.log('SETTING INTERVAL')&#10;    timer = setInterval(set_orientation, 500);&#10;    set_orientation();&#10;  }&#10;}&#10;&#10;// Save the last location&#10;var Location_in = function () {&#10;  last_location = get('Location');&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Command2Pose.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[425.0, 210.0]">
+        </property>
+        <port name="Command" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Location" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="NORTH">
+            </property>
+        </port>
+        <port name="Pose" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{110, 240}">
+        </property>
+    </entity>
+    <entity name="JavaScript" class="ptolemy.actor.lib.jjs.JavaScript">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Put your JavaScript program here.&#10;// Add ports and parameters.&#10;// Define JavaScript functions initialize(), fire(), and/or wrapup().&#10;// Refer to parameters in scope using dollar-sign{parameterName}.&#10;// In the fire() function, use get(parameterName, channel) to read inputs.&#10;// Send to output ports using send(value, portName, channel).&#10;&#10;var i = 0;&#10;&#10;exports.setup =function () {&#10;	output('output');&#10;	input('trigger');&#10;}&#10;&#10;exports.initialize = function () {&#10;	addInputHandler('trigger', t);&#10;}&#10;&#10;var t = function () {&#10;	if (i == 10) {&#10;		&#10;		var out=  {&#10;			command: 'Spin'&#10;		};&#10;		send('output', out);&#10;	}&#10;	i++;&#10;}&#10;&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{245, 205}">
+        </property>
+        <port name="output" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="trigger" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+    </entity>
+    <entity name="Discrete TimeDelay" class="ptolemy.actor.lib.TimeDelay">
+        <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[750.0, 225.0]">
+        </property>
+    </entity>
+    <entity name="Display" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={638, 660, 499, 208}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[425.0, 75.0]">
+        </property>
+    </entity>
+    <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={590, 421, 1017, 434}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[565.0, 80.0]">
+        </property>
+    </entity>
+    <entity name="Display3" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={947, 545, 499, 208}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[700.0, 85.0]">
+        </property>
+    </entity>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{335.0, 210.0}">
+        </vertex>
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{500.0, 210.0}">
+        </vertex>
+    </relation>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{665.0, 220.0}">
+        </vertex>
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[425.0, 130.0]">
+        </vertex>
+    </relation>
+    <link port="Scarab.pose" relation="relation3"/>
+    <link port="Scarab.location" relation="relation"/>
+    <link port="Command2Pose.Command" relation="relation5"/>
+    <link port="Command2Pose.Location" relation="relation2"/>
+    <link port="Command2Pose.Pose" relation="relation3"/>
+    <link port="JavaScript.output" relation="relation5"/>
+    <link port="JavaScript.trigger" relation="relation2"/>
+    <link port="Discrete TimeDelay.input" relation="relation"/>
+    <link port="Discrete TimeDelay.output" relation="relation2"/>
+    <link port="Display.input" relation="relation5"/>
+    <link port="Display2.input" relation="relation3"/>
+    <link port="Display3.input" relation="relation"/>
+</entity>

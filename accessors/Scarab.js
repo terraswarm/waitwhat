@@ -11,6 +11,17 @@ var WebSocket = require('webSocket');
 
 /** Set up the accessor by defining the parameters, inputs, and outputs. */
 exports.setup = function() {
+
+  input('pose');
+
+  output('battery', {
+    type: 'int'
+  });
+  output('state', {
+    type: 'string'
+  });
+  output('location');
+
   parameter('server', {
     type: 'string',
     value: 'localhost'
@@ -23,19 +34,12 @@ exports.setup = function() {
     type: 'string',
     value: '/scarab/lucy'
   });
-  input('cmd');
-  output('battery', {
-    type: 'int'
-  });
-  output('state', {
-    type: 'string'
-  });
-  output('location');
 }
 
 var batteryClient = null;
 var stateClient = null;
 var locationClient = null;
+var poseClient = null;
 
 var seq = 0;
 
@@ -99,33 +103,33 @@ exports.initialize = function() {
     });
   });
   locationClient.on('message', function (msg) {
-    send('location', msg.msg.pose.position);
+    send('location', msg.msg.pose);
   });
   locationClient.on('error', function(message) {
     error(message)
   });
 
   // Get location updates from the robot
-  cmdClient = new WebSocket.Client({
+  poseClient = new WebSocket.Client({
     host: getParameter('server'),
     port: getParameter('port')
   });
-  cmdClient.on('open', function () {
+  poseClient.on('open', function () {
     // Subscribe to /scarab/name/pose
-    cmdClient.send({
+    poseClient.send({
         op: 'advertise',
         topic: getParameter('topicPrefix') + '/goal',
         type: 'geometry_msgs/PoseStamped'
     });
   });
-  cmdClient.on('error', function(message) {
+  poseClient.on('error', function(message) {
     error(message)
   });
-  addInputHandler('cmd', cmd_in);
+  addInputHandler('pose', pose_in);
 } 
 
-var cmd_in = function () {
-  var v = get('cmd');
+var pose_in = function () {
+  var v = get('pose');
 
   out = {
     op: 'publish',
@@ -143,7 +147,7 @@ var cmd_in = function () {
     }
   };
 
-  cmdClient.send(out);
+  poseClient.send(out);
 }
 
 exports.wrapup = function() {
@@ -168,11 +172,11 @@ exports.wrapup = function() {
     locationClient.close();
     locationClient = null;
   }
-  if (cmdClient) {
-    cmdClient.removeAllListeners('open');
-    cmdClient.removeAllListeners('message');
-    cmdClient.removeAllListeners('close');
-    cmdClient.close();
-    cmdClient = null;
+  if (poseClient) {
+    poseClient.removeAllListeners('open');
+    poseClient.removeAllListeners('message');
+    poseClient.removeAllListeners('close');
+    poseClient.close();
+    poseClient = null;
   }
 }

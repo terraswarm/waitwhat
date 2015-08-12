@@ -1,5 +1,6 @@
 [
     "RoboCafeController.js",
+    "Command2Pose.js",
     "Scarab.js",
     "FakeLocationStream.js",
     "OpFilter.js",
