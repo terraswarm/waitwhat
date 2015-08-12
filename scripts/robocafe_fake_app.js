@@ -17,7 +17,7 @@ var argv = require('yargs')
         type: 'string'
     })
     .option('id', {
-        default: 'loc1',
+        default: 'F967525B-2A41-4261-A1E4-2C3EDBBD33AF',
         type: 'string'
     })
     .argv;
@@ -33,11 +33,8 @@ ws.on('open', function() {
 
 	var msg = {
 		phone_id: argv.id,
-		type: command
-	}
-
-	if (command == 'selection') {
-		msg.selection = argv.item;
+		type: command,
+        selection: argv.item
 	}
 
     ws.send(JSON.stringify(msg));

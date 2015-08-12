@@ -8,7 +8,9 @@
     "OpMultiplexorKey.js",
     "OpSwitching.js",
     "OpKeySwitching.js",
+    "OpAddKeyValue.js",
     "CoordinateLinearTransform.js",
     "GoalMessage.js",
-    "MoveActionGoalMessage.js"
+    "MoveActionGoalMessage.js",
+    "ConstantLocation.js"
 ]

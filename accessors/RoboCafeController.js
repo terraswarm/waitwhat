@@ -61,8 +61,9 @@ exports.initialize = function () {
   addInputHandler('UserChoice', Choice_in);
 }
 
-function select_source_and_robot (phone_id, robot_index) {
+function set_source_and_robot (phone_id, robot_index, operation) {
   var out = {
+    type: operation,
     input: phone_id,
     output: robot_index
   }
@@ -80,12 +81,16 @@ var Choice_in = function () {
   if ('message' in ws_payload) {
     var msg = ws_payload.message;
 
+    // Get the unique identifier for what sent this packet
     var phone_id = msg.phone_id;
 
-    // Check what type of message this is
-    if (msg.type == 'selection') {
-      console.log('GOT SELE')
-      // Got a "GET ME A SNACK" message      
+    // Do some common operations for choice selections, cancellations,
+    // and done events
+    if (msg.type == 'selection' ||
+        msg.type == 'cancelled' ||
+        msg.type == 'finished') {
+
+      // What item/candy the user asked for
       var selection = msg.selection;
 
       // Now that we know what the user wants, figure out if we can satisfy
@@ -93,36 +98,52 @@ var Choice_in = function () {
       if (selection in ITEMS) {
         // Get the robot struct of the one that has what we are looking for
         var rbt_idx = ITEMS[selection];
-        console.log(rbt_idx)
+        console.log('Got robot index: '+rbt_idx + ' for ' + selection);
         var rbt = robots[rbt_idx];
 
-        // Check its state
-        if (rbt.state == STATE_IDLE) {
-          // Ok great!
-          // Put this one into service
-          rbt.state = STATE_SERVING;
-          // Keep track of which user this robot is attached to
-          rbt.servicing = phone_id;
-          // And send the robot to the person
-          select_source_and_robot(phone_id, rbt_idx);
+
+        // Now do what we want if this is a new selection
+        if (msg.type == 'selection') {
+          // We have a robot, check its state
+          if (rbt.state == STATE_IDLE) {
+            // Ok great!
+            // Put this one into service
+            rbt.state = STATE_SERVING;
+            // Keep track of which user this robot is attached to
+            rbt.servicing = phone_id;
+            // And send the robot to the person
+            set_source_and_robot(phone_id, rbt_idx, 'add');
+          }
+        
+
+        } else if (msg.type == 'cancelled' || msg.type == 'finished') {
+          // We no longer need this robot to go to this person, send it
+          // back home
+
+          // Check that the correct robot was helping this person
+          if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
+            // This checks out. Stop the robot from what it was doing
+            // and send it home.
+            rbt.state = STATE_IDLE;
+            rbt.servicing = null;
+            set_source_and_robot(phone_id, rbt_idx, 'remove');
+            // Send the robot home.
+            set_source_and_robot('Home', rbt_idx, 'add');
+            // And in a couple seconds, stop telling it to go home
+            setTimeout(function () {
+              set_source_and_robot('Home', rbt_idx, 'remove');
+            }, 3000);
+          }
+
         }
+
+
+      } else {
+        console.log('Could not find a robot that matched item ' + selection);
       }
 
-    } else if (msg.type == 'finished' || msg.type == 'cancelled') {
-      console.log("GOT FINI")
-      // Got a "CANCEL" or "I GOT MY ITEM" message
-
-      // Look up which robot was helping this user
-      for (var i=0; i<NUM_ROBOTS; i++) {
-        var rbt = robots[i];
-        if (rbt.servicing == phone_id) {
-          // got it
-          rbt.state = STATE_IDLE;
-          rbt.servicing = null;
-          select_source_and_robot(phone_id, null);
-        }
-      }
     }
+
   }
 
 }

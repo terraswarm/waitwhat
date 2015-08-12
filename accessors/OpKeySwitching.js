@@ -3,7 +3,8 @@
 /** Switching Network
  *
  * Takes in control assignments in the form of {input: key_value,
- *                                              output: output_index}
+ *                                              output: output_index,
+ *                                              type: add|remove}
  * and maps inputs to outputs
  *
  *  @accessor OpSwitching
@@ -47,14 +48,35 @@ exports.initialize = function () {
 var Select_in = function () {
   var s = get('Select');
 
+  var t = s['type'];
   var i = s['input'];
-  var o = s['output'];
+  var o = 'Output' + s['output'];
 
-  if (typeof o == 'number' && o <= 5 && o >= 0) {
-    matrix[i] = 'Output' + o;
-  } else {
-    matrix[i] = null;
+  if (!(i in matrix && matrix.hasOwnProperty(i))) {
+    // Create the array if it doesn't exist
+    matrix[i] = [];
   }
+
+  if (t == 'remove') {
+    // Get rid of this connection
+    var destarr = matrix[i];
+    var index = destarr.indexOf(o);
+    if (index > -1) {
+        destarr.splice(index, 1);
+    }
+  
+  } else if (t == 'add') {
+    // New connection!
+    var destarr = matrix[i];
+    var index = destarr.indexOf(o);
+    if (index == -1) {
+      // Not already there, so let's add it
+      destarr.push(o);
+    }
+  }
+
+  console.log(matrix);
+  
 }
 
 var Input_in = function () {
@@ -64,8 +86,9 @@ var Input_in = function () {
     var val = i[key];
     if (val in matrix && matrix.hasOwnProperty(val)) {
       var out = matrix[val];
-      if (out != null) {
-        send(out, i);
+      // Send to all connected outputs
+      for (var j=0; j<out.length; j++) {
+        send(out[j], i);
       }
     }
   }

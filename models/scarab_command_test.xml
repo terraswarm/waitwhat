@@ -39,7 +39,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="9090">
         </property>
-        <property name="topicPrefix" class="ptolemy.data.expr.Parameter" value="/scarab/lane">
+        <property name="topicPrefix" class="ptolemy.data.expr.Parameter" value="/scarab/lucy">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -67,7 +67,7 @@
         </port>
     </entity>
     <entity name="Command2Pose" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a MoveActionGoal ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor MoveActionGoalMessage&#10; *&#10;*/&#10;&#10;var last_location;&#10;&#10;// Variables for spin&#10;var timer = null;&#10;var steps;&#10;var last_rotation;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  // Input command of what the robot should do.&#10;  //  {&#10;  //    command: Go|Spin&#10;  //    X: Y: Z:   // only if Go command&#10;  //  }&#10;  input('Command');&#10;&#10;  // Current location of the robot&#10;  input('Location');&#10;&#10;  // Direct the robot&#10;  output('Pose');&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Command', Command_in);&#10;  addInputHandler('Location', Location_in);&#10;}&#10;&#10;var QUANTERION_THIRD = {&#10;  x: 0,&#10;  y: 0,&#10;  z: 0.894427191,&#10;  w: 0.4472135955&#10;};&#10;&#10;function multiply_quanterions (q1, q2) {&#10;  ret = {&#10;    x:  q1.x * q2.w + q1.y * q2.z - q1.z * q2.y + q1.w * q2.x,&#10;    y: -q1.x * q2.z + q1.y * q2.w + q1.z * q2.x + q1.w * q2.y,&#10;    z:  q1.x * q2.y - q1.y * q2.x + q1.z * q2.w + q1.w * q2.z,&#10;    w: -q1.x * q2.x - q1.y * q2.y - q1.z * q2.z + q1.w * q2.w&#10;  }&#10;  return ret;&#10;}&#10;&#10;function normalize_quaternion (q) {&#10;  var n = Math.sqrt(q.x*q.x + q.y*q.y + q.z*q.z + q.w*q.w);&#10;  var ret = {&#10;    x: q.x/n,&#10;    y: q.y/n,&#10;    z: q.z/n,&#10;    w: q.w/n,&#10;  }&#10;  return ret;&#10;}&#10;&#10;&#10;var Command_in = function () {&#10;  // Upon new command we need to stop any internal timers&#10;  if (timer != null) {&#10;    clearInterval(timer);&#10;    // workaround incase this doesnt work&#10;    steps = 100;&#10;    timer = null;&#10;  }&#10;&#10;  // Now parse the incoming command&#10;  var cmd = get('Command');&#10;&#10;  if (cmd.command == 'Go') {&#10;    // Send the robot to the given location&#10;  &#10;    var x = cmd.X || 0; &#10;    var y = cmd.Y || 0; &#10;    var z = cmd.Z || 0; &#10;&#10;    out = {&#10;      'position': {&#10;        'x': x,&#10;        'y': y,&#10;        'z': 0.0&#10;      },&#10;      'orientation': last_location.orientation&#10;    }&#10;    send('Pose', out);&#10;&#10;  } else if (cmd.command == 'Spin') {&#10;    // Start the spin&#10;    steps = 0;&#10;&#10;    function set_orientation () {&#10;      var out = last_location;&#10;&#10;      if (steps == 0) {&#10;        last_rotation = out.orientation;&#10;      }&#10;&#10;      // 15 degrees in radians&#10;      // last_w += Math.cos(0.2617);&#10;      // out.orientation.x = 0;&#10;      // out.orientation.y = 0;&#10;      // out.orientation.z = 1;&#10;      // // out.orientation.w = last_w;&#10;      // out.orientation.w = 0;&#10;&#10;      // Rotate by 1/3 of a circle&#10;      var rotated = multiply_quanterions(last_rotation, QUANTERION_THIRD);&#10;      last_rotation = normalize_quaternion(rotated);&#10;      out.orientation = last_rotation;&#10;&#10;      if (steps &lt; 3) {&#10;        send('Pose', out);&#10;      }&#10;&#10;      steps++;&#10;      if (steps &gt;= 24) {&#10;        console.log('QUITING');&#10;        clearInterval(timer);&#10;      }&#10;    }&#10;&#10;    console.log('SETTING INTERVAL');&#10;    if (timer == null) {&#10;      timer = setInterval(set_orientation, 2000);&#10;      set_orientation();&#10;    }&#10;    &#10;  }&#10;}&#10;&#10;// Save the last location&#10;var Location_in = function () {&#10;  last_location = get('Location');&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a MoveActionGoal ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor MoveActionGoalMessage&#10; *&#10;*/&#10;&#10;var last_location;&#10;&#10;// Variables for spin&#10;var timer = null;&#10;var steps;&#10;var last_location_spin;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  // Input command of what the robot should do.&#10;  //  {&#10;  //    command: Go|Spin&#10;  //    X: Y: Z:   // only if Go command&#10;  //  }&#10;  input('Command');&#10;&#10;  // Current location of the robot&#10;  input('Location');&#10;&#10;  // Direct the robot&#10;  output('Pose');&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Command', Command_in);&#10;  addInputHandler('Location', Location_in);&#10;}&#10;&#10;var QUANTERION_THIRD = {&#10;  x: 0,&#10;  y: 0,&#10;  z: 0.894427191,&#10;  w: 0.4472135955&#10;};&#10;&#10;function multiply_quanterions (q1, q2) {&#10;  ret = {&#10;    x:  q1.x * q2.w + q1.y * q2.z - q1.z * q2.y + q1.w * q2.x,&#10;    y: -q1.x * q2.z + q1.y * q2.w + q1.z * q2.x + q1.w * q2.y,&#10;    z:  q1.x * q2.y - q1.y * q2.x + q1.z * q2.w + q1.w * q2.z,&#10;    w: -q1.x * q2.x - q1.y * q2.y - q1.z * q2.z + q1.w * q2.w&#10;  }&#10;  return ret;&#10;}&#10;&#10;function normalize_quaternion (q) {&#10;  var n = Math.sqrt(q.x*q.x + q.y*q.y + q.z*q.z + q.w*q.w);&#10;  var ret = {&#10;    x: q.x/n,&#10;    y: q.y/n,&#10;    z: q.z/n,&#10;    w: q.w/n,&#10;  }&#10;  return ret;&#10;}&#10;&#10;&#10;var Command_in = function () {&#10;  // Upon new command we need to stop any internal timers&#10;  if (timer != null) {&#10;    clearInterval(timer);&#10;    // workaround incase this doesnt work&#10;    steps = 100;&#10;    timer = null;&#10;  }&#10;&#10;  // Now parse the incoming command&#10;  var cmd = get('Command');&#10;&#10;  if (cmd.command == 'Go') {&#10;    // Send the robot to the given location&#10;  &#10;    var x = cmd.X || 0; &#10;    var y = cmd.Y || 0; &#10;    var z = cmd.Z || 0; &#10;&#10;    out = {&#10;      'position': {&#10;        'x': x,&#10;        'y': y,&#10;        'z': 0.0&#10;      },&#10;      'orientation': last_location.orientation&#10;    }&#10;    send('Pose', out);&#10;&#10;  } else if (cmd.command == 'Spin') {&#10;    // Start the spin&#10;    steps = 0;&#10;&#10;    function set_orientation () {&#10;      if (steps == 0) {&#10;        // Save where we are at the start&#10;        last_location_spin = last_location;&#10;      }&#10;&#10;      if (steps &lt; 6) {&#10;        // Rotate by 1/3 of a circle&#10;        var rotated = multiply_quanterions(last_location_spin.orientation, QUANTERION_THIRD);&#10;        rotated = normalize_quaternion(rotated);&#10;        last_location_spin.orientation = rotated;&#10;&#10;        send('Pose', last_location_spin);&#10;      }&#10;&#10;      steps++;&#10;      if (steps &gt;= 24) {&#10;        clearInterval(timer);&#10;      }&#10;    }&#10;&#10;    if (timer == null) {&#10;      timer = setInterval(set_orientation, 5000);&#10;      set_orientation();&#10;    }&#10;    &#10;  }&#10;}&#10;&#10;// Save the last location&#10;var Location_in = function () {&#10;  last_location = get('Location');&#10;}&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
@@ -107,7 +107,7 @@
         </property>
     </entity>
     <entity name="JavaScript" class="ptolemy.actor.lib.jjs.JavaScript">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Put your JavaScript program here.&#10;// Add ports and parameters.&#10;// Define JavaScript functions initialize(), fire(), and/or wrapup().&#10;// Refer to parameters in scope using dollar-sign{parameterName}.&#10;// In the fire() function, use get(parameterName, channel) to read inputs.&#10;// Send to output ports using send(value, portName, channel).&#10;&#10;var i = 0;&#10;&#10;exports.setup =function () {&#10;	output('output');&#10;	input('trigger');&#10;}&#10;&#10;exports.initialize = function () {&#10;	addInputHandler('trigger', t);&#10;}&#10;&#10;var t = function () {&#10;	if (i == 10) {&#10;		&#10;		var out=  {&#10;			command: 'Spin'&#10;		};&#10;		send('output', out);&#10;	}&#10;	i++;&#10;}&#10;&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Put your JavaScript program here.&#10;// Add ports and parameters.&#10;// Define JavaScript functions initialize(), fire(), and/or wrapup().&#10;// Refer to parameters in scope using dollar-sign{parameterName}.&#10;// In the fire() function, use get(parameterName, channel) to read inputs.&#10;// Send to output ports using send(value, portName, channel).&#10;&#10;var i = 0;&#10;&#10;exports.setup =function () {&#10;	output('output');&#10;	input('trigger');&#10;}&#10;&#10;exports.initialize = function () {&#10;	addInputHandler('trigger', t);&#10;}&#10;&#10;var t = function () {&#10;	if (i == 2) {&#10;		&#10;		var out=  {&#10;			command: 'Spin'&#10;		};&#10;		send('output', out);&#10;	}&#10;	i++;&#10;}&#10;&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
@@ -125,14 +125,10 @@
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
         </port>
         <port name="trigger" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
             </property>
         </port>
     </entity>
@@ -151,7 +147,7 @@
         </property>
     </entity>
     <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={590, 421, 1017, 570}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={33, 87, 1017, 570}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[1017, 526]">
         </property>
@@ -159,7 +155,7 @@
         </property>
     </entity>
     <entity name="Display3" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={947, 545, 686, 335}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={677, 437, 984, 311}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[686, 291]">
         </property>
