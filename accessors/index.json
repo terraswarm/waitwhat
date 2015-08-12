@@ -1,8 +1,11 @@
 [
+    "RoboCafeController.js",
     "Scarab.js",
     "FakeLocationStream.js",
     "OpFilter.js",
     "OpMultiplexorKey.js",
+    "OpSwitching.js",
+    "OpKeySwitching.js",
     "CoordinateLinearTransform.js",
     "GoalMessage.js",
     "MoveActionGoalMessage.js"

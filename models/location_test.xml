@@ -16,7 +16,7 @@
     </property>
     <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{715.7762627180233, 667.1672783430233}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{715.7762627180231, 667.1672783430231}">
     </property>
     <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
         <property name="period" class="ptolemy.actor.parameters.PortParameter" value="3.0">
@@ -86,7 +86,7 @@
         </property>
     </entity>
     <entity name="Display4" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={649, 682, 391, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1256, 492, 391, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -130,6 +130,7 @@
         </property>
     </entity>
     <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
+        <display name="Lane"/>
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;  input('cmd');&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose.position);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  cmdClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cmdClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    cmdClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  cmdClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cmd', cmd_in);&#10;} &#10;&#10;var cmd_in = function () {&#10;  var v = get('cmd');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  cmdClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (cmdClient) {&#10;    cmdClient.removeAllListeners('open');&#10;    cmdClient.removeAllListeners('message');&#10;    cmdClient.removeAllListeners('close');&#10;    cmdClient.close();&#10;    cmdClient = null;&#10;  }&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
@@ -176,11 +177,11 @@
         </port>
     </entity>
     <entity name="GoalMessage" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a PoseStamped ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor GoalMessage&#10; *&#10;*/&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;}&#10;&#10;var Input_in = function () {&#10;  var v = get('Input');&#10;&#10;  console.log(v);&#10;  console.log(typeof v);&#10;&#10;  var x = v.X || 0; &#10;  var y = v.Y || 0; &#10;  var z = v.Z || 0; &#10;&#10;  out = {&#10;    'position': {&#10;      'x': x,&#10;      'y': y,&#10;      'z': 0.0},&#10;    'orientation': {&#10;      'x': 0.0,&#10;      'y': 0.0,&#10;      'z': 0.0,&#10;      'w': 1.0}&#10;     }&#10;&#10;  send('Output', out);&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a PoseStamped ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor GoalMessage&#10; *&#10;*/&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;}&#10;&#10;var Input_in = function () {&#10;  var v = get('Input');&#10;&#10;  var x = v.X || 0; &#10;  var y = v.Y || 0; &#10;  var z = v.Z || 0; &#10;&#10;  out = {&#10;    'position': {&#10;      'x': x,&#10;      'y': y,&#10;      'z': 0.0},&#10;    'orientation': {&#10;      'x': 0.0,&#10;      'y': 0.0,&#10;      'z': 0.0,&#10;      'w': 1.0}&#10;     }&#10;&#10;  send('Output', out);&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoalMessage.js">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[975.0, 535.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1090.0, 470.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -198,7 +199,7 @@
         </port>
     </entity>
     <entity name="Display" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={884, 377, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={29, 101, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -224,10 +225,11 @@
         </property>
         <property name="Zshift" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[745.0, 535.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[690.0, 600.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
+            <property name="multiport"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
             <property name="defaultValue" class="ptolemy.data.expr.Parameter">
@@ -242,7 +244,7 @@
         </port>
     </entity>
     <entity name="Display3" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={889, 526, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={37, 811, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -266,7 +268,7 @@
         </property>
         <property name="MinY" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
-        <property name="MaxY" class="ptolemy.data.expr.Parameter" value="4.5">
+        <property name="MaxY" class="ptolemy.data.expr.Parameter" value="15">
         </property>
         <property name="MinZ" class="ptolemy.data.expr.Parameter" value="1.0">
         </property>
@@ -291,24 +293,8 @@
             </property>
         </port>
     </entity>
-    <entity name="Const" class="ptolemy.actor.lib.Const">
-        <property name="value" class="ptolemy.data.expr.Parameter" value="0">
-        </property>
-        <doc>Create a constant sequence.</doc>
-        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
-            </property>
-            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[405.0, 830.0]">
-        </property>
-    </entity>
-    <entity name="Switch" class="ptolemy.actor.lib.Switch">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1080.0, 535.0]">
-        </property>
-    </entity>
     <entity name="Scarab2" class="org.terraswarm.accessor.JSAccessor">
+        <display name="Lady"/>
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;  input('cmd');&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose.position);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  cmdClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cmdClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    cmdClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  cmdClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cmd', cmd_in);&#10;} &#10;&#10;var cmd_in = function () {&#10;  var v = get('cmd');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  cmdClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (cmdClient) {&#10;    cmdClient.removeAllListeners('open');&#10;    cmdClient.removeAllListeners('message');&#10;    cmdClient.removeAllListeners('close');&#10;    cmdClient.close();&#10;    cmdClient = null;&#10;  }&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
@@ -323,7 +309,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1195.0, 580.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1205.0, 580.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -347,7 +333,7 @@
         </port>
     </entity>
     <entity name="Display5" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1266, 70, 378, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1268, 530, 378, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -355,55 +341,6 @@
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[1375.0, 590.0]">
         </property>
-    </entity>
-    <entity name="Const2" class="ptolemy.actor.lib.Const">
-        <property name="value" class="ptolemy.data.expr.Parameter" value="0">
-        </property>
-        <doc>Create a constant sequence.</doc>
-        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
-            </property>
-            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[910.0, 850.0]">
-        </property>
-    </entity>
-    <entity name="OpMultiplexorKey" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpMultiplexorKey&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  input('Value');&#10;&#10;  output('Output');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;  var v = get('Value');&#10;&#10;  console.log(i);&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == v) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpMultiplexorKey.js">
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="id">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[580.0, 535.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="multiport"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
-        </port>
-        <port name="Value" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
-            <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
-        </port>
     </entity>
     <entity name="FakeLocationStream" class="org.terraswarm.accessor.JSAccessor">
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Generate a stream of made up location data.&#10; *&#10; *  Outputs an object that looks like:&#10; *&#10; *      {&#10; *        id: &lt;unique id per thing being localized&gt;&#10; *        X:  &lt;x coordinate&gt;&#10; *        Y:  &lt;x coordinate&gt;&#10; *        Z:  &lt;x coordinate&gt;&#10; *      }&#10; *&#10; *  @accessor FakeLocationStream&#10; *&#10;*/&#10;&#10;// Which ID we should be generating location data for&#10;var current_id;&#10;&#10;// Last location&#10;var x;&#10;var y;&#10;var z;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('ID', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;1&quot;&#10;  });&#10;  output('Location', {&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // How often to generate a new location value in seconds&#10;  parameter('Period', {&#10;    value: 1,&#10;    type: 'number'&#10;  });&#10;&#10;  // Bounds of generated locations in meters&#10;  parameter('MinX', {value: 0, type: 'number'});&#10;  parameter('MaxX', {value: 10, type: 'number'});&#10;  parameter('MinY', {value: 0, type: 'number'});&#10;  parameter('MaxY', {value: 10, type: 'number'});&#10;  parameter('MinZ', {value: 1, type: 'number'});&#10;  parameter('MaxZ', {value: 2, type: 'number'});&#10;&#10;  // How much any one parameter can vary between updates&#10;  parameter('MaxVariance', {value: 0.2, type: 'number'});&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('ID', ID_in);&#10;&#10;  current_id = get('ID');&#10;  x = getParameter('MinX');&#10;  y = getParameter('MinY');&#10;  z = getParameter('MinZ');&#10;&#10;  // Use the period parameter to setup the loop that generates fake&#10;  // location data.&#10;  setInterval(update_location, getParameter('Period')*1000);&#10;}&#10;&#10;function getRandomArbitrary (min, max) {&#10;  return Math.random() * (max - min) + min;&#10;}&#10;&#10;function getRandomInt (min, max) {&#10;  return Math.floor(Math.random() * (max - min)) + min;&#10;}&#10;&#10;// Generates a new location value and sends to output based on parameters set&#10;function update_location () {&#10;&#10;  var j = getParameter('MaxVariance');&#10;  var alter = getRandomArbitrary(j/2, j);&#10;  var neg = getRandomInt(1, 3);&#10;  if (neg == 1) {&#10;    alter *= -1;&#10;  }&#10;&#10;  // Choose which axis to change on this iteration&#10;  var whichone = getRandomInt(0, 3);&#10;&#10;  if (whichone == 0) {&#10;    // ALTER X&#10;    var new_x = x + alter;&#10;    if (new_x &lt; getParameter('MinX')) new_x = getParameter('MinX');&#10;    if (new_x &gt; getParameter('MaxX')) new_x = getParameter('MaxX');&#10;    x = new_x;&#10;  &#10;  } else if (whichone == 1) {&#10;    // ALTER Y&#10;    var new_y = y + alter;&#10;    if (new_y &lt; getParameter('MinY')) new_y = getParameter('MinY');&#10;    if (new_y &gt; getParameter('MaxY')) new_y = getParameter('MaxY');&#10;    y = new_y;&#10;&#10;  } else if (whichone == 2) {&#10;    // ALTER Z&#10;    var new_z = z + alter;&#10;    if (new_z &lt; getParameter('MinZ')) new_z = getParameter('MinZ');&#10;    if (new_z &gt; getParameter('MaxZ')) new_z = getParameter('MaxZ');&#10;    z = new_z;&#10;&#10;  }&#10;&#10;  var loc = {&#10;    id: current_id,&#10;    X: x,&#10;    Y: y,&#10;    Z: z&#10;  };&#10;&#10;  send('Location', loc);&#10;&#10;}&#10;&#10;&#10;var ID_in  = function () {&#10;  current_id = get('ID');&#10;}&#10;">
@@ -422,7 +359,7 @@
         </property>
         <property name="MinY" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
-        <property name="MaxY" class="ptolemy.data.expr.Parameter" value="4.5">
+        <property name="MaxY" class="ptolemy.data.expr.Parameter" value="15">
         </property>
         <property name="MinZ" class="ptolemy.data.expr.Parameter" value="1.0">
         </property>
@@ -462,44 +399,6 @@
         <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
     </entity>
-    <entity name="Scarab3" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;  input('cmd');&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose.position);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  cmdClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cmdClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    cmdClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  cmdClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cmd', cmd_in);&#10;} &#10;&#10;var cmd_in = function () {&#10;  var v = get('cmd');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  cmdClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (cmdClient) {&#10;    cmdClient.removeAllListeners('open');&#10;    cmdClient.removeAllListeners('message');&#10;    cmdClient.removeAllListeners('close');&#10;    cmdClient.close();&#10;    cmdClient = null;&#10;  }&#10;}&#10;">
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
-        </property>
-        <property name="server" class="ptolemy.data.expr.Parameter" value="141.212.11.124">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="port" class="ptolemy.data.expr.Parameter" value="9090">
-        </property>
-        <property name="topicPrefix" class="ptolemy.data.expr.Parameter" value="/scarab/loretta">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1190.0, 690.0]">
-        </property>
-        <port name="cmd" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="battery" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="state" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="location" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
     <entity name="WebSocketServer" class="org.terraswarm.accessor.JSAccessor">
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.&#10;// All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor starts a server that listens for web socket&#10; *  connection requests on the specified hostInterface and port.  The&#10; *  hostInterface is needed only if the host machine has more than one&#10; *  network interface (e.g. Ethernet and WiFi) and 'localhost' does&#10; *  not resolve to the desired interface.&#10; *&#10; *  &lt;p&gt;The output &lt;code&gt;connection&lt;/code&gt; reports the when a&#10; *  connection is opened or closed.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;When a message arrives on a connection, a &lt;code&gt;received&lt;/code&gt;&#10; *  output is produced with that message.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;When an input arrives on &lt;code&gt;toSend&lt;/code&gt;, then a message is&#10; *  sent to one or all of the open socket connections.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;When &lt;code&gt;wrapup()&lt;/code&gt; is invoked, this accessor closes the&#10; *  server and all connections.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;The messages can be any type that has a JSON representation.&#10; *  For incomming messages, this accessor assumes that the message is&#10; *  a string in UTF-8 that encodes a JSON object.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;This accessor requires the module webSocket.&lt;/p&gt;&#10; *&#10; *  @accessor WebSocketServer&#10; *  @parameter {string} hostInterface The IP address or domain name of the&#10; *    network interface to listen to.&#10; *  @parameter {number} port The port to listen to for connections.&#10; *  @input toSend The data to be sent to open sockets. If this is an object with 'socketID' field and a 'message' field, then send the value of the message field to the socket identified by the socketID field. If the input has any other form, then the message is broadcast to all open socket connections.&#10; *  @output connection An output produced when a connection opens or closes. The output is an object with two fields, a 'socketID', which is a unique ID for this client connection, and a 'status' field, which is the string 'open' or 'closed'.&#10; *  @output received A message received a client in the form of an object with two fields, a 'socketID', which is a unique ID for this client connection, and a 'message' field, which is the message received from the client.&#10; *  @author Hokeun Kim, Edward Lee &#10; *  @version $$Id: WebSocketServer.js 234 2015-08-01 22:06:40Z eal $$ &#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;var server = null;&#10;var running = false;&#10;&#10;/** Sets up the accessor by defining inputs and outputs. */&#10;exports.setup = function() {&#10;    parameter('hostInterface', {&#10;        value: &quot;localhost&quot;, &#10;        type: &quot;string&quot; &#10;    });&#10;    parameter('port', {&#10;        value: 8080, &#10;        type: &quot;int&quot; &#10;    });&#10;    input('toSend');&#10;    output('received');&#10;    output('connection');&#10;}&#10;&#10;var handle;&#10;var sockets = [];&#10;&#10;/** Starts the web socket and attaches functions to inputs and outputs. &#10;  * Adds an input handler on toSend that sends the input received to the right socket. */ &#10;exports.initialize = function() {&#10;    if (!server) {&#10;        server = new WebSocket.Server({'port':getParameter('port'),&#10;                                       'hostInterface':getParameter('hostInterface')});&#10;        server.on('listening', onListening);&#10;        server.on('connection', onConnection);&#10;        server.start();&#10;    }&#10;    running = true;&#10;&#10;    handle = addInputHandler('toSend', function() {&#10;        var data = get('toSend');&#10;        // Careful: Don't do if (data) because if data === 0, then data is false.&#10;        if (data !== null) {&#10;            if ((data.socketID != null)  &amp;&amp; (data.message != null)) {&#10;                // data has the right form for a point-to-point send.&#10;                if (sockets[data.socketID] &amp;&amp; sockets[data.socketID].isOpen()) {&#10;                    // id matches this socket.&#10;                    console.log(&quot;Sending to socket id &quot; &#10;                            + data.socketID&#10;                            + &quot; message: &quot;&#10;                            + data.message);&#10;                    sockets[data.socketID].send(data.message);&#10;                } else {&#10;                    console.log('Socket with ID ' + data.socketID&#10;                            + ' is not open. Discarding message: ' + data.message);&#10;                }&#10;            } else {&#10;                // No socketID or message, so this is a broadcast message.&#10;                var success = false;&#10;                for (var id = 0; id &lt; sockets.length; id++) {&#10;                    if (sockets[id].isOpen()) {&#10;                        console.log(&quot;Broadcasting to socket id &quot; + id &#10;                                + &quot; message: &quot; + data);&#10;                        sockets[id].send(data);&#10;                        success = true;&#10;                    }&#10;                }&#10;                if (!success) {&#10;                    console.log('No open sockets. Discarding message: ' + data.message);&#10;                }&#10;            }&#10;        }&#10;    });&#10;}&#10;&#10;function onListening() {&#10;    console.log('Server: Listening for socket connection requests.');&#10;}&#10;&#10;/** Executes when a connection has been establised.&lt;br&gt;&#10; *  Triggers an output on &lt;code&gt;'connection'&lt;/code&gt;.&#10; *  Adds an event listener to the socket. */&#10;function onConnection(socket) {&#10;   //socketID is the index of the socket in the sockets array. &#10;    var socketID = sockets.length;&#10;    console.log('Server: new socket established with ID: ' + socketID);&#10;    send('connection', {'socketID':socketID, 'status':'open'});&#10;    socket.on('message', function(message) {&#10;        send('received', {'socketID':socketID, 'message':message});&#10;    });&#10;    socket.on('close', function(message) {&#10;        send('connection', {'socketID':socketID, 'status':'closed'});&#10;    });&#10;&#10;    sockets.push(socket);    &#10;}&#10;&#10;/** Removes all inputHandlers from sockets.&lt;br&gt;&#10; * Unregisters event listeners from sockets.&lt;br&gt;&#10; * Closes server. */&#10;exports.wrapup = function(){&#10;    for (var i = 0; i &lt; sockets.length; i++) {&#10;        sockets[i].removeAllListeners();&#10;    }&#10;&#10;    sockets = [];&#10;    removeInputHandler(handle); &#10;&#10;    if (server != null) {&#10;        server.removeAllListeners();&#10;        server.close();&#10;        server = null;&#10;    }&#10;}&#10;">
         </property>
@@ -511,7 +410,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8081">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[255.0, 940.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[165.0, 875.0]">
         </property>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -536,6 +435,7 @@
         </port>
     </entity>
     <entity name="JavaScript" class="ptolemy.actor.lib.jjs.JavaScript">
+        <display name="ExtractMessageAsInt"/>
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Put your JavaScript program here.&#10;// Add ports and parameters.&#10;// Define JavaScript functions initialize(), fire(), and/or wrapup().&#10;// Refer to parameters in scope using dollar-sign{parameterName}.&#10;// In the fire() function, use get(parameterName, channel) to read inputs.&#10;// Send to output ports using send(value, portName, channel).&#10;&#10;exports.setup = function () {&#10;  input('input');&#10;  output('output', {&#10;type: 'int'});&#10;};&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('input', myin);&#10;}&#10;&#10;var myin = function () {&#10;  var i = get('input');&#10;  &#10;  if (typeof i === 'object' &amp;&amp; 'message' in i) {&#10;    send('output', parseInt(i.message));&#10;  }&#10;}&#10;">
             <property name="style" class="ptolemy.actor.gui.style.TextStyle">
                 <property name="height" class="ptolemy.data.expr.Parameter" value="16">
@@ -544,7 +444,7 @@
                 </property>
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{625, 990}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1185.0, 995.0]">
         </property>
         <port name="input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -564,11 +464,216 @@
         </port>
     </entity>
     <entity name="Display6" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={889, 526, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={876, 529, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1220.0, 910.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1205.0, 865.0]">
+        </property>
+    </entity>
+    <entity name="Scarab3" class="org.terraswarm.accessor.JSAccessor">
+        <display name="Loretta"/>
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;  input('cmd');&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose.position);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  cmdClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cmdClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    cmdClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  cmdClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cmd', cmd_in);&#10;} &#10;&#10;var cmd_in = function () {&#10;  var v = get('cmd');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  cmdClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (cmdClient) {&#10;    cmdClient.removeAllListeners('open');&#10;    cmdClient.removeAllListeners('message');&#10;    cmdClient.removeAllListeners('close');&#10;    cmdClient.close();&#10;    cmdClient = null;&#10;  }&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
+        </property>
+        <property name="server" class="ptolemy.data.expr.Parameter" value="141.212.11.124">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="port" class="ptolemy.data.expr.Parameter" value="9090">
+        </property>
+        <property name="topicPrefix" class="ptolemy.data.expr.Parameter" value="/scarab/loretta">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1215.0, 695.0]">
+        </property>
+        <port name="cmd" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="battery" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="state" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="location" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="GoalMessage2" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a PoseStamped ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor GoalMessage&#10; *&#10;*/&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;}&#10;&#10;var Input_in = function () {&#10;  var v = get('Input');&#10;&#10;  console.log(v);&#10;  console.log(typeof v);&#10;&#10;  var x = v.X || 0; &#10;  var y = v.Y || 0; &#10;  var z = v.Z || 0; &#10;&#10;  out = {&#10;    'position': {&#10;      'x': x,&#10;      'y': y,&#10;      'z': 0.0},&#10;    'orientation': {&#10;      'x': 0.0,&#10;      'y': 0.0,&#10;      'z': 0.0,&#10;      'w': 1.0}&#10;     }&#10;&#10;  send('Output', out);&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoalMessage.js">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1091.6958923339844, 580.6200256347656]">
+        </property>
+        <port name="Input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="GoalMessage3" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a PoseStamped ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor GoalMessage&#10; *&#10;*/&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;}&#10;&#10;var Input_in = function () {&#10;  var v = get('Input');&#10;&#10;  console.log(v);&#10;  console.log(typeof v);&#10;&#10;  var x = v.X || 0; &#10;  var y = v.Y || 0; &#10;  var z = v.Z || 0; &#10;&#10;  out = {&#10;    'position': {&#10;      'x': x,&#10;      'y': y,&#10;      'z': 0.0},&#10;    'orientation': {&#10;      'x': 0.0,&#10;      'y': 0.0,&#10;      'z': 0.0,&#10;      'w': 1.0}&#10;     }&#10;&#10;  send('Output', out);&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoalMessage.js">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1095.0, 690.0]">
+        </property>
+        <port name="Input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="OpMultiplexorKey" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpMultiplexorKey&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  input('Value');&#10;&#10;  output('Output');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;  var v = get('Value');&#10;&#10;  console.log(i);&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == v) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpMultiplexorKey.js">
+        </property>
+        <property name="key" class="ptolemy.data.expr.Parameter" value="id">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1195.0, 1070.0]">
+        </property>
+        <port name="Input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="multiport"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Value" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
+            </property>
+        </port>
+        <port name="Output" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="OpKeySwitching" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Switching Network&#10; *&#10; * Takes in control assignments in the form of {input: key_value,&#10; *                                              output: output_index}&#10; * and maps inputs to outputs&#10; *&#10; *  @accessor OpSwitching&#10; *&#10;*/&#10;&#10;var key;&#10;&#10;var matrix = {};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;&#10;  input('Select');&#10;&#10;  output('Output0');&#10;  output('Output1');&#10;  output('Output2');&#10;  output('Output3');&#10;  output('Output4');&#10;  output('Output5');&#10;&#10;  parameter('Key', {&#10;    type: 'string',&#10;    value: 'id'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  key = getParameter('Key');&#10;&#10;  addInputHandler('Select', Select_in);&#10;  addInputHandler('Input', Input_in);&#10;}&#10;&#10;var Select_in = function () {&#10;  var s = get('Select');&#10;&#10;  var i = s['input'];&#10;  var o = s['output'];&#10;&#10;  if (typeof o == 'number' &amp;&amp; o &lt;= 5 &amp;&amp; o &gt;= 0) {&#10;    matrix[i] = 'Output' + o;&#10;  } else {&#10;    matrix[i] = null;&#10;  }&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    var val = i[key];&#10;    if (val in matrix &amp;&amp; matrix.hasOwnProperty(val)) {&#10;      var out = matrix[val];&#10;      if (out != null) {&#10;        send(out, i);&#10;      }&#10;    }&#10;  }&#10;}&#10;&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpKeySwitching.js">
+        </property>
+        <property name="Key" class="ptolemy.data.expr.Parameter" value="id">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[925.0, 600.0]">
+        </property>
+        <port name="Input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Select" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+            <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
+            </property>
+        </port>
+        <port name="Output0" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Output1" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Output2" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Output3" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Output4" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="Output5" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+    </entity>
+    <entity name="RoboCafeController" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 3;&#10;&#10;// STATES&#10;var STATE_IDLE = 0; // Robot is currently just sitting there.&#10;var STATE_SERVING = 1; // Robot has been requested and is going servering a person.&#10;&#10;// MAPPING OF ITEM TO ROBOT NUM&#10;var ITEMS = {&#10;  Twix: 0,&#10;  SquirtGun: 1,&#10;  BouncyBalls: 2&#10;}&#10;&#10;// Array of robot structs&#10;var robots = [];&#10;&#10;&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;&#10;  output('SelectPhoneRobot');&#10;&#10;&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  // parameter('key', {&#10;  //   type: 'string'&#10;  // });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robots[i] = robot;&#10;  }&#10;&#10;&#10;&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;}&#10;&#10;function select_source_and_robot (phone_id, robot_index) {&#10;  var out = {&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  console.log('got choice');&#10;  console.log(ws_payload);&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Check what type of message this is&#10;    if (msg.type == 'selection') {&#10;      console.log('GOT SELE')&#10;      // Got a &quot;GET ME A SNACK&quot; message      &#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;        // Get the robot struct of the one that has what we are looking for&#10;        var rbt_idx = ITEMS[selection];&#10;        console.log(rbt_idx)&#10;        var rbt = robots[rbt_idx];&#10;&#10;        // Check its state&#10;        if (rbt.state == STATE_IDLE) {&#10;          // Ok great!&#10;          // Put this one into service&#10;          rbt.state = STATE_SERVING;&#10;          // Keep track of which user this robot is attached to&#10;          rbt.servicing = phone_id;&#10;          // And send the robot to the person&#10;          select_source_and_robot(phone_id, rbt_idx);&#10;        }&#10;      }&#10;&#10;    } else if (msg.type == 'finished') {&#10;      console.log(&quot;GOT FINI&quot;)&#10;      // Got a &quot;CANCEL&quot; or &quot;I GOT MY ITEM&quot; message&#10;&#10;      // Look up which robot was helping this user&#10;      for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;        var rbt = robots[i];&#10;        if (rbt.servicing == phone_id) {&#10;          // got it&#10;          rbt.state = STATE_IDLE;&#10;          rbt.servicing = null;&#10;          select_source_and_robot(phone_id, null);&#10;        }&#10;      }&#10;    }&#10;  }&#10;&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/RoboCafeController.js">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[640.0, 830.0]">
+        </property>
+        <port name="UserChoice" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="SelectPhoneRobot" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+    </entity>
+    <entity name="Display7" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={930, 866, 759, 306}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[565.0, 1060.0]">
         </property>
     </entity>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
@@ -584,45 +689,47 @@
     <relation name="relation11" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[880.0, 535.0]">
-        </vertex>
-    </relation>
-    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
-        </property>
-        <vertex name="vertex1" value="[1140.0, 470.0]">
+        <vertex name="vertex1" value="[820.0, 600.0]">
         </vertex>
     </relation>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation13" class="ptolemy.actor.TypedIORelation">
     </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[525.0, 505.0]">
+        </vertex>
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[1145.0, 470.0]">
+        </vertex>
+    </relation>
+    <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+    </relation>
     <relation name="relation14" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation15" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation10" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation12" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
-        </property>
-        <vertex name="vertex1" value="[425.0, 460.0]">
-        </vertex>
-    </relation>
-    <relation name="relation9" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1050.0, 895.0]">
+        <vertex name="vertex1" value="{795.0, 765.0}">
+        </vertex>
+    </relation>
+    <relation name="relation16" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{415.0, 905.0}">
         </vertex>
     </relation>
     <link port="DiscreteClock.output" relation="relation6"/>
@@ -635,36 +742,34 @@
     <link port="StringConst4.trigger" relation="relation6"/>
     <link port="Scarab.cmd" relation="relation2"/>
     <link port="Scarab.location" relation="relation8"/>
-    <link port="GoalMessage.Input" relation="relation11"/>
-    <link port="GoalMessage.Output" relation="relation15"/>
+    <link port="GoalMessage.Input" relation="relation3"/>
+    <link port="GoalMessage.Output" relation="relation2"/>
     <link port="Display.input" relation="relation11"/>
     <link port="Display2.input" relation="relation2"/>
-    <link port="CoordinateLinearTransform2.Input" relation="relation3"/>
+    <link port="CoordinateLinearTransform2.Input" relation="relation4"/>
     <link port="CoordinateLinearTransform2.Output" relation="relation11"/>
     <link port="Display3.input" relation="relation4"/>
     <link port="FakeLocationStream5.ID" relation="relation"/>
     <link port="FakeLocationStream5.Location" relation="relation4"/>
-    <link port="Const.trigger" relation="relation6"/>
-    <link port="Switch.input" relation="relation15"/>
-    <link port="Switch.output" relation="relation2"/>
-    <link port="Switch.output" relation="relation14"/>
-    <link port="Switch.output" relation="relation9"/>
-    <link port="Switch.control" relation="relation17"/>
-    <link port="Scarab2.cmd" relation="relation14"/>
+    <link port="Scarab2.cmd" relation="relation9"/>
     <link port="Scarab2.location" relation="relation13"/>
     <link port="Display5.input" relation="relation13"/>
-    <link port="Const2.trigger" relation="relation6"/>
-    <link port="OpMultiplexorKey.Input" relation="relation4"/>
-    <link port="OpMultiplexorKey.Input" relation="relation10"/>
-    <link port="OpMultiplexorKey.Value" relation="relation12"/>
-    <link port="OpMultiplexorKey.Output" relation="relation3"/>
     <link port="FakeLocationStream.ID" relation="relation5"/>
-    <link port="FakeLocationStream.Location" relation="relation10"/>
-    <link port="StringConst5.output" relation="relation12"/>
+    <link port="FakeLocationStream.Location" relation="relation4"/>
     <link port="StringConst5.trigger" relation="relation6"/>
-    <link port="Scarab3.cmd" relation="relation9"/>
-    <link port="WebSocketServer.received" relation="relation7"/>
-    <link port="JavaScript.input" relation="relation7"/>
-    <link port="JavaScript.output" relation="relation17"/>
+    <link port="WebSocketServer.received" relation="relation16"/>
     <link port="Display6.input" relation="relation17"/>
+    <link port="Scarab3.cmd" relation="relation14"/>
+    <link port="GoalMessage2.Input" relation="relation10"/>
+    <link port="GoalMessage2.Output" relation="relation9"/>
+    <link port="GoalMessage3.Input" relation="relation12"/>
+    <link port="GoalMessage3.Output" relation="relation14"/>
+    <link port="OpKeySwitching.Input" relation="relation11"/>
+    <link port="OpKeySwitching.Select" relation="relation17"/>
+    <link port="OpKeySwitching.Output0" relation="relation3"/>
+    <link port="OpKeySwitching.Output1" relation="relation10"/>
+    <link port="OpKeySwitching.Output2" relation="relation12"/>
+    <link port="RoboCafeController.UserChoice" relation="relation16"/>
+    <link port="RoboCafeController.SelectPhoneRobot" relation="relation17"/>
+    <link port="Display7.input" relation="relation16"/>
 </entity>
