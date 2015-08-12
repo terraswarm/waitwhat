@@ -108,7 +108,7 @@ var Choice_in = function () {
         }
       }
 
-    } else if (msg.type == 'finished') {
+    } else if (msg.type == 'finished' || msg.type == 'cancelled') {
       console.log("GOT FINI")
       // Got a "CANCEL" or "I GOT MY ITEM" message
 
