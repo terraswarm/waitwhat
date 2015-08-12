@@ -173,6 +173,10 @@ exports.wrapup = function() {
     locationClient = null;
   }
   if (poseClient) {
+    poseClient.send({
+        op: 'unadvertise',
+        topic: getParameter('topicPrefix') + '/goal'
+    });
     poseClient.removeAllListeners('open');
     poseClient.removeAllListeners('message');
     poseClient.removeAllListeners('close');
