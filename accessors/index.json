@@ -9,6 +9,7 @@
     "OpSwitching.js",
     "OpKeySwitching.js",
     "OpAddKeyValue.js",
+    "OpStripString.js",
     "CoordinateLinearTransform.js",
     "GoalMessage.js",
     "MoveActionGoalMessage.js",

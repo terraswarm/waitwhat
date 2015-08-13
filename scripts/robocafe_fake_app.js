@@ -13,7 +13,7 @@ var argv = require('yargs')
         type: 'string'
     })
     .option('host', {
-        default: '141.212.11.243:8081',
+        default: '141.212.11.234:8081',
         type: 'string'
     })
     .option('id', {

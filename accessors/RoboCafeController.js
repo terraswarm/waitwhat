@@ -10,8 +10,8 @@
 var NUM_ROBOTS = 3;
 
 // STATES
-var STATE_IDLE = 0; // Robot is currently just sitting there.
-var STATE_SERVING = 1; // Robot has been requested and is going servering a person.
+var STATE_IDLE = 'IDLE'; // Robot is currently just sitting there.
+var STATE_SERVING = 'SERVING'; // Robot has been requested and is going servering a person.
 
 // MAPPING OF ITEM TO ROBOT NUM
 var ITEMS = {
@@ -34,6 +34,7 @@ exports.setup = function () {
   input('UserChoice');
 
   output('SelectPhoneRobot');
+  output('RobotStatus');
 
 
 
@@ -53,10 +54,10 @@ exports.initialize = function () {
     var robot = {};
     robot.state = STATE_IDLE;
     robots[i] = robot;
+
+    // Output initial status
+    update_status(i, STATE_IDLE);
   }
-
-
-
 
   addInputHandler('UserChoice', Choice_in);
 }
@@ -68,6 +69,13 @@ function set_source_and_robot (phone_id, robot_index, operation) {
     output: robot_index
   }
   send('SelectPhoneRobot', out);
+}
+
+function update_status (robot_index, state) {
+  send('RobotStatus', {
+    robotid: robot_index,
+    status: state
+  });
 }
 
 
@@ -113,6 +121,8 @@ var Choice_in = function () {
             rbt.servicing = phone_id;
             // And send the robot to the person
             set_source_and_robot(phone_id, rbt_idx, 'add');
+            // And update output status
+            update_status(rbt_idx, STATE_SERVING);
           }
         
 
@@ -133,6 +143,8 @@ var Choice_in = function () {
             setTimeout(function () {
               set_source_and_robot('Home', rbt_idx, 'remove');
             }, 3000);
+            // And update output status
+            update_status(rbt_idx, STATE_IDLE);
           }
 
         }
