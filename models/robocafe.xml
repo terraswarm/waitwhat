@@ -37,7 +37,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Home Coordinates">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[475.0, 775.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[475.0, 800.0]">
         </property>
     </property>
     <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
@@ -465,17 +465,72 @@
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/svn/accessors/web/WebSocketServer.js">
         </property>
+        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="3.0, 3.0">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="74.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="64.0">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,0.8,1.0,1.0}">
+                </property>
+            </property>
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="30">
+                </property>
+                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
+                </property>
+                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="WS">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[6.0, 3.0]">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={348, 478, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="polygon" class="ptolemy.vergil.kernel.attributes.ResizablePolygonAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{-25.0, 3.0}">
+                </property>
+                <property name="lineWidth" class="ptolemy.data.expr.Parameter" value="0">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="14.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="60.99999999999999">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 1.0, 1.0, 1.0}">
+                </property>
+                <property name="vertices" class="ptolemy.data.expr.Parameter" value="{0.0, 0.0, 10.0, -10.0, 0.0, -20.0}">
+                </property>
+                <property name="_renderLast" class="ptolemy.kernel.util.SingletonAttribute">
+                </property>
+            </property>
+        </property>
         <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="0.0.0.0">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8081">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[70.0, 1005.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[70.0, 995.0]">
         </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
         <port name="toSend" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
@@ -486,6 +541,8 @@
         <port name="connection" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
     </entity>
@@ -690,6 +747,11 @@
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[830.0, 690.0]">
         </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -835,6 +897,30 @@
             </property>
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Command2Pose.js">
+        </property>
+        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="0.5, 0.0">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="57.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="30.0">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,0.0,0.6,1.0}">
+                </property>
+            </property>
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
+                </property>
+                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="C2P">
+                </property>
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
         </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
@@ -1000,6 +1086,32 @@
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Location2Command.js">
         </property>
+        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="3.552713678800501E-15, 0.0">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="54.00000000000001">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="30.0">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,0.0,0.6,1.0}">
+                </property>
+            </property>
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
+                </property>
+                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="L2C">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={323, 258, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+        </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
             </property>
@@ -1085,9 +1197,11 @@
                 </property>
             </property>
             <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="22">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
                 </property>
                 <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
+                </property>
+                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
                 </property>
                 <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
                 </property>
@@ -1113,7 +1227,7 @@
         </property>
         <property name="Y" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[410.0, 810.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[410.0, 835.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1181,7 +1295,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[520.0, 810.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[520.0, 835.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1233,7 +1347,7 @@
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[840.0, 995.0]">
+        <vertex name="vertex1" value="[830.0, 995.0]">
         </vertex>
     </relation>
     <relation name="relation16" class="ptolemy.actor.TypedIORelation">
@@ -1301,7 +1415,7 @@
     <relation name="relation26" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{585.0, 690.0}">
+        <vertex name="vertex1" value="[585.0, 690.0]">
         </vertex>
     </relation>
     <relation name="relation19" class="ptolemy.actor.TypedIORelation">
