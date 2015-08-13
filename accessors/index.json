@@ -12,5 +12,6 @@
     "CoordinateLinearTransform.js",
     "GoalMessage.js",
     "MoveActionGoalMessage.js",
-    "ConstantLocation.js"
+    "ConstantLocation.js",
+    "ConstantKeyValue.js"
 ]
