@@ -1,5 +1,6 @@
 [
     "RoboCafeController.js",
+    "Container.js",
     "Command2Pose.js",
     "Location2Command.js",
     "Scarab.js",
@@ -9,6 +10,7 @@
     "OpSwitching.js",
     "OpKeySwitching.js",
     "OpAddKeyValue.js",
+    "OpStrip.js",
     "OpStripString.js",
     "CoordinateLinearTransform.js",
     "GoalMessage.js",

@@ -64,7 +64,9 @@ exports.initialize = function() {
     // need for now.
     s = msg.msg.status[1].message;
     charge = parseInt(s.substr(0, s.indexOf('%')));
-    send('battery', charge);
+    if (!isNaN(charge)) {
+      send('battery', charge);
+    }
   });
   batteryClient.on('error', function(message) {
     error(message)
