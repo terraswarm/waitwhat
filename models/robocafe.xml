@@ -53,7 +53,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 9:25:38 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 10:47:30 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -159,6 +159,25 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[725.0, 460.0]">
         </property>
     </property>
+    <property name="poseUpdateThreshold" class="ptolemy.data.expr.Parameter" value="0.3">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[725.0, 480.0]">
+        </property>
+    </property>
     <entity name="Display4" class="ptolemy.actor.lib.gui.Display">
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={291, 392, 759, 306}, maximized=false}">
         </property>
@@ -166,7 +185,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lane Location">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1459.5, 405.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1624.5, 405.0]">
         </property>
     </entity>
     <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
@@ -213,7 +232,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 490.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1470.0, 490.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -246,7 +265,7 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1299.5, 390.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1464.5, 390.0]">
         </property>
     </entity>
     <entity name="CoordinateLinearTransform2" class="org.terraswarm.accessor.JSAccessor">
@@ -298,7 +317,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1307.5, 610.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1472.5, 610.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -564,7 +583,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1305.0, 840.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1470.0, 840.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -630,13 +649,13 @@
     <entity name="Discrete TimeDelay" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1434.5, 500.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1599.5, 500.0]">
         </property>
     </entity>
     <entity name="Discrete TimeDelay2" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1432.5, 620.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1597.5, 620.0]">
         </property>
     </entity>
     <entity name="Command2Pose2" class="org.terraswarm.accessor.JSAccessor">
@@ -712,7 +731,7 @@
     <entity name="Discrete TimeDelay3" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1430.0, 735.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1595.0, 735.0]">
         </property>
     </entity>
     <entity name="Command2Pose4" class="org.terraswarm.accessor.JSAccessor">
@@ -753,7 +772,7 @@
     <entity name="Discrete TimeDelay4" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1430.0, 850.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1595.0, 850.0]">
         </property>
     </entity>
     <entity name="Location2Command" class="org.terraswarm.accessor.JSAccessor">
@@ -800,7 +819,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1305.0, 725.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1470.0, 725.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -977,7 +996,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lane Location">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1399.5, 385.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1564.5, 385.0]">
         </property>
     </entity>
     <entity name="ConstantKeyValue" class="org.terraswarm.accessor.JSAccessor">
@@ -2364,7 +2383,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lucy Status">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1675.0, 725.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1840.0, 725.0]">
         </property>
     </entity>
     <entity name="Display11" class="ptolemy.actor.lib.gui.Display">
@@ -2374,7 +2393,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lucy Battery">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1675.0, 665.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1840.0, 665.0]">
         </property>
     </entity>
     <entity name="Container" class="org.terraswarm.accessor.JSAccessor">
@@ -2505,10 +2524,278 @@
             </property>
         </port>
     </entity>
+    <entity name="PoseFilter" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 500.0]">
+        </property>
+        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
+                </property>
+                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
+                </property>
+            </property>
+            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
+            </property>
+        </property>
+        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+    </entity>
+    <entity name="PoseFilter2" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 620.0]">
+        </property>
+        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
+                </property>
+                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
+                </property>
+            </property>
+            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
+            </property>
+        </property>
+        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="PoseFilter3" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1305.0, 735.0}">
+        </property>
+        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
+                </property>
+                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
+                </property>
+            </property>
+            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
+            </property>
+        </property>
+        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="PoseFilter4" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 850.0]">
+        </property>
+        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
+                </property>
+                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
+                </property>
+            </property>
+            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
+            </property>
+        </property>
+        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{1384.5, 500.0}">
+        <vertex name="vertex1" value="[1549.5, 500.0]">
         </vertex>
     </relation>
     <relation name="relation4" class="ptolemy.actor.TypedIORelation">
@@ -2520,7 +2807,7 @@
     <relation name="relation2" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1210.0, 500.0]">
+        <vertex name="vertex1" value="[1390.0, 500.0]">
         </vertex>
     </relation>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
@@ -2538,7 +2825,7 @@
     <relation name="relation7" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{1387.5, 620.0}">
+        <vertex name="vertex1" value="[1552.5, 620.0]">
         </vertex>
     </relation>
     <relation name="relation21" class="ptolemy.actor.TypedIORelation">
@@ -2552,25 +2839,25 @@
     <relation name="relation25" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{1302.5, 430.0}">
+        <vertex name="vertex1" value="[1467.5, 430.0]">
         </vertex>
     </relation>
     <relation name="relation3" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{1307.5, 570.0}">
+        <vertex name="vertex1" value="[1472.5, 570.0]">
         </vertex>
     </relation>
     <relation name="relation9" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{1305.0, 680.0}">
+        <vertex name="vertex1" value="[1470.0, 680.0]">
         </vertex>
     </relation>
     <relation name="relation10" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{1300.0, 795.0}">
+        <vertex name="vertex1" value="[1465.0, 795.0]">
         </vertex>
     </relation>
     <relation name="relation13" class="ptolemy.actor.TypedIORelation">
@@ -2604,7 +2891,7 @@
     <relation name="relation11" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{1357.5, 445.0}">
+        <vertex name="vertex1" value="[1522.5, 445.0]">
         </vertex>
     </relation>
     <relation name="relation31" class="ptolemy.actor.TypedIORelation">
@@ -2659,12 +2946,6 @@
     </relation>
     <relation name="relation18" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation24" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation44" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation45" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation46" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
@@ -2675,6 +2956,20 @@
         <vertex name="vertex1" value="[760.0, 930.0]">
         </vertex>
     </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation24" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation40" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation44" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation45" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation47" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation48" class="ptolemy.actor.TypedIORelation">
+    </relation>
     <link port="Display4.input" relation="relation8"/>
     <link port="Scarab.state" relation="relation11"/>
     <link port="Scarab.location" relation="relation8"/>
@@ -2684,7 +2979,7 @@
     <link port="CoordinateLinearTransform2.Output" relation="relation26"/>
     <link port="Display3.input" relation="relation4"/>
     <link port="Scarab2.location" relation="relation7"/>
-    <link port="Scarab2.pose" relation="relation44"/>
+    <link port="Scarab2.pose" relation="relation40"/>
     <link port="WebSocketServer.received" relation="relation16"/>
     <link port="Display6.input" relation="relation17"/>
     <link port="OpKeySwitching.Input" relation="relation28"/>
@@ -2698,7 +2993,7 @@
     <link port="RoboCafeController.RobotStatus" relation="relation39"/>
     <link port="Display7.input" relation="relation16"/>
     <link port="Scarab4.location" relation="relation12"/>
-    <link port="Scarab4.pose" relation="relation45"/>
+    <link port="Scarab4.pose" relation="relation48"/>
     <link port="Command2Pose.Command" relation="relation13"/>
     <link port="Command2Pose.Location" relation="relation25"/>
     <link port="Command2Pose.Pose" relation="relation43"/>
@@ -2724,7 +3019,7 @@
     <link port="Scarab3.battery" relation="relation42"/>
     <link port="Scarab3.state" relation="relation41"/>
     <link port="Scarab3.location" relation="relation14"/>
-    <link port="Scarab3.pose" relation="relation24"/>
+    <link port="Scarab3.pose" relation="relation47"/>
     <link port="ConstantLocation.pose" relation="relation19"/>
     <link port="OpAddKeyValue.Input" relation="relation19"/>
     <link port="OpAddKeyValue.Output" relation="relation26"/>
@@ -2769,12 +3064,20 @@
     <link port="Display.input" relation="relation41"/>
     <link port="Display11.input" relation="relation42"/>
     <link port="Container.PoseIn" relation="relation43"/>
-    <link port="Container.PoseOut" relation="relation2"/>
+    <link port="Container.PoseOut" relation="relation5"/>
     <link port="Container2.PoseIn" relation="relation46"/>
-    <link port="Container2.PoseOut" relation="relation44"/>
+    <link port="Container2.PoseOut" relation="relation24"/>
     <link port="Container3.PoseIn" relation="relation18"/>
-    <link port="Container3.PoseOut" relation="relation24"/>
+    <link port="Container3.PoseOut" relation="relation44"/>
     <link port="Container4.PoseIn" relation="relation15"/>
     <link port="Container4.PoseOut" relation="relation45"/>
+    <link port="PoseFilter.PoseIn" relation="relation5"/>
+    <link port="PoseFilter.PoseOut" relation="relation2"/>
+    <link port="PoseFilter2.PoseIn" relation="relation24"/>
+    <link port="PoseFilter2.PoseOut" relation="relation40"/>
+    <link port="PoseFilter3.PoseIn" relation="relation44"/>
+    <link port="PoseFilter3.PoseOut" relation="relation47"/>
+    <link port="PoseFilter4.PoseIn" relation="relation45"/>
+    <link port="PoseFilter4.PoseOut" relation="relation48"/>
     <link relation1="relation28" relation2="relation6"/>
 </entity>

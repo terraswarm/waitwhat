@@ -5,6 +5,7 @@
     "Location2Command.js",
     "Scarab.js",
     "FakeLocationStream.js",
+    "PoseFilter.js",
     "OpFilter.js",
     "OpMultiplexorKey.js",
     "OpSwitching.js",
