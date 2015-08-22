@@ -53,7 +53,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 8:44:21 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 8:46:49 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
