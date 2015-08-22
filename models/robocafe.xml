@@ -14,9 +14,9 @@
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1437, 913]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.7110892368267249">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.7505333994882242">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{815.3902399986158, 941.73828125}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{762.6572265625, 953.3690372886738}">
     </property>
     <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
     </property>
@@ -27,7 +27,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Localization Information">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[5.0, 510.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[90.0, 505.0]">
         </property>
     </property>
     <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -37,7 +37,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Spin Command">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[400.0, 930.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[335.0, 930.0]">
         </property>
     </property>
     <property name="Annotation3" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -53,7 +53,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 14, 2015 3:51:47 AM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 14, 2015 1:15:29 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -69,7 +69,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Control">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1175.0, 325.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1145.0, 370.0]">
         </property>
     </property>
     <property name="Annotation5" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -79,14 +79,34 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Status Indication - Hues">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1225.0, 1130.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1100.0, 1070.0]">
+        </property>
+    </property>
+    <property name="Annotation6" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Choice Mechanism">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[50.0, 1035.0]">
+        </property>
+    </property>
+    <property name="Annotation7" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Main Controller">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[605.0, 1040.0]">
         </property>
     </property>
     <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
         <property name="period" class="ptolemy.actor.parameters.PortParameter" value="3.0">
         </property>
         <doc>Create periodic timed events.</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[-165.0, 695.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-165.0, 700.0]">
         </property>
         <port name="output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -116,10 +136,10 @@
         </port>
     </entity>
     <entity name="StringConst" class="ptolemy.actor.lib.StringConst">
-        <property name="value" class="ptolemy.data.expr.Parameter" value="FF67B95E-7E64-496A-AB80-C54FE9CE2AE7">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="loc0">
         </property>
         <doc>Create a constant sequence with a string value.</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[65.0, 635.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[65.0, 660.0]">
         </property>
         <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
@@ -142,7 +162,7 @@
         </property>
     </entity>
     <entity name="Display4" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={86, 206, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={291, 392, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -153,7 +173,7 @@
     </entity>
     <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
         <display name="Lane"/>
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    if (!isNaN(charge)) {&#10;      send('battery', charge);&#10;    }&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
         </property>
@@ -222,7 +242,7 @@
         </port>
     </entity>
     <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={772, 524, 886, 425}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={749, 540, 886, 425}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -335,7 +355,7 @@
         </port>
     </entity>
     <entity name="Display3" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={65, 577, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={70, 621, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -347,7 +367,7 @@
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/FakeLocationStream.js">
         </property>
-        <property name="ID" class="ptolemy.actor.parameters.PortParameter" value="FF67B95E-7E64-496A-AB80-C54FE9CE2AE7">
+        <property name="ID" class="ptolemy.actor.parameters.PortParameter" value="loc0">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -367,7 +387,7 @@
         </property>
         <property name="MaxVariance" class="ptolemy.data.expr.Parameter" value="0.5">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[250.0, 645.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[250.0, 670.0]">
         </property>
         <port name="ID" class="ptolemy.actor.parameters.ParameterPort">
             <property name="input"/>
@@ -384,7 +404,7 @@
     </entity>
     <entity name="Scarab2" class="org.terraswarm.accessor.JSAccessor">
         <display name="Lady"/>
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    if (!isNaN(charge)) {&#10;      send('battery', charge);&#10;    }&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
         </property>
@@ -525,7 +545,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8081">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[-20.0, 1130.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-20.0, 1100.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -553,11 +573,11 @@
         </port>
     </entity>
     <entity name="Display6" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={109, 614, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={285, 662, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[925.0, 1120.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[880.0, 910.0]">
         </property>
     </entity>
     <entity name="OpKeySwitching" class="org.terraswarm.accessor.JSAccessor">
@@ -830,7 +850,7 @@
             <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 1130.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 1100.0]">
         </property>
         <port name="UserChoice" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -853,12 +873,12 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[500.0, 1075.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[200.0, 1050.0]">
         </property>
     </entity>
     <entity name="Scarab4" class="org.terraswarm.accessor.JSAccessor">
         <display name="Lizzy"/>
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    if (!isNaN(charge)) {&#10;      send('battery', charge);&#10;    }&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
         </property>
@@ -939,7 +959,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1047.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1025.0, 500.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -986,7 +1006,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1045.0, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 620.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1021,7 +1041,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1042.5, 735.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 735.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1062,7 +1082,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1042.5, 850.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 850.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1144,7 +1164,7 @@
     </entity>
     <entity name="Scarab3" class="org.terraswarm.accessor.JSAccessor">
         <display name="Lucy"/>
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    send('battery', charge);&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    if (!isNaN(charge)) {&#10;      send('battery', charge);&#10;    }&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
         </property>
@@ -1233,9 +1253,9 @@
         </property>
         <property name="Period" class="ptolemy.data.expr.Parameter" value="1.0">
         </property>
-        <property name="X" class="ptolemy.data.expr.Parameter" value="0.0">
+        <property name="X" class="ptolemy.data.expr.Parameter" value="3.0">
         </property>
-        <property name="Y" class="ptolemy.data.expr.Parameter" value="0.0">
+        <property name="Y" class="ptolemy.data.expr.Parameter" value="2.83">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[280.0, 835.0]">
         </property>
@@ -1319,7 +1339,7 @@
         </port>
     </entity>
     <entity name="Display8" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={151, 240, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={635, 500, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -1349,6 +1369,12 @@
                 </property>
             </property>
             <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="2">
+                </property>
+                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
                 <property name="_location" class="ptolemy.kernel.util.Location" value="[68.0, 15.0]">
                 </property>
             </property>
@@ -1518,7 +1544,7 @@
         <property name="matchString" class="ptolemy.actor.parameters.PortParameter" value="IDLE">
         </property>
         <doc>Determine if a string matches a regular expression</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1145.0, 1250.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1145.0, 1200.0]">
         </property>
     </entity>
     <entity name="Display5" class="ptolemy.actor.lib.gui.Display">
@@ -1528,7 +1554,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="stringmatchptol">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1260.0, 1180.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1260.0, 1130.0]">
         </property>
     </entity>
     <entity name="Const" class="ptolemy.actor.lib.Const">
@@ -1541,7 +1567,7 @@
             <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1350.0, 1250.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1350.0, 1200.0]">
         </property>
     </entity>
     <entity name="WebSocketServer2" class="org.terraswarm.accessor.JSAccessor">
@@ -1551,7 +1577,7 @@
         </property>
         <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
             <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="3.0, 3.0">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-38.0, -29.0]">
                 </property>
                 <property name="width" class="ptolemy.data.expr.Parameter" value="74.0">
                 </property>
@@ -1571,10 +1597,10 @@
                 </property>
                 <property name="text" class="ptolemy.kernel.util.StringAttribute" value="WS">
                 </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[6.0, 3.0]">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-17.0, -12.0]">
                 </property>
             </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={348, 478, 934, 634}, maximized=false}">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={281, 257, 934, 634}, maximized=false}">
             </property>
             <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
             </property>
@@ -1595,6 +1621,10 @@
                 </property>
                 <property name="_renderLast" class="ptolemy.kernel.util.SingletonAttribute">
                 </property>
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
             </property>
         </property>
         <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="0.0.0.0">
@@ -1631,7 +1661,7 @@
         </port>
     </entity>
     <entity name="Display9" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={141, 712, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={129, 630, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
@@ -1647,7 +1677,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="huehue">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1450.0, 1170.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1450.0, 1120.0]">
         </property>
     </entity>
     <entity name="Hue" class="org.terraswarm.accessor.JSAccessor">
@@ -1687,7 +1717,7 @@
         </property>
         <property name="trigger" class="ptolemy.actor.parameters.PortParameter" value="30000">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1545.0, 1240.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1545.0, 1190.0]">
         </property>
         <port name="bridgeIPAddress" class="ptolemy.actor.parameters.ParameterPort">
             <property name="input"/>
@@ -1747,7 +1777,7 @@
         </port>
     </entity>
     <entity name="TrueGate" class="ptolemy.actor.lib.logic.TrueGate">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1250.0, 1250.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1250.0, 1200.0]">
         </property>
     </entity>
     <entity name="StringMatches2" class="ptolemy.actor.lib.string.StringMatches">
@@ -1757,11 +1787,11 @@
         <property name="matchString" class="ptolemy.actor.parameters.PortParameter" value="SERVING">
         </property>
         <doc>Determine if a string matches a regular expression</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1145.0, 1310.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1145.0, 1260.0]">
         </property>
     </entity>
     <entity name="TrueGate2" class="ptolemy.actor.lib.logic.TrueGate">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1250.0, 1310.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1250.0, 1260.0]">
         </property>
     </entity>
     <entity name="Const2" class="ptolemy.actor.lib.Const">
@@ -1774,7 +1804,7 @@
             <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1350.0, 1310.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1350.0, 1260.0]">
         </property>
     </entity>
     <entity name="OpFilter" class="org.terraswarm.accessor.JSAccessor">
@@ -1832,7 +1862,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[820.0, 1240.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[820.0, 1190.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1886,7 +1916,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[975.0, 1240.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[975.0, 1190.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1959,7 +1989,7 @@
     </entity>
     <entity name="lab11in4908" class="ptolemy.actor.TypedCompositeActor">
         <display name="Status2Color"/>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1405.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1355.0]">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={240, 105, 1015, 634}, maximized=false}">
         </property>
@@ -2274,7 +2304,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[820.0, 1405.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[820.0, 1355.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -2328,7 +2358,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[980.0, 1405.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[980.0, 1355.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -2343,7 +2373,7 @@
     </entity>
     <entity name="lab11in" class="ptolemy.actor.TypedCompositeActor">
         <display name="Status2Color"/>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1535.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1445.0]">
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={240, 105, 1015, 634}, maximized=false}">
         </property>
@@ -2658,7 +2688,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[720.0, 1535.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[820.0, 1445.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -2712,7 +2742,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[880.0, 1535.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[985.0, 1445.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -2732,17 +2762,17 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lucy Status">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1624.98046875, 676.5234375}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1675.0, 725.0]">
         </property>
     </entity>
     <entity name="Display11" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={147, 189, 759, 306}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={776, 171, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lucy Battery">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1622.5, 615.0}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1675.0, 665.0]">
         </property>
     </entity>
     <entity name="Container" class="org.terraswarm.accessor.JSAccessor">
@@ -2771,8 +2801,6 @@
                 <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
                 </property>
                 <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute">
                 </property>
                 <property name="_location" class="ptolemy.kernel.util.Location" value="[37.0, 24.0]">
                 </property>
@@ -2878,14 +2906,10 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-            </property>
         </port>
         <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
             </property>
         </port>
     </entity>
@@ -3038,23 +3062,13 @@
         </property>
         <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
             <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="-0.5, 0.5">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-45.0, -30.0]">
                 </property>
                 <property name="width" class="ptolemy.data.expr.Parameter" value="85.0">
                 </property>
                 <property name="height" class="ptolemy.data.expr.Parameter" value="57.0">
                 </property>
                 <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,1.0,1.0,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="2">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[37.0, 24.0]">
                 </property>
             </property>
             <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={268, 192, 934, 634}, maximized=false}">
@@ -3140,6 +3154,10 @@
                 </property>
                 <property name="y" class="ptolemy.data.expr.Parameter" value="26">
                 </property>
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
             </property>
         </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
@@ -3304,7 +3322,7 @@
         </port>
     </entity>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="[-115.0, 695.0]">
+        <vertex name="vertex1" value="[-115.0, 700.0]">
         </vertex>
     </relation>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
@@ -3332,13 +3350,13 @@
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[830.0, 1120.0]">
+        <vertex name="vertex1" value="[830.0, 835.0]">
         </vertex>
     </relation>
     <relation name="relation16" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[455.0, 1130.0]">
+        <vertex name="vertex1" value="[150.0, 1100.0]">
         </vertex>
     </relation>
     <relation name="relation7" class="ptolemy.actor.TypedIORelation">
@@ -3416,11 +3434,11 @@
     <relation name="relation31" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1205.0, 1250.0]">
+        <vertex name="vertex1" value="[1205.0, 1200.0]">
         </vertex>
     </relation>
     <relation name="relation32" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="[1405.0, 1250.0]">
+        <vertex name="vertex1" value="[1405.0, 1200.0]">
         </vertex>
     </relation>
     <relation name="relation30" class="ptolemy.actor.TypedIORelation">
@@ -3428,7 +3446,7 @@
     <relation name="relation27" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1050.0, 1240.0]">
+        <vertex name="vertex1" value="[1050.0, 1190.0]">
         </vertex>
     </relation>
     <relation name="relation33" class="ptolemy.actor.TypedIORelation">
@@ -3450,11 +3468,11 @@
     <relation name="relation39" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="{702.732130343378, 1235.4253596925369}">
+        <vertex name="vertex1" value="[695.0, 1190.0]">
         </vertex>
     </relation>
     <relation name="relation40" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex" value="[995.0, 1540.0]">
+        <vertex name="vertex" value="[1065.0, 1445.0]">
         </vertex>
     </relation>
     <relation name="relation29" class="ptolemy.actor.TypedIORelation">
@@ -3521,10 +3539,12 @@
     <link port="Command2Pose2.Location" relation="relation3"/>
     <link port="Command2Pose2.Pose" relation="relation46"/>
     <link port="Command2Pose3.Command" relation="relation22"/>
+    <link port="Command2Pose3.Location" relation="relation9"/>
     <link port="Command2Pose3.Pose" relation="relation18"/>
     <link port="Discrete TimeDelay3.input" relation="relation14"/>
     <link port="Discrete TimeDelay3.output" relation="relation9"/>
     <link port="Command2Pose4.Command" relation="relation20"/>
+    <link port="Command2Pose4.Location" relation="relation10"/>
     <link port="Command2Pose4.Pose" relation="relation15"/>
     <link port="Discrete TimeDelay4.input" relation="relation12"/>
     <link port="Discrete TimeDelay4.output" relation="relation10"/>
