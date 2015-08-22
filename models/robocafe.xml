@@ -37,7 +37,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Spin Command">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[335.0, 930.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[390.0, 900.0]">
         </property>
     </property>
     <property name="Annotation3" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -47,17 +47,17 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Home Coordinates">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{362.29751691704627, 795.9341631263139}">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[410.0, 780.0]">
         </property>
     </property>
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 8:46:49 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 9:07:24 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[140.0, 1315.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[290.0, 1340.0]">
         </property>
     </property>
     <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="false">
@@ -100,6 +100,63 @@
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Main Controller">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[605.0, 1040.0]">
+        </property>
+    </property>
+    <property name="rosBridgeIP" class="ptolemy.data.expr.StringParameter" value="192.168.11.108">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{725, 420}">
+        </property>
+    </property>
+    <property name="hueBulbIP" class="ptolemy.data.expr.StringParameter" value="4908hue.eecs.umich.edu">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[725.0, 440.0]">
+        </property>
+    </property>
+    <property name="hueUsername" class="ptolemy.data.expr.StringParameter" value="lab11in4908">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[725.0, 460.0]">
         </property>
     </property>
     <entity name="Display4" class="ptolemy.actor.lib.gui.Display">
@@ -146,7 +203,7 @@
             <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={373, 208, 934, 634}, maximized=false}">
             </property>
         </property>
-        <property name="server" class="ptolemy.data.expr.Parameter" value="141.212.11.124">
+        <property name="server" class="ptolemy.data.expr.Parameter" value="${rosBridgeIP}">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -231,7 +288,7 @@
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
         </property>
-        <property name="server" class="ptolemy.data.expr.Parameter" value="141.212.11.124">
+        <property name="server" class="ptolemy.data.expr.Parameter" value="${rosBridgeIP}">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -497,7 +554,7 @@
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
         </property>
-        <property name="server" class="ptolemy.data.expr.Parameter" value="141.212.11.124">
+        <property name="server" class="ptolemy.data.expr.Parameter" value="${rosBridgeIP}">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -733,7 +790,7 @@
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Scarab.js">
         </property>
-        <property name="server" class="ptolemy.data.expr.Parameter" value="141.212.11.124">
+        <property name="server" class="ptolemy.data.expr.Parameter" value="${rosBridgeIP}">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
@@ -828,7 +885,7 @@
         </property>
         <property name="Y" class="ptolemy.data.expr.Parameter" value="2.83">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[280.0, 835.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[330.0, 815.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -900,7 +957,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[425.0, 835.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[480.0, 815.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1030,7 +1087,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[310.0, 965.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[300.0, 930.0]">
         </property>
         <port name="kv" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1093,7 +1150,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[480.0, 965.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[475.0, 930.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -1607,7 +1664,7 @@
             <property name="_location" class="ptolemy.kernel.util.Location" value="[445.0, 100.0]">
             </property>
         </property>
-        <property name="hueIP" class="ptolemy.data.expr.StringParameter" value="4908hue.eecs.umich.edu">
+        <property name="hueIP" class="ptolemy.data.expr.StringParameter" value="${hueBulbIP}">
             <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -1626,7 +1683,7 @@
             <property name="_location" class="ptolemy.kernel.util.Location" value="[445.0, 60.0]">
             </property>
         </property>
-        <property name="hueUsername" class="ptolemy.data.expr.StringParameter" value="lab11in4908">
+        <property name="hueUsername" class="ptolemy.data.expr.StringParameter" value="${hueUsername}">
             <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -1719,11 +1776,11 @@
                 <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
                 </property>
             </property>
-            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="4908hue.eecs.umich.edu">
+            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueIP}">
                 <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
                 </property>
             </property>
-            <property name="userName" class="ptolemy.data.expr.Parameter" value="lab11in4908">
+            <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
                 <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
                 </property>
             </property>
@@ -1948,7 +2005,7 @@
         </property>
         <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8000000000000003">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{380.49999999999983, 252.00000000000009}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{380.4999999999999, 252.00000000000009}">
         </property>
         <property name="bulbID" class="ptolemy.data.expr.Parameter" value="1">
             <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
@@ -1969,7 +2026,7 @@
             <property name="_location" class="ptolemy.kernel.util.Location" value="[420.0, 20.0]">
             </property>
         </property>
-        <property name="hueIP" class="ptolemy.data.expr.StringParameter" value="4908hue.eecs.umich.edu">
+        <property name="hueIP" class="ptolemy.data.expr.StringParameter" value="${hueBulbIP}">
             <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -1988,7 +2045,7 @@
             <property name="_location" class="ptolemy.kernel.util.Location" value="[420.0, 0.0]">
             </property>
         </property>
-        <property name="hueUsername" class="ptolemy.data.expr.StringParameter" value="lab11in4908">
+        <property name="hueUsername" class="ptolemy.data.expr.StringParameter" value="${hueUsername}">
             <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -2081,11 +2138,11 @@
                 <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
                 </property>
             </property>
-            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="4908hue.eecs.umich.edu">
+            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueIP}">
                 <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
                 </property>
             </property>
-            <property name="userName" class="ptolemy.data.expr.Parameter" value="lab11in4908">
+            <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
                 <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
                 </property>
             </property>
@@ -2448,6 +2505,10 @@
             </property>
         </port>
     </entity>
+    <entity name="CompositeActor" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="0.0, 0.0">
+        </property>
+    </entity>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
@@ -2519,13 +2580,13 @@
     <relation name="relation13" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[920.0, 500.0]">
+        <vertex name="vertex1" value="[915.0, 500.0]">
         </vertex>
     </relation>
     <relation name="relation20" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[920.0, 850.0]">
+        <vertex name="vertex1" value="[915.0, 850.0]">
         </vertex>
     </relation>
     <relation name="relation26" class="ptolemy.actor.TypedIORelation">
@@ -2590,10 +2651,6 @@
         <vertex name="vertex1" value="[695.0, 1190.0]">
         </vertex>
     </relation>
-    <relation name="relation40" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex" value="[1065.0, 1445.0]">
-        </vertex>
-    </relation>
     <relation name="relation29" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation41" class="ptolemy.actor.TypedIORelation">
@@ -2613,6 +2670,14 @@
     <relation name="relation45" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation46" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[760.0, 930.0]">
+        </vertex>
     </relation>
     <link port="Display4.input" relation="relation8"/>
     <link port="Scarab.state" relation="relation11"/>
@@ -2670,7 +2735,7 @@
     <link port="Display8.input" relation="relation11"/>
     <link port="ConstantKeyValue.kv" relation="relation23"/>
     <link port="OpAddKeyValue2.Input" relation="relation23"/>
-    <link port="OpAddKeyValue2.Output" relation="relation28"/>
+    <link port="OpAddKeyValue2.Output" relation="relation6"/>
     <link port="StringMatches.pattern" relation="relation27"/>
     <link port="StringMatches.output" relation="relation31"/>
     <link port="Display5.input" relation="relation31"/>
@@ -2700,11 +2765,11 @@
     <link port="OpFilter2.Output" relation="relation35"/>
     <link port="OpStripString2.Input" relation="relation35"/>
     <link port="OpStripString2.Output" relation="relation38"/>
-    <link port="lab11in.status" relation="relation40"/>
+    <link port="lab11in.status" relation="relation"/>
     <link port="OpFilter3.Input" relation="relation39"/>
     <link port="OpFilter3.Output" relation="relation29"/>
     <link port="OpStripString3.Input" relation="relation29"/>
-    <link port="OpStripString3.Output" relation="relation40"/>
+    <link port="OpStripString3.Output" relation="relation"/>
     <link port="Display.input" relation="relation41"/>
     <link port="Display11.input" relation="relation42"/>
     <link port="Container.PoseIn" relation="relation43"/>
@@ -2715,4 +2780,5 @@
     <link port="Container3.PoseOut" relation="relation24"/>
     <link port="Container4.PoseIn" relation="relation15"/>
     <link port="Container4.PoseOut" relation="relation45"/>
+    <link relation1="relation28" relation2="relation6"/>
 </entity>
