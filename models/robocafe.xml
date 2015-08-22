@@ -14,9 +14,9 @@
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1437, 913]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.7505333994882242">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.7921866968232755">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{762.6572265624999, 953.369037288674}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{840.6715246054816, 921.7382812499999}">
     </property>
     <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
     </property>
@@ -53,7 +53,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 9:07:24 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 21, 2015 9:08:19 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -2504,10 +2504,6 @@
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
-    </entity>
-    <entity name="CompositeActor" class="ptolemy.actor.TypedCompositeActor">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="0.0, 0.0">
-        </property>
     </entity>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
