@@ -19,7 +19,7 @@
     <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{2.8421709430404007E-14, 0.0}">
     </property>
     <property name="image6" class="ptolemy.vergil.kernel.attributes.ImageAttribute">
-        <property name="source" class="ptolemy.data.expr.FileParameter" value="/Users/bradjc/svn/shed-media/images/scarab/scarab_418x500.gif">
+        <property name="source" class="ptolemy.data.expr.FileParameter" value="./scarab_418x500.gif">
         </property>
         <property name="scale" class="ptolemy.data.expr.Parameter" value="15">
         </property>
