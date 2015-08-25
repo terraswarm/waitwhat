@@ -53,7 +53,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 25, 2015 6:34:08 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 25, 2015 6:43:17 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -427,7 +427,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8081">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[130.0, 1100.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[130.0, 1090.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -2712,28 +2712,6 @@
             </property>
         </port>
     </entity>
-    <entity name="DiscreteClock" class="ptolemy.actor.lib.DiscreteClock">
-        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="25">
-        </property>
-        <doc>Create periodic timed events.</doc>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{275, 1205}">
-        </property>
-    </entity>
-    <entity name="StringConst" class="ptolemy.actor.lib.StringConst">
-        <property name="value" class="ptolemy.data.expr.Parameter" value="some_applause">
-        </property>
-        <doc>Create a constant sequence with a string value.</doc>
-        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
-            </property>
-            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="80">
-            </property>
-            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{435, 1180}">
-        </property>
-    </entity>
     <entity name="Display12" class="ptolemy.actor.lib.gui.Display">
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={147, 189, 759, 306}, maximized=false}">
         </property>
@@ -2752,6 +2730,174 @@
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lucy cancel">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[1610.0, 870.0]">
+        </property>
+    </entity>
+    <entity name="WebSocketServer3" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.&#10;// All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor starts a server that listens for web socket&#10; *  connection requests on the specified hostInterface and port.  The&#10; *  hostInterface is needed only if the host machine has more than one&#10; *  network interface (e.g. Ethernet and WiFi) and 'localhost' does&#10; *  not resolve to the desired interface.&#10; *&#10; *  &lt;p&gt;The output &lt;code&gt;connection&lt;/code&gt; reports the when a&#10; *  connection is opened or closed.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;When a message arrives on a connection, a &lt;code&gt;received&lt;/code&gt;&#10; *  output is produced with that message.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;When an input arrives on &lt;code&gt;toSend&lt;/code&gt;, then a message is&#10; *  sent to one or all of the open socket connections.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;When &lt;code&gt;wrapup()&lt;/code&gt; is invoked, this accessor closes the&#10; *  server and all connections.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;The messages can be any type that has a JSON representation.&#10; *  For incomming messages, this accessor assumes that the message is&#10; *  a string in UTF-8 that encodes a JSON object.&lt;/p&gt;&#10; *&#10; *  &lt;p&gt;This accessor requires the module webSocket.&lt;/p&gt;&#10; *&#10; *  @accessor WebSocketServer&#10; *  @parameter {string} hostInterface The IP address or domain name of the&#10; *    network interface to listen to.&#10; *  @parameter {number} port The port to listen to for connections.&#10; *  @input toSend The data to be sent to open sockets. If this is an object with 'socketID' field and a 'message' field, then send the value of the message field to the socket identified by the socketID field. If the input has any other form, then the message is broadcast to all open socket connections.&#10; *  @output connection An output produced when a connection opens or closes. The output is an object with two fields, a 'socketID', which is a unique ID for this client connection, and a 'status' field, which is the string 'open' or 'closed'.&#10; *  @output received A message received a client in the form of an object with two fields, a 'socketID', which is a unique ID for this client connection, and a 'message' field, which is the message received from the client.&#10; *  @author Hokeun Kim, Edward Lee &#10; *  @version $$Id: WebSocketServer.js 234 2015-08-01 22:06:40Z eal $$ &#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;var server = null;&#10;var running = false;&#10;&#10;/** Sets up the accessor by defining inputs and outputs. */&#10;exports.setup = function() {&#10;    parameter('hostInterface', {&#10;        value: &quot;localhost&quot;, &#10;        type: &quot;string&quot; &#10;    });&#10;    parameter('port', {&#10;        value: 8080, &#10;        type: &quot;int&quot; &#10;    });&#10;    input('toSend');&#10;    output('received');&#10;    output('connection');&#10;}&#10;&#10;var handle;&#10;var sockets = [];&#10;&#10;/** Starts the web socket and attaches functions to inputs and outputs. &#10;  * Adds an input handler on toSend that sends the input received to the right socket. */ &#10;exports.initialize = function() {&#10;    if (!server) {&#10;        server = new WebSocket.Server({'port':getParameter('port'),&#10;                                       'hostInterface':getParameter('hostInterface')});&#10;        server.on('listening', onListening);&#10;        server.on('connection', onConnection);&#10;        server.start();&#10;    }&#10;    running = true;&#10;&#10;    handle = addInputHandler('toSend', function() {&#10;        var data = get('toSend');&#10;        // Careful: Don't do if (data) because if data === 0, then data is false.&#10;        if (data !== null) {&#10;            if ((data.socketID != null)  &amp;&amp; (data.message != null)) {&#10;                // data has the right form for a point-to-point send.&#10;                if (sockets[data.socketID] &amp;&amp; sockets[data.socketID].isOpen()) {&#10;                    // id matches this socket.&#10;                    console.log(&quot;Sending to socket id &quot; &#10;                            + data.socketID&#10;                            + &quot; message: &quot;&#10;                            + data.message);&#10;                    sockets[data.socketID].send(data.message);&#10;                } else {&#10;                    console.log('Socket with ID ' + data.socketID&#10;                            + ' is not open. Discarding message: ' + data.message);&#10;                }&#10;            } else {&#10;                // No socketID or message, so this is a broadcast message.&#10;                var success = false;&#10;                for (var id = 0; id &lt; sockets.length; id++) {&#10;                    if (sockets[id].isOpen()) {&#10;                        console.log(&quot;Broadcasting to socket id &quot; + id &#10;                                + &quot; message: &quot; + data);&#10;                        sockets[id].send(data);&#10;                        success = true;&#10;                    }&#10;                }&#10;                if (!success) {&#10;                    console.log('No open sockets. Discarding message: ' + data.message);&#10;                }&#10;            }&#10;        }&#10;    });&#10;}&#10;&#10;function onListening() {&#10;    console.log('Server: Listening for socket connection requests.');&#10;}&#10;&#10;/** Executes when a connection has been establised.&lt;br&gt;&#10; *  Triggers an output on &lt;code&gt;'connection'&lt;/code&gt;.&#10; *  Adds an event listener to the socket. */&#10;function onConnection(socket) {&#10;   //socketID is the index of the socket in the sockets array. &#10;    var socketID = sockets.length;&#10;    console.log('Server: new socket established with ID: ' + socketID);&#10;    send('connection', {'socketID':socketID, 'status':'open'});&#10;    socket.on('message', function(message) {&#10;        send('received', {'socketID':socketID, 'message':message});&#10;    });&#10;    socket.on('close', function(message) {&#10;        send('connection', {'socketID':socketID, 'status':'closed'});&#10;    });&#10;&#10;    sockets.push(socket);    &#10;}&#10;&#10;/** Removes all inputHandlers from sockets.&lt;br&gt;&#10; * Unregisters event listeners from sockets.&lt;br&gt;&#10; * Closes server. */&#10;exports.wrapup = function(){&#10;    for (var i = 0; i &lt; sockets.length; i++) {&#10;        sockets[i].removeAllListeners();&#10;    }&#10;&#10;    sockets = [];&#10;    removeInputHandler(handle); &#10;&#10;    if (server != null) {&#10;        server.removeAllListeners();&#10;        server.close();&#10;        server = null;&#10;    }&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/svn/accessors/web/net/WebSocketServer.js">
+        </property>
+        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-36.0, -29.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="74.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="64.0">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,0.8,1.0,1.0}">
+                </property>
+            </property>
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="30">
+                </property>
+                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
+                </property>
+                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="WS">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-16.0, -12.0]">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={348, 412, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="polygon" class="ptolemy.vergil.kernel.attributes.ResizablePolygonAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="{-25.0, 3.0}">
+                </property>
+                <property name="lineWidth" class="ptolemy.data.expr.Parameter" value="0">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="14.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="60.99999999999999">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 1.0, 1.0, 1.0}">
+                </property>
+                <property name="vertices" class="ptolemy.data.expr.Parameter" value="{0.0, 0.0, 10.0, -10.0, 0.0, -20.0}">
+                </property>
+                <property name="_renderLast" class="ptolemy.kernel.util.SingletonAttribute">
+                </property>
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
+            </property>
+        </property>
+        <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="0.0.0.0">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="port" class="ptolemy.data.expr.Parameter" value="8084">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[130.0, 1205.0]">
+        </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="toSend" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="received" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="connection" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="OpStrip2" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Strips out a certain key's value from an object.&#10; *&#10; *  @accessor OpStrip&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  output('Output');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key to extract the value from&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    send('Output', i[key]);&#10;  }&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpStrip.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="key" class="ptolemy.data.expr.Parameter" value="message">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[320.0, 1205.0]">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-8.0, 0.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="45.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="33.0">
+                </property>
+                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.8,0.6,1.0}">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={391, 492, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
+            </property>
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
+                </property>
+                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
+                </property>
+                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-serif">
+                </property>
+                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="v">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-18.0, -11.0]">
+                </property>
+            </property>
+        </property>
+        <port name="Input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="Display14" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={72, 522, 759, 306}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
+        </property>
+        <property name="title" class="ptolemy.data.expr.StringParameter" value="applause">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[525.0, 1205.0]">
         </property>
     </entity>
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
@@ -2781,7 +2927,7 @@
     <relation name="relation16" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[250.0, 1100.0]">
+        <vertex name="vertex1" value="[250.0, 1090.0]">
         </vertex>
     </relation>
     <relation name="relation7" class="ptolemy.actor.TypedIORelation">
@@ -2938,10 +3084,6 @@
     </relation>
     <relation name="relation53" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation54" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation55" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation56" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
@@ -2952,6 +3094,14 @@
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
         <vertex name="vertex1" value="[1255.0, 760.0]">
+        </vertex>
+    </relation>
+    <relation name="relation50" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation55" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[450.0, 1205.0]">
         </vertex>
     </relation>
     <link port="Display4.input" relation="relation8"/>
@@ -2979,7 +3129,7 @@
     <link port="RoboCafeController.UserChoice" relation="relation16"/>
     <link port="RoboCafeController.SelectPhoneRobot" relation="relation17"/>
     <link port="RoboCafeController.RobotStatus" relation="relation39"/>
-    <link port="RoboCafeController.Applause" relation="relation54"/>
+    <link port="RoboCafeController.Applause" relation="relation55"/>
     <link port="Display7.input" relation="relation16"/>
     <link port="Scarab4.location" relation="relation12"/>
     <link port="Scarab4.pose" relation="relation44"/>
@@ -3074,10 +3224,11 @@
     <link port="GoCommandFilter3.CommandOut" relation="relation18"/>
     <link port="GoCommandFilter4.CommandIn" relation="relation20"/>
     <link port="GoCommandFilter4.CommandOut" relation="relation21"/>
-    <link port="DiscreteClock.output" relation="relation55"/>
-    <link port="StringConst.output" relation="relation54"/>
-    <link port="StringConst.trigger" relation="relation55"/>
     <link port="Display12.input" relation="relation56"/>
     <link port="Display13.input" relation="relation47"/>
+    <link port="WebSocketServer3.received" relation="relation50"/>
+    <link port="OpStrip2.Input" relation="relation50"/>
+    <link port="OpStrip2.Output" relation="relation55"/>
+    <link port="Display14.input" relation="relation55"/>
     <link relation1="relation28" relation2="relation6"/>
 </entity>
