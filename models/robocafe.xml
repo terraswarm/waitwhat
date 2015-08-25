@@ -53,7 +53,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 25, 2015 11:54:47 AM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 25, 2015 12:00:26 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -121,7 +121,7 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="{725, 420}">
         </property>
     </property>
-    <property name="hueBulbIP" class="ptolemy.data.expr.StringParameter" value="4908hue.eecs.umich.edu">
+    <property name="hueBulbIP" class="ptolemy.data.expr.StringParameter" value="192.168.11.117">
         <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
@@ -1347,11 +1347,11 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="4908hue.eecs.umich.edu">
+        <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueBulbIP}">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="userName" class="ptolemy.data.expr.Parameter" value="lab11in4908">
+        <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
