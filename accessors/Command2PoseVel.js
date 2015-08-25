@@ -45,6 +45,7 @@ exports.setup = function() {
 
   // Raw access
   output('CmdVel');
+  output('Cancel');
 
   // How long to let the robot spin
   parameter('SpinDuration', {
@@ -86,9 +87,8 @@ var Command_in = function () {
 
   } else if (cmd.command == 'Spin') {
     if (!currently_spinning) {
-      // Start by stopping the current action by sending a location to go to
-      // that happens to be the same position it is at.
-      send('Pose', last_location);
+      // Start by cancelling wherever it was going
+      send('Cancel', true);
 
       // Now power the wheels to spin
       var spin_vel = {

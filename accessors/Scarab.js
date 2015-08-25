@@ -14,6 +14,7 @@ exports.setup = function() {
 
   input('pose');
   input('cmdvel');
+  input('cancel');
 
   output('battery', {
     type: 'int'
@@ -42,6 +43,7 @@ var stateClient = null;
 var locationClient = null;
 var poseClient = null;
 var cmdvelClient = null;
+var cancelClient = null;
 
 var seq = 0;
 
@@ -146,6 +148,23 @@ exports.initialize = function() {
     error(message)
   });
   addInputHandler('cmdvel', cmdvel_in);
+
+  // Send cancel to the robot
+  cancelClient = new WebSocket.Client({
+    host: getParameter('server'),
+    port: getParameter('port')
+  });
+  cancelClient.on('open', function () {
+    cancelClient.send({
+        op: 'advertise',
+        topic: getParameter('topicPrefix') + '/cancel',
+        type: 'std_msgs/Empty'
+    });
+  });
+  cancelClient.on('error', function(message) {
+    error(message)
+  });
+  addInputHandler('cancel', cancel_in);
 } 
 
 var pose_in = function () {
@@ -180,6 +199,18 @@ var cmdvel_in = function () {
   };
 
   cmdvelClient.send(out);
+}
+
+var cancel_in = function () {
+  var c = get('cancel');
+
+  out = {
+    op: 'publish',
+    topic: getParameter('topicPrefix') + '/cancel',
+    msg: null
+  };
+
+  cancelClient.send(out);
 }
 
 exports.wrapup = function() {
@@ -225,5 +256,16 @@ exports.wrapup = function() {
     cmdvelClient.removeAllListeners('close');
     cmdvelClient.close();
     cmdvelClient = null;
+  }
+  if (cancelClient) {
+    cancelClient.send({
+        op: 'unadvertise',
+        topic: getParameter('topicPrefix') + '/cancel'
+    });
+    cancelClient.removeAllListeners('open');
+    cancelClient.removeAllListeners('message');
+    cancelClient.removeAllListeners('close');
+    cancelClient.close();
+    cancelClient = null;
   }
 }
