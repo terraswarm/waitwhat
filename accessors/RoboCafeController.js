@@ -32,6 +32,7 @@ exports.setup = function () {
   // I/O
   //
   input('UserChoice');
+  input('Applause');
 
   output('SelectPhoneRobot');
   output('RobotStatus');
@@ -60,6 +61,7 @@ exports.initialize = function () {
   }
 
   addInputHandler('UserChoice', Choice_in);
+  addInputHandler('Applause', Applause_in);
 }
 
 function set_source_and_robot (phone_id, robot_index, operation) {
@@ -158,4 +160,18 @@ var Choice_in = function () {
 
   }
 
+}
+
+var Applause_in = function () {
+  var a = get('Applause');
+
+  var r1 = robots[2];
+
+  if (r1.state != STATE_IDLE) {
+    // Stop what ever was controlling the robot before
+    set_source_and_robot(r1.servicing, 2, 'remove');
+  }
+
+  // Make it spin
+  set_source_and_robot('Spin', 2, 'add');
 }
