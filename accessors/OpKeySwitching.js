@@ -66,6 +66,20 @@ var Select_in = function () {
     }
   
   } else if (t == 'add') {
+
+    // Make sure this output isn't connected already
+    for (var input in matrix) {
+      if (matrix.hasOwnProperty(input)) {
+        for (var j=0; j<matrix[input].length; j++) {
+          var outp = matrix[input][j];
+          if (outp == o) {
+            matrix[input].splice(j, 1);
+            break;
+          }
+        }      
+      }
+    }
+
     // New connection!
     var destarr = matrix[i];
     var index = destarr.indexOf(o);

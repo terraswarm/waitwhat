@@ -45,41 +45,17 @@ exports.setup = function() {
 
   // Raw access
   output('CmdVel');
+
+  // How long to let the robot spin
+  parameter('SpinDuration', {
+    type: 'number'
+  });
 }
 
 exports.initialize = function () {
   addInputHandler('Command', Command_in);
   addInputHandler('Location', Location_in);
 }
-
-// var QUANTERION_THIRD = {
-//   x: 0,
-//   y: 0,
-//   z: 0.894427191,
-//   w: 0.4472135955
-// };
-
-// function multiply_quanterions (q1, q2) {
-//   ret = {
-//     x:  q1.x * q2.w + q1.y * q2.z - q1.z * q2.y + q1.w * q2.x,
-//     y: -q1.x * q2.z + q1.y * q2.w + q1.z * q2.x + q1.w * q2.y,
-//     z:  q1.x * q2.y - q1.y * q2.x + q1.z * q2.w + q1.w * q2.z,
-//     w: -q1.x * q2.x - q1.y * q2.y - q1.z * q2.z + q1.w * q2.w
-//   }
-//   return ret;
-// }
-
-// function normalize_quaternion (q) {
-//   var n = Math.sqrt(q.x*q.x + q.y*q.y + q.z*q.z + q.w*q.w);
-//   var ret = {
-//     x: q.x/n,
-//     y: q.y/n,
-//     z: q.z/n,
-//     w: q.w/n,
-//   }
-//   return ret;
-// }
-
 
 var Command_in = function () {
   // Now parse the incoming command
@@ -124,7 +100,7 @@ var Command_in = function () {
         angular: {
           x: 0,
           y: 0,
-          z: 0.7
+          z: 1.0
         }
       };
 
@@ -149,7 +125,7 @@ var Command_in = function () {
         send('CmdVel', spin_no);
         currently_spinning = false;
         timer = null;
-      }, 2000);
+      }, getParameter('SpinDuration')*1000);
     }
     
   }

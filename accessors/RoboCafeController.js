@@ -12,6 +12,7 @@ var NUM_ROBOTS = 3;
 // STATES
 var STATE_IDLE = 'IDLE'; // Robot is currently just sitting there.
 var STATE_SERVING = 'SERVING'; // Robot has been requested and is going servering a person.
+var STATE_SPINNING = 'SPINNING';
 
 // MAPPING OF ITEM TO ROBOT NUM
 var ITEMS = {
@@ -42,10 +43,14 @@ exports.setup = function () {
   //
   // Parameters
   //
-  // key,value pair that has to be present to have a packet meet the filter
-  // parameter('key', {
-  //   type: 'string'
-  // });
+  parameter('SpinRobotIndex', {
+    type: 'number',
+    value: 0
+  });
+  parameter('SpinRobotDuration', {
+    type: 'number',
+    value: 5
+  });
 }
 
 exports.initialize = function () {
@@ -141,10 +146,10 @@ var Choice_in = function () {
             set_source_and_robot(phone_id, rbt_idx, 'remove');
             // Send the robot home.
             set_source_and_robot('Home', rbt_idx, 'add');
-            // And in a couple seconds, stop telling it to go home
-            setTimeout(function () {
-              set_source_and_robot('Home', rbt_idx, 'remove');
-            }, 3000);
+            // // And in a couple seconds, stop telling it to go home
+            // setTimeout(function () {
+            //   set_source_and_robot('Home', rbt_idx, 'remove');
+            // }, 3000);
             // And update output status
             update_status(rbt_idx, STATE_IDLE);
           }
@@ -165,13 +170,41 @@ var Choice_in = function () {
 var Applause_in = function () {
   var a = get('Applause');
 
-  var r1 = robots[2];
+  if (a == 'no_applause') {
+    // ignore
+  
+  } else if (a == 'some_applause') {
+    // Make one robot spin
 
-  if (r1.state != STATE_IDLE) {
-    // Stop what ever was controlling the robot before
-    set_source_and_robot(r1.servicing, 2, 'remove');
+    var robot_index = getParameter('SpinRobotIndex');
+    var robot = robots[robot_index];
+
+    var old_servicing = robot.servicing;
+    var old_state = robot.state;
+
+    // Robot is busy with spinning!
+    robot.state == STATE_SPINNING;
+    update_status(robot_index, STATE_SPINNING);
+
+    if (old_servicing != null) {
+      // Stop what ever was controlling the robot before
+      set_source_and_robot(old_servicing, robot_index, 'remove');
+    }
+
+    // Make it spin
+    set_source_and_robot('Spin', robot_index, 'add');
+
+    // After the spin is done, put it back
+    setTimeout(function () {
+      set_source_and_robot('Spin', robot_index, 'remove');
+      if (old_servicing != null) {
+        // Re setup what ever was controlling the robot before
+        set_source_and_robot(old_servicing, robot_index, 'add');
+      }
+
+      robot.state = old_state;
+      update_status(robot_index, old_state);
+    }, getParameter('SpinRobotDuration') * 1000);
+
   }
-
-  // Make it spin
-  set_source_and_robot('Spin', 2, 'add');
 }
