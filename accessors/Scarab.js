@@ -207,7 +207,7 @@ var cancel_in = function () {
   out = {
     op: 'publish',
     topic: getParameter('topicPrefix') + '/cancel',
-    msg: null
+    msg: {}
   };
 
   cancelClient.send(out);
