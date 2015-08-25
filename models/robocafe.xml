@@ -14,9 +14,9 @@
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1437, 913]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.7921866968232755">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.7195026475764114">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{990.6715246054807, 921.7382812499999}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{886.6572265625001, 979.3136763916871}">
     </property>
     <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
     </property>
@@ -27,7 +27,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Localization Information">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[275.0, 570.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[80.0, 570.0]">
         </property>
     </property>
     <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -53,7 +53,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 22, 2015 8:04:00 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 25, 2015 11:43:37 AM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -69,7 +69,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Control">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1145.0, 370.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[995.0, 370.0]">
         </property>
     </property>
     <property name="Annotation5" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -185,7 +185,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lane Location">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1624.5, 405.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1474.5, 405.0]">
         </property>
     </entity>
     <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
@@ -232,7 +232,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1470.0, 490.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1320.0, 490.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -265,7 +265,7 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1464.5, 390.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1314.5, 390.0]">
         </property>
     </entity>
     <entity name="CoordinateLinearTransform2" class="org.terraswarm.accessor.JSAccessor">
@@ -279,7 +279,7 @@
         </property>
         <property name="Zshift" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[495.0, 690.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[300.0, 690.0]">
         </property>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -298,7 +298,7 @@
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[525.0, 605.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[330.0, 605.0]">
         </property>
     </entity>
     <entity name="Scarab2" class="org.terraswarm.accessor.JSAccessor">
@@ -317,7 +317,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1472.5, 610.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1322.5, 610.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -583,7 +583,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1470.0, 840.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1320.0, 840.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -626,7 +626,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1025.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1180.0, 500.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -649,13 +649,13 @@
     <entity name="Discrete TimeDelay" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1599.5, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1449.5, 500.0]">
         </property>
     </entity>
     <entity name="Discrete TimeDelay2" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1597.5, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1447.5, 620.0]">
         </property>
     </entity>
     <entity name="Command2Pose2" class="org.terraswarm.accessor.JSAccessor">
@@ -673,7 +673,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1180.0, 620.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -708,7 +708,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 735.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1185.0, 735.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -731,7 +731,7 @@
     <entity name="Discrete TimeDelay3" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1595.0, 735.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1445.0, 735.0]">
         </property>
     </entity>
     <entity name="Command2Pose4" class="org.terraswarm.accessor.JSAccessor">
@@ -749,7 +749,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 850.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1185.0, 850.0]">
         </property>
         <port name="Command" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -772,7 +772,7 @@
     <entity name="Discrete TimeDelay4" class="ptolemy.actor.lib.TimeDelay">
         <property name="delay" class="ptolemy.actor.parameters.PortParameter" value="0.01">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1595.0, 850.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1445.0, 850.0]">
         </property>
     </entity>
     <entity name="Location2Command" class="org.terraswarm.accessor.JSAccessor">
@@ -819,7 +819,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1470.0, 725.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1320.0, 725.0]">
         </property>
         <port name="cmd" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
@@ -996,7 +996,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lane Location">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1564.5, 385.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1414.5, 385.0]">
         </property>
     </entity>
     <entity name="ConstantKeyValue" class="org.terraswarm.accessor.JSAccessor">
@@ -1278,7 +1278,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8082">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[130.0, 690.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[5.0, 690.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1312,7 +1312,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="alps location">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[335.0, 615.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[140.0, 615.0]">
         </property>
     </entity>
     <entity name="Display10" class="ptolemy.actor.lib.gui.Display">
@@ -1637,7 +1637,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[340.0, 690.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[160.0, 690.0]">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
             <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
@@ -2417,7 +2417,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lucy Status">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1840.0, 725.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1690.0, 725.0]">
         </property>
     </entity>
     <entity name="Display11" class="ptolemy.actor.lib.gui.Display">
@@ -2427,17 +2427,17 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Lucy Battery">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1840.0, 665.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1690.0, 665.0]">
         </property>
     </entity>
-    <entity name="Container" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Contain the robot!&#10; *&#10; *&#10; *  @accessor Container&#10; *&#10;*/&#10;&#10;var boundary = [];&#10;var boundary_single = [];&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Boundary', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  var points = getParameter('Boundary').split(',');&#10;  for (var i=1; i&lt;points.length; i+=2) {&#10;    var x = parseFloat(points[i-1]);&#10;    var y = parseFloat(points[i]);&#10;    boundary_single.push(x);&#10;    boundary_single.push(y);&#10;    boundary.push([x, y]);&#10;  }&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function checkInside (point) {&#10;    // ray-casting algorithm based on&#10;    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html&#10;    var vs = boundary;&#10;    var x = point[0], y = point[1];&#10;    &#10;    var inside = false;&#10;    for (var i = 0, j = vs.length - 1; i &lt; vs.length; j = i++) {&#10;        var xi = vs[i][0], yi = vs[i][1];&#10;        var xj = vs[j][0], yj = vs[j][1];&#10;        &#10;        var intersect = ((yi &gt; y) != (yj &gt; y))&#10;            &amp;&amp; (x &lt; (xj - xi) * (y - yi) / (yj - yi) + xi);&#10;        if (intersect) inside = !inside;&#10;    }&#10;    &#10;    return inside;&#10;};&#10;&#10;function offset_point (sx, sy, ex, ey) {&#10;  var a = sx - ex;&#10;  var b = sy - ey;&#10;  var l = Math.sqrt((a*a)+(b*b));&#10;  var scale = 0.3/l;&#10;&#10;  var new_x = ex - (scale*a);&#10;  var new_y = ey - (scale*b);&#10;&#10;  return [new_x, new_y];&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;  var x = p.position.x;&#10;  var y = p.position.y;&#10;&#10;  // Check if the point is inside&#10;  if (checkInside([x, y])) {&#10;    // Woo! Good to go, send this along&#10;    send('PoseOut', p);&#10;  } else {&#10;    console.log('Point is outside ' + x + ' y: ' + y);&#10;&#10;    // Outside, get closest point&#10;    var closest = PolyK.ClosestEdge(boundary_single, x, y);&#10;    var new_x = closest.point.x;&#10;    var new_y = closest.point.y;&#10;&#10;    // Move 30cm beyond that so we don't go right to the wall&#10;    var shifted = offset_point(x, y, new_x, new_y);&#10;&#10;&#10;    console.log(closest);&#10;    console.log(shifted);&#10;    p.position.x = shifted[0];&#10;    p.position.y = shifted[1];&#10;    send('PoseOut', p);&#10;  }&#10;&#10;}&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;  /*&#10;    PolyK library&#10;    url: http://polyk.ivank.net&#10;    Released under MIT licence.&#10;    &#10;    Copyright (c) 2012 - 2014 Ivan Kuckir&#10;&#10;    Permission is hereby granted, free of charge, to any person&#10;    obtaining a copy of this software and associated documentation&#10;    files (the &quot;Software&quot;), to deal in the Software without&#10;    restriction, including without limitation the rights to use,&#10;    copy, modify, merge, publish, distribute, sublicense, and/or sell&#10;    copies of the Software, and to permit persons to whom the&#10;    Software is furnished to do so, subject to the following&#10;    conditions:&#10;&#10;    The above copyright notice and this permission notice shall be&#10;    included in all copies or substantial portions of the Software.&#10;&#10;    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,&#10;    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES&#10;    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND&#10;    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT&#10;    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#10;    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING&#10;    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR&#10;    OTHER DEALINGS IN THE SOFTWARE.&#10;    &#10;    19. 5. 2014 - Problem with slicing fixed.&#10;  */&#10;&#10;  var PolyK = {};&#10;  &#10;  /*&#10;    Is Polygon self-intersecting?&#10;    &#10;    O(n^2)&#10;  */&#10;  &#10;  PolyK.IsSimple = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;4) return true;&#10;    var a1 = new PolyK._P(), a2 = new PolyK._P();&#10;    var b1 = new PolyK._P(), b2 = new PolyK._P();&#10;    var c = new PolyK._P();&#10;    &#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      a1.x = p[2*i  ];&#10;      a1.y = p[2*i+1];&#10;      if(i==n-1)  { a2.x = p[0    ];  a2.y = p[1    ]; }&#10;      else    { a2.x = p[2*i+2];  a2.y = p[2*i+3]; }&#10;      &#10;      for(var j=0; j&lt;n; j++)&#10;      {&#10;        if(Math.abs(i-j) &lt; 2) continue;&#10;        if(j==n-1 &amp;&amp; i==0) continue;&#10;        if(i==n-1 &amp;&amp; j==0) continue;&#10;        &#10;        b1.x = p[2*j  ];&#10;        b1.y = p[2*j+1];&#10;        if(j==n-1)  { b2.x = p[0    ];  b2.y = p[1    ]; }&#10;        else    { b2.x = p[2*j+2];  b2.y = p[2*j+3]; }&#10;        &#10;        if(PolyK._GetLineIntersection(a1,a2,b1,b2,c) != null) return false;&#10;      }&#10;    }&#10;    return true;&#10;  }&#10;  &#10;  PolyK.IsConvex = function(p)&#10;  {&#10;    if(p.length&lt;6) return true;&#10;    var l = p.length - 4;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      if(!PolyK._convex(p[i], p[i+1], p[i+2], p[i+3], p[i+4], p[i+5])) return false;&#10;    if(!PolyK._convex(p[l  ], p[l+1], p[l+2], p[l+3], p[0], p[1])) return false;&#10;    if(!PolyK._convex(p[l+2], p[l+3], p[0  ], p[1  ], p[2], p[3])) return false;&#10;    return true;&#10;  }&#10;  &#10;  PolyK.GetArea = function(p)&#10;  {&#10;    if(p.length &lt;6) return 0;&#10;    var l = p.length - 2;&#10;    var sum = 0;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      sum += (p[i+2]-p[i]) * (p[i+1]+p[i+3]);&#10;    sum += (p[0]-p[l]) * (p[l+1]+p[1]);&#10;    return - sum * 0.5;&#10;  }&#10;  &#10;  PolyK.GetAABB = function(p)&#10;  {&#10;    var minx = Infinity; &#10;    var miny = Infinity;&#10;    var maxx = -minx;&#10;    var maxy = -miny;&#10;    for(var i=0; i&lt;p.length; i+=2)&#10;    {&#10;      minx = Math.min(minx, p[i  ]);&#10;      maxx = Math.max(maxx, p[i  ]);&#10;      miny = Math.min(miny, p[i+1]);&#10;      maxy = Math.max(maxy, p[i+1]);&#10;    }&#10;    return {x:minx, y:miny, width:maxx-minx, height:maxy-miny};&#10;  }&#10;  &#10;  PolyK.Reverse = function(p)&#10;  {&#10;    var np = [];&#10;    for(var j=p.length-2; j&gt;=0; j-=2)  np.push(p[j], p[j+1])&#10;    return np;&#10;  }&#10;  &#10;&#10;  PolyK.Triangulate = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;3) return [];&#10;    var tgs = [];&#10;    var avl = [];&#10;    for(var i=0; i&lt;n; i++) avl.push(i);&#10;    &#10;    var i = 0;&#10;    var al = n;&#10;    while(al &gt; 3)&#10;    {&#10;      var i0 = avl[(i+0)%al];&#10;      var i1 = avl[(i+1)%al];&#10;      var i2 = avl[(i+2)%al];&#10;      &#10;      var ax = p[2*i0],  ay = p[2*i0+1];&#10;      var bx = p[2*i1],  by = p[2*i1+1];&#10;      var cx = p[2*i2],  cy = p[2*i2+1];&#10;      &#10;      var earFound = false;&#10;      if(PolyK._convex(ax, ay, bx, by, cx, cy))&#10;      {&#10;        earFound = true;&#10;        for(var j=0; j&lt;al; j++)&#10;        {&#10;          var vi = avl[j];&#10;          if(vi==i0 || vi==i1 || vi==i2) continue;&#10;          if(PolyK._PointInTriangle(p[2*vi], p[2*vi+1], ax, ay, bx, by, cx, cy)) {earFound = false; break;}&#10;        }&#10;      }&#10;      if(earFound)&#10;      {&#10;        tgs.push(i0, i1, i2);&#10;        avl.splice((i+1)%al, 1);&#10;        al--;&#10;        i= 0;&#10;      }&#10;      else if(i++ &gt; 3*al) break;    // no convex angles :(&#10;    }&#10;    tgs.push(avl[0], avl[1], avl[2]);&#10;    return tgs;&#10;  }&#10;  &#10;  PolyK.ContainsPoint = function(p, px, py)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    var ax, ay = p[2*n-3]-py, bx = p[2*n-2]-px, by = p[2*n-1]-py;&#10;    &#10;    //var lup = by &gt; ay;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay==by) continue;&#10;      lup = by&gt;ay;&#10;    }&#10;    &#10;    var depth = 0;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay&lt; 0 &amp;&amp; by&lt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ay&gt; 0 &amp;&amp; by&gt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ax&lt; 0 &amp;&amp; bx&lt; 0) continue;  // both points on the left&#10;      &#10;      if(ay==by &amp;&amp; Math.min(ax,bx)&lt;=0) return true;&#10;      if(ay==by) continue;&#10;      &#10;      var lx = ax + (bx-ax)*(-ay)/(by-ay);&#10;      if(lx==0) return true;      // point on edge&#10;      if(lx&gt; 0) depth++;&#10;      if(ay==0 &amp;&amp;  lup &amp;&amp; by&gt;ay) depth--; // hit vertex, both up&#10;      if(ay==0 &amp;&amp; !lup &amp;&amp; by&lt;ay) depth--; // hit vertex, both down&#10;      lup = by&gt;ay;&#10;    }&#10;    //console.log(depth);&#10;    return (depth &amp; 1) == 1;&#10;  }&#10;  &#10;  PolyK.Slice = function(p, ax, ay, bx, by)&#10;  {&#10;    if(PolyK.ContainsPoint(p, ax, ay) || PolyK.ContainsPoint(p, bx, by)) return [p.slice(0)];&#10;&#10;    var a = new PolyK._P(ax, ay);&#10;    var b = new PolyK._P(bx, by);&#10;    var iscs = [];  // intersections&#10;    var ps = [];  // points&#10;    for(var i=0; i&lt;p.length; i+=2) ps.push(new PolyK._P(p[i], p[i+1]));&#10;    &#10;    for(var i=0; i&lt;ps.length; i++)&#10;    {&#10;      var isc = new PolyK._P(0,0);&#10;      isc = PolyK._GetLineIntersection(a, b, ps[i], ps[(i+1)%ps.length], isc);&#10;      var fisc = iscs[0];&#10;      var lisc = iscs[iscs.length-1];&#10;      if(isc &amp;&amp; (fisc==null || PolyK._P.dist(isc,fisc)&gt;1e-10) &amp;&amp; (lisc==null || PolyK._P.dist(isc,lisc)&gt;1e-10 ) )//&amp;&amp; (isc.x!=ps[i].x || isc.y!=ps[i].y) )&#10;      {&#10;        isc.flag = true;&#10;        iscs.push(isc);&#10;        ps.splice(i+1,0,isc);&#10;        i++;&#10;      }&#10;    }&#10;    &#10;    if(iscs.length &lt;2) return [p.slice(0)];&#10;    var comp = function(u,v) { return PolyK._P.dist(a,u) - PolyK._P.dist(a,v); }&#10;    iscs.sort(comp);&#10;    &#10;    //console.log(&quot;Intersections: &quot;+iscs.length, JSON.stringify(iscs));&#10;    &#10;    var pgs = [];&#10;    var dir = 0;&#10;    while(iscs.length &gt; 0)&#10;    {&#10;      var n = ps.length;&#10;      var i0 = iscs[0];&#10;      var i1 = iscs[1];&#10;      //if(i0.x==i1.x &amp;&amp; i0.y==i1.y) { iscs.splice(0,2); continue;}&#10;      var ind0 = ps.indexOf(i0);&#10;      var ind1 = ps.indexOf(i1);&#10;      var solved = false;&#10;      &#10;      //console.log(i0, i1);&#10;      &#10;      if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      else&#10;      {&#10;        i0 = iscs[1];&#10;        i1 = iscs[0];&#10;        ind0 = ps.indexOf(i0);&#10;        ind1 = ps.indexOf(i1);&#10;        if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      }&#10;      if(solved)&#10;      {&#10;        dir--;&#10;        var pgn = PolyK._getPoints(ps, ind0, ind1);&#10;        pgs.push(pgn);&#10;        ps = PolyK._getPoints(ps, ind1, ind0);&#10;        i0.flag = i1.flag = false;&#10;        iscs.splice(0,2);&#10;        if(iscs.length == 0) pgs.push(ps);&#10;      }&#10;      else { dir++; iscs.reverse(); }&#10;      if(dir&gt;1) break;&#10;    }&#10;    var result = [];&#10;    for(var i=0; i&lt;pgs.length; i++)&#10;    {&#10;      var pg = pgs[i];&#10;      var npg = [];&#10;      for(var j=0; j&lt;pg.length; j++) npg.push(pg[j].x, pg[j].y);&#10;      result.push(npg);&#10;    }&#10;    return result;&#10;  }&#10;  &#10;  PolyK.Raycast = function(p, x, y, dx, dy, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], a2 = tp[1], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    a2.x = x+dx; a2.y = y+dy;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, norm:{x:0, y:0}, refl:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;      if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, i/2, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;    if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, (p.length/2)-1, isc);&#10;    &#10;    return (isc.dist != Infinity) ? isc : null;&#10;  }&#10;  &#10;  PolyK.ClosestEdge = function(p, x, y, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, point:{x:0, y:0}, norm:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      PolyK._pointLineDist(a1, b1, b2, i&gt;&gt;1, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    PolyK._pointLineDist(a1, b1, b2, l&gt;&gt;1, isc);&#10;    &#10;    var idst = 1/isc.dist;&#10;    isc.norm.x = (x-isc.point.x)*idst;&#10;    isc.norm.y = (y-isc.point.y)*idst;&#10;    return isc;&#10;  }&#10;  &#10;  PolyK._pointLineDist = function(p, a, b, edge, isc)&#10;  {&#10;    var x = p.x, y = p.y, x1 = a.x, y1 = a.y, x2 = b.x, y2 = b.y;&#10;    &#10;    var A = x - x1;&#10;    var B = y - y1;&#10;    var C = x2 - x1;&#10;    var D = y2 - y1;&#10;&#10;    var dot = A * C + B * D;&#10;    var len_sq = C * C + D * D;&#10;    var param = dot / len_sq;&#10;&#10;    var xx, yy;&#10;&#10;    if (param &lt; 0 || (x1 == x2 &amp;&amp; y1 == y2)) {&#10;      xx = x1;&#10;      yy = y1;&#10;    }&#10;    else if (param &gt; 1) {&#10;      xx = x2;&#10;      yy = y2;&#10;    }&#10;    else {&#10;      xx = x1 + param * C;&#10;      yy = y1 + param * D;&#10;    }&#10;&#10;    var dx = x - xx;&#10;    var dy = y - yy;&#10;    var dst = Math.sqrt(dx * dx + dy * dy);&#10;    if(dst&lt;isc.dist)&#10;    {&#10;      isc.dist = dst;&#10;      isc.edge = edge;&#10;      isc.point.x = xx;&#10;      isc.point.y = yy;&#10;    }&#10;  }&#10;  &#10;  PolyK._updateISC = function(dx, dy, a1, b1, b2, c, edge, isc)&#10;  {&#10;    var nrl = PolyK._P.dist(a1, c);&#10;    if(nrl&lt;isc.dist)&#10;    {&#10;      var ibl = 1/PolyK._P.dist(b1, b2);&#10;      var nx = -(b2.y-b1.y)*ibl;&#10;      var ny =  (b2.x-b1.x)*ibl;&#10;      var ddot = 2*(dx*nx+dy*ny);&#10;      isc.dist = nrl;&#10;      isc.norm.x = nx;  &#10;      isc.norm.y = ny; &#10;      isc.refl.x = -ddot*nx+dx;&#10;      isc.refl.y = -ddot*ny+dy;&#10;      isc.edge = edge;&#10;    }&#10;  }&#10;  &#10;  PolyK._getPoints = function(ps, ind0, ind1)&#10;  {&#10;    var n = ps.length;&#10;    var nps = [];&#10;    if(ind1&lt;ind0) ind1 += n;&#10;    for(var i=ind0; i&lt;= ind1; i++) nps.push(ps[i%n]);&#10;    return nps;&#10;  }&#10;  &#10;  PolyK._firstWithFlag = function(ps, ind)&#10;  {&#10;    var n = ps.length;&#10;    while(true)&#10;    {&#10;      ind = (ind+1)%n;&#10;      if(ps[ind].flag) return ind;&#10;    }&#10;  }&#10;  &#10;  PolyK._PointInTriangle = function(px, py, ax, ay, bx, by, cx, cy)&#10;  {&#10;    var v0x = cx-ax;&#10;    var v0y = cy-ay;&#10;    var v1x = bx-ax;&#10;    var v1y = by-ay;&#10;    var v2x = px-ax;&#10;    var v2y = py-ay;&#10;    &#10;    var dot00 = v0x*v0x+v0y*v0y;&#10;    var dot01 = v0x*v1x+v0y*v1y;&#10;    var dot02 = v0x*v2x+v0y*v2y;&#10;    var dot11 = v1x*v1x+v1y*v1y;&#10;    var dot12 = v1x*v2x+v1y*v2y;&#10;    &#10;    var invDenom = 1 / (dot00 * dot11 - dot01 * dot01);&#10;    var u = (dot11 * dot02 - dot01 * dot12) * invDenom;&#10;    var v = (dot00 * dot12 - dot01 * dot02) * invDenom;&#10;&#10;    // Check if point is in triangle&#10;    return (u &gt;= 0) &amp;&amp; (v &gt;= 0) &amp;&amp; (u + v &lt; 1);&#10;  }&#10;  &#10;  PolyK._RayLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    var iDen = 1/Den;&#10;    I.x = ( A*dbx - dax*B ) * iDen;&#10;    I.y = ( A*dby - day*B ) * iDen;&#10;    &#10;    if(!PolyK._InRect(I, b1, b2)) return null;&#10;    if((day&gt;0 &amp;&amp; I.y&gt;a1.y) || (day&lt;0 &amp;&amp; I.y&lt;a1.y)) return null; &#10;    if((dax&gt;0 &amp;&amp; I.x&gt;a1.x) || (dax&lt;0 &amp;&amp; I.x&lt;a1.x)) return null; &#10;    return I;&#10;  }&#10;  &#10;  PolyK._GetLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    I.x = ( A*dbx - dax*B ) / Den;&#10;    I.y = ( A*dby - day*B ) / Den;&#10;    &#10;    if(PolyK._InRect(I, a1, a2) &amp;&amp; PolyK._InRect(I, b1, b2)) return I;&#10;    return null;&#10;  }&#10;  &#10;  PolyK._InRect = function(a, b, c) // a in rect (b,c)&#10;  {&#10;    var minx = Math.min(b.x,c.x), maxx = Math.max(b.x,c.x);&#10;    var miny = Math.min(b.y,c.y), maxy = Math.max(b.y,c.y);&#10;    &#10;    if  (minx == maxx) return (miny&lt;=a.y &amp;&amp; a.y&lt;=maxy);&#10;    if  (miny == maxy) return (minx&lt;=a.x &amp;&amp; a.x&lt;=maxx);&#10;    &#10;    //return (minx &lt;= a.x &amp;&amp; a.x &lt;= maxx &amp;&amp; miny &lt;= a.y &amp;&amp; a.y &lt;= maxy)&#10;    return (minx &lt;= a.x+1e-10 &amp;&amp; a.x-1e-10 &lt;= maxx &amp;&amp; miny &lt;= a.y+1e-10 &amp;&amp; a.y-1e-10 &lt;= maxy) ;   &#10;  }&#10;  &#10;  PolyK._convex = function(ax, ay, bx, by, cx, cy)&#10;  {&#10;    return (ay-by)*(cx-bx) + (bx-ax)*(cy-by) &gt;= 0;&#10;  }&#10;    &#10;  PolyK._P = function(x,y)&#10;  {&#10;    this.x = x;&#10;    this.y = y;&#10;    this.flag = false;&#10;  }&#10;  PolyK._P.prototype.toString = function()&#10;  {&#10;    return &quot;Point [&quot;+this.x+&quot;, &quot;+this.y+&quot;]&quot;;&#10;  }&#10;  PolyK._P.dist = function(a,b)&#10;  {&#10;    var dx = b.x-a.x;&#10;    var dy = b.y-a.y;&#10;    return Math.sqrt(dx*dx + dy*dy);&#10;  }&#10;  &#10;  PolyK._tp = [];&#10;  for(var i=0; i&lt;10; i++) PolyK._tp.push(new PolyK._P(0,0));&#10;">
+    <entity name="ContainerLocation" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Contain the ALPS!&#10; *&#10; *&#10; *  @accessor ContainerLocation&#10; *&#10;*/&#10;&#10;var boundary = [];&#10;var boundary_single = [];&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('LocationIn');&#10;  output('LocationOut');&#10;&#10;  parameter('Boundary', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  var points = getParameter('Boundary').split(',');&#10;  for (var i=1; i&lt;points.length; i+=2) {&#10;    var x = parseFloat(points[i-1]);&#10;    var y = parseFloat(points[i]);&#10;    boundary_single.push(x);&#10;    boundary_single.push(y);&#10;    boundary.push([x, y]);&#10;  }&#10;&#10;  addInputHandler('LocationIn', LocationIn_In);&#10;}&#10;&#10;function checkInside (point) {&#10;    // ray-casting algorithm based on&#10;    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html&#10;    var vs = boundary;&#10;    var x = point[0], y = point[1];&#10;    &#10;    var inside = false;&#10;    for (var i = 0, j = vs.length - 1; i &lt; vs.length; j = i++) {&#10;        var xi = vs[i][0], yi = vs[i][1];&#10;        var xj = vs[j][0], yj = vs[j][1];&#10;        &#10;        var intersect = ((yi &gt; y) != (yj &gt; y))&#10;            &amp;&amp; (x &lt; (xj - xi) * (y - yi) / (yj - yi) + xi);&#10;        if (intersect) inside = !inside;&#10;    }&#10;    &#10;    return inside;&#10;};&#10;&#10;function offset_point (sx, sy, ex, ey) {&#10;  var a = sx - ex;&#10;  var b = sy - ey;&#10;  var l = Math.sqrt((a*a)+(b*b));&#10;  var scale = 0.3/l;&#10;&#10;  var new_x = ex - (scale*a);&#10;  var new_y = ey - (scale*b);&#10;&#10;  return [new_x, new_y];&#10;}&#10;&#10;var LocationIn_In = function () {&#10;  var p = get('LocationIn');&#10;  var x = p.X;&#10;  var y = p.Y;&#10;&#10;  // Check if the point is inside&#10;  if (checkInside([x, y])) {&#10;    // Woo! Good to go, send this along&#10;    send('LocationOut', p);&#10;  } else {&#10;    console.log('Point is outside ' + x + ' y: ' + y);&#10;&#10;    // Outside, get closest point&#10;    var closest = PolyK.ClosestEdge(boundary_single, x, y);&#10;    var new_x = closest.point.x;&#10;    var new_y = closest.point.y;&#10;&#10;    // Move 30cm beyond that so we don't go right to the wall&#10;    var shifted = offset_point(x, y, new_x, new_y);&#10;&#10;    p.X = shifted[0];&#10;    p.Y = shifted[1];&#10;    send('LocationOut', p);&#10;  }&#10;&#10;}&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;  /*&#10;    PolyK library&#10;    url: http://polyk.ivank.net&#10;    Released under MIT licence.&#10;    &#10;    Copyright (c) 2012 - 2014 Ivan Kuckir&#10;&#10;    Permission is hereby granted, free of charge, to any person&#10;    obtaining a copy of this software and associated documentation&#10;    files (the &quot;Software&quot;), to deal in the Software without&#10;    restriction, including without limitation the rights to use,&#10;    copy, modify, merge, publish, distribute, sublicense, and/or sell&#10;    copies of the Software, and to permit persons to whom the&#10;    Software is furnished to do so, subject to the following&#10;    conditions:&#10;&#10;    The above copyright notice and this permission notice shall be&#10;    included in all copies or substantial portions of the Software.&#10;&#10;    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,&#10;    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES&#10;    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND&#10;    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT&#10;    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#10;    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING&#10;    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR&#10;    OTHER DEALINGS IN THE SOFTWARE.&#10;    &#10;    19. 5. 2014 - Problem with slicing fixed.&#10;  */&#10;&#10;  var PolyK = {};&#10;  &#10;  /*&#10;    Is Polygon self-intersecting?&#10;    &#10;    O(n^2)&#10;  */&#10;  &#10;  PolyK.IsSimple = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;4) return true;&#10;    var a1 = new PolyK._P(), a2 = new PolyK._P();&#10;    var b1 = new PolyK._P(), b2 = new PolyK._P();&#10;    var c = new PolyK._P();&#10;    &#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      a1.x = p[2*i  ];&#10;      a1.y = p[2*i+1];&#10;      if(i==n-1)  { a2.x = p[0    ];  a2.y = p[1    ]; }&#10;      else    { a2.x = p[2*i+2];  a2.y = p[2*i+3]; }&#10;      &#10;      for(var j=0; j&lt;n; j++)&#10;      {&#10;        if(Math.abs(i-j) &lt; 2) continue;&#10;        if(j==n-1 &amp;&amp; i==0) continue;&#10;        if(i==n-1 &amp;&amp; j==0) continue;&#10;        &#10;        b1.x = p[2*j  ];&#10;        b1.y = p[2*j+1];&#10;        if(j==n-1)  { b2.x = p[0    ];  b2.y = p[1    ]; }&#10;        else    { b2.x = p[2*j+2];  b2.y = p[2*j+3]; }&#10;        &#10;        if(PolyK._GetLineIntersection(a1,a2,b1,b2,c) != null) return false;&#10;      }&#10;    }&#10;    return true;&#10;  }&#10;  &#10;  PolyK.IsConvex = function(p)&#10;  {&#10;    if(p.length&lt;6) return true;&#10;    var l = p.length - 4;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      if(!PolyK._convex(p[i], p[i+1], p[i+2], p[i+3], p[i+4], p[i+5])) return false;&#10;    if(!PolyK._convex(p[l  ], p[l+1], p[l+2], p[l+3], p[0], p[1])) return false;&#10;    if(!PolyK._convex(p[l+2], p[l+3], p[0  ], p[1  ], p[2], p[3])) return false;&#10;    return true;&#10;  }&#10;  &#10;  PolyK.GetArea = function(p)&#10;  {&#10;    if(p.length &lt;6) return 0;&#10;    var l = p.length - 2;&#10;    var sum = 0;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      sum += (p[i+2]-p[i]) * (p[i+1]+p[i+3]);&#10;    sum += (p[0]-p[l]) * (p[l+1]+p[1]);&#10;    return - sum * 0.5;&#10;  }&#10;  &#10;  PolyK.GetAABB = function(p)&#10;  {&#10;    var minx = Infinity; &#10;    var miny = Infinity;&#10;    var maxx = -minx;&#10;    var maxy = -miny;&#10;    for(var i=0; i&lt;p.length; i+=2)&#10;    {&#10;      minx = Math.min(minx, p[i  ]);&#10;      maxx = Math.max(maxx, p[i  ]);&#10;      miny = Math.min(miny, p[i+1]);&#10;      maxy = Math.max(maxy, p[i+1]);&#10;    }&#10;    return {x:minx, y:miny, width:maxx-minx, height:maxy-miny};&#10;  }&#10;  &#10;  PolyK.Reverse = function(p)&#10;  {&#10;    var np = [];&#10;    for(var j=p.length-2; j&gt;=0; j-=2)  np.push(p[j], p[j+1])&#10;    return np;&#10;  }&#10;  &#10;&#10;  PolyK.Triangulate = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;3) return [];&#10;    var tgs = [];&#10;    var avl = [];&#10;    for(var i=0; i&lt;n; i++) avl.push(i);&#10;    &#10;    var i = 0;&#10;    var al = n;&#10;    while(al &gt; 3)&#10;    {&#10;      var i0 = avl[(i+0)%al];&#10;      var i1 = avl[(i+1)%al];&#10;      var i2 = avl[(i+2)%al];&#10;      &#10;      var ax = p[2*i0],  ay = p[2*i0+1];&#10;      var bx = p[2*i1],  by = p[2*i1+1];&#10;      var cx = p[2*i2],  cy = p[2*i2+1];&#10;      &#10;      var earFound = false;&#10;      if(PolyK._convex(ax, ay, bx, by, cx, cy))&#10;      {&#10;        earFound = true;&#10;        for(var j=0; j&lt;al; j++)&#10;        {&#10;          var vi = avl[j];&#10;          if(vi==i0 || vi==i1 || vi==i2) continue;&#10;          if(PolyK._PointInTriangle(p[2*vi], p[2*vi+1], ax, ay, bx, by, cx, cy)) {earFound = false; break;}&#10;        }&#10;      }&#10;      if(earFound)&#10;      {&#10;        tgs.push(i0, i1, i2);&#10;        avl.splice((i+1)%al, 1);&#10;        al--;&#10;        i= 0;&#10;      }&#10;      else if(i++ &gt; 3*al) break;    // no convex angles :(&#10;    }&#10;    tgs.push(avl[0], avl[1], avl[2]);&#10;    return tgs;&#10;  }&#10;  &#10;  PolyK.ContainsPoint = function(p, px, py)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    var ax, ay = p[2*n-3]-py, bx = p[2*n-2]-px, by = p[2*n-1]-py;&#10;    &#10;    //var lup = by &gt; ay;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay==by) continue;&#10;      lup = by&gt;ay;&#10;    }&#10;    &#10;    var depth = 0;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay&lt; 0 &amp;&amp; by&lt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ay&gt; 0 &amp;&amp; by&gt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ax&lt; 0 &amp;&amp; bx&lt; 0) continue;  // both points on the left&#10;      &#10;      if(ay==by &amp;&amp; Math.min(ax,bx)&lt;=0) return true;&#10;      if(ay==by) continue;&#10;      &#10;      var lx = ax + (bx-ax)*(-ay)/(by-ay);&#10;      if(lx==0) return true;      // point on edge&#10;      if(lx&gt; 0) depth++;&#10;      if(ay==0 &amp;&amp;  lup &amp;&amp; by&gt;ay) depth--; // hit vertex, both up&#10;      if(ay==0 &amp;&amp; !lup &amp;&amp; by&lt;ay) depth--; // hit vertex, both down&#10;      lup = by&gt;ay;&#10;    }&#10;    //console.log(depth);&#10;    return (depth &amp; 1) == 1;&#10;  }&#10;  &#10;  PolyK.Slice = function(p, ax, ay, bx, by)&#10;  {&#10;    if(PolyK.ContainsPoint(p, ax, ay) || PolyK.ContainsPoint(p, bx, by)) return [p.slice(0)];&#10;&#10;    var a = new PolyK._P(ax, ay);&#10;    var b = new PolyK._P(bx, by);&#10;    var iscs = [];  // intersections&#10;    var ps = [];  // points&#10;    for(var i=0; i&lt;p.length; i+=2) ps.push(new PolyK._P(p[i], p[i+1]));&#10;    &#10;    for(var i=0; i&lt;ps.length; i++)&#10;    {&#10;      var isc = new PolyK._P(0,0);&#10;      isc = PolyK._GetLineIntersection(a, b, ps[i], ps[(i+1)%ps.length], isc);&#10;      var fisc = iscs[0];&#10;      var lisc = iscs[iscs.length-1];&#10;      if(isc &amp;&amp; (fisc==null || PolyK._P.dist(isc,fisc)&gt;1e-10) &amp;&amp; (lisc==null || PolyK._P.dist(isc,lisc)&gt;1e-10 ) )//&amp;&amp; (isc.x!=ps[i].x || isc.y!=ps[i].y) )&#10;      {&#10;        isc.flag = true;&#10;        iscs.push(isc);&#10;        ps.splice(i+1,0,isc);&#10;        i++;&#10;      }&#10;    }&#10;    &#10;    if(iscs.length &lt;2) return [p.slice(0)];&#10;    var comp = function(u,v) { return PolyK._P.dist(a,u) - PolyK._P.dist(a,v); }&#10;    iscs.sort(comp);&#10;    &#10;    //console.log(&quot;Intersections: &quot;+iscs.length, JSON.stringify(iscs));&#10;    &#10;    var pgs = [];&#10;    var dir = 0;&#10;    while(iscs.length &gt; 0)&#10;    {&#10;      var n = ps.length;&#10;      var i0 = iscs[0];&#10;      var i1 = iscs[1];&#10;      //if(i0.x==i1.x &amp;&amp; i0.y==i1.y) { iscs.splice(0,2); continue;}&#10;      var ind0 = ps.indexOf(i0);&#10;      var ind1 = ps.indexOf(i1);&#10;      var solved = false;&#10;      &#10;      //console.log(i0, i1);&#10;      &#10;      if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      else&#10;      {&#10;        i0 = iscs[1];&#10;        i1 = iscs[0];&#10;        ind0 = ps.indexOf(i0);&#10;        ind1 = ps.indexOf(i1);&#10;        if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      }&#10;      if(solved)&#10;      {&#10;        dir--;&#10;        var pgn = PolyK._getPoints(ps, ind0, ind1);&#10;        pgs.push(pgn);&#10;        ps = PolyK._getPoints(ps, ind1, ind0);&#10;        i0.flag = i1.flag = false;&#10;        iscs.splice(0,2);&#10;        if(iscs.length == 0) pgs.push(ps);&#10;      }&#10;      else { dir++; iscs.reverse(); }&#10;      if(dir&gt;1) break;&#10;    }&#10;    var result = [];&#10;    for(var i=0; i&lt;pgs.length; i++)&#10;    {&#10;      var pg = pgs[i];&#10;      var npg = [];&#10;      for(var j=0; j&lt;pg.length; j++) npg.push(pg[j].x, pg[j].y);&#10;      result.push(npg);&#10;    }&#10;    return result;&#10;  }&#10;  &#10;  PolyK.Raycast = function(p, x, y, dx, dy, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], a2 = tp[1], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    a2.x = x+dx; a2.y = y+dy;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, norm:{x:0, y:0}, refl:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;      if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, i/2, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;    if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, (p.length/2)-1, isc);&#10;    &#10;    return (isc.dist != Infinity) ? isc : null;&#10;  }&#10;  &#10;  PolyK.ClosestEdge = function(p, x, y, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, point:{x:0, y:0}, norm:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      PolyK._pointLineDist(a1, b1, b2, i&gt;&gt;1, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    PolyK._pointLineDist(a1, b1, b2, l&gt;&gt;1, isc);&#10;    &#10;    var idst = 1/isc.dist;&#10;    isc.norm.x = (x-isc.point.x)*idst;&#10;    isc.norm.y = (y-isc.point.y)*idst;&#10;    return isc;&#10;  }&#10;  &#10;  PolyK._pointLineDist = function(p, a, b, edge, isc)&#10;  {&#10;    var x = p.x, y = p.y, x1 = a.x, y1 = a.y, x2 = b.x, y2 = b.y;&#10;    &#10;    var A = x - x1;&#10;    var B = y - y1;&#10;    var C = x2 - x1;&#10;    var D = y2 - y1;&#10;&#10;    var dot = A * C + B * D;&#10;    var len_sq = C * C + D * D;&#10;    var param = dot / len_sq;&#10;&#10;    var xx, yy;&#10;&#10;    if (param &lt; 0 || (x1 == x2 &amp;&amp; y1 == y2)) {&#10;      xx = x1;&#10;      yy = y1;&#10;    }&#10;    else if (param &gt; 1) {&#10;      xx = x2;&#10;      yy = y2;&#10;    }&#10;    else {&#10;      xx = x1 + param * C;&#10;      yy = y1 + param * D;&#10;    }&#10;&#10;    var dx = x - xx;&#10;    var dy = y - yy;&#10;    var dst = Math.sqrt(dx * dx + dy * dy);&#10;    if(dst&lt;isc.dist)&#10;    {&#10;      isc.dist = dst;&#10;      isc.edge = edge;&#10;      isc.point.x = xx;&#10;      isc.point.y = yy;&#10;    }&#10;  }&#10;  &#10;  PolyK._updateISC = function(dx, dy, a1, b1, b2, c, edge, isc)&#10;  {&#10;    var nrl = PolyK._P.dist(a1, c);&#10;    if(nrl&lt;isc.dist)&#10;    {&#10;      var ibl = 1/PolyK._P.dist(b1, b2);&#10;      var nx = -(b2.y-b1.y)*ibl;&#10;      var ny =  (b2.x-b1.x)*ibl;&#10;      var ddot = 2*(dx*nx+dy*ny);&#10;      isc.dist = nrl;&#10;      isc.norm.x = nx;  &#10;      isc.norm.y = ny; &#10;      isc.refl.x = -ddot*nx+dx;&#10;      isc.refl.y = -ddot*ny+dy;&#10;      isc.edge = edge;&#10;    }&#10;  }&#10;  &#10;  PolyK._getPoints = function(ps, ind0, ind1)&#10;  {&#10;    var n = ps.length;&#10;    var nps = [];&#10;    if(ind1&lt;ind0) ind1 += n;&#10;    for(var i=ind0; i&lt;= ind1; i++) nps.push(ps[i%n]);&#10;    return nps;&#10;  }&#10;  &#10;  PolyK._firstWithFlag = function(ps, ind)&#10;  {&#10;    var n = ps.length;&#10;    while(true)&#10;    {&#10;      ind = (ind+1)%n;&#10;      if(ps[ind].flag) return ind;&#10;    }&#10;  }&#10;  &#10;  PolyK._PointInTriangle = function(px, py, ax, ay, bx, by, cx, cy)&#10;  {&#10;    var v0x = cx-ax;&#10;    var v0y = cy-ay;&#10;    var v1x = bx-ax;&#10;    var v1y = by-ay;&#10;    var v2x = px-ax;&#10;    var v2y = py-ay;&#10;    &#10;    var dot00 = v0x*v0x+v0y*v0y;&#10;    var dot01 = v0x*v1x+v0y*v1y;&#10;    var dot02 = v0x*v2x+v0y*v2y;&#10;    var dot11 = v1x*v1x+v1y*v1y;&#10;    var dot12 = v1x*v2x+v1y*v2y;&#10;    &#10;    var invDenom = 1 / (dot00 * dot11 - dot01 * dot01);&#10;    var u = (dot11 * dot02 - dot01 * dot12) * invDenom;&#10;    var v = (dot00 * dot12 - dot01 * dot02) * invDenom;&#10;&#10;    // Check if point is in triangle&#10;    return (u &gt;= 0) &amp;&amp; (v &gt;= 0) &amp;&amp; (u + v &lt; 1);&#10;  }&#10;  &#10;  PolyK._RayLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    var iDen = 1/Den;&#10;    I.x = ( A*dbx - dax*B ) * iDen;&#10;    I.y = ( A*dby - day*B ) * iDen;&#10;    &#10;    if(!PolyK._InRect(I, b1, b2)) return null;&#10;    if((day&gt;0 &amp;&amp; I.y&gt;a1.y) || (day&lt;0 &amp;&amp; I.y&lt;a1.y)) return null; &#10;    if((dax&gt;0 &amp;&amp; I.x&gt;a1.x) || (dax&lt;0 &amp;&amp; I.x&lt;a1.x)) return null; &#10;    return I;&#10;  }&#10;  &#10;  PolyK._GetLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    I.x = ( A*dbx - dax*B ) / Den;&#10;    I.y = ( A*dby - day*B ) / Den;&#10;    &#10;    if(PolyK._InRect(I, a1, a2) &amp;&amp; PolyK._InRect(I, b1, b2)) return I;&#10;    return null;&#10;  }&#10;  &#10;  PolyK._InRect = function(a, b, c) // a in rect (b,c)&#10;  {&#10;    var minx = Math.min(b.x,c.x), maxx = Math.max(b.x,c.x);&#10;    var miny = Math.min(b.y,c.y), maxy = Math.max(b.y,c.y);&#10;    &#10;    if  (minx == maxx) return (miny&lt;=a.y &amp;&amp; a.y&lt;=maxy);&#10;    if  (miny == maxy) return (minx&lt;=a.x &amp;&amp; a.x&lt;=maxx);&#10;    &#10;    //return (minx &lt;= a.x &amp;&amp; a.x &lt;= maxx &amp;&amp; miny &lt;= a.y &amp;&amp; a.y &lt;= maxy)&#10;    return (minx &lt;= a.x+1e-10 &amp;&amp; a.x-1e-10 &lt;= maxx &amp;&amp; miny &lt;= a.y+1e-10 &amp;&amp; a.y-1e-10 &lt;= maxy) ;   &#10;  }&#10;  &#10;  PolyK._convex = function(ax, ay, bx, by, cx, cy)&#10;  {&#10;    return (ay-by)*(cx-bx) + (bx-ax)*(cy-by) &gt;= 0;&#10;  }&#10;    &#10;  PolyK._P = function(x,y)&#10;  {&#10;    this.x = x;&#10;    this.y = y;&#10;    this.flag = false;&#10;  }&#10;  PolyK._P.prototype.toString = function()&#10;  {&#10;    return &quot;Point [&quot;+this.x+&quot;, &quot;+this.y+&quot;]&quot;;&#10;  }&#10;  PolyK._P.dist = function(a,b)&#10;  {&#10;    var dx = b.x-a.x;&#10;    var dy = b.y-a.y;&#10;    return Math.sqrt(dx*dx + dy*dy);&#10;  }&#10;  &#10;  PolyK._tp = [];&#10;  for(var i=0; i&lt;10; i++) PolyK._tp.push(new PolyK._P(0,0));&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
             </property>
         </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Container.js">
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/ContainerLocation.js">
         </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
@@ -2445,31 +2445,35 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="Boundary" class="ptolemy.data.expr.Parameter" value="0,0,2.03,0,2.03,2.3,3.88,2.3,3.88,7.77,2.97,7.77,2.97,9.7,1.02,9.7,1.02,6.7,-2.9,6.7,-2.9,4.19,0,4.19">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[475.0, 690.0]">
+        </property>
+        <property name="Boundary" class="ptolemy.data.expr.Parameter" value="5.18,-0.06,-7.9,-0.06,-7.9,7.822,-1.07,7.822,-1.07,4.94,5.18,4.94">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1160.0, 500.0]">
-        </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+        <port name="LocationIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
         </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+        <port name="LocationOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
         </port>
     </entity>
-    <entity name="Container2" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Contain the robot!&#10; *&#10; *&#10; *  @accessor Container&#10; *&#10;*/&#10;&#10;var boundary = [];&#10;var boundary_single = [];&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Boundary', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  var points = getParameter('Boundary').split(',');&#10;  for (var i=1; i&lt;points.length; i+=2) {&#10;    var x = parseFloat(points[i-1]);&#10;    var y = parseFloat(points[i]);&#10;    boundary_single.push(x);&#10;    boundary_single.push(y);&#10;    boundary.push([x, y]);&#10;  }&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function checkInside (point) {&#10;    // ray-casting algorithm based on&#10;    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html&#10;    var vs = boundary;&#10;    var x = point[0], y = point[1];&#10;    &#10;    var inside = false;&#10;    for (var i = 0, j = vs.length - 1; i &lt; vs.length; j = i++) {&#10;        var xi = vs[i][0], yi = vs[i][1];&#10;        var xj = vs[j][0], yj = vs[j][1];&#10;        &#10;        var intersect = ((yi &gt; y) != (yj &gt; y))&#10;            &amp;&amp; (x &lt; (xj - xi) * (y - yi) / (yj - yi) + xi);&#10;        if (intersect) inside = !inside;&#10;    }&#10;    &#10;    return inside;&#10;};&#10;&#10;function offset_point (sx, sy, ex, ey) {&#10;  var a = sx - ex;&#10;  var b = sy - ey;&#10;  var l = Math.sqrt((a*a)+(b*b));&#10;  var scale = 0.3/l;&#10;&#10;  var new_x = ex - (scale*a);&#10;  var new_y = ey - (scale*b);&#10;&#10;  return [new_x, new_y];&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;  var x = p.position.x;&#10;  var y = p.position.y;&#10;&#10;  // Check if the point is inside&#10;  if (checkInside([x, y])) {&#10;    // Woo! Good to go, send this along&#10;    send('PoseOut', p);&#10;  } else {&#10;    console.log('Point is outside ' + x + ' y: ' + y);&#10;&#10;    // Outside, get closest point&#10;    var closest = PolyK.ClosestEdge(boundary_single, x, y);&#10;    var new_x = closest.point.x;&#10;    var new_y = closest.point.y;&#10;&#10;    // Move 30cm beyond that so we don't go right to the wall&#10;    var shifted = offset_point(x, y, new_x, new_y);&#10;&#10;&#10;    console.log(closest);&#10;    console.log(shifted);&#10;    p.position.x = shifted[0];&#10;    p.position.y = shifted[1];&#10;    send('PoseOut', p);&#10;  }&#10;&#10;}&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;  /*&#10;    PolyK library&#10;    url: http://polyk.ivank.net&#10;    Released under MIT licence.&#10;    &#10;    Copyright (c) 2012 - 2014 Ivan Kuckir&#10;&#10;    Permission is hereby granted, free of charge, to any person&#10;    obtaining a copy of this software and associated documentation&#10;    files (the &quot;Software&quot;), to deal in the Software without&#10;    restriction, including without limitation the rights to use,&#10;    copy, modify, merge, publish, distribute, sublicense, and/or sell&#10;    copies of the Software, and to permit persons to whom the&#10;    Software is furnished to do so, subject to the following&#10;    conditions:&#10;&#10;    The above copyright notice and this permission notice shall be&#10;    included in all copies or substantial portions of the Software.&#10;&#10;    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,&#10;    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES&#10;    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND&#10;    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT&#10;    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#10;    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING&#10;    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR&#10;    OTHER DEALINGS IN THE SOFTWARE.&#10;    &#10;    19. 5. 2014 - Problem with slicing fixed.&#10;  */&#10;&#10;  var PolyK = {};&#10;  &#10;  /*&#10;    Is Polygon self-intersecting?&#10;    &#10;    O(n^2)&#10;  */&#10;  &#10;  PolyK.IsSimple = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;4) return true;&#10;    var a1 = new PolyK._P(), a2 = new PolyK._P();&#10;    var b1 = new PolyK._P(), b2 = new PolyK._P();&#10;    var c = new PolyK._P();&#10;    &#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      a1.x = p[2*i  ];&#10;      a1.y = p[2*i+1];&#10;      if(i==n-1)  { a2.x = p[0    ];  a2.y = p[1    ]; }&#10;      else    { a2.x = p[2*i+2];  a2.y = p[2*i+3]; }&#10;      &#10;      for(var j=0; j&lt;n; j++)&#10;      {&#10;        if(Math.abs(i-j) &lt; 2) continue;&#10;        if(j==n-1 &amp;&amp; i==0) continue;&#10;        if(i==n-1 &amp;&amp; j==0) continue;&#10;        &#10;        b1.x = p[2*j  ];&#10;        b1.y = p[2*j+1];&#10;        if(j==n-1)  { b2.x = p[0    ];  b2.y = p[1    ]; }&#10;        else    { b2.x = p[2*j+2];  b2.y = p[2*j+3]; }&#10;        &#10;        if(PolyK._GetLineIntersection(a1,a2,b1,b2,c) != null) return false;&#10;      }&#10;    }&#10;    return true;&#10;  }&#10;  &#10;  PolyK.IsConvex = function(p)&#10;  {&#10;    if(p.length&lt;6) return true;&#10;    var l = p.length - 4;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      if(!PolyK._convex(p[i], p[i+1], p[i+2], p[i+3], p[i+4], p[i+5])) return false;&#10;    if(!PolyK._convex(p[l  ], p[l+1], p[l+2], p[l+3], p[0], p[1])) return false;&#10;    if(!PolyK._convex(p[l+2], p[l+3], p[0  ], p[1  ], p[2], p[3])) return false;&#10;    return true;&#10;  }&#10;  &#10;  PolyK.GetArea = function(p)&#10;  {&#10;    if(p.length &lt;6) return 0;&#10;    var l = p.length - 2;&#10;    var sum = 0;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      sum += (p[i+2]-p[i]) * (p[i+1]+p[i+3]);&#10;    sum += (p[0]-p[l]) * (p[l+1]+p[1]);&#10;    return - sum * 0.5;&#10;  }&#10;  &#10;  PolyK.GetAABB = function(p)&#10;  {&#10;    var minx = Infinity; &#10;    var miny = Infinity;&#10;    var maxx = -minx;&#10;    var maxy = -miny;&#10;    for(var i=0; i&lt;p.length; i+=2)&#10;    {&#10;      minx = Math.min(minx, p[i  ]);&#10;      maxx = Math.max(maxx, p[i  ]);&#10;      miny = Math.min(miny, p[i+1]);&#10;      maxy = Math.max(maxy, p[i+1]);&#10;    }&#10;    return {x:minx, y:miny, width:maxx-minx, height:maxy-miny};&#10;  }&#10;  &#10;  PolyK.Reverse = function(p)&#10;  {&#10;    var np = [];&#10;    for(var j=p.length-2; j&gt;=0; j-=2)  np.push(p[j], p[j+1])&#10;    return np;&#10;  }&#10;  &#10;&#10;  PolyK.Triangulate = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;3) return [];&#10;    var tgs = [];&#10;    var avl = [];&#10;    for(var i=0; i&lt;n; i++) avl.push(i);&#10;    &#10;    var i = 0;&#10;    var al = n;&#10;    while(al &gt; 3)&#10;    {&#10;      var i0 = avl[(i+0)%al];&#10;      var i1 = avl[(i+1)%al];&#10;      var i2 = avl[(i+2)%al];&#10;      &#10;      var ax = p[2*i0],  ay = p[2*i0+1];&#10;      var bx = p[2*i1],  by = p[2*i1+1];&#10;      var cx = p[2*i2],  cy = p[2*i2+1];&#10;      &#10;      var earFound = false;&#10;      if(PolyK._convex(ax, ay, bx, by, cx, cy))&#10;      {&#10;        earFound = true;&#10;        for(var j=0; j&lt;al; j++)&#10;        {&#10;          var vi = avl[j];&#10;          if(vi==i0 || vi==i1 || vi==i2) continue;&#10;          if(PolyK._PointInTriangle(p[2*vi], p[2*vi+1], ax, ay, bx, by, cx, cy)) {earFound = false; break;}&#10;        }&#10;      }&#10;      if(earFound)&#10;      {&#10;        tgs.push(i0, i1, i2);&#10;        avl.splice((i+1)%al, 1);&#10;        al--;&#10;        i= 0;&#10;      }&#10;      else if(i++ &gt; 3*al) break;    // no convex angles :(&#10;    }&#10;    tgs.push(avl[0], avl[1], avl[2]);&#10;    return tgs;&#10;  }&#10;  &#10;  PolyK.ContainsPoint = function(p, px, py)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    var ax, ay = p[2*n-3]-py, bx = p[2*n-2]-px, by = p[2*n-1]-py;&#10;    &#10;    //var lup = by &gt; ay;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay==by) continue;&#10;      lup = by&gt;ay;&#10;    }&#10;    &#10;    var depth = 0;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay&lt; 0 &amp;&amp; by&lt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ay&gt; 0 &amp;&amp; by&gt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ax&lt; 0 &amp;&amp; bx&lt; 0) continue;  // both points on the left&#10;      &#10;      if(ay==by &amp;&amp; Math.min(ax,bx)&lt;=0) return true;&#10;      if(ay==by) continue;&#10;      &#10;      var lx = ax + (bx-ax)*(-ay)/(by-ay);&#10;      if(lx==0) return true;      // point on edge&#10;      if(lx&gt; 0) depth++;&#10;      if(ay==0 &amp;&amp;  lup &amp;&amp; by&gt;ay) depth--; // hit vertex, both up&#10;      if(ay==0 &amp;&amp; !lup &amp;&amp; by&lt;ay) depth--; // hit vertex, both down&#10;      lup = by&gt;ay;&#10;    }&#10;    //console.log(depth);&#10;    return (depth &amp; 1) == 1;&#10;  }&#10;  &#10;  PolyK.Slice = function(p, ax, ay, bx, by)&#10;  {&#10;    if(PolyK.ContainsPoint(p, ax, ay) || PolyK.ContainsPoint(p, bx, by)) return [p.slice(0)];&#10;&#10;    var a = new PolyK._P(ax, ay);&#10;    var b = new PolyK._P(bx, by);&#10;    var iscs = [];  // intersections&#10;    var ps = [];  // points&#10;    for(var i=0; i&lt;p.length; i+=2) ps.push(new PolyK._P(p[i], p[i+1]));&#10;    &#10;    for(var i=0; i&lt;ps.length; i++)&#10;    {&#10;      var isc = new PolyK._P(0,0);&#10;      isc = PolyK._GetLineIntersection(a, b, ps[i], ps[(i+1)%ps.length], isc);&#10;      var fisc = iscs[0];&#10;      var lisc = iscs[iscs.length-1];&#10;      if(isc &amp;&amp; (fisc==null || PolyK._P.dist(isc,fisc)&gt;1e-10) &amp;&amp; (lisc==null || PolyK._P.dist(isc,lisc)&gt;1e-10 ) )//&amp;&amp; (isc.x!=ps[i].x || isc.y!=ps[i].y) )&#10;      {&#10;        isc.flag = true;&#10;        iscs.push(isc);&#10;        ps.splice(i+1,0,isc);&#10;        i++;&#10;      }&#10;    }&#10;    &#10;    if(iscs.length &lt;2) return [p.slice(0)];&#10;    var comp = function(u,v) { return PolyK._P.dist(a,u) - PolyK._P.dist(a,v); }&#10;    iscs.sort(comp);&#10;    &#10;    //console.log(&quot;Intersections: &quot;+iscs.length, JSON.stringify(iscs));&#10;    &#10;    var pgs = [];&#10;    var dir = 0;&#10;    while(iscs.length &gt; 0)&#10;    {&#10;      var n = ps.length;&#10;      var i0 = iscs[0];&#10;      var i1 = iscs[1];&#10;      //if(i0.x==i1.x &amp;&amp; i0.y==i1.y) { iscs.splice(0,2); continue;}&#10;      var ind0 = ps.indexOf(i0);&#10;      var ind1 = ps.indexOf(i1);&#10;      var solved = false;&#10;      &#10;      //console.log(i0, i1);&#10;      &#10;      if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      else&#10;      {&#10;        i0 = iscs[1];&#10;        i1 = iscs[0];&#10;        ind0 = ps.indexOf(i0);&#10;        ind1 = ps.indexOf(i1);&#10;        if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      }&#10;      if(solved)&#10;      {&#10;        dir--;&#10;        var pgn = PolyK._getPoints(ps, ind0, ind1);&#10;        pgs.push(pgn);&#10;        ps = PolyK._getPoints(ps, ind1, ind0);&#10;        i0.flag = i1.flag = false;&#10;        iscs.splice(0,2);&#10;        if(iscs.length == 0) pgs.push(ps);&#10;      }&#10;      else { dir++; iscs.reverse(); }&#10;      if(dir&gt;1) break;&#10;    }&#10;    var result = [];&#10;    for(var i=0; i&lt;pgs.length; i++)&#10;    {&#10;      var pg = pgs[i];&#10;      var npg = [];&#10;      for(var j=0; j&lt;pg.length; j++) npg.push(pg[j].x, pg[j].y);&#10;      result.push(npg);&#10;    }&#10;    return result;&#10;  }&#10;  &#10;  PolyK.Raycast = function(p, x, y, dx, dy, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], a2 = tp[1], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    a2.x = x+dx; a2.y = y+dy;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, norm:{x:0, y:0}, refl:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;      if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, i/2, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;    if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, (p.length/2)-1, isc);&#10;    &#10;    return (isc.dist != Infinity) ? isc : null;&#10;  }&#10;  &#10;  PolyK.ClosestEdge = function(p, x, y, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, point:{x:0, y:0}, norm:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      PolyK._pointLineDist(a1, b1, b2, i&gt;&gt;1, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    PolyK._pointLineDist(a1, b1, b2, l&gt;&gt;1, isc);&#10;    &#10;    var idst = 1/isc.dist;&#10;    isc.norm.x = (x-isc.point.x)*idst;&#10;    isc.norm.y = (y-isc.point.y)*idst;&#10;    return isc;&#10;  }&#10;  &#10;  PolyK._pointLineDist = function(p, a, b, edge, isc)&#10;  {&#10;    var x = p.x, y = p.y, x1 = a.x, y1 = a.y, x2 = b.x, y2 = b.y;&#10;    &#10;    var A = x - x1;&#10;    var B = y - y1;&#10;    var C = x2 - x1;&#10;    var D = y2 - y1;&#10;&#10;    var dot = A * C + B * D;&#10;    var len_sq = C * C + D * D;&#10;    var param = dot / len_sq;&#10;&#10;    var xx, yy;&#10;&#10;    if (param &lt; 0 || (x1 == x2 &amp;&amp; y1 == y2)) {&#10;      xx = x1;&#10;      yy = y1;&#10;    }&#10;    else if (param &gt; 1) {&#10;      xx = x2;&#10;      yy = y2;&#10;    }&#10;    else {&#10;      xx = x1 + param * C;&#10;      yy = y1 + param * D;&#10;    }&#10;&#10;    var dx = x - xx;&#10;    var dy = y - yy;&#10;    var dst = Math.sqrt(dx * dx + dy * dy);&#10;    if(dst&lt;isc.dist)&#10;    {&#10;      isc.dist = dst;&#10;      isc.edge = edge;&#10;      isc.point.x = xx;&#10;      isc.point.y = yy;&#10;    }&#10;  }&#10;  &#10;  PolyK._updateISC = function(dx, dy, a1, b1, b2, c, edge, isc)&#10;  {&#10;    var nrl = PolyK._P.dist(a1, c);&#10;    if(nrl&lt;isc.dist)&#10;    {&#10;      var ibl = 1/PolyK._P.dist(b1, b2);&#10;      var nx = -(b2.y-b1.y)*ibl;&#10;      var ny =  (b2.x-b1.x)*ibl;&#10;      var ddot = 2*(dx*nx+dy*ny);&#10;      isc.dist = nrl;&#10;      isc.norm.x = nx;  &#10;      isc.norm.y = ny; &#10;      isc.refl.x = -ddot*nx+dx;&#10;      isc.refl.y = -ddot*ny+dy;&#10;      isc.edge = edge;&#10;    }&#10;  }&#10;  &#10;  PolyK._getPoints = function(ps, ind0, ind1)&#10;  {&#10;    var n = ps.length;&#10;    var nps = [];&#10;    if(ind1&lt;ind0) ind1 += n;&#10;    for(var i=ind0; i&lt;= ind1; i++) nps.push(ps[i%n]);&#10;    return nps;&#10;  }&#10;  &#10;  PolyK._firstWithFlag = function(ps, ind)&#10;  {&#10;    var n = ps.length;&#10;    while(true)&#10;    {&#10;      ind = (ind+1)%n;&#10;      if(ps[ind].flag) return ind;&#10;    }&#10;  }&#10;  &#10;  PolyK._PointInTriangle = function(px, py, ax, ay, bx, by, cx, cy)&#10;  {&#10;    var v0x = cx-ax;&#10;    var v0y = cy-ay;&#10;    var v1x = bx-ax;&#10;    var v1y = by-ay;&#10;    var v2x = px-ax;&#10;    var v2y = py-ay;&#10;    &#10;    var dot00 = v0x*v0x+v0y*v0y;&#10;    var dot01 = v0x*v1x+v0y*v1y;&#10;    var dot02 = v0x*v2x+v0y*v2y;&#10;    var dot11 = v1x*v1x+v1y*v1y;&#10;    var dot12 = v1x*v2x+v1y*v2y;&#10;    &#10;    var invDenom = 1 / (dot00 * dot11 - dot01 * dot01);&#10;    var u = (dot11 * dot02 - dot01 * dot12) * invDenom;&#10;    var v = (dot00 * dot12 - dot01 * dot02) * invDenom;&#10;&#10;    // Check if point is in triangle&#10;    return (u &gt;= 0) &amp;&amp; (v &gt;= 0) &amp;&amp; (u + v &lt; 1);&#10;  }&#10;  &#10;  PolyK._RayLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    var iDen = 1/Den;&#10;    I.x = ( A*dbx - dax*B ) * iDen;&#10;    I.y = ( A*dby - day*B ) * iDen;&#10;    &#10;    if(!PolyK._InRect(I, b1, b2)) return null;&#10;    if((day&gt;0 &amp;&amp; I.y&gt;a1.y) || (day&lt;0 &amp;&amp; I.y&lt;a1.y)) return null; &#10;    if((dax&gt;0 &amp;&amp; I.x&gt;a1.x) || (dax&lt;0 &amp;&amp; I.x&lt;a1.x)) return null; &#10;    return I;&#10;  }&#10;  &#10;  PolyK._GetLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    I.x = ( A*dbx - dax*B ) / Den;&#10;    I.y = ( A*dby - day*B ) / Den;&#10;    &#10;    if(PolyK._InRect(I, a1, a2) &amp;&amp; PolyK._InRect(I, b1, b2)) return I;&#10;    return null;&#10;  }&#10;  &#10;  PolyK._InRect = function(a, b, c) // a in rect (b,c)&#10;  {&#10;    var minx = Math.min(b.x,c.x), maxx = Math.max(b.x,c.x);&#10;    var miny = Math.min(b.y,c.y), maxy = Math.max(b.y,c.y);&#10;    &#10;    if  (minx == maxx) return (miny&lt;=a.y &amp;&amp; a.y&lt;=maxy);&#10;    if  (miny == maxy) return (minx&lt;=a.x &amp;&amp; a.x&lt;=maxx);&#10;    &#10;    //return (minx &lt;= a.x &amp;&amp; a.x &lt;= maxx &amp;&amp; miny &lt;= a.y &amp;&amp; a.y &lt;= maxy)&#10;    return (minx &lt;= a.x+1e-10 &amp;&amp; a.x-1e-10 &lt;= maxx &amp;&amp; miny &lt;= a.y+1e-10 &amp;&amp; a.y-1e-10 &lt;= maxy) ;   &#10;  }&#10;  &#10;  PolyK._convex = function(ax, ay, bx, by, cx, cy)&#10;  {&#10;    return (ay-by)*(cx-bx) + (bx-ax)*(cy-by) &gt;= 0;&#10;  }&#10;    &#10;  PolyK._P = function(x,y)&#10;  {&#10;    this.x = x;&#10;    this.y = y;&#10;    this.flag = false;&#10;  }&#10;  PolyK._P.prototype.toString = function()&#10;  {&#10;    return &quot;Point [&quot;+this.x+&quot;, &quot;+this.y+&quot;]&quot;;&#10;  }&#10;  PolyK._P.dist = function(a,b)&#10;  {&#10;    var dx = b.x-a.x;&#10;    var dy = b.y-a.y;&#10;    return Math.sqrt(dx*dx + dy*dy);&#10;  }&#10;  &#10;  PolyK._tp = [];&#10;  for(var i=0; i&lt;10; i++) PolyK._tp.push(new PolyK._P(0,0));&#10;">
+    <entity name="GoCommandFilter" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor GoCommandFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_cmd = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('CommandIn');&#10;  output('CommandOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('CommandIn', CommandIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var CommandIn_In = function () {&#10;  var c = get('CommandIn');&#10;&#10;  if (c.command == 'Go') {&#10;    // We only care about filtering &quot;Go&quot; packets&#10;&#10;    if (last_sent_cmd == null) {&#10;      // Got first packet&#10;      last_sent_cmd = c;&#10;      send('CommandOut', c);&#10;    &#10;    } else {&#10;&#10;      // See if this is too close to the last point we sent.&#10;      // If it is, don't send it, otherwise do.&#10;      var old_x = last_sent_cmd.X;&#10;      var old_y = last_sent_cmd.Y;&#10;      var new_x = c.X;&#10;      var new_y = c.Y;&#10;&#10;      var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;      if (d &gt; thresh) {&#10;        // Actually send this point&#10;        last_sent_cmd = c;&#10;        send('CommandOut', c);&#10;      }&#10;&#10;    }&#10;&#10;  } else {&#10;    // We just forward all other commands&#10;    send('CommandOut', c);&#10;  }&#10;&#10;}&#10;&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
             </property>
         </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Container.js">
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoCommandFilter.js">
         </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
@@ -2477,31 +2481,33 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="Boundary" class="ptolemy.data.expr.Parameter" value="0,0,2.03,0,2.03,2.3,3.88,2.3,3.88,7.77,2.97,7.77,2.97,9.7,1.02,9.7,1.02,6.7,-2.9,6.7,-2.9,4.19,0,4.19">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1010.0, 500.0]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1155.0, 620.0]">
+        <property name="Threshold" class="ptolemy.data.expr.Parameter">
         </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
         </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
         </port>
     </entity>
-    <entity name="Container3" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Contain the robot!&#10; *&#10; *&#10; *  @accessor Container&#10; *&#10;*/&#10;&#10;var boundary = [];&#10;var boundary_single = [];&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Boundary', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  var points = getParameter('Boundary').split(',');&#10;  for (var i=1; i&lt;points.length; i+=2) {&#10;    var x = parseFloat(points[i-1]);&#10;    var y = parseFloat(points[i]);&#10;    boundary_single.push(x);&#10;    boundary_single.push(y);&#10;    boundary.push([x, y]);&#10;  }&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function checkInside (point) {&#10;    // ray-casting algorithm based on&#10;    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html&#10;    var vs = boundary;&#10;    var x = point[0], y = point[1];&#10;    &#10;    var inside = false;&#10;    for (var i = 0, j = vs.length - 1; i &lt; vs.length; j = i++) {&#10;        var xi = vs[i][0], yi = vs[i][1];&#10;        var xj = vs[j][0], yj = vs[j][1];&#10;        &#10;        var intersect = ((yi &gt; y) != (yj &gt; y))&#10;            &amp;&amp; (x &lt; (xj - xi) * (y - yi) / (yj - yi) + xi);&#10;        if (intersect) inside = !inside;&#10;    }&#10;    &#10;    return inside;&#10;};&#10;&#10;function offset_point (sx, sy, ex, ey) {&#10;  var a = sx - ex;&#10;  var b = sy - ey;&#10;  var l = Math.sqrt((a*a)+(b*b));&#10;  var scale = 0.3/l;&#10;&#10;  var new_x = ex - (scale*a);&#10;  var new_y = ey - (scale*b);&#10;&#10;  return [new_x, new_y];&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;  var x = p.position.x;&#10;  var y = p.position.y;&#10;&#10;  // Check if the point is inside&#10;  if (checkInside([x, y])) {&#10;    // Woo! Good to go, send this along&#10;    send('PoseOut', p);&#10;  } else {&#10;    console.log('Point is outside ' + x + ' y: ' + y);&#10;&#10;    // Outside, get closest point&#10;    var closest = PolyK.ClosestEdge(boundary_single, x, y);&#10;    var new_x = closest.point.x;&#10;    var new_y = closest.point.y;&#10;&#10;    // Move 30cm beyond that so we don't go right to the wall&#10;    var shifted = offset_point(x, y, new_x, new_y);&#10;&#10;&#10;    console.log(closest);&#10;    console.log(shifted);&#10;    p.position.x = shifted[0];&#10;    p.position.y = shifted[1];&#10;    send('PoseOut', p);&#10;  }&#10;&#10;}&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;  /*&#10;    PolyK library&#10;    url: http://polyk.ivank.net&#10;    Released under MIT licence.&#10;    &#10;    Copyright (c) 2012 - 2014 Ivan Kuckir&#10;&#10;    Permission is hereby granted, free of charge, to any person&#10;    obtaining a copy of this software and associated documentation&#10;    files (the &quot;Software&quot;), to deal in the Software without&#10;    restriction, including without limitation the rights to use,&#10;    copy, modify, merge, publish, distribute, sublicense, and/or sell&#10;    copies of the Software, and to permit persons to whom the&#10;    Software is furnished to do so, subject to the following&#10;    conditions:&#10;&#10;    The above copyright notice and this permission notice shall be&#10;    included in all copies or substantial portions of the Software.&#10;&#10;    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,&#10;    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES&#10;    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND&#10;    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT&#10;    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#10;    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING&#10;    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR&#10;    OTHER DEALINGS IN THE SOFTWARE.&#10;    &#10;    19. 5. 2014 - Problem with slicing fixed.&#10;  */&#10;&#10;  var PolyK = {};&#10;  &#10;  /*&#10;    Is Polygon self-intersecting?&#10;    &#10;    O(n^2)&#10;  */&#10;  &#10;  PolyK.IsSimple = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;4) return true;&#10;    var a1 = new PolyK._P(), a2 = new PolyK._P();&#10;    var b1 = new PolyK._P(), b2 = new PolyK._P();&#10;    var c = new PolyK._P();&#10;    &#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      a1.x = p[2*i  ];&#10;      a1.y = p[2*i+1];&#10;      if(i==n-1)  { a2.x = p[0    ];  a2.y = p[1    ]; }&#10;      else    { a2.x = p[2*i+2];  a2.y = p[2*i+3]; }&#10;      &#10;      for(var j=0; j&lt;n; j++)&#10;      {&#10;        if(Math.abs(i-j) &lt; 2) continue;&#10;        if(j==n-1 &amp;&amp; i==0) continue;&#10;        if(i==n-1 &amp;&amp; j==0) continue;&#10;        &#10;        b1.x = p[2*j  ];&#10;        b1.y = p[2*j+1];&#10;        if(j==n-1)  { b2.x = p[0    ];  b2.y = p[1    ]; }&#10;        else    { b2.x = p[2*j+2];  b2.y = p[2*j+3]; }&#10;        &#10;        if(PolyK._GetLineIntersection(a1,a2,b1,b2,c) != null) return false;&#10;      }&#10;    }&#10;    return true;&#10;  }&#10;  &#10;  PolyK.IsConvex = function(p)&#10;  {&#10;    if(p.length&lt;6) return true;&#10;    var l = p.length - 4;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      if(!PolyK._convex(p[i], p[i+1], p[i+2], p[i+3], p[i+4], p[i+5])) return false;&#10;    if(!PolyK._convex(p[l  ], p[l+1], p[l+2], p[l+3], p[0], p[1])) return false;&#10;    if(!PolyK._convex(p[l+2], p[l+3], p[0  ], p[1  ], p[2], p[3])) return false;&#10;    return true;&#10;  }&#10;  &#10;  PolyK.GetArea = function(p)&#10;  {&#10;    if(p.length &lt;6) return 0;&#10;    var l = p.length - 2;&#10;    var sum = 0;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      sum += (p[i+2]-p[i]) * (p[i+1]+p[i+3]);&#10;    sum += (p[0]-p[l]) * (p[l+1]+p[1]);&#10;    return - sum * 0.5;&#10;  }&#10;  &#10;  PolyK.GetAABB = function(p)&#10;  {&#10;    var minx = Infinity; &#10;    var miny = Infinity;&#10;    var maxx = -minx;&#10;    var maxy = -miny;&#10;    for(var i=0; i&lt;p.length; i+=2)&#10;    {&#10;      minx = Math.min(minx, p[i  ]);&#10;      maxx = Math.max(maxx, p[i  ]);&#10;      miny = Math.min(miny, p[i+1]);&#10;      maxy = Math.max(maxy, p[i+1]);&#10;    }&#10;    return {x:minx, y:miny, width:maxx-minx, height:maxy-miny};&#10;  }&#10;  &#10;  PolyK.Reverse = function(p)&#10;  {&#10;    var np = [];&#10;    for(var j=p.length-2; j&gt;=0; j-=2)  np.push(p[j], p[j+1])&#10;    return np;&#10;  }&#10;  &#10;&#10;  PolyK.Triangulate = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;3) return [];&#10;    var tgs = [];&#10;    var avl = [];&#10;    for(var i=0; i&lt;n; i++) avl.push(i);&#10;    &#10;    var i = 0;&#10;    var al = n;&#10;    while(al &gt; 3)&#10;    {&#10;      var i0 = avl[(i+0)%al];&#10;      var i1 = avl[(i+1)%al];&#10;      var i2 = avl[(i+2)%al];&#10;      &#10;      var ax = p[2*i0],  ay = p[2*i0+1];&#10;      var bx = p[2*i1],  by = p[2*i1+1];&#10;      var cx = p[2*i2],  cy = p[2*i2+1];&#10;      &#10;      var earFound = false;&#10;      if(PolyK._convex(ax, ay, bx, by, cx, cy))&#10;      {&#10;        earFound = true;&#10;        for(var j=0; j&lt;al; j++)&#10;        {&#10;          var vi = avl[j];&#10;          if(vi==i0 || vi==i1 || vi==i2) continue;&#10;          if(PolyK._PointInTriangle(p[2*vi], p[2*vi+1], ax, ay, bx, by, cx, cy)) {earFound = false; break;}&#10;        }&#10;      }&#10;      if(earFound)&#10;      {&#10;        tgs.push(i0, i1, i2);&#10;        avl.splice((i+1)%al, 1);&#10;        al--;&#10;        i= 0;&#10;      }&#10;      else if(i++ &gt; 3*al) break;    // no convex angles :(&#10;    }&#10;    tgs.push(avl[0], avl[1], avl[2]);&#10;    return tgs;&#10;  }&#10;  &#10;  PolyK.ContainsPoint = function(p, px, py)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    var ax, ay = p[2*n-3]-py, bx = p[2*n-2]-px, by = p[2*n-1]-py;&#10;    &#10;    //var lup = by &gt; ay;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay==by) continue;&#10;      lup = by&gt;ay;&#10;    }&#10;    &#10;    var depth = 0;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay&lt; 0 &amp;&amp; by&lt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ay&gt; 0 &amp;&amp; by&gt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ax&lt; 0 &amp;&amp; bx&lt; 0) continue;  // both points on the left&#10;      &#10;      if(ay==by &amp;&amp; Math.min(ax,bx)&lt;=0) return true;&#10;      if(ay==by) continue;&#10;      &#10;      var lx = ax + (bx-ax)*(-ay)/(by-ay);&#10;      if(lx==0) return true;      // point on edge&#10;      if(lx&gt; 0) depth++;&#10;      if(ay==0 &amp;&amp;  lup &amp;&amp; by&gt;ay) depth--; // hit vertex, both up&#10;      if(ay==0 &amp;&amp; !lup &amp;&amp; by&lt;ay) depth--; // hit vertex, both down&#10;      lup = by&gt;ay;&#10;    }&#10;    //console.log(depth);&#10;    return (depth &amp; 1) == 1;&#10;  }&#10;  &#10;  PolyK.Slice = function(p, ax, ay, bx, by)&#10;  {&#10;    if(PolyK.ContainsPoint(p, ax, ay) || PolyK.ContainsPoint(p, bx, by)) return [p.slice(0)];&#10;&#10;    var a = new PolyK._P(ax, ay);&#10;    var b = new PolyK._P(bx, by);&#10;    var iscs = [];  // intersections&#10;    var ps = [];  // points&#10;    for(var i=0; i&lt;p.length; i+=2) ps.push(new PolyK._P(p[i], p[i+1]));&#10;    &#10;    for(var i=0; i&lt;ps.length; i++)&#10;    {&#10;      var isc = new PolyK._P(0,0);&#10;      isc = PolyK._GetLineIntersection(a, b, ps[i], ps[(i+1)%ps.length], isc);&#10;      var fisc = iscs[0];&#10;      var lisc = iscs[iscs.length-1];&#10;      if(isc &amp;&amp; (fisc==null || PolyK._P.dist(isc,fisc)&gt;1e-10) &amp;&amp; (lisc==null || PolyK._P.dist(isc,lisc)&gt;1e-10 ) )//&amp;&amp; (isc.x!=ps[i].x || isc.y!=ps[i].y) )&#10;      {&#10;        isc.flag = true;&#10;        iscs.push(isc);&#10;        ps.splice(i+1,0,isc);&#10;        i++;&#10;      }&#10;    }&#10;    &#10;    if(iscs.length &lt;2) return [p.slice(0)];&#10;    var comp = function(u,v) { return PolyK._P.dist(a,u) - PolyK._P.dist(a,v); }&#10;    iscs.sort(comp);&#10;    &#10;    //console.log(&quot;Intersections: &quot;+iscs.length, JSON.stringify(iscs));&#10;    &#10;    var pgs = [];&#10;    var dir = 0;&#10;    while(iscs.length &gt; 0)&#10;    {&#10;      var n = ps.length;&#10;      var i0 = iscs[0];&#10;      var i1 = iscs[1];&#10;      //if(i0.x==i1.x &amp;&amp; i0.y==i1.y) { iscs.splice(0,2); continue;}&#10;      var ind0 = ps.indexOf(i0);&#10;      var ind1 = ps.indexOf(i1);&#10;      var solved = false;&#10;      &#10;      //console.log(i0, i1);&#10;      &#10;      if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      else&#10;      {&#10;        i0 = iscs[1];&#10;        i1 = iscs[0];&#10;        ind0 = ps.indexOf(i0);&#10;        ind1 = ps.indexOf(i1);&#10;        if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      }&#10;      if(solved)&#10;      {&#10;        dir--;&#10;        var pgn = PolyK._getPoints(ps, ind0, ind1);&#10;        pgs.push(pgn);&#10;        ps = PolyK._getPoints(ps, ind1, ind0);&#10;        i0.flag = i1.flag = false;&#10;        iscs.splice(0,2);&#10;        if(iscs.length == 0) pgs.push(ps);&#10;      }&#10;      else { dir++; iscs.reverse(); }&#10;      if(dir&gt;1) break;&#10;    }&#10;    var result = [];&#10;    for(var i=0; i&lt;pgs.length; i++)&#10;    {&#10;      var pg = pgs[i];&#10;      var npg = [];&#10;      for(var j=0; j&lt;pg.length; j++) npg.push(pg[j].x, pg[j].y);&#10;      result.push(npg);&#10;    }&#10;    return result;&#10;  }&#10;  &#10;  PolyK.Raycast = function(p, x, y, dx, dy, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], a2 = tp[1], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    a2.x = x+dx; a2.y = y+dy;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, norm:{x:0, y:0}, refl:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;      if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, i/2, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;    if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, (p.length/2)-1, isc);&#10;    &#10;    return (isc.dist != Infinity) ? isc : null;&#10;  }&#10;  &#10;  PolyK.ClosestEdge = function(p, x, y, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, point:{x:0, y:0}, norm:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      PolyK._pointLineDist(a1, b1, b2, i&gt;&gt;1, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    PolyK._pointLineDist(a1, b1, b2, l&gt;&gt;1, isc);&#10;    &#10;    var idst = 1/isc.dist;&#10;    isc.norm.x = (x-isc.point.x)*idst;&#10;    isc.norm.y = (y-isc.point.y)*idst;&#10;    return isc;&#10;  }&#10;  &#10;  PolyK._pointLineDist = function(p, a, b, edge, isc)&#10;  {&#10;    var x = p.x, y = p.y, x1 = a.x, y1 = a.y, x2 = b.x, y2 = b.y;&#10;    &#10;    var A = x - x1;&#10;    var B = y - y1;&#10;    var C = x2 - x1;&#10;    var D = y2 - y1;&#10;&#10;    var dot = A * C + B * D;&#10;    var len_sq = C * C + D * D;&#10;    var param = dot / len_sq;&#10;&#10;    var xx, yy;&#10;&#10;    if (param &lt; 0 || (x1 == x2 &amp;&amp; y1 == y2)) {&#10;      xx = x1;&#10;      yy = y1;&#10;    }&#10;    else if (param &gt; 1) {&#10;      xx = x2;&#10;      yy = y2;&#10;    }&#10;    else {&#10;      xx = x1 + param * C;&#10;      yy = y1 + param * D;&#10;    }&#10;&#10;    var dx = x - xx;&#10;    var dy = y - yy;&#10;    var dst = Math.sqrt(dx * dx + dy * dy);&#10;    if(dst&lt;isc.dist)&#10;    {&#10;      isc.dist = dst;&#10;      isc.edge = edge;&#10;      isc.point.x = xx;&#10;      isc.point.y = yy;&#10;    }&#10;  }&#10;  &#10;  PolyK._updateISC = function(dx, dy, a1, b1, b2, c, edge, isc)&#10;  {&#10;    var nrl = PolyK._P.dist(a1, c);&#10;    if(nrl&lt;isc.dist)&#10;    {&#10;      var ibl = 1/PolyK._P.dist(b1, b2);&#10;      var nx = -(b2.y-b1.y)*ibl;&#10;      var ny =  (b2.x-b1.x)*ibl;&#10;      var ddot = 2*(dx*nx+dy*ny);&#10;      isc.dist = nrl;&#10;      isc.norm.x = nx;  &#10;      isc.norm.y = ny; &#10;      isc.refl.x = -ddot*nx+dx;&#10;      isc.refl.y = -ddot*ny+dy;&#10;      isc.edge = edge;&#10;    }&#10;  }&#10;  &#10;  PolyK._getPoints = function(ps, ind0, ind1)&#10;  {&#10;    var n = ps.length;&#10;    var nps = [];&#10;    if(ind1&lt;ind0) ind1 += n;&#10;    for(var i=ind0; i&lt;= ind1; i++) nps.push(ps[i%n]);&#10;    return nps;&#10;  }&#10;  &#10;  PolyK._firstWithFlag = function(ps, ind)&#10;  {&#10;    var n = ps.length;&#10;    while(true)&#10;    {&#10;      ind = (ind+1)%n;&#10;      if(ps[ind].flag) return ind;&#10;    }&#10;  }&#10;  &#10;  PolyK._PointInTriangle = function(px, py, ax, ay, bx, by, cx, cy)&#10;  {&#10;    var v0x = cx-ax;&#10;    var v0y = cy-ay;&#10;    var v1x = bx-ax;&#10;    var v1y = by-ay;&#10;    var v2x = px-ax;&#10;    var v2y = py-ay;&#10;    &#10;    var dot00 = v0x*v0x+v0y*v0y;&#10;    var dot01 = v0x*v1x+v0y*v1y;&#10;    var dot02 = v0x*v2x+v0y*v2y;&#10;    var dot11 = v1x*v1x+v1y*v1y;&#10;    var dot12 = v1x*v2x+v1y*v2y;&#10;    &#10;    var invDenom = 1 / (dot00 * dot11 - dot01 * dot01);&#10;    var u = (dot11 * dot02 - dot01 * dot12) * invDenom;&#10;    var v = (dot00 * dot12 - dot01 * dot02) * invDenom;&#10;&#10;    // Check if point is in triangle&#10;    return (u &gt;= 0) &amp;&amp; (v &gt;= 0) &amp;&amp; (u + v &lt; 1);&#10;  }&#10;  &#10;  PolyK._RayLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    var iDen = 1/Den;&#10;    I.x = ( A*dbx - dax*B ) * iDen;&#10;    I.y = ( A*dby - day*B ) * iDen;&#10;    &#10;    if(!PolyK._InRect(I, b1, b2)) return null;&#10;    if((day&gt;0 &amp;&amp; I.y&gt;a1.y) || (day&lt;0 &amp;&amp; I.y&lt;a1.y)) return null; &#10;    if((dax&gt;0 &amp;&amp; I.x&gt;a1.x) || (dax&lt;0 &amp;&amp; I.x&lt;a1.x)) return null; &#10;    return I;&#10;  }&#10;  &#10;  PolyK._GetLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    I.x = ( A*dbx - dax*B ) / Den;&#10;    I.y = ( A*dby - day*B ) / Den;&#10;    &#10;    if(PolyK._InRect(I, a1, a2) &amp;&amp; PolyK._InRect(I, b1, b2)) return I;&#10;    return null;&#10;  }&#10;  &#10;  PolyK._InRect = function(a, b, c) // a in rect (b,c)&#10;  {&#10;    var minx = Math.min(b.x,c.x), maxx = Math.max(b.x,c.x);&#10;    var miny = Math.min(b.y,c.y), maxy = Math.max(b.y,c.y);&#10;    &#10;    if  (minx == maxx) return (miny&lt;=a.y &amp;&amp; a.y&lt;=maxy);&#10;    if  (miny == maxy) return (minx&lt;=a.x &amp;&amp; a.x&lt;=maxx);&#10;    &#10;    //return (minx &lt;= a.x &amp;&amp; a.x &lt;= maxx &amp;&amp; miny &lt;= a.y &amp;&amp; a.y &lt;= maxy)&#10;    return (minx &lt;= a.x+1e-10 &amp;&amp; a.x-1e-10 &lt;= maxx &amp;&amp; miny &lt;= a.y+1e-10 &amp;&amp; a.y-1e-10 &lt;= maxy) ;   &#10;  }&#10;  &#10;  PolyK._convex = function(ax, ay, bx, by, cx, cy)&#10;  {&#10;    return (ay-by)*(cx-bx) + (bx-ax)*(cy-by) &gt;= 0;&#10;  }&#10;    &#10;  PolyK._P = function(x,y)&#10;  {&#10;    this.x = x;&#10;    this.y = y;&#10;    this.flag = false;&#10;  }&#10;  PolyK._P.prototype.toString = function()&#10;  {&#10;    return &quot;Point [&quot;+this.x+&quot;, &quot;+this.y+&quot;]&quot;;&#10;  }&#10;  PolyK._P.dist = function(a,b)&#10;  {&#10;    var dx = b.x-a.x;&#10;    var dy = b.y-a.y;&#10;    return Math.sqrt(dx*dx + dy*dy);&#10;  }&#10;  &#10;  PolyK._tp = [];&#10;  for(var i=0; i&lt;10; i++) PolyK._tp.push(new PolyK._P(0,0));&#10;">
+    <entity name="GoCommandFilter2" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor GoCommandFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_cmd = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('CommandIn');&#10;  output('CommandOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('CommandIn', CommandIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var CommandIn_In = function () {&#10;  var c = get('CommandIn');&#10;&#10;  if (c.command == 'Go') {&#10;    // We only care about filtering &quot;Go&quot; packets&#10;&#10;    if (last_sent_cmd == null) {&#10;      // Got first packet&#10;      last_sent_cmd = c;&#10;      send('CommandOut', c);&#10;    &#10;    } else {&#10;&#10;      // See if this is too close to the last point we sent.&#10;      // If it is, don't send it, otherwise do.&#10;      var old_x = last_sent_cmd.X;&#10;      var old_y = last_sent_cmd.Y;&#10;      var new_x = c.X;&#10;      var new_y = c.Y;&#10;&#10;      var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;      if (d &gt; thresh) {&#10;        // Actually send this point&#10;        last_sent_cmd = c;&#10;        send('CommandOut', c);&#10;      }&#10;&#10;    }&#10;&#10;  } else {&#10;    // We just forward all other commands&#10;    send('CommandOut', c);&#10;  }&#10;&#10;}&#10;&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
             </property>
         </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Container.js">
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoCommandFilter.js">
         </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
@@ -2509,31 +2515,29 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="Boundary" class="ptolemy.data.expr.Parameter" value="0,0,2.03,0,2.03,2.3,3.88,2.3,3.88,7.77,2.97,7.77,2.97,9.7,1.02,9.7,1.02,6.7,-2.9,6.7,-2.9,4.19,0,4.19">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1010.0, 620.0]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1155.0, 735.0]">
+        <property name="Threshold" class="ptolemy.data.expr.Parameter">
         </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
     </entity>
-    <entity name="Container4" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Contain the robot!&#10; *&#10; *&#10; *  @accessor Container&#10; *&#10;*/&#10;&#10;var boundary = [];&#10;var boundary_single = [];&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Boundary', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  var points = getParameter('Boundary').split(',');&#10;  for (var i=1; i&lt;points.length; i+=2) {&#10;    var x = parseFloat(points[i-1]);&#10;    var y = parseFloat(points[i]);&#10;    boundary_single.push(x);&#10;    boundary_single.push(y);&#10;    boundary.push([x, y]);&#10;  }&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function checkInside (point) {&#10;    // ray-casting algorithm based on&#10;    // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html&#10;    var vs = boundary;&#10;    var x = point[0], y = point[1];&#10;    &#10;    var inside = false;&#10;    for (var i = 0, j = vs.length - 1; i &lt; vs.length; j = i++) {&#10;        var xi = vs[i][0], yi = vs[i][1];&#10;        var xj = vs[j][0], yj = vs[j][1];&#10;        &#10;        var intersect = ((yi &gt; y) != (yj &gt; y))&#10;            &amp;&amp; (x &lt; (xj - xi) * (y - yi) / (yj - yi) + xi);&#10;        if (intersect) inside = !inside;&#10;    }&#10;    &#10;    return inside;&#10;};&#10;&#10;function offset_point (sx, sy, ex, ey) {&#10;  var a = sx - ex;&#10;  var b = sy - ey;&#10;  var l = Math.sqrt((a*a)+(b*b));&#10;  var scale = 0.3/l;&#10;&#10;  var new_x = ex - (scale*a);&#10;  var new_y = ey - (scale*b);&#10;&#10;  return [new_x, new_y];&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;  var x = p.position.x;&#10;  var y = p.position.y;&#10;&#10;  // Check if the point is inside&#10;  if (checkInside([x, y])) {&#10;    // Woo! Good to go, send this along&#10;    send('PoseOut', p);&#10;  } else {&#10;    console.log('Point is outside ' + x + ' y: ' + y);&#10;&#10;    // Outside, get closest point&#10;    var closest = PolyK.ClosestEdge(boundary_single, x, y);&#10;    var new_x = closest.point.x;&#10;    var new_y = closest.point.y;&#10;&#10;    // Move 30cm beyond that so we don't go right to the wall&#10;    var shifted = offset_point(x, y, new_x, new_y);&#10;&#10;&#10;    console.log(closest);&#10;    console.log(shifted);&#10;    p.position.x = shifted[0];&#10;    p.position.y = shifted[1];&#10;    send('PoseOut', p);&#10;  }&#10;&#10;}&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;  /*&#10;    PolyK library&#10;    url: http://polyk.ivank.net&#10;    Released under MIT licence.&#10;    &#10;    Copyright (c) 2012 - 2014 Ivan Kuckir&#10;&#10;    Permission is hereby granted, free of charge, to any person&#10;    obtaining a copy of this software and associated documentation&#10;    files (the &quot;Software&quot;), to deal in the Software without&#10;    restriction, including without limitation the rights to use,&#10;    copy, modify, merge, publish, distribute, sublicense, and/or sell&#10;    copies of the Software, and to permit persons to whom the&#10;    Software is furnished to do so, subject to the following&#10;    conditions:&#10;&#10;    The above copyright notice and this permission notice shall be&#10;    included in all copies or substantial portions of the Software.&#10;&#10;    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,&#10;    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES&#10;    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND&#10;    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT&#10;    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,&#10;    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING&#10;    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR&#10;    OTHER DEALINGS IN THE SOFTWARE.&#10;    &#10;    19. 5. 2014 - Problem with slicing fixed.&#10;  */&#10;&#10;  var PolyK = {};&#10;  &#10;  /*&#10;    Is Polygon self-intersecting?&#10;    &#10;    O(n^2)&#10;  */&#10;  &#10;  PolyK.IsSimple = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;4) return true;&#10;    var a1 = new PolyK._P(), a2 = new PolyK._P();&#10;    var b1 = new PolyK._P(), b2 = new PolyK._P();&#10;    var c = new PolyK._P();&#10;    &#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      a1.x = p[2*i  ];&#10;      a1.y = p[2*i+1];&#10;      if(i==n-1)  { a2.x = p[0    ];  a2.y = p[1    ]; }&#10;      else    { a2.x = p[2*i+2];  a2.y = p[2*i+3]; }&#10;      &#10;      for(var j=0; j&lt;n; j++)&#10;      {&#10;        if(Math.abs(i-j) &lt; 2) continue;&#10;        if(j==n-1 &amp;&amp; i==0) continue;&#10;        if(i==n-1 &amp;&amp; j==0) continue;&#10;        &#10;        b1.x = p[2*j  ];&#10;        b1.y = p[2*j+1];&#10;        if(j==n-1)  { b2.x = p[0    ];  b2.y = p[1    ]; }&#10;        else    { b2.x = p[2*j+2];  b2.y = p[2*j+3]; }&#10;        &#10;        if(PolyK._GetLineIntersection(a1,a2,b1,b2,c) != null) return false;&#10;      }&#10;    }&#10;    return true;&#10;  }&#10;  &#10;  PolyK.IsConvex = function(p)&#10;  {&#10;    if(p.length&lt;6) return true;&#10;    var l = p.length - 4;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      if(!PolyK._convex(p[i], p[i+1], p[i+2], p[i+3], p[i+4], p[i+5])) return false;&#10;    if(!PolyK._convex(p[l  ], p[l+1], p[l+2], p[l+3], p[0], p[1])) return false;&#10;    if(!PolyK._convex(p[l+2], p[l+3], p[0  ], p[1  ], p[2], p[3])) return false;&#10;    return true;&#10;  }&#10;  &#10;  PolyK.GetArea = function(p)&#10;  {&#10;    if(p.length &lt;6) return 0;&#10;    var l = p.length - 2;&#10;    var sum = 0;&#10;    for(var i=0; i&lt;l; i+=2)&#10;      sum += (p[i+2]-p[i]) * (p[i+1]+p[i+3]);&#10;    sum += (p[0]-p[l]) * (p[l+1]+p[1]);&#10;    return - sum * 0.5;&#10;  }&#10;  &#10;  PolyK.GetAABB = function(p)&#10;  {&#10;    var minx = Infinity; &#10;    var miny = Infinity;&#10;    var maxx = -minx;&#10;    var maxy = -miny;&#10;    for(var i=0; i&lt;p.length; i+=2)&#10;    {&#10;      minx = Math.min(minx, p[i  ]);&#10;      maxx = Math.max(maxx, p[i  ]);&#10;      miny = Math.min(miny, p[i+1]);&#10;      maxy = Math.max(maxy, p[i+1]);&#10;    }&#10;    return {x:minx, y:miny, width:maxx-minx, height:maxy-miny};&#10;  }&#10;  &#10;  PolyK.Reverse = function(p)&#10;  {&#10;    var np = [];&#10;    for(var j=p.length-2; j&gt;=0; j-=2)  np.push(p[j], p[j+1])&#10;    return np;&#10;  }&#10;  &#10;&#10;  PolyK.Triangulate = function(p)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    if(n&lt;3) return [];&#10;    var tgs = [];&#10;    var avl = [];&#10;    for(var i=0; i&lt;n; i++) avl.push(i);&#10;    &#10;    var i = 0;&#10;    var al = n;&#10;    while(al &gt; 3)&#10;    {&#10;      var i0 = avl[(i+0)%al];&#10;      var i1 = avl[(i+1)%al];&#10;      var i2 = avl[(i+2)%al];&#10;      &#10;      var ax = p[2*i0],  ay = p[2*i0+1];&#10;      var bx = p[2*i1],  by = p[2*i1+1];&#10;      var cx = p[2*i2],  cy = p[2*i2+1];&#10;      &#10;      var earFound = false;&#10;      if(PolyK._convex(ax, ay, bx, by, cx, cy))&#10;      {&#10;        earFound = true;&#10;        for(var j=0; j&lt;al; j++)&#10;        {&#10;          var vi = avl[j];&#10;          if(vi==i0 || vi==i1 || vi==i2) continue;&#10;          if(PolyK._PointInTriangle(p[2*vi], p[2*vi+1], ax, ay, bx, by, cx, cy)) {earFound = false; break;}&#10;        }&#10;      }&#10;      if(earFound)&#10;      {&#10;        tgs.push(i0, i1, i2);&#10;        avl.splice((i+1)%al, 1);&#10;        al--;&#10;        i= 0;&#10;      }&#10;      else if(i++ &gt; 3*al) break;    // no convex angles :(&#10;    }&#10;    tgs.push(avl[0], avl[1], avl[2]);&#10;    return tgs;&#10;  }&#10;  &#10;  PolyK.ContainsPoint = function(p, px, py)&#10;  {&#10;    var n = p.length&gt;&gt;1;&#10;    var ax, ay = p[2*n-3]-py, bx = p[2*n-2]-px, by = p[2*n-1]-py;&#10;    &#10;    //var lup = by &gt; ay;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay==by) continue;&#10;      lup = by&gt;ay;&#10;    }&#10;    &#10;    var depth = 0;&#10;    for(var i=0; i&lt;n; i++)&#10;    {&#10;      ax = bx;  ay = by;&#10;      bx = p[2*i  ] - px;&#10;      by = p[2*i+1] - py;&#10;      if(ay&lt; 0 &amp;&amp; by&lt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ay&gt; 0 &amp;&amp; by&gt; 0) continue;  // both &quot;up&quot; or both &quot;down&quot;&#10;      if(ax&lt; 0 &amp;&amp; bx&lt; 0) continue;  // both points on the left&#10;      &#10;      if(ay==by &amp;&amp; Math.min(ax,bx)&lt;=0) return true;&#10;      if(ay==by) continue;&#10;      &#10;      var lx = ax + (bx-ax)*(-ay)/(by-ay);&#10;      if(lx==0) return true;      // point on edge&#10;      if(lx&gt; 0) depth++;&#10;      if(ay==0 &amp;&amp;  lup &amp;&amp; by&gt;ay) depth--; // hit vertex, both up&#10;      if(ay==0 &amp;&amp; !lup &amp;&amp; by&lt;ay) depth--; // hit vertex, both down&#10;      lup = by&gt;ay;&#10;    }&#10;    //console.log(depth);&#10;    return (depth &amp; 1) == 1;&#10;  }&#10;  &#10;  PolyK.Slice = function(p, ax, ay, bx, by)&#10;  {&#10;    if(PolyK.ContainsPoint(p, ax, ay) || PolyK.ContainsPoint(p, bx, by)) return [p.slice(0)];&#10;&#10;    var a = new PolyK._P(ax, ay);&#10;    var b = new PolyK._P(bx, by);&#10;    var iscs = [];  // intersections&#10;    var ps = [];  // points&#10;    for(var i=0; i&lt;p.length; i+=2) ps.push(new PolyK._P(p[i], p[i+1]));&#10;    &#10;    for(var i=0; i&lt;ps.length; i++)&#10;    {&#10;      var isc = new PolyK._P(0,0);&#10;      isc = PolyK._GetLineIntersection(a, b, ps[i], ps[(i+1)%ps.length], isc);&#10;      var fisc = iscs[0];&#10;      var lisc = iscs[iscs.length-1];&#10;      if(isc &amp;&amp; (fisc==null || PolyK._P.dist(isc,fisc)&gt;1e-10) &amp;&amp; (lisc==null || PolyK._P.dist(isc,lisc)&gt;1e-10 ) )//&amp;&amp; (isc.x!=ps[i].x || isc.y!=ps[i].y) )&#10;      {&#10;        isc.flag = true;&#10;        iscs.push(isc);&#10;        ps.splice(i+1,0,isc);&#10;        i++;&#10;      }&#10;    }&#10;    &#10;    if(iscs.length &lt;2) return [p.slice(0)];&#10;    var comp = function(u,v) { return PolyK._P.dist(a,u) - PolyK._P.dist(a,v); }&#10;    iscs.sort(comp);&#10;    &#10;    //console.log(&quot;Intersections: &quot;+iscs.length, JSON.stringify(iscs));&#10;    &#10;    var pgs = [];&#10;    var dir = 0;&#10;    while(iscs.length &gt; 0)&#10;    {&#10;      var n = ps.length;&#10;      var i0 = iscs[0];&#10;      var i1 = iscs[1];&#10;      //if(i0.x==i1.x &amp;&amp; i0.y==i1.y) { iscs.splice(0,2); continue;}&#10;      var ind0 = ps.indexOf(i0);&#10;      var ind1 = ps.indexOf(i1);&#10;      var solved = false;&#10;      &#10;      //console.log(i0, i1);&#10;      &#10;      if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      else&#10;      {&#10;        i0 = iscs[1];&#10;        i1 = iscs[0];&#10;        ind0 = ps.indexOf(i0);&#10;        ind1 = ps.indexOf(i1);&#10;        if(PolyK._firstWithFlag(ps, ind0) == ind1) solved = true;&#10;      }&#10;      if(solved)&#10;      {&#10;        dir--;&#10;        var pgn = PolyK._getPoints(ps, ind0, ind1);&#10;        pgs.push(pgn);&#10;        ps = PolyK._getPoints(ps, ind1, ind0);&#10;        i0.flag = i1.flag = false;&#10;        iscs.splice(0,2);&#10;        if(iscs.length == 0) pgs.push(ps);&#10;      }&#10;      else { dir++; iscs.reverse(); }&#10;      if(dir&gt;1) break;&#10;    }&#10;    var result = [];&#10;    for(var i=0; i&lt;pgs.length; i++)&#10;    {&#10;      var pg = pgs[i];&#10;      var npg = [];&#10;      for(var j=0; j&lt;pg.length; j++) npg.push(pg[j].x, pg[j].y);&#10;      result.push(npg);&#10;    }&#10;    return result;&#10;  }&#10;  &#10;  PolyK.Raycast = function(p, x, y, dx, dy, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], a2 = tp[1], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    a2.x = x+dx; a2.y = y+dy;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, norm:{x:0, y:0}, refl:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;      if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, i/2, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    var nisc = PolyK._RayLineIntersection(a1, a2, b1, b2, c);&#10;    if(nisc) PolyK._updateISC(dx, dy, a1, b1, b2, c, (p.length/2)-1, isc);&#10;    &#10;    return (isc.dist != Infinity) ? isc : null;&#10;  }&#10;  &#10;  PolyK.ClosestEdge = function(p, x, y, isc)&#10;  {&#10;    var l = p.length - 2;&#10;    var tp = PolyK._tp;&#10;    var a1 = tp[0], &#10;    b1 = tp[2], b2 = tp[3], c = tp[4];&#10;    a1.x = x; a1.y = y;&#10;    &#10;    if(isc==null) isc = {dist:0, edge:0, point:{x:0, y:0}, norm:{x:0, y:0}};&#10;    isc.dist = Infinity;&#10;    &#10;    for(var i=0; i&lt;l; i+=2)&#10;    {&#10;      b1.x = p[i  ];  b1.y = p[i+1];&#10;      b2.x = p[i+2];  b2.y = p[i+3];&#10;      PolyK._pointLineDist(a1, b1, b2, i&gt;&gt;1, isc);&#10;    }&#10;    b1.x = b2.x;  b1.y = b2.y;&#10;    b2.x = p[0];  b2.y = p[1];&#10;    PolyK._pointLineDist(a1, b1, b2, l&gt;&gt;1, isc);&#10;    &#10;    var idst = 1/isc.dist;&#10;    isc.norm.x = (x-isc.point.x)*idst;&#10;    isc.norm.y = (y-isc.point.y)*idst;&#10;    return isc;&#10;  }&#10;  &#10;  PolyK._pointLineDist = function(p, a, b, edge, isc)&#10;  {&#10;    var x = p.x, y = p.y, x1 = a.x, y1 = a.y, x2 = b.x, y2 = b.y;&#10;    &#10;    var A = x - x1;&#10;    var B = y - y1;&#10;    var C = x2 - x1;&#10;    var D = y2 - y1;&#10;&#10;    var dot = A * C + B * D;&#10;    var len_sq = C * C + D * D;&#10;    var param = dot / len_sq;&#10;&#10;    var xx, yy;&#10;&#10;    if (param &lt; 0 || (x1 == x2 &amp;&amp; y1 == y2)) {&#10;      xx = x1;&#10;      yy = y1;&#10;    }&#10;    else if (param &gt; 1) {&#10;      xx = x2;&#10;      yy = y2;&#10;    }&#10;    else {&#10;      xx = x1 + param * C;&#10;      yy = y1 + param * D;&#10;    }&#10;&#10;    var dx = x - xx;&#10;    var dy = y - yy;&#10;    var dst = Math.sqrt(dx * dx + dy * dy);&#10;    if(dst&lt;isc.dist)&#10;    {&#10;      isc.dist = dst;&#10;      isc.edge = edge;&#10;      isc.point.x = xx;&#10;      isc.point.y = yy;&#10;    }&#10;  }&#10;  &#10;  PolyK._updateISC = function(dx, dy, a1, b1, b2, c, edge, isc)&#10;  {&#10;    var nrl = PolyK._P.dist(a1, c);&#10;    if(nrl&lt;isc.dist)&#10;    {&#10;      var ibl = 1/PolyK._P.dist(b1, b2);&#10;      var nx = -(b2.y-b1.y)*ibl;&#10;      var ny =  (b2.x-b1.x)*ibl;&#10;      var ddot = 2*(dx*nx+dy*ny);&#10;      isc.dist = nrl;&#10;      isc.norm.x = nx;  &#10;      isc.norm.y = ny; &#10;      isc.refl.x = -ddot*nx+dx;&#10;      isc.refl.y = -ddot*ny+dy;&#10;      isc.edge = edge;&#10;    }&#10;  }&#10;  &#10;  PolyK._getPoints = function(ps, ind0, ind1)&#10;  {&#10;    var n = ps.length;&#10;    var nps = [];&#10;    if(ind1&lt;ind0) ind1 += n;&#10;    for(var i=ind0; i&lt;= ind1; i++) nps.push(ps[i%n]);&#10;    return nps;&#10;  }&#10;  &#10;  PolyK._firstWithFlag = function(ps, ind)&#10;  {&#10;    var n = ps.length;&#10;    while(true)&#10;    {&#10;      ind = (ind+1)%n;&#10;      if(ps[ind].flag) return ind;&#10;    }&#10;  }&#10;  &#10;  PolyK._PointInTriangle = function(px, py, ax, ay, bx, by, cx, cy)&#10;  {&#10;    var v0x = cx-ax;&#10;    var v0y = cy-ay;&#10;    var v1x = bx-ax;&#10;    var v1y = by-ay;&#10;    var v2x = px-ax;&#10;    var v2y = py-ay;&#10;    &#10;    var dot00 = v0x*v0x+v0y*v0y;&#10;    var dot01 = v0x*v1x+v0y*v1y;&#10;    var dot02 = v0x*v2x+v0y*v2y;&#10;    var dot11 = v1x*v1x+v1y*v1y;&#10;    var dot12 = v1x*v2x+v1y*v2y;&#10;    &#10;    var invDenom = 1 / (dot00 * dot11 - dot01 * dot01);&#10;    var u = (dot11 * dot02 - dot01 * dot12) * invDenom;&#10;    var v = (dot00 * dot12 - dot01 * dot02) * invDenom;&#10;&#10;    // Check if point is in triangle&#10;    return (u &gt;= 0) &amp;&amp; (v &gt;= 0) &amp;&amp; (u + v &lt; 1);&#10;  }&#10;  &#10;  PolyK._RayLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    var iDen = 1/Den;&#10;    I.x = ( A*dbx - dax*B ) * iDen;&#10;    I.y = ( A*dby - day*B ) * iDen;&#10;    &#10;    if(!PolyK._InRect(I, b1, b2)) return null;&#10;    if((day&gt;0 &amp;&amp; I.y&gt;a1.y) || (day&lt;0 &amp;&amp; I.y&lt;a1.y)) return null; &#10;    if((dax&gt;0 &amp;&amp; I.x&gt;a1.x) || (dax&lt;0 &amp;&amp; I.x&lt;a1.x)) return null; &#10;    return I;&#10;  }&#10;  &#10;  PolyK._GetLineIntersection = function(a1, a2, b1, b2, c)&#10;  {&#10;    var dax = (a1.x-a2.x), dbx = (b1.x-b2.x);&#10;    var day = (a1.y-a2.y), dby = (b1.y-b2.y);&#10;&#10;    var Den = dax*dby - day*dbx;&#10;    if (Den == 0) return null;  // parallel&#10;    &#10;    var A = (a1.x * a2.y - a1.y * a2.x);&#10;    var B = (b1.x * b2.y - b1.y * b2.x);&#10;    &#10;    var I = c;&#10;    I.x = ( A*dbx - dax*B ) / Den;&#10;    I.y = ( A*dby - day*B ) / Den;&#10;    &#10;    if(PolyK._InRect(I, a1, a2) &amp;&amp; PolyK._InRect(I, b1, b2)) return I;&#10;    return null;&#10;  }&#10;  &#10;  PolyK._InRect = function(a, b, c) // a in rect (b,c)&#10;  {&#10;    var minx = Math.min(b.x,c.x), maxx = Math.max(b.x,c.x);&#10;    var miny = Math.min(b.y,c.y), maxy = Math.max(b.y,c.y);&#10;    &#10;    if  (minx == maxx) return (miny&lt;=a.y &amp;&amp; a.y&lt;=maxy);&#10;    if  (miny == maxy) return (minx&lt;=a.x &amp;&amp; a.x&lt;=maxx);&#10;    &#10;    //return (minx &lt;= a.x &amp;&amp; a.x &lt;= maxx &amp;&amp; miny &lt;= a.y &amp;&amp; a.y &lt;= maxy)&#10;    return (minx &lt;= a.x+1e-10 &amp;&amp; a.x-1e-10 &lt;= maxx &amp;&amp; miny &lt;= a.y+1e-10 &amp;&amp; a.y-1e-10 &lt;= maxy) ;   &#10;  }&#10;  &#10;  PolyK._convex = function(ax, ay, bx, by, cx, cy)&#10;  {&#10;    return (ay-by)*(cx-bx) + (bx-ax)*(cy-by) &gt;= 0;&#10;  }&#10;    &#10;  PolyK._P = function(x,y)&#10;  {&#10;    this.x = x;&#10;    this.y = y;&#10;    this.flag = false;&#10;  }&#10;  PolyK._P.prototype.toString = function()&#10;  {&#10;    return &quot;Point [&quot;+this.x+&quot;, &quot;+this.y+&quot;]&quot;;&#10;  }&#10;  PolyK._P.dist = function(a,b)&#10;  {&#10;    var dx = b.x-a.x;&#10;    var dy = b.y-a.y;&#10;    return Math.sqrt(dx*dx + dy*dy);&#10;  }&#10;  &#10;  PolyK._tp = [];&#10;  for(var i=0; i&lt;10; i++) PolyK._tp.push(new PolyK._P(0,0));&#10;">
+    <entity name="GoCommandFilter3" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor GoCommandFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_cmd = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('CommandIn');&#10;  output('CommandOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('CommandIn', CommandIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var CommandIn_In = function () {&#10;  var c = get('CommandIn');&#10;&#10;  if (c.command == 'Go') {&#10;    // We only care about filtering &quot;Go&quot; packets&#10;&#10;    if (last_sent_cmd == null) {&#10;      // Got first packet&#10;      last_sent_cmd = c;&#10;      send('CommandOut', c);&#10;    &#10;    } else {&#10;&#10;      // See if this is too close to the last point we sent.&#10;      // If it is, don't send it, otherwise do.&#10;      var old_x = last_sent_cmd.X;&#10;      var old_y = last_sent_cmd.Y;&#10;      var new_x = c.X;&#10;      var new_y = c.Y;&#10;&#10;      var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;      if (d &gt; thresh) {&#10;        // Actually send this point&#10;        last_sent_cmd = c;&#10;        send('CommandOut', c);&#10;      }&#10;&#10;    }&#10;&#10;  } else {&#10;    // We just forward all other commands&#10;    send('CommandOut', c);&#10;  }&#10;&#10;}&#10;&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
             </property>
         </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Container.js">
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoCommandFilter.js">
         </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
@@ -2541,31 +2545,29 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="Boundary" class="ptolemy.data.expr.Parameter" value="0,0,2.03,0,2.03,2.3,3.88,2.3,3.88,7.77,2.97,7.77,2.97,9.7,1.02,9.7,1.02,6.7,-2.9,6.7,-2.9,4.19,0,4.19">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 735.0]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1160.0, 850.0]">
+        <property name="Threshold" class="ptolemy.data.expr.Parameter">
         </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
     </entity>
-    <entity name="PoseFilter" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
+    <entity name="GoCommandFilter4" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor GoCommandFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_cmd = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('CommandIn');&#10;  output('CommandOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('CommandIn', CommandIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var CommandIn_In = function () {&#10;  var c = get('CommandIn');&#10;&#10;  if (c.command == 'Go') {&#10;    // We only care about filtering &quot;Go&quot; packets&#10;&#10;    if (last_sent_cmd == null) {&#10;      // Got first packet&#10;      last_sent_cmd = c;&#10;      send('CommandOut', c);&#10;    &#10;    } else {&#10;&#10;      // See if this is too close to the last point we sent.&#10;      // If it is, don't send it, otherwise do.&#10;      var old_x = last_sent_cmd.X;&#10;      var old_y = last_sent_cmd.Y;&#10;      var new_x = c.X;&#10;      var new_y = c.Y;&#10;&#10;      var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;      if (d &gt; thresh) {&#10;        // Actually send this point&#10;        last_sent_cmd = c;&#10;        send('CommandOut', c);&#10;      }&#10;&#10;    }&#10;&#10;  } else {&#10;    // We just forward all other commands&#10;    send('CommandOut', c);&#10;  }&#10;&#10;}&#10;&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
             </property>
         </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoCommandFilter.js">
         </property>
         <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
             <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
@@ -2573,250 +2575,16 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1015.0, 850.0]">
         </property>
-        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
+        <property name="Threshold" class="ptolemy.data.expr.Parameter">
         </property>
-        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
-                </property>
-                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
-            </property>
-        </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="PoseFilter2" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 620.0]">
-        </property>
-        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
-        </property>
-        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
-                </property>
-                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
-            </property>
-        </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="PoseFilter3" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="{1305.0, 735.0}">
-        </property>
-        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
-        </property>
-        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
-                </property>
-                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
-            </property>
-        </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="PoseFilter4" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor PoseFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_pose = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('PoseIn');&#10;  output('PoseOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('PoseIn', PoseIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var PoseIn_In = function () {&#10;  var p = get('PoseIn');&#10;&#10;  if (last_sent_pose == null) {&#10;    // Got first packet&#10;    last_sent_pose = p;&#10;    send('PoseOut', p);&#10;  &#10;  } else {&#10;&#10;    // See if this is too close to the last point we sent.&#10;    // If it is, don't send it, otherwise do.&#10;    var old_x = last_sent_pose.position.x;&#10;    var old_y = last_sent_pose.position.y;&#10;    var new_x = p.position.x;&#10;    var new_y = p.position.y;&#10;&#10;    var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;    if (d &gt; thresh) {&#10;      // Actually send this point&#10;      last_sent_pose = p;&#10;      send('PoseOut', p);&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/PoseFilter.js">
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 850.0]">
-        </property>
-        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
-        </property>
-        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="ellipse2" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="47.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="48.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,1.0,0.6,1.0}">
-                </property>
-                <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="ellipse" class="ptolemy.vergil.kernel.attributes.EllipseAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="23.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="22.0">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={322, 276, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
-            </property>
-        </property>
-        <port name="PoseIn" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="PoseOut" class="ptolemy.actor.TypedIOPort">
+        <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
@@ -2825,19 +2593,19 @@
     <relation name="relation8" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1549.5, 500.0]">
+        <vertex name="vertex1" value="[1399.5, 500.0]">
         </vertex>
     </relation>
     <relation name="relation4" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[420.0, 690.0]">
+        <vertex name="vertex1" value="[225.0, 690.0]">
         </vertex>
     </relation>
     <relation name="relation2" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1390.0, 500.0]">
+        <vertex name="vertex1" value="[1240.0, 500.0]">
         </vertex>
     </relation>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
@@ -2855,12 +2623,8 @@
     <relation name="relation7" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1552.5, 620.0]">
+        <vertex name="vertex1" value="[1402.5, 620.0]">
         </vertex>
-    </relation>
-    <relation name="relation21" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation22" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation12" class="ptolemy.actor.TypedIORelation">
     </relation>
@@ -2869,25 +2633,25 @@
     <relation name="relation25" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1467.5, 430.0]">
+        <vertex name="vertex1" value="[1317.5, 430.0]">
         </vertex>
     </relation>
     <relation name="relation3" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1472.5, 570.0]">
+        <vertex name="vertex1" value="[1322.5, 570.0]">
         </vertex>
     </relation>
     <relation name="relation9" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1470.0, 680.0]">
+        <vertex name="vertex1" value="[1320.0, 680.0]">
         </vertex>
     </relation>
     <relation name="relation10" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1465.0, 795.0]">
+        <vertex name="vertex1" value="[1315.0, 795.0]">
         </vertex>
     </relation>
     <relation name="relation13" class="ptolemy.actor.TypedIORelation">
@@ -2921,7 +2685,7 @@
     <relation name="relation11" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[1522.5, 445.0]">
+        <vertex name="vertex1" value="[1372.5, 445.0]">
         </vertex>
     </relation>
     <relation name="relation31" class="ptolemy.actor.TypedIORelation">
@@ -2951,7 +2715,7 @@
     <relation name="relation37" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[250.0, 690.0]">
+        <vertex name="vertex1" value="[95.0, 690.0]">
         </vertex>
     </relation>
     <relation name="relation35" class="ptolemy.actor.TypedIORelation">
@@ -2970,14 +2734,6 @@
     </relation>
     <relation name="relation42" class="ptolemy.actor.TypedIORelation">
     </relation>
-    <relation name="relation43" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation15" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation18" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation46" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
@@ -2986,19 +2742,25 @@
         <vertex name="vertex1" value="[760.0, 930.0]">
         </vertex>
     </relation>
+    <relation name="relation49" class="ptolemy.actor.TypedIORelation">
+    </relation>
     <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation15" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation18" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation21" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation22" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation24" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation40" class="ptolemy.actor.TypedIORelation">
     </relation>
+    <relation name="relation43" class="ptolemy.actor.TypedIORelation">
+    </relation>
     <relation name="relation44" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation45" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation47" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation48" class="ptolemy.actor.TypedIORelation">
     </relation>
     <link port="Display4.input" relation="relation8"/>
     <link port="Scarab.state" relation="relation11"/>
@@ -3006,7 +2768,7 @@
     <link port="Scarab.pose" relation="relation2"/>
     <link port="Display2.input" relation="relation2"/>
     <link port="CoordinateLinearTransform2.Input" relation="relation4"/>
-    <link port="CoordinateLinearTransform2.Output" relation="relation26"/>
+    <link port="CoordinateLinearTransform2.Output" relation="relation49"/>
     <link port="Display3.input" relation="relation4"/>
     <link port="Scarab2.location" relation="relation7"/>
     <link port="Scarab2.pose" relation="relation40"/>
@@ -3015,33 +2777,33 @@
     <link port="OpKeySwitching.Input" relation="relation28"/>
     <link port="OpKeySwitching.Select" relation="relation17"/>
     <link port="OpKeySwitching.Output0" relation="relation13"/>
-    <link port="OpKeySwitching.Output1" relation="relation21"/>
-    <link port="OpKeySwitching.Output2" relation="relation22"/>
+    <link port="OpKeySwitching.Output1" relation="relation22"/>
+    <link port="OpKeySwitching.Output2" relation="relation24"/>
     <link port="OpKeySwitching.Output3" relation="relation20"/>
     <link port="RoboCafeController.UserChoice" relation="relation16"/>
     <link port="RoboCafeController.SelectPhoneRobot" relation="relation17"/>
     <link port="RoboCafeController.RobotStatus" relation="relation39"/>
     <link port="Display7.input" relation="relation16"/>
     <link port="Scarab4.location" relation="relation12"/>
-    <link port="Scarab4.pose" relation="relation48"/>
-    <link port="Command2Pose.Command" relation="relation13"/>
+    <link port="Scarab4.pose" relation="relation44"/>
+    <link port="Command2Pose.Command" relation="relation5"/>
     <link port="Command2Pose.Location" relation="relation25"/>
-    <link port="Command2Pose.Pose" relation="relation43"/>
+    <link port="Command2Pose.Pose" relation="relation2"/>
     <link port="Discrete TimeDelay.input" relation="relation8"/>
     <link port="Discrete TimeDelay.output" relation="relation25"/>
     <link port="Discrete TimeDelay2.input" relation="relation7"/>
     <link port="Discrete TimeDelay2.output" relation="relation3"/>
-    <link port="Command2Pose2.Command" relation="relation21"/>
+    <link port="Command2Pose2.Command" relation="relation15"/>
     <link port="Command2Pose2.Location" relation="relation3"/>
-    <link port="Command2Pose2.Pose" relation="relation46"/>
-    <link port="Command2Pose3.Command" relation="relation22"/>
+    <link port="Command2Pose2.Pose" relation="relation40"/>
+    <link port="Command2Pose3.Command" relation="relation18"/>
     <link port="Command2Pose3.Location" relation="relation9"/>
-    <link port="Command2Pose3.Pose" relation="relation18"/>
+    <link port="Command2Pose3.Pose" relation="relation43"/>
     <link port="Discrete TimeDelay3.input" relation="relation14"/>
     <link port="Discrete TimeDelay3.output" relation="relation9"/>
-    <link port="Command2Pose4.Command" relation="relation20"/>
+    <link port="Command2Pose4.Command" relation="relation21"/>
     <link port="Command2Pose4.Location" relation="relation10"/>
-    <link port="Command2Pose4.Pose" relation="relation15"/>
+    <link port="Command2Pose4.Pose" relation="relation44"/>
     <link port="Discrete TimeDelay4.input" relation="relation12"/>
     <link port="Discrete TimeDelay4.output" relation="relation10"/>
     <link port="Location2Command.Location" relation="relation26"/>
@@ -3049,7 +2811,7 @@
     <link port="Scarab3.battery" relation="relation42"/>
     <link port="Scarab3.state" relation="relation41"/>
     <link port="Scarab3.location" relation="relation14"/>
-    <link port="Scarab3.pose" relation="relation47"/>
+    <link port="Scarab3.pose" relation="relation43"/>
     <link port="ConstantLocation.pose" relation="relation19"/>
     <link port="OpAddKeyValue.Input" relation="relation19"/>
     <link port="OpAddKeyValue.Output" relation="relation26"/>
@@ -3093,21 +2855,15 @@
     <link port="OpStripString3.Output" relation="relation"/>
     <link port="Display.input" relation="relation41"/>
     <link port="Display11.input" relation="relation42"/>
-    <link port="Container.PoseIn" relation="relation43"/>
-    <link port="Container.PoseOut" relation="relation5"/>
-    <link port="Container2.PoseIn" relation="relation46"/>
-    <link port="Container2.PoseOut" relation="relation24"/>
-    <link port="Container3.PoseIn" relation="relation18"/>
-    <link port="Container3.PoseOut" relation="relation44"/>
-    <link port="Container4.PoseIn" relation="relation15"/>
-    <link port="Container4.PoseOut" relation="relation45"/>
-    <link port="PoseFilter.PoseIn" relation="relation5"/>
-    <link port="PoseFilter.PoseOut" relation="relation2"/>
-    <link port="PoseFilter2.PoseIn" relation="relation24"/>
-    <link port="PoseFilter2.PoseOut" relation="relation40"/>
-    <link port="PoseFilter3.PoseIn" relation="relation44"/>
-    <link port="PoseFilter3.PoseOut" relation="relation47"/>
-    <link port="PoseFilter4.PoseIn" relation="relation45"/>
-    <link port="PoseFilter4.PoseOut" relation="relation48"/>
+    <link port="ContainerLocation.LocationIn" relation="relation49"/>
+    <link port="ContainerLocation.LocationOut" relation="relation26"/>
+    <link port="GoCommandFilter.CommandIn" relation="relation13"/>
+    <link port="GoCommandFilter.CommandOut" relation="relation5"/>
+    <link port="GoCommandFilter2.CommandIn" relation="relation22"/>
+    <link port="GoCommandFilter2.CommandOut" relation="relation15"/>
+    <link port="GoCommandFilter3.CommandIn" relation="relation24"/>
+    <link port="GoCommandFilter3.CommandOut" relation="relation18"/>
+    <link port="GoCommandFilter4.CommandIn" relation="relation20"/>
+    <link port="GoCommandFilter4.CommandOut" relation="relation21"/>
     <link relation1="relation28" relation2="relation6"/>
 </entity>
