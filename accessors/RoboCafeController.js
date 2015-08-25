@@ -176,7 +176,7 @@ var Applause_in = function () {
   } else if (a == 'some_applause') {
     // Make one robot spin
 
-    var robot_index = getParameter('SpinRobotIndex');
+    var robot_index = parseInt(getParameter('SpinRobotIndex'));
     var robot = robots[robot_index];
 
     var old_servicing = robot.servicing;
