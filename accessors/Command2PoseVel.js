@@ -90,26 +90,12 @@ var Command_in = function () {
       // Start by cancelling wherever it was going
       send('Cancel', true);
 
-      // Now power the wheels to spin
-      var spin_vel = {
-        linear: {
-          x: 0,
-          y: 0,
-          z: 0
-        },
-        angular: {
-          x: 0,
-          y: 0,
-          z: 1.0
-        }
-      };
+      // Wait for a quick second to make sure the cancel command has a 
+      // chance to go through
+      setTimeout(function () {
 
-      send('CmdVel', spin_vel);
-      currently_spinning  = true;
-
-      // Now stop the spin at some point
-      timer = setTimeout(function () {
-        var spin_no = {
+        // Now power the wheels to spin
+        var spin_vel = {
           linear: {
             x: 0,
             y: 0,
@@ -118,14 +104,34 @@ var Command_in = function () {
           angular: {
             x: 0,
             y: 0,
-            z: 0
+            z: 1.0
           }
         };
 
-        send('CmdVel', spin_no);
-        currently_spinning = false;
-        timer = null;
-      }, getParameter('SpinDuration')*1000);
+        send('CmdVel', spin_vel);
+        currently_spinning  = true;
+
+        // Now stop the spin at some point
+        timer = setTimeout(function () {
+          var spin_no = {
+            linear: {
+              x: 0,
+              y: 0,
+              z: 0
+            },
+            angular: {
+              x: 0,
+              y: 0,
+              z: 0
+            }
+          };
+
+          send('CmdVel', spin_no);
+          currently_spinning = false;
+          timer = null;
+        }, getParameter('SpinDuration')*1000);
+
+      }, 50);
     }
     
   }
