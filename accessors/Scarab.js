@@ -13,6 +13,7 @@ var WebSocket = require('webSocket');
 exports.setup = function() {
 
   input('pose');
+  input('cmdvel');
 
   output('battery', {
     type: 'int'
@@ -40,6 +41,7 @@ var batteryClient = null;
 var stateClient = null;
 var locationClient = null;
 var poseClient = null;
+var cmdvelClient = null;
 
 var seq = 0;
 
@@ -111,13 +113,12 @@ exports.initialize = function() {
     error(message)
   });
 
-  // Get location updates from the robot
+  // Send poses to the robot
   poseClient = new WebSocket.Client({
     host: getParameter('server'),
     port: getParameter('port')
   });
   poseClient.on('open', function () {
-    // Subscribe to /scarab/name/pose
     poseClient.send({
         op: 'advertise',
         topic: getParameter('topicPrefix') + '/goal',
@@ -128,6 +129,23 @@ exports.initialize = function() {
     error(message)
   });
   addInputHandler('pose', pose_in);
+
+  // Send cmd_vel to the robot
+  cmdvelClient = new WebSocket.Client({
+    host: getParameter('server'),
+    port: getParameter('port')
+  });
+  cmdvelClient.on('open', function () {
+    cmdvelClient.send({
+        op: 'advertise',
+        topic: getParameter('topicPrefix') + '/cmd_vel',
+        type: 'geometry_msgs/Twist'
+    });
+  });
+  cmdvelClient.on('error', function(message) {
+    error(message)
+  });
+  addInputHandler('cmdvel', cmdvel_in);
 } 
 
 var pose_in = function () {
@@ -150,6 +168,18 @@ var pose_in = function () {
   };
 
   poseClient.send(out);
+}
+
+var cmdvel_in = function () {
+  var c = get('cmdvel');
+
+  out = {
+    op: 'publish',
+    topic: getParameter('topicPrefix') + '/cmd_vel',
+    msg: c
+  };
+
+  cmdvelClient.send(out);
 }
 
 exports.wrapup = function() {
@@ -184,5 +214,16 @@ exports.wrapup = function() {
     poseClient.removeAllListeners('close');
     poseClient.close();
     poseClient = null;
+  }
+  if (cmdvelClient) {
+    cmdvelClient.send({
+        op: 'unadvertise',
+        topic: getParameter('topicPrefix') + '/cmd_vel'
+    });
+    cmdvelClient.removeAllListeners('open');
+    cmdvelClient.removeAllListeners('message');
+    cmdvelClient.removeAllListeners('close');
+    cmdvelClient.close();
+    cmdvelClient = null;
   }
 }

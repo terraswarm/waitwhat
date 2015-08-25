@@ -3,6 +3,7 @@
     "Container.js",
     "ContainerLocation.js",
     "Command2Pose.js",
+    "Command2PoseVel.js",
     "GoCommandFilter.js",
     "Location2Command.js",
     "Scarab.js",
