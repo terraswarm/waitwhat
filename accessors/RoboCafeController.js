@@ -145,7 +145,7 @@ var Choice_in = function () {
             rbt.servicing = null;
             set_source_and_robot(phone_id, rbt_idx, 'remove');
             // Send the robot home.
-            set_source_and_robot('Home', rbt_idx, 'add');
+            set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');
             // // And in a couple seconds, stop telling it to go home
             // setTimeout(function () {
             //   set_source_and_robot('Home', rbt_idx, 'remove');
