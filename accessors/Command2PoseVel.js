@@ -23,7 +23,7 @@ var last_location = {
 
 // Variables for spin
 var timer = null;
-var currently_spinning;
+var currently_spinning = false;
 
 /** Define inputs and outputs. */
 exports.setup = function() {
