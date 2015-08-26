@@ -87,6 +87,8 @@ var Command_in = function () {
 
   } else if (cmd.command == 'Spin') {
     if (!currently_spinning) {
+      currently_spinning  = true;
+      
       // Start by cancelling wherever it was going
       send('Cancel', true);
 
