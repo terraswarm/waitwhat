@@ -182,7 +182,7 @@ var Choice_in = function () {
           } else {
             // Check if this phone in queue and remove it
             if (rbt.queue.indexOf(phone_id) > -1) {
-              rbq.queue.splice(rbt.queue.indexOf(phone_id), 1);
+              rbt.queue.splice(rbt.queue.indexOf(phone_id), 1);
             }
           }
 
