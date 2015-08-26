@@ -88,7 +88,7 @@ var Command_in = function () {
   } else if (cmd.command == 'Spin') {
     if (!currently_spinning) {
       currently_spinning  = true;
-      
+
       // Start by cancelling wherever it was going
       send('Cancel', true);
 
@@ -111,7 +111,6 @@ var Command_in = function () {
         };
 
         send('CmdVel', spin_vel);
-        currently_spinning  = true;
 
         // Now stop the spin at some point
         timer = setTimeout(function () {

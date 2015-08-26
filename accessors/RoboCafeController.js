@@ -132,8 +132,12 @@ var Choice_in = function () {
             // And update output status
             update_status(rbt_idx, STATE_SERVING);
           } else {
-            // Robot not free, queue this request
-            rbt.queue.push(phone_id);
+
+            // We may want to queue
+            if (rbt.servicing != phone_id && rbt.queue.indexOf(phone_id) == -1) {
+              // Robot not free, queue this request
+              rbt.queue.push(phone_id);
+            }
           }
         
 
@@ -174,6 +178,11 @@ var Choice_in = function () {
               // And update output status
               update_status(rbt_idx, STATE_IDLE);
 
+            }
+          } else {
+            // Check if this phone in queue and remove it
+            if (rbt.queue.indexOf(phone_id) > -1) {
+              rbq.queue.splice(rbt.queue.indexOf(phone_id), 1);
             }
           }
 
