@@ -59,6 +59,7 @@ exports.initialize = function () {
   for (var i=0; i<NUM_ROBOTS; i++) {
     var robot = {};
     robot.state = STATE_IDLE;
+    robot.queue = [];
     robots[i] = robot;
 
     // Output initial status
@@ -130,6 +131,9 @@ var Choice_in = function () {
             set_source_and_robot(phone_id, rbt_idx, 'add');
             // And update output status
             update_status(rbt_idx, STATE_SERVING);
+          } else {
+            // Robot not free, queue this request
+            rbt.queue.push(phone_id);
           }
         
 
@@ -141,17 +145,36 @@ var Choice_in = function () {
           if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
             // This checks out. Stop the robot from what it was doing
             // and send it home.
-            rbt.state = STATE_IDLE;
-            rbt.servicing = null;
-            set_source_and_robot(phone_id, rbt_idx, 'remove');
-            // Send the robot home.
-            set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');
-            // // And in a couple seconds, stop telling it to go home
-            // setTimeout(function () {
-            //   set_source_and_robot('Home', rbt_idx, 'remove');
-            // }, 3000);
-            // And update output status
-            update_status(rbt_idx, STATE_IDLE);
+
+
+            // Check if there is anyone in the queue
+            if (rbt.queue.length > 0) {
+              var next_phone = rbt.queue.shift();
+              // Ok great!
+              // Put this one into service
+              rbt.state = STATE_SERVING;
+              // Keep track of which user this robot is attached to
+              rbt.servicing = next_phone;
+              // And send the robot to the person
+              set_source_and_robot(next_phone, rbt_idx, 'add');
+              // And update output status
+              update_status(rbt_idx, STATE_SERVING);
+            
+            } else {
+              // go back home
+              rbt.state = STATE_IDLE;
+              rbt.servicing = null;
+              set_source_and_robot(phone_id, rbt_idx, 'remove');
+              // Send the robot home.
+              set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');
+              // // And in a couple seconds, stop telling it to go home
+              // setTimeout(function () {
+              //   set_source_and_robot('Home', rbt_idx, 'remove');
+              // }, 3000);
+              // And update output status
+              update_status(rbt_idx, STATE_IDLE);
+
+            }
           }
 
         }
