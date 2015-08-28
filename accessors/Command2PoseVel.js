@@ -46,6 +46,7 @@ exports.setup = function() {
   // Raw access
   output('CmdVel');
   output('Cancel');
+   
 
   // How long to let the robot spin
   parameter('SpinDuration', {
@@ -64,10 +65,9 @@ var Command_in = function () {
 
   if (cmd.command == 'Go') {
 
-    currently_spinning = false;
     // Upon new command we need to stop any internal timers
     if (timer != null) {
-      clearTimeout(timer);
+      clearTimeout(timer); 
     }
 
     // Send the robot to the given location
@@ -88,6 +88,7 @@ var Command_in = function () {
 
   } else if (cmd.command == 'Spin') {
     if (!currently_spinning) {
+      currently_spinning  = true;
 
       // Start by cancelling wherever it was going
       send('Cancel', true);
@@ -111,8 +112,6 @@ var Command_in = function () {
         };
 
         send('CmdVel', spin_vel);
-        // setting this flag when the robot actually starts spinning.
-        currently_spinning  = true;
 
         // Now stop the spin at some point
         timer = setTimeout(function () {
@@ -131,13 +130,11 @@ var Command_in = function () {
 
           send('CmdVel', spin_no);
           currently_spinning = false;
-          timer = null;
         }, getParameter('SpinDuration')*1000);
-
-      }, 50);
-    }
-    
-  }
+        timer = null;
+      }, 50); 
+    } 
+  } 
 }
 
 // Save the last location
