@@ -73,11 +73,11 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 29, 2015 2:06:29 AM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 29, 2015 2:32:26 AM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[290.0, 1390.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[170.0, 1390.0]">
         </property>
     </property>
     <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="false">
@@ -92,16 +92,6 @@
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Control">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[1150.0, 420.0]">
-        </property>
-    </property>
-    <property name="Annotation5" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
-        </property>
-        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
-        </property>
-        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Status Indication - Hues">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1275.0, 1105.0]">
         </property>
     </property>
     <property name="Annotation6" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -241,305 +231,6 @@
         <property name="y" class="ptolemy.data.expr.Parameter" value="500">
         </property>
     </property>
-    <class name="lab11in4908" extends="ptolemy.actor.TypedCompositeActor">
-        <display name="Status2Color"/>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[355.0, 1390.0]">
-        </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={240, 105, 1015, 634}, maximized=false}">
-        </property>
-        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[781, 524]">
-        </property>
-        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
-        </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{380.5, 252.0}">
-        </property>
-        <property name="bulbID" class="ptolemy.data.expr.Parameter" value="2">
-            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
-                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
-                </property>
-            </property>
-            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-                <configure>
-      <svg>
-        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
-      </svg>
-    </configure>
-            </property>
-            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[445.0, 100.0]">
-            </property>
-        </property>
-        <property name="hueIP" class="ptolemy.data.expr.StringParameter" value="${hueBulbIP}">
-            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
-                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
-                </property>
-            </property>
-            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-                <configure>
-      <svg>
-        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
-      </svg>
-    </configure>
-            </property>
-            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[445.0, 60.0]">
-            </property>
-        </property>
-        <property name="hueUsername" class="ptolemy.data.expr.StringParameter" value="${hueUsername}">
-            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
-                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
-                </property>
-            </property>
-            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
-                <configure>
-      <svg>
-        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
-      </svg>
-    </configure>
-            </property>
-            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[445.0, 80.0]">
-            </property>
-        </property>
-        <port name="status" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[100.0, 255.0]">
-            </property>
-        </port>
-        <entity name="StringMatches" class="ptolemy.actor.lib.string.StringMatches">
-            <display name="IDLE"/>
-            <property name="pattern" class="ptolemy.actor.parameters.PortParameter" value="IDLE">
-            </property>
-            <property name="matchString" class="ptolemy.actor.parameters.PortParameter" value="IDLE">
-            </property>
-            <doc>Determine if a string matches a regular expression</doc>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{313.0, 238.0}">
-            </property>
-        </entity>
-        <entity name="Const" class="ptolemy.actor.lib.Const">
-            <property name="value" class="ptolemy.data.expr.Parameter" value="32001">
-            </property>
-            <doc>Create a constant sequence.</doc>
-            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
-                </property>
-                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
-                </property>
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{518.0, 238.0}">
-            </property>
-        </entity>
-        <entity name="TrueGate" class="ptolemy.actor.lib.logic.TrueGate">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{418.0, 238.0}">
-            </property>
-        </entity>
-        <entity name="StringMatches2" class="ptolemy.actor.lib.string.StringMatches">
-            <display name="SERVING"/>
-            <property name="pattern" class="ptolemy.actor.parameters.PortParameter" value="IDLE">
-            </property>
-            <property name="matchString" class="ptolemy.actor.parameters.PortParameter" value="SERVING">
-            </property>
-            <doc>Determine if a string matches a regular expression</doc>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{313.0, 298.0}">
-            </property>
-        </entity>
-        <entity name="TrueGate2" class="ptolemy.actor.lib.logic.TrueGate">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{418.0, 298.0}">
-            </property>
-        </entity>
-        <entity name="Const2" class="ptolemy.actor.lib.Const">
-            <property name="value" class="ptolemy.data.expr.Parameter" value="2000">
-            </property>
-            <doc>Create a constant sequence.</doc>
-            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
-                </property>
-                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
-                </property>
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="{518.0, 298.0}">
-            </property>
-        </entity>
-        <entity name="Hue" class="org.terraswarm.accessor.JSAccessor">
-            <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.  // All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor controls a Philips Hue lightbulb.&#10; *  &lt;p&gt;&#10; *  It sets the parameters of the specified&#10; *  light according to the input values.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Logging on: This script attempts to access the bridge as a user with&#10; *  name given by &lt;i&gt;userName&lt;/i&gt;, which defaults to &quot;ptolemyuser&quot;.&#10; *  If there is no such user on the bridge, the script registers such a user and requests&#10; *  (via an alert dialog) that the&#10; *  link button on the bridge be pushed to authorize registration of this user.&#10; *  The user is given 20s to do this before an exception is thrown&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Verifying the light: The final initialization step is to get a list of accessible lights. &#10; *  If the input light is not accessible, this accessor throws&#10; *  an exception, where the error message provides a list of available lights.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Discovery: Finding the IP address of the Hue Bridge is not necessarily easy.&#10; *  The bridge acquires its address via DHCP, so the address will typically change&#10; *  each time the bridge is rebooted. Moreover, the address will likely not be&#10; *  accessible except on the local network.  The bridge responds to UPnP packets&#10; *  (universal plug-and-play), so it is possible to use software such as&#10; *  &lt;a href=&quot;http://4thline.org/projects/cling/&quot;&gt;Cling&lt;/a&gt; to discover the bridge.&#10; *  Ideally, UPnP discover would be provided via an accessor. In this case, a&#10; *  swarmlet could be created that runs periodically on a local network and publishes&#10; *  the URL of any discovered bridges to a key-value store. Then the KeyValueStore&#10; *  accessor could be used to provide the &lt;i&gt;bridgeIPAdress&lt;/i&gt; input to this accessor.&#10; *  &lt;/p&gt;&#10; *  @accessor Hue&#10; *  @input {string} bridgeIPAddress The bridge IP address (and port, if needed).&#10; *  @parameter {string} userName The user name for logging on to the Hue Bridge. This must be at least 11 characters, or the Hue regards it as invalid.&#10; *  @input {int} lightID The light identifier (an integer beginning with 1).&#10; *  @input {number} brightness The brightness (an integer between 0 and 255).&#10; *  @input {number} hue The hue (an integer between 0 and 62580).&#10; *  @input {number} saturation The saturation (an integer between 0 and 255).&#10; *  @output {boolean} on Whether the light is on (true) or off (false).&#10; *  @input {int} transitionTime The transition time, in multiples of 100ms.&#10; *  @input {int} trigger Triggers a PUT request with all the light settings. Can be any type.&#10; *  @author Edward A. Lee, Marcus Pan &#10; *  @version $$Id: Hue.js 231 2015-07-31 22:45:12Z mpanj@seas.upenn.edu $$ &#10; *&#10;*/&#10;&#10;&#10;// State variables.&#10;var timeout = 3000;&#10;var url = &quot;&quot;;&#10;var userName = &quot;&quot;;&#10;var reachableLights = [];&#10;var changedLights = [];&#10;var strReachableLights = &quot;&quot;;&#10;var handleRegisterUser;&#10;var registerInterval = 2000;&#10;var registerTimeout = 20000;&#10;var registerAttempts = 0;&#10;var handlers = [];&#10;var triggerHandle;&#10;&#10;// Uncomment the following to see the URL being used for the bridge.&#10;// alert(&quot;Connecting to: &quot; + bridge);&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  input('bridgeIPAddress', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;&quot;&#10;  });&#10;  parameter('userName', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;ptolemyuser&quot;&#10;  });&#10;  input('lightID', {&#10;    type: &quot;int&quot;,&#10;    value: 1&#10;  });&#10;  input('brightness', {&#10;    type: &quot;number&quot;,&#10;    value: 255&#10;  });&#10;  input('hue', {&#10;    type: &quot;number&quot;,&#10;    value: 65280&#10;  });&#10;  input('saturation', {&#10;    type: &quot;number&quot;,&#10;    value: 255 &#10;  });&#10;  input('on', {&#10;    type: &quot;boolean&quot;,&#10;    value: false&#10;  });&#10;  input('transitionTime', {&#10;    type: &quot;int&quot;,&#10;    value: 4&#10;  });&#10;  input('trigger', {value: true})&#10;}&#10;/** Initialize connection. &#10; *  Register user if not registered &#10; *  Input handlers are not added here in case we need to wait for user to regiter */&#10;exports.initialize = function() {&#10;   var ipAddress = get('bridgeIPAddress');&#10;   userName = getParameter('userName');&#10;&#10;   if (userName.length &lt; 11) {&#10;      throw &quot;Username too short. Hue only accepts usernames that contain at least 11 characters.&quot;;&#10;   }&#10;&#10;   if (ipAddress == null || ipAddress.trim() == &quot;&quot;) {&#10;      throw &quot;No IP Address is given for the Hue Bridge.&quot;;&#10;   }&#10;&#10;   url = &quot;http://&quot; + ipAddress + &quot;/&quot;;&#10;&#10;   // First make sure the bridge is actually there and responding.&#10;   try {&#10;      httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout);&#10;   } catch ( ex) {&#10;      // FIXME: We should do a UPnP discovery here and find a bridge.&#10;      throw &quot;No Hue bridge responding at &quot; + url + &quot;\n&quot; + ex;&#10;   }&#10;   url = url + &quot;api/&quot;;&#10;&#10;   // Next, make sure that input username is an authorized user. If not, register the user.&#10;   var lights = JSON.parse(httpRequest(url + userName + &quot;/&quot;, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;&#10;   if (isNonEmptyArray(lights) &amp;&amp; lights[0].error) {&#10;      var description = lights[0].error.description;&#10;&#10;      if (description.match(&quot;unauthorized user&quot;)) {&#10;         // Add this user.&#10;         alert(userName + &quot; is not a registered user.\n&quot; + &#10;            &quot; Push the link button on the Hue bridge to register.&quot;); &#10;         registerUser();&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;      &#10;   } else if (lights.lights) {&#10;      //proceed to next stage of initialization&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Unknown error. Could not authorize user.&quot;;&#10;   }&#10;}&#10;&#10;/** Register a new user. &#10;  * This function repeats at registerInterval until registration is successful, or until registerTimeout. &#10;  * It does so because it needs to wait until the user clicks&#10;  * the button on the Hue bridge. */&#10;function registerUser() {&#10;   var registerData = '{&quot;devicetype&quot;:&quot;' + userName + '&quot;, &quot;username&quot;:&quot;' + userName + '&quot;}';&#10;   var response = JSON.parse(httpRequest(url, &quot;POST&quot;, null, registerData, timeout));&#10;   console.log(response);&#10;   if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;      var description = response[0].error.description;&#10;&#10;      if (description.match(&quot;link button not pressed&quot;)) {&#10;         //repeat registration attempt unless registerTimeout has been reached&#10;         console.log('link button');&#10;         registerAttempts++;&#10;         if ((registerAttempts * registerInterval) &gt; registerTimeout) {&#10;            throw &quot;Failed to create user after &quot; + registerTimeout/1000 + &#10;               &quot;s.&quot;;&#10;         }&#10;         handleRegisterUser = setTimeout(registerUser, registerInterval);&#10;         return;&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;&#10;   } else if (isNonEmptyArray(response) &amp;&amp; response[0].success) {&#10;      //registration is successful - proceed to next stage of initialization&#10;      if (handleRegisterUser != null) {&#10;         clearTimeout(handleRegisterUser);&#10;      }&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Error registering new user&quot;;&#10;   }&#10;}&#10;&#10;/** This function is only called after user has been registered. &#10;  * Get reachable lights. &#10;  * Add input handlers */&#10;function getReachableLights() {&#10;   url = url + userName + &quot;/&quot; + &quot;lights/&quot;;&#10;   var lights = JSON.parse(httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;   console.log(lights);&#10;&#10;   try {&#10;      for (var id in lights) {&#10;         if (lights[id].state.reachable) {&#10;            reachableLights.push(id);&#10;           //record string of reachable lights &#10;            if (strReachableLights.length == 0) {&#10;               strReachableLights += id;&#10;            }&#10;            else {&#10;               strReachableLights += &quot;, &quot; + id;&#10;            }&#10;         }&#10;      }&#10;   } catch (e) {&#10;      throw &quot;Failed to access the state of light &quot;&#10;         &quot; at URL &quot; + url + &quot;\n&quot; + e;&#10;   }&#10;   if (strReachableLights.length == 0) {&#10;      strReachableLights = &quot;No lights are reachable&quot;;&#10;   }&#10;   strReachableLights += &quot;.&quot;;&#10;   console.log('reachable lights: ' + strReachableLights);&#10;/*&#10;   handlers.push(addInputHandler('brightness', inputHandler));&#10;   handlers.push(addInputHandler('hue', inputHandler));&#10;   handlers.push(addInputHandler('saturation', inputHandler));&#10;   handlers.push(addInputHandler('on', inputHandler));&#10;   handlers.push(addInputHandler('transitionTime', inputHandler));&#10;   handlers.push(addInputHandler('lightID', inputHandler));&#10;*/&#10;   triggerHandle = addInputHandler('trigger', inputHandler);&#10;}&#10;&#10;/** Get light settings from inputs and PUT */&#10;function inputHandler() {&#10;   //check if light is reachable&#10;   var lightID = get('lightID').toString();&#10;   if (reachableLights.indexOf(lightID) == -1) {&#10;      throw &quot;Light &quot; + lightID + &quot; is not reachable at &quot; + &#10;         url + &quot;.\n Reachable lights are &quot; + strReachableLights;&#10;   }&#10;   //keep track of changed lights to turn off during wrap up&#10;   if (changedLights.indexOf(lightID) == -1) {&#10;      changedLights.push(lightID);&#10;   }&#10;&#10;   //get inputs and send command to light&#10;   var command = {&#10;      on: get('on') == true,&#10;      bri: limit(get('brightness'), 0, 255),&#10;      hue: limit(get('hue'), 0, 65280),&#10;      sat: limit(get('saturation'), 0, 255),&#10;      transitiontime: limit(get('transitionTime'), 0, 65535)&#10;   }&#10;&#10;   var cmd = JSON.stringify(command);&#10;   try {&#10;      var response = httpRequest(url + lightID + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, cmd, timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         throw &quot;Server responds with error: &quot; + response[0].error.description;&#10;      }&#10;   } catch(e) {&#10;      throw &quot;Error accessing network: &quot; + e;&#10;   }&#10;}&#10;&#10;/** Turn off changed lights on wrapup. */&#10;exports.wrapup = function() {&#10;   /*&#10;   for (var i = 0; i &lt; handlers.length; i++) {&#10;      removeInputHandler(handlers[i]);&#10;   }&#10;   */&#10;   if (triggerHandle) {&#10;      removeInputHandler(triggerHandle);&#10;   }&#10;&#10;   var errorLights = [];&#10;   for (var i = 0; i &lt; changedLights.length; i++) {&#10;      var response = httpRequest(url + changedLights[i] + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, '{&quot;on&quot;:false}', timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         errorLights.push(lightID); &#10;      }&#10;   }&#10;&#10;   if (errorLights.length != 0) {&#10;      throw &quot;Error turning of lights &quot; + errorLights.toString();&#10;   }&#10;}&#10;&#10;/** utility function to check that an object is a nonempty array */&#10;function isNonEmptyArray(obj) {&#10;   return (obj instanceof Array &amp;&amp; obj.length &gt; 0);&#10;}&#10;&#10;/** Utility function to limit the range of a number&#10; * and to force it to be an integer. If the value argument&#10; * is a string, then it will be converted to a Number. */&#10;function limit(value, low, high) {&#10;   var parsed = parseInt(value);&#10;   if (!parsed) {&#10;      throw &quot;Expected a number between &quot; + low + &quot; and &quot; + high + &quot;, but got &quot; + value;&#10;   }&#10;   if (parsed &lt; low) {&#10;      return low;&#10;   } else if (parsed &gt; high) {&#10;      return high;&#10;   } else {&#10;      return parsed;&#10;   }&#10;}&#10;">
-                <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                    <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                    </property>
-                </property>
-            </property>
-            <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/svn/accessors/web/devices/Hue.js">
-            </property>
-            <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-                </property>
-                <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-                </property>
-            </property>
-            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueIP}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="lightID" class="ptolemy.actor.parameters.PortParameter" value="bulbID">
-            </property>
-            <property name="brightness" class="ptolemy.actor.parameters.PortParameter" value="255">
-            </property>
-            <property name="hue" class="ptolemy.actor.parameters.PortParameter" value="32001.0">
-            </property>
-            <property name="saturation" class="ptolemy.actor.parameters.PortParameter" value="255">
-            </property>
-            <property name="on" class="ptolemy.actor.parameters.PortParameter" value="true">
-            </property>
-            <property name="transitionTime" class="ptolemy.actor.parameters.PortParameter" value="4">
-            </property>
-            <property name="trigger" class="ptolemy.actor.parameters.PortParameter" value="32001">
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[710.0, 250.0]">
-            </property>
-            <port name="bridgeIPAddress" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-            <port name="lightID" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-            <port name="brightness" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-            <port name="hue" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-            <port name="saturation" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-            <port name="on" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-            <port name="transitionTime" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-            <port name="trigger" class="ptolemy.actor.parameters.ParameterPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
-            </port>
-        </entity>
-        <entity name="StringMatches3" class="ptolemy.actor.lib.string.StringMatches">
-            <display name="SPINNING"/>
-            <property name="pattern" class="ptolemy.actor.parameters.PortParameter" value="IDLE">
-            </property>
-            <property name="matchString" class="ptolemy.actor.parameters.PortParameter" value="SPINNING">
-            </property>
-            <doc>Determine if a string matches a regular expression</doc>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[310.0, 355.0]">
-            </property>
-        </entity>
-        <entity name="TrueGate3" class="ptolemy.actor.lib.logic.TrueGate">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[420.0, 355.0]">
-            </property>
-        </entity>
-        <entity name="Const3" class="ptolemy.actor.lib.Const">
-            <property name="value" class="ptolemy.data.expr.Parameter" value="51345">
-            </property>
-            <doc>Create a constant sequence.</doc>
-            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
-                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
-                </property>
-                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
-                </property>
-            </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[520.0, 355.0]">
-            </property>
-        </entity>
-        <relation name="relation" class="ptolemy.actor.TypedIORelation">
-            <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
-            </property>
-            <vertex name="vertex1" value="{373.0, 238.0}">
-            </vertex>
-        </relation>
-        <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-        </relation>
-        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
-        </relation>
-        <relation name="relation4" class="ptolemy.actor.TypedIORelation">
-        </relation>
-        <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-            <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
-            </property>
-            <vertex name="vertex1" value="[160.0, 255.0]">
-            </vertex>
-        </relation>
-        <relation name="relation5" class="ptolemy.actor.TypedIORelation">
-            <vertex name="vertex1" value="[605.0, 265.0]">
-            </vertex>
-        </relation>
-        <relation name="relation7" class="ptolemy.actor.TypedIORelation">
-        </relation>
-        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
-        </relation>
-        <link port="status" relation="relation6"/>
-        <link port="StringMatches.pattern" relation="relation6"/>
-        <link port="StringMatches.output" relation="relation"/>
-        <link port="Const.output" relation="relation5"/>
-        <link port="Const.trigger" relation="relation2"/>
-        <link port="TrueGate.input" relation="relation"/>
-        <link port="TrueGate.output" relation="relation2"/>
-        <link port="StringMatches2.pattern" relation="relation6"/>
-        <link port="StringMatches2.output" relation="relation3"/>
-        <link port="TrueGate2.input" relation="relation3"/>
-        <link port="TrueGate2.output" relation="relation4"/>
-        <link port="Const2.output" relation="relation5"/>
-        <link port="Const2.trigger" relation="relation4"/>
-        <link port="Hue.hue" relation="relation5"/>
-        <link port="Hue.trigger" relation="relation5"/>
-        <link port="StringMatches3.pattern" relation="relation6"/>
-        <link port="StringMatches3.output" relation="relation7"/>
-        <link port="TrueGate3.input" relation="relation7"/>
-        <link port="TrueGate3.output" relation="relation8"/>
-        <link port="Const3.output" relation="relation5"/>
-        <link port="Const3.trigger" relation="relation8"/>
-    </class>
     <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
         <display name="Lane"/>
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;  input('cmdvel');&#10;  input('cancel');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;var cmdvelClient = null;&#10;var cancelClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    if (!isNaN(charge)) {&#10;      send('battery', charge);&#10;    }&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Send poses to the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;&#10;  // Send cmd_vel to the robot&#10;  cmdvelClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cmdvelClient.on('open', function () {&#10;    cmdvelClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/cmd_vel',&#10;        type: 'geometry_msgs/Twist'&#10;    });&#10;  });&#10;  cmdvelClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cmdvel', cmdvel_in);&#10;&#10;  // Send cancel to the robot&#10;  cancelClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cancelClient.on('open', function () {&#10;    cancelClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/cancel',&#10;        type: 'std_msgs/Empty'&#10;    });&#10;  });&#10;  cancelClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cancel', cancel_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;var cmdvel_in = function () {&#10;  var c = get('cmdvel');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/cmd_vel',&#10;    msg: c&#10;  };&#10;&#10;  cmdvelClient.send(out);&#10;}&#10;&#10;var cancel_in = function () {&#10;  var c = get('cancel');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/cancel',&#10;    msg: {}&#10;  };&#10;&#10;  cancelClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;  if (cmdvelClient) {&#10;    cmdvelClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/cmd_vel'&#10;    });&#10;    cmdvelClient.removeAllListeners('open');&#10;    cmdvelClient.removeAllListeners('message');&#10;    cmdvelClient.removeAllListeners('close');&#10;    cmdvelClient.close();&#10;    cmdvelClient = null;&#10;  }&#10;  if (cancelClient) {&#10;    cancelClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/cancel'&#10;    });&#10;    cancelClient.removeAllListeners('open');&#10;    cancelClient.removeAllListeners('message');&#10;    cancelClient.removeAllListeners('close');&#10;    cancelClient.close();&#10;    cancelClient = null;&#10;  }&#10;}&#10;">
@@ -1699,138 +1390,6 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[325.0, 500.0]">
         </property>
     </entity>
-    <entity name="OpFilter" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpFilter&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;var value;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;  parameter('value', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('Input', Input_in);&#10;&#10;  key = getParameter('key');&#10;  value = getParameter('value');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == value) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpFilter.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 0.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="94.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="29.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.8,0.6,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="[k]==v">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={275, 234, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="robotid">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="value" class="ptolemy.data.expr.Parameter" value="0">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1155.0, 1160.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="OpStripString" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Strips out a certain key's value from an object as a string.&#10; *&#10; *  @accessor OpStripString&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  output('Output', {&#10;    type: 'string'&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key to extract the value from&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    send('Output', ''+i[key]);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpStripString.js">
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="status">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1310.0, 1160.0]">
-        </property>
-        <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[0.0, 0.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="60">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="40">
-                </property>
-                <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.8,0.6,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="&quot;v&quot;">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-17.0, -13.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={373, 208, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
-            </property>
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
     <entity name="OpStrip" class="org.terraswarm.accessor.JSAccessor">
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Strips out a certain key's value from an object.&#10; *&#10; *  @accessor OpStrip&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  output('Output');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key to extract the value from&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    send('Output', i[key]);&#10;  }&#10;}&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
@@ -1901,206 +1460,6 @@
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
-        </port>
-    </entity>
-    <entity name="OpFilter2" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpFilter&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;var value;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;  parameter('value', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('Input', Input_in);&#10;&#10;  key = getParameter('key');&#10;  value = getParameter('value');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == value) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpFilter.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 0.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="94.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="29.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.8,0.6,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="[k]==v">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={275, 234, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="robotid">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="value" class="ptolemy.data.expr.Parameter" value="1">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1155.0, 1250.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="OpStripString2" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Strips out a certain key's value from an object as a string.&#10; *&#10; *  @accessor OpStripString&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  output('Output', {&#10;    type: 'string'&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key to extract the value from&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    send('Output', ''+i[key]);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpStripString.js">
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="status">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1315.0, 1250.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="OpFilter3" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpFilter&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;var value;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;  parameter('value', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('Input', Input_in);&#10;&#10;  key = getParameter('key');&#10;  value = getParameter('value');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == value) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpFilter.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 0.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="94.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="29.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.8,0.6,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="[k]==v">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={275, 234, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="robotid">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="value" class="ptolemy.data.expr.Parameter" value="2">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1155.0, 1340.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="OpStripString3" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Strips out a certain key's value from an object as a string.&#10; *&#10; *  @accessor OpStripString&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  output('Output', {&#10;    type: 'string'&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key to extract the value from&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    send('Output', ''+i[key]);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpStripString.js">
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="status">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1320.0, 1340.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
     </entity>
@@ -2457,188 +1816,6 @@
         <property name="title" class="ptolemy.data.expr.StringParameter" value="applause">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[525.0, 1255.0]">
-        </property>
-    </entity>
-    <entity name="InstanceOflab11in" class="lab11in4908">
-        <display name="Status2Color"/>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 1250.0]">
-        </property>
-        <entity name="Hue" class="org.terraswarm.accessor.JSAccessor">
-            <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.  // All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor controls a Philips Hue lightbulb.&#10; *  &lt;p&gt;&#10; *  It sets the parameters of the specified&#10; *  light according to the input values.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Logging on: This script attempts to access the bridge as a user with&#10; *  name given by &lt;i&gt;userName&lt;/i&gt;, which defaults to &quot;ptolemyuser&quot;.&#10; *  If there is no such user on the bridge, the script registers such a user and requests&#10; *  (via an alert dialog) that the&#10; *  link button on the bridge be pushed to authorize registration of this user.&#10; *  The user is given 20s to do this before an exception is thrown&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Verifying the light: The final initialization step is to get a list of accessible lights. &#10; *  If the input light is not accessible, this accessor throws&#10; *  an exception, where the error message provides a list of available lights.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Discovery: Finding the IP address of the Hue Bridge is not necessarily easy.&#10; *  The bridge acquires its address via DHCP, so the address will typically change&#10; *  each time the bridge is rebooted. Moreover, the address will likely not be&#10; *  accessible except on the local network.  The bridge responds to UPnP packets&#10; *  (universal plug-and-play), so it is possible to use software such as&#10; *  &lt;a href=&quot;http://4thline.org/projects/cling/&quot;&gt;Cling&lt;/a&gt; to discover the bridge.&#10; *  Ideally, UPnP discover would be provided via an accessor. In this case, a&#10; *  swarmlet could be created that runs periodically on a local network and publishes&#10; *  the URL of any discovered bridges to a key-value store. Then the KeyValueStore&#10; *  accessor could be used to provide the &lt;i&gt;bridgeIPAdress&lt;/i&gt; input to this accessor.&#10; *  &lt;/p&gt;&#10; *  @accessor Hue&#10; *  @input {string} bridgeIPAddress The bridge IP address (and port, if needed).&#10; *  @parameter {string} userName The user name for logging on to the Hue Bridge. This must be at least 11 characters, or the Hue regards it as invalid.&#10; *  @input {int} lightID The light identifier (an integer beginning with 1).&#10; *  @input {number} brightness The brightness (an integer between 0 and 255).&#10; *  @input {number} hue The hue (an integer between 0 and 62580).&#10; *  @input {number} saturation The saturation (an integer between 0 and 255).&#10; *  @output {boolean} on Whether the light is on (true) or off (false).&#10; *  @input {int} transitionTime The transition time, in multiples of 100ms.&#10; *  @input {int} trigger Triggers a PUT request with all the light settings. Can be any type.&#10; *  @author Edward A. Lee, Marcus Pan &#10; *  @version $$Id: Hue.js 231 2015-07-31 22:45:12Z mpanj@seas.upenn.edu $$ &#10; *&#10;*/&#10;&#10;&#10;// State variables.&#10;var timeout = 3000;&#10;var url = &quot;&quot;;&#10;var userName = &quot;&quot;;&#10;var reachableLights = [];&#10;var changedLights = [];&#10;var strReachableLights = &quot;&quot;;&#10;var handleRegisterUser;&#10;var registerInterval = 2000;&#10;var registerTimeout = 20000;&#10;var registerAttempts = 0;&#10;var handlers = [];&#10;var triggerHandle;&#10;&#10;// Uncomment the following to see the URL being used for the bridge.&#10;// alert(&quot;Connecting to: &quot; + bridge);&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  input('bridgeIPAddress', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;&quot;&#10;  });&#10;  parameter('userName', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;ptolemyuser&quot;&#10;  });&#10;  input('lightID', {&#10;    type: &quot;int&quot;,&#10;    value: 1&#10;  });&#10;  input('brightness', {&#10;    type: &quot;number&quot;,&#10;    value: 255&#10;  });&#10;  input('hue', {&#10;    type: &quot;number&quot;,&#10;    value: 65280&#10;  });&#10;  input('saturation', {&#10;    type: &quot;number&quot;,&#10;    value: 255 &#10;  });&#10;  input('on', {&#10;    type: &quot;boolean&quot;,&#10;    value: false&#10;  });&#10;  input('transitionTime', {&#10;    type: &quot;int&quot;,&#10;    value: 4&#10;  });&#10;  input('trigger', {value: true})&#10;}&#10;/** Initialize connection. &#10; *  Register user if not registered &#10; *  Input handlers are not added here in case we need to wait for user to regiter */&#10;exports.initialize = function() {&#10;   var ipAddress = get('bridgeIPAddress');&#10;   userName = getParameter('userName');&#10;&#10;   if (userName.length &lt; 11) {&#10;      throw &quot;Username too short. Hue only accepts usernames that contain at least 11 characters.&quot;;&#10;   }&#10;&#10;   if (ipAddress == null || ipAddress.trim() == &quot;&quot;) {&#10;      throw &quot;No IP Address is given for the Hue Bridge.&quot;;&#10;   }&#10;&#10;   url = &quot;http://&quot; + ipAddress + &quot;/&quot;;&#10;&#10;   // First make sure the bridge is actually there and responding.&#10;   try {&#10;      httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout);&#10;   } catch ( ex) {&#10;      // FIXME: We should do a UPnP discovery here and find a bridge.&#10;      throw &quot;No Hue bridge responding at &quot; + url + &quot;\n&quot; + ex;&#10;   }&#10;   url = url + &quot;api/&quot;;&#10;&#10;   // Next, make sure that input username is an authorized user. If not, register the user.&#10;   var lights = JSON.parse(httpRequest(url + userName + &quot;/&quot;, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;&#10;   if (isNonEmptyArray(lights) &amp;&amp; lights[0].error) {&#10;      var description = lights[0].error.description;&#10;&#10;      if (description.match(&quot;unauthorized user&quot;)) {&#10;         // Add this user.&#10;         alert(userName + &quot; is not a registered user.\n&quot; + &#10;            &quot; Push the link button on the Hue bridge to register.&quot;); &#10;         registerUser();&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;      &#10;   } else if (lights.lights) {&#10;      //proceed to next stage of initialization&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Unknown error. Could not authorize user.&quot;;&#10;   }&#10;}&#10;&#10;/** Register a new user. &#10;  * This function repeats at registerInterval until registration is successful, or until registerTimeout. &#10;  * It does so because it needs to wait until the user clicks&#10;  * the button on the Hue bridge. */&#10;function registerUser() {&#10;   var registerData = '{&quot;devicetype&quot;:&quot;' + userName + '&quot;, &quot;username&quot;:&quot;' + userName + '&quot;}';&#10;   var response = JSON.parse(httpRequest(url, &quot;POST&quot;, null, registerData, timeout));&#10;   console.log(response);&#10;   if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;      var description = response[0].error.description;&#10;&#10;      if (description.match(&quot;link button not pressed&quot;)) {&#10;         //repeat registration attempt unless registerTimeout has been reached&#10;         console.log('link button');&#10;         registerAttempts++;&#10;         if ((registerAttempts * registerInterval) &gt; registerTimeout) {&#10;            throw &quot;Failed to create user after &quot; + registerTimeout/1000 + &#10;               &quot;s.&quot;;&#10;         }&#10;         handleRegisterUser = setTimeout(registerUser, registerInterval);&#10;         return;&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;&#10;   } else if (isNonEmptyArray(response) &amp;&amp; response[0].success) {&#10;      //registration is successful - proceed to next stage of initialization&#10;      if (handleRegisterUser != null) {&#10;         clearTimeout(handleRegisterUser);&#10;      }&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Error registering new user&quot;;&#10;   }&#10;}&#10;&#10;/** This function is only called after user has been registered. &#10;  * Get reachable lights. &#10;  * Add input handlers */&#10;function getReachableLights() {&#10;   url = url + userName + &quot;/&quot; + &quot;lights/&quot;;&#10;   var lights = JSON.parse(httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;   console.log(lights);&#10;&#10;   try {&#10;      for (var id in lights) {&#10;         if (lights[id].state.reachable) {&#10;            reachableLights.push(id);&#10;           //record string of reachable lights &#10;            if (strReachableLights.length == 0) {&#10;               strReachableLights += id;&#10;            }&#10;            else {&#10;               strReachableLights += &quot;, &quot; + id;&#10;            }&#10;         }&#10;      }&#10;   } catch (e) {&#10;      throw &quot;Failed to access the state of light &quot;&#10;         &quot; at URL &quot; + url + &quot;\n&quot; + e;&#10;   }&#10;   if (strReachableLights.length == 0) {&#10;      strReachableLights = &quot;No lights are reachable&quot;;&#10;   }&#10;   strReachableLights += &quot;.&quot;;&#10;   console.log('reachable lights: ' + strReachableLights);&#10;/*&#10;   handlers.push(addInputHandler('brightness', inputHandler));&#10;   handlers.push(addInputHandler('hue', inputHandler));&#10;   handlers.push(addInputHandler('saturation', inputHandler));&#10;   handlers.push(addInputHandler('on', inputHandler));&#10;   handlers.push(addInputHandler('transitionTime', inputHandler));&#10;   handlers.push(addInputHandler('lightID', inputHandler));&#10;*/&#10;   triggerHandle = addInputHandler('trigger', inputHandler);&#10;}&#10;&#10;/** Get light settings from inputs and PUT */&#10;function inputHandler() {&#10;   //check if light is reachable&#10;   var lightID = get('lightID').toString();&#10;   if (reachableLights.indexOf(lightID) == -1) {&#10;      throw &quot;Light &quot; + lightID + &quot; is not reachable at &quot; + &#10;         url + &quot;.\n Reachable lights are &quot; + strReachableLights;&#10;   }&#10;   //keep track of changed lights to turn off during wrap up&#10;   if (changedLights.indexOf(lightID) == -1) {&#10;      changedLights.push(lightID);&#10;   }&#10;&#10;   //get inputs and send command to light&#10;   var command = {&#10;      on: get('on') == true,&#10;      bri: limit(get('brightness'), 0, 255),&#10;      hue: limit(get('hue'), 0, 65280),&#10;      sat: limit(get('saturation'), 0, 255),&#10;      transitiontime: limit(get('transitionTime'), 0, 65535)&#10;   }&#10;&#10;   var cmd = JSON.stringify(command);&#10;   try {&#10;      var response = httpRequest(url + lightID + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, cmd, timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         throw &quot;Server responds with error: &quot; + response[0].error.description;&#10;      }&#10;   } catch(e) {&#10;      throw &quot;Error accessing network: &quot; + e;&#10;   }&#10;}&#10;&#10;/** Turn off changed lights on wrapup. */&#10;exports.wrapup = function() {&#10;   /*&#10;   for (var i = 0; i &lt; handlers.length; i++) {&#10;      removeInputHandler(handlers[i]);&#10;   }&#10;   */&#10;   if (triggerHandle) {&#10;      removeInputHandler(triggerHandle);&#10;   }&#10;&#10;   var errorLights = [];&#10;   for (var i = 0; i &lt; changedLights.length; i++) {&#10;      var response = httpRequest(url + changedLights[i] + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, '{&quot;on&quot;:false}', timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         errorLights.push(lightID); &#10;      }&#10;   }&#10;&#10;   if (errorLights.length != 0) {&#10;      throw &quot;Error turning of lights &quot; + errorLights.toString();&#10;   }&#10;}&#10;&#10;/** utility function to check that an object is a nonempty array */&#10;function isNonEmptyArray(obj) {&#10;   return (obj instanceof Array &amp;&amp; obj.length &gt; 0);&#10;}&#10;&#10;/** Utility function to limit the range of a number&#10; * and to force it to be an integer. If the value argument&#10; * is a string, then it will be converted to a Number. */&#10;function limit(value, low, high) {&#10;   var parsed = parseInt(value);&#10;   if (!parsed) {&#10;      throw &quot;Expected a number between &quot; + low + &quot; and &quot; + high + &quot;, but got &quot; + value;&#10;   }&#10;   if (parsed &lt; low) {&#10;      return low;&#10;   } else if (parsed &gt; high) {&#10;      return high;&#10;   } else {&#10;      return parsed;&#10;   }&#10;}&#10;">
-            </property>
-            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueIP}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-        </entity>
-    </entity>
-    <entity name="InstanceOflab11in2" class="lab11in4908">
-        <display name="Status2Color"/>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 1340.0]">
-        </property>
-        <property name="bulbID" class="ptolemy.data.expr.Parameter" value="1">
-        </property>
-        <entity name="Hue" class="org.terraswarm.accessor.JSAccessor">
-            <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.  // All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor controls a Philips Hue lightbulb.&#10; *  &lt;p&gt;&#10; *  It sets the parameters of the specified&#10; *  light according to the input values.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Logging on: This script attempts to access the bridge as a user with&#10; *  name given by &lt;i&gt;userName&lt;/i&gt;, which defaults to &quot;ptolemyuser&quot;.&#10; *  If there is no such user on the bridge, the script registers such a user and requests&#10; *  (via an alert dialog) that the&#10; *  link button on the bridge be pushed to authorize registration of this user.&#10; *  The user is given 20s to do this before an exception is thrown&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Verifying the light: The final initialization step is to get a list of accessible lights. &#10; *  If the input light is not accessible, this accessor throws&#10; *  an exception, where the error message provides a list of available lights.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Discovery: Finding the IP address of the Hue Bridge is not necessarily easy.&#10; *  The bridge acquires its address via DHCP, so the address will typically change&#10; *  each time the bridge is rebooted. Moreover, the address will likely not be&#10; *  accessible except on the local network.  The bridge responds to UPnP packets&#10; *  (universal plug-and-play), so it is possible to use software such as&#10; *  &lt;a href=&quot;http://4thline.org/projects/cling/&quot;&gt;Cling&lt;/a&gt; to discover the bridge.&#10; *  Ideally, UPnP discover would be provided via an accessor. In this case, a&#10; *  swarmlet could be created that runs periodically on a local network and publishes&#10; *  the URL of any discovered bridges to a key-value store. Then the KeyValueStore&#10; *  accessor could be used to provide the &lt;i&gt;bridgeIPAdress&lt;/i&gt; input to this accessor.&#10; *  &lt;/p&gt;&#10; *  @accessor Hue&#10; *  @input {string} bridgeIPAddress The bridge IP address (and port, if needed).&#10; *  @parameter {string} userName The user name for logging on to the Hue Bridge. This must be at least 11 characters, or the Hue regards it as invalid.&#10; *  @input {int} lightID The light identifier (an integer beginning with 1).&#10; *  @input {number} brightness The brightness (an integer between 0 and 255).&#10; *  @input {number} hue The hue (an integer between 0 and 62580).&#10; *  @input {number} saturation The saturation (an integer between 0 and 255).&#10; *  @output {boolean} on Whether the light is on (true) or off (false).&#10; *  @input {int} transitionTime The transition time, in multiples of 100ms.&#10; *  @input {int} trigger Triggers a PUT request with all the light settings. Can be any type.&#10; *  @author Edward A. Lee, Marcus Pan &#10; *  @version $$Id: Hue.js 231 2015-07-31 22:45:12Z mpanj@seas.upenn.edu $$ &#10; *&#10;*/&#10;&#10;&#10;// State variables.&#10;var timeout = 3000;&#10;var url = &quot;&quot;;&#10;var userName = &quot;&quot;;&#10;var reachableLights = [];&#10;var changedLights = [];&#10;var strReachableLights = &quot;&quot;;&#10;var handleRegisterUser;&#10;var registerInterval = 2000;&#10;var registerTimeout = 20000;&#10;var registerAttempts = 0;&#10;var handlers = [];&#10;var triggerHandle;&#10;&#10;// Uncomment the following to see the URL being used for the bridge.&#10;// alert(&quot;Connecting to: &quot; + bridge);&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  input('bridgeIPAddress', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;&quot;&#10;  });&#10;  parameter('userName', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;ptolemyuser&quot;&#10;  });&#10;  input('lightID', {&#10;    type: &quot;int&quot;,&#10;    value: 1&#10;  });&#10;  input('brightness', {&#10;    type: &quot;number&quot;,&#10;    value: 255&#10;  });&#10;  input('hue', {&#10;    type: &quot;number&quot;,&#10;    value: 65280&#10;  });&#10;  input('saturation', {&#10;    type: &quot;number&quot;,&#10;    value: 255 &#10;  });&#10;  input('on', {&#10;    type: &quot;boolean&quot;,&#10;    value: false&#10;  });&#10;  input('transitionTime', {&#10;    type: &quot;int&quot;,&#10;    value: 4&#10;  });&#10;  input('trigger', {value: true})&#10;}&#10;/** Initialize connection. &#10; *  Register user if not registered &#10; *  Input handlers are not added here in case we need to wait for user to regiter */&#10;exports.initialize = function() {&#10;   var ipAddress = get('bridgeIPAddress');&#10;   userName = getParameter('userName');&#10;&#10;   if (userName.length &lt; 11) {&#10;      throw &quot;Username too short. Hue only accepts usernames that contain at least 11 characters.&quot;;&#10;   }&#10;&#10;   if (ipAddress == null || ipAddress.trim() == &quot;&quot;) {&#10;      throw &quot;No IP Address is given for the Hue Bridge.&quot;;&#10;   }&#10;&#10;   url = &quot;http://&quot; + ipAddress + &quot;/&quot;;&#10;&#10;   // First make sure the bridge is actually there and responding.&#10;   try {&#10;      httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout);&#10;   } catch ( ex) {&#10;      // FIXME: We should do a UPnP discovery here and find a bridge.&#10;      throw &quot;No Hue bridge responding at &quot; + url + &quot;\n&quot; + ex;&#10;   }&#10;   url = url + &quot;api/&quot;;&#10;&#10;   // Next, make sure that input username is an authorized user. If not, register the user.&#10;   var lights = JSON.parse(httpRequest(url + userName + &quot;/&quot;, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;&#10;   if (isNonEmptyArray(lights) &amp;&amp; lights[0].error) {&#10;      var description = lights[0].error.description;&#10;&#10;      if (description.match(&quot;unauthorized user&quot;)) {&#10;         // Add this user.&#10;         alert(userName + &quot; is not a registered user.\n&quot; + &#10;            &quot; Push the link button on the Hue bridge to register.&quot;); &#10;         registerUser();&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;      &#10;   } else if (lights.lights) {&#10;      //proceed to next stage of initialization&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Unknown error. Could not authorize user.&quot;;&#10;   }&#10;}&#10;&#10;/** Register a new user. &#10;  * This function repeats at registerInterval until registration is successful, or until registerTimeout. &#10;  * It does so because it needs to wait until the user clicks&#10;  * the button on the Hue bridge. */&#10;function registerUser() {&#10;   var registerData = '{&quot;devicetype&quot;:&quot;' + userName + '&quot;, &quot;username&quot;:&quot;' + userName + '&quot;}';&#10;   var response = JSON.parse(httpRequest(url, &quot;POST&quot;, null, registerData, timeout));&#10;   console.log(response);&#10;   if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;      var description = response[0].error.description;&#10;&#10;      if (description.match(&quot;link button not pressed&quot;)) {&#10;         //repeat registration attempt unless registerTimeout has been reached&#10;         console.log('link button');&#10;         registerAttempts++;&#10;         if ((registerAttempts * registerInterval) &gt; registerTimeout) {&#10;            throw &quot;Failed to create user after &quot; + registerTimeout/1000 + &#10;               &quot;s.&quot;;&#10;         }&#10;         handleRegisterUser = setTimeout(registerUser, registerInterval);&#10;         return;&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;&#10;   } else if (isNonEmptyArray(response) &amp;&amp; response[0].success) {&#10;      //registration is successful - proceed to next stage of initialization&#10;      if (handleRegisterUser != null) {&#10;         clearTimeout(handleRegisterUser);&#10;      }&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Error registering new user&quot;;&#10;   }&#10;}&#10;&#10;/** This function is only called after user has been registered. &#10;  * Get reachable lights. &#10;  * Add input handlers */&#10;function getReachableLights() {&#10;   url = url + userName + &quot;/&quot; + &quot;lights/&quot;;&#10;   var lights = JSON.parse(httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;   console.log(lights);&#10;&#10;   try {&#10;      for (var id in lights) {&#10;         if (lights[id].state.reachable) {&#10;            reachableLights.push(id);&#10;           //record string of reachable lights &#10;            if (strReachableLights.length == 0) {&#10;               strReachableLights += id;&#10;            }&#10;            else {&#10;               strReachableLights += &quot;, &quot; + id;&#10;            }&#10;         }&#10;      }&#10;   } catch (e) {&#10;      throw &quot;Failed to access the state of light &quot;&#10;         &quot; at URL &quot; + url + &quot;\n&quot; + e;&#10;   }&#10;   if (strReachableLights.length == 0) {&#10;      strReachableLights = &quot;No lights are reachable&quot;;&#10;   }&#10;   strReachableLights += &quot;.&quot;;&#10;   console.log('reachable lights: ' + strReachableLights);&#10;/*&#10;   handlers.push(addInputHandler('brightness', inputHandler));&#10;   handlers.push(addInputHandler('hue', inputHandler));&#10;   handlers.push(addInputHandler('saturation', inputHandler));&#10;   handlers.push(addInputHandler('on', inputHandler));&#10;   handlers.push(addInputHandler('transitionTime', inputHandler));&#10;   handlers.push(addInputHandler('lightID', inputHandler));&#10;*/&#10;   triggerHandle = addInputHandler('trigger', inputHandler);&#10;}&#10;&#10;/** Get light settings from inputs and PUT */&#10;function inputHandler() {&#10;   //check if light is reachable&#10;   var lightID = get('lightID').toString();&#10;   if (reachableLights.indexOf(lightID) == -1) {&#10;      throw &quot;Light &quot; + lightID + &quot; is not reachable at &quot; + &#10;         url + &quot;.\n Reachable lights are &quot; + strReachableLights;&#10;   }&#10;   //keep track of changed lights to turn off during wrap up&#10;   if (changedLights.indexOf(lightID) == -1) {&#10;      changedLights.push(lightID);&#10;   }&#10;&#10;   //get inputs and send command to light&#10;   var command = {&#10;      on: get('on') == true,&#10;      bri: limit(get('brightness'), 0, 255),&#10;      hue: limit(get('hue'), 0, 65280),&#10;      sat: limit(get('saturation'), 0, 255),&#10;      transitiontime: limit(get('transitionTime'), 0, 65535)&#10;   }&#10;&#10;   var cmd = JSON.stringify(command);&#10;   try {&#10;      var response = httpRequest(url + lightID + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, cmd, timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         throw &quot;Server responds with error: &quot; + response[0].error.description;&#10;      }&#10;   } catch(e) {&#10;      throw &quot;Error accessing network: &quot; + e;&#10;   }&#10;}&#10;&#10;/** Turn off changed lights on wrapup. */&#10;exports.wrapup = function() {&#10;   /*&#10;   for (var i = 0; i &lt; handlers.length; i++) {&#10;      removeInputHandler(handlers[i]);&#10;   }&#10;   */&#10;   if (triggerHandle) {&#10;      removeInputHandler(triggerHandle);&#10;   }&#10;&#10;   var errorLights = [];&#10;   for (var i = 0; i &lt; changedLights.length; i++) {&#10;      var response = httpRequest(url + changedLights[i] + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, '{&quot;on&quot;:false}', timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         errorLights.push(lightID); &#10;      }&#10;   }&#10;&#10;   if (errorLights.length != 0) {&#10;      throw &quot;Error turning of lights &quot; + errorLights.toString();&#10;   }&#10;}&#10;&#10;/** utility function to check that an object is a nonempty array */&#10;function isNonEmptyArray(obj) {&#10;   return (obj instanceof Array &amp;&amp; obj.length &gt; 0);&#10;}&#10;&#10;/** Utility function to limit the range of a number&#10; * and to force it to be an integer. If the value argument&#10; * is a string, then it will be converted to a Number. */&#10;function limit(value, low, high) {&#10;   var parsed = parseInt(value);&#10;   if (!parsed) {&#10;      throw &quot;Expected a number between &quot; + low + &quot; and &quot; + high + &quot;, but got &quot; + value;&#10;   }&#10;   if (parsed &lt; low) {&#10;      return low;&#10;   } else if (parsed &gt; high) {&#10;      return high;&#10;   } else {&#10;      return parsed;&#10;   }&#10;}&#10;">
-            </property>
-            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueIP}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-        </entity>
-    </entity>
-    <entity name="InstanceOflab11in3" class="lab11in4908">
-        <display name="Status2Color"/>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 1160.0]">
-        </property>
-        <entity name="Hue" class="org.terraswarm.accessor.JSAccessor">
-            <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.  // All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor controls a Philips Hue lightbulb.&#10; *  &lt;p&gt;&#10; *  It sets the parameters of the specified&#10; *  light according to the input values.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Logging on: This script attempts to access the bridge as a user with&#10; *  name given by &lt;i&gt;userName&lt;/i&gt;, which defaults to &quot;ptolemyuser&quot;.&#10; *  If there is no such user on the bridge, the script registers such a user and requests&#10; *  (via an alert dialog) that the&#10; *  link button on the bridge be pushed to authorize registration of this user.&#10; *  The user is given 20s to do this before an exception is thrown&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Verifying the light: The final initialization step is to get a list of accessible lights. &#10; *  If the input light is not accessible, this accessor throws&#10; *  an exception, where the error message provides a list of available lights.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Discovery: Finding the IP address of the Hue Bridge is not necessarily easy.&#10; *  The bridge acquires its address via DHCP, so the address will typically change&#10; *  each time the bridge is rebooted. Moreover, the address will likely not be&#10; *  accessible except on the local network.  The bridge responds to UPnP packets&#10; *  (universal plug-and-play), so it is possible to use software such as&#10; *  &lt;a href=&quot;http://4thline.org/projects/cling/&quot;&gt;Cling&lt;/a&gt; to discover the bridge.&#10; *  Ideally, UPnP discover would be provided via an accessor. In this case, a&#10; *  swarmlet could be created that runs periodically on a local network and publishes&#10; *  the URL of any discovered bridges to a key-value store. Then the KeyValueStore&#10; *  accessor could be used to provide the &lt;i&gt;bridgeIPAdress&lt;/i&gt; input to this accessor.&#10; *  &lt;/p&gt;&#10; *  @accessor Hue&#10; *  @input {string} bridgeIPAddress The bridge IP address (and port, if needed).&#10; *  @parameter {string} userName The user name for logging on to the Hue Bridge. This must be at least 11 characters, or the Hue regards it as invalid.&#10; *  @input {int} lightID The light identifier (an integer beginning with 1).&#10; *  @input {number} brightness The brightness (an integer between 0 and 255).&#10; *  @input {number} hue The hue (an integer between 0 and 62580).&#10; *  @input {number} saturation The saturation (an integer between 0 and 255).&#10; *  @output {boolean} on Whether the light is on (true) or off (false).&#10; *  @input {int} transitionTime The transition time, in multiples of 100ms.&#10; *  @input {int} trigger Triggers a PUT request with all the light settings. Can be any type.&#10; *  @author Edward A. Lee, Marcus Pan &#10; *  @version $$Id: Hue.js 231 2015-07-31 22:45:12Z mpanj@seas.upenn.edu $$ &#10; *&#10;*/&#10;&#10;&#10;// State variables.&#10;var timeout = 3000;&#10;var url = &quot;&quot;;&#10;var userName = &quot;&quot;;&#10;var reachableLights = [];&#10;var changedLights = [];&#10;var strReachableLights = &quot;&quot;;&#10;var handleRegisterUser;&#10;var registerInterval = 2000;&#10;var registerTimeout = 20000;&#10;var registerAttempts = 0;&#10;var handlers = [];&#10;var triggerHandle;&#10;&#10;// Uncomment the following to see the URL being used for the bridge.&#10;// alert(&quot;Connecting to: &quot; + bridge);&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  input('bridgeIPAddress', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;&quot;&#10;  });&#10;  parameter('userName', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;ptolemyuser&quot;&#10;  });&#10;  input('lightID', {&#10;    type: &quot;int&quot;,&#10;    value: 1&#10;  });&#10;  input('brightness', {&#10;    type: &quot;number&quot;,&#10;    value: 255&#10;  });&#10;  input('hue', {&#10;    type: &quot;number&quot;,&#10;    value: 65280&#10;  });&#10;  input('saturation', {&#10;    type: &quot;number&quot;,&#10;    value: 255 &#10;  });&#10;  input('on', {&#10;    type: &quot;boolean&quot;,&#10;    value: false&#10;  });&#10;  input('transitionTime', {&#10;    type: &quot;int&quot;,&#10;    value: 4&#10;  });&#10;  input('trigger', {value: true})&#10;}&#10;/** Initialize connection. &#10; *  Register user if not registered &#10; *  Input handlers are not added here in case we need to wait for user to regiter */&#10;exports.initialize = function() {&#10;   var ipAddress = get('bridgeIPAddress');&#10;   userName = getParameter('userName');&#10;&#10;   if (userName.length &lt; 11) {&#10;      throw &quot;Username too short. Hue only accepts usernames that contain at least 11 characters.&quot;;&#10;   }&#10;&#10;   if (ipAddress == null || ipAddress.trim() == &quot;&quot;) {&#10;      throw &quot;No IP Address is given for the Hue Bridge.&quot;;&#10;   }&#10;&#10;   url = &quot;http://&quot; + ipAddress + &quot;/&quot;;&#10;&#10;   // First make sure the bridge is actually there and responding.&#10;   try {&#10;      httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout);&#10;   } catch ( ex) {&#10;      // FIXME: We should do a UPnP discovery here and find a bridge.&#10;      throw &quot;No Hue bridge responding at &quot; + url + &quot;\n&quot; + ex;&#10;   }&#10;   url = url + &quot;api/&quot;;&#10;&#10;   // Next, make sure that input username is an authorized user. If not, register the user.&#10;   var lights = JSON.parse(httpRequest(url + userName + &quot;/&quot;, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;&#10;   if (isNonEmptyArray(lights) &amp;&amp; lights[0].error) {&#10;      var description = lights[0].error.description;&#10;&#10;      if (description.match(&quot;unauthorized user&quot;)) {&#10;         // Add this user.&#10;         alert(userName + &quot; is not a registered user.\n&quot; + &#10;            &quot; Push the link button on the Hue bridge to register.&quot;); &#10;         registerUser();&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;      &#10;   } else if (lights.lights) {&#10;      //proceed to next stage of initialization&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Unknown error. Could not authorize user.&quot;;&#10;   }&#10;}&#10;&#10;/** Register a new user. &#10;  * This function repeats at registerInterval until registration is successful, or until registerTimeout. &#10;  * It does so because it needs to wait until the user clicks&#10;  * the button on the Hue bridge. */&#10;function registerUser() {&#10;   var registerData = '{&quot;devicetype&quot;:&quot;' + userName + '&quot;, &quot;username&quot;:&quot;' + userName + '&quot;}';&#10;   var response = JSON.parse(httpRequest(url, &quot;POST&quot;, null, registerData, timeout));&#10;   console.log(response);&#10;   if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;      var description = response[0].error.description;&#10;&#10;      if (description.match(&quot;link button not pressed&quot;)) {&#10;         //repeat registration attempt unless registerTimeout has been reached&#10;         console.log('link button');&#10;         registerAttempts++;&#10;         if ((registerAttempts * registerInterval) &gt; registerTimeout) {&#10;            throw &quot;Failed to create user after &quot; + registerTimeout/1000 + &#10;               &quot;s.&quot;;&#10;         }&#10;         handleRegisterUser = setTimeout(registerUser, registerInterval);&#10;         return;&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;&#10;   } else if (isNonEmptyArray(response) &amp;&amp; response[0].success) {&#10;      //registration is successful - proceed to next stage of initialization&#10;      if (handleRegisterUser != null) {&#10;         clearTimeout(handleRegisterUser);&#10;      }&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Error registering new user&quot;;&#10;   }&#10;}&#10;&#10;/** This function is only called after user has been registered. &#10;  * Get reachable lights. &#10;  * Add input handlers */&#10;function getReachableLights() {&#10;   url = url + userName + &quot;/&quot; + &quot;lights/&quot;;&#10;   var lights = JSON.parse(httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;   console.log(lights);&#10;&#10;   try {&#10;      for (var id in lights) {&#10;         if (lights[id].state.reachable) {&#10;            reachableLights.push(id);&#10;           //record string of reachable lights &#10;            if (strReachableLights.length == 0) {&#10;               strReachableLights += id;&#10;            }&#10;            else {&#10;               strReachableLights += &quot;, &quot; + id;&#10;            }&#10;         }&#10;      }&#10;   } catch (e) {&#10;      throw &quot;Failed to access the state of light &quot;&#10;         &quot; at URL &quot; + url + &quot;\n&quot; + e;&#10;   }&#10;   if (strReachableLights.length == 0) {&#10;      strReachableLights = &quot;No lights are reachable&quot;;&#10;   }&#10;   strReachableLights += &quot;.&quot;;&#10;   console.log('reachable lights: ' + strReachableLights);&#10;/*&#10;   handlers.push(addInputHandler('brightness', inputHandler));&#10;   handlers.push(addInputHandler('hue', inputHandler));&#10;   handlers.push(addInputHandler('saturation', inputHandler));&#10;   handlers.push(addInputHandler('on', inputHandler));&#10;   handlers.push(addInputHandler('transitionTime', inputHandler));&#10;   handlers.push(addInputHandler('lightID', inputHandler));&#10;*/&#10;   triggerHandle = addInputHandler('trigger', inputHandler);&#10;}&#10;&#10;/** Get light settings from inputs and PUT */&#10;function inputHandler() {&#10;   //check if light is reachable&#10;   var lightID = get('lightID').toString();&#10;   if (reachableLights.indexOf(lightID) == -1) {&#10;      throw &quot;Light &quot; + lightID + &quot; is not reachable at &quot; + &#10;         url + &quot;.\n Reachable lights are &quot; + strReachableLights;&#10;   }&#10;   //keep track of changed lights to turn off during wrap up&#10;   if (changedLights.indexOf(lightID) == -1) {&#10;      changedLights.push(lightID);&#10;   }&#10;&#10;   //get inputs and send command to light&#10;   var command = {&#10;      on: get('on') == true,&#10;      bri: limit(get('brightness'), 0, 255),&#10;      hue: limit(get('hue'), 0, 65280),&#10;      sat: limit(get('saturation'), 0, 255),&#10;      transitiontime: limit(get('transitionTime'), 0, 65535)&#10;   }&#10;&#10;   var cmd = JSON.stringify(command);&#10;   try {&#10;      var response = httpRequest(url + lightID + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, cmd, timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         throw &quot;Server responds with error: &quot; + response[0].error.description;&#10;      }&#10;   } catch(e) {&#10;      throw &quot;Error accessing network: &quot; + e;&#10;   }&#10;}&#10;&#10;/** Turn off changed lights on wrapup. */&#10;exports.wrapup = function() {&#10;   /*&#10;   for (var i = 0; i &lt; handlers.length; i++) {&#10;      removeInputHandler(handlers[i]);&#10;   }&#10;   */&#10;   if (triggerHandle) {&#10;      removeInputHandler(triggerHandle);&#10;   }&#10;&#10;   var errorLights = [];&#10;   for (var i = 0; i &lt; changedLights.length; i++) {&#10;      var response = httpRequest(url + changedLights[i] + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, '{&quot;on&quot;:false}', timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         errorLights.push(lightID); &#10;      }&#10;   }&#10;&#10;   if (errorLights.length != 0) {&#10;      throw &quot;Error turning of lights &quot; + errorLights.toString();&#10;   }&#10;}&#10;&#10;/** utility function to check that an object is a nonempty array */&#10;function isNonEmptyArray(obj) {&#10;   return (obj instanceof Array &amp;&amp; obj.length &gt; 0);&#10;}&#10;&#10;/** Utility function to limit the range of a number&#10; * and to force it to be an integer. If the value argument&#10; * is a string, then it will be converted to a Number. */&#10;function limit(value, low, high) {&#10;   var parsed = parseInt(value);&#10;   if (!parsed) {&#10;      throw &quot;Expected a number between &quot; + low + &quot; and &quot; + high + &quot;, but got &quot; + value;&#10;   }&#10;   if (parsed &lt; low) {&#10;      return low;&#10;   } else if (parsed &gt; high) {&#10;      return high;&#10;   } else {&#10;      return parsed;&#10;   }&#10;}&#10;">
-            </property>
-            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueIP}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-        </entity>
-    </entity>
-    <entity name="OpFilter4" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Outputs objects that match a key,value filter.&#10; *&#10; *  @accessor OpFilter&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;var value;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input', {&#10;  });&#10;  output('Output', {&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key,value pair that has to be present to have a packet meet the filter&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;  parameter('value', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  addInputHandler('Input', Input_in);&#10;&#10;  key = getParameter('key');&#10;  value = getParameter('value');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key) &amp;&amp; i[key] == value) {&#10;    send('Output', i);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpFilter.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 0.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="94.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="29.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,0.8,0.6,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="24">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="[k]==v">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-1.0, 1.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={275, 234, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="robotid">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="value" class="ptolemy.data.expr.Parameter" value="3">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1150.0, 1425.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="OpStripString4" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Strips out a certain key's value from an object as a string.&#10; *&#10; *  @accessor OpStripString&#10; *&#10;*/&#10;&#10;// Filter params&#10;var key;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  output('Output', {&#10;    type: 'string'&#10;  });&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  // key to extract the value from&#10;  parameter('key', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Input', Input_in);&#10;  key = getParameter('key');&#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    send('Output', ''+i[key]);&#10;  }&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpStripString.js">
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="key" class="ptolemy.data.expr.Parameter" value="status">
-            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1320.0, 1425.0]">
-        </property>
-        <port name="Input" class="ptolemy.actor.TypedIOPort">
-            <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-    </entity>
-    <entity name="InstanceOflab11in4" class="lab11in4908">
-        <display name="Status2Color"/>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 1425.0]">
-        </property>
-        <property name="bulbID" class="ptolemy.data.expr.Parameter" value="12">
-        </property>
-        <entity name="Hue" class="org.terraswarm.accessor.JSAccessor">
-            <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.  // All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor controls a Philips Hue lightbulb.&#10; *  &lt;p&gt;&#10; *  It sets the parameters of the specified&#10; *  light according to the input values.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Logging on: This script attempts to access the bridge as a user with&#10; *  name given by &lt;i&gt;userName&lt;/i&gt;, which defaults to &quot;ptolemyuser&quot;.&#10; *  If there is no such user on the bridge, the script registers such a user and requests&#10; *  (via an alert dialog) that the&#10; *  link button on the bridge be pushed to authorize registration of this user.&#10; *  The user is given 20s to do this before an exception is thrown&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Verifying the light: The final initialization step is to get a list of accessible lights. &#10; *  If the input light is not accessible, this accessor throws&#10; *  an exception, where the error message provides a list of available lights.&#10; *  &lt;/p&gt;&lt;p&gt;&#10; *  Discovery: Finding the IP address of the Hue Bridge is not necessarily easy.&#10; *  The bridge acquires its address via DHCP, so the address will typically change&#10; *  each time the bridge is rebooted. Moreover, the address will likely not be&#10; *  accessible except on the local network.  The bridge responds to UPnP packets&#10; *  (universal plug-and-play), so it is possible to use software such as&#10; *  &lt;a href=&quot;http://4thline.org/projects/cling/&quot;&gt;Cling&lt;/a&gt; to discover the bridge.&#10; *  Ideally, UPnP discover would be provided via an accessor. In this case, a&#10; *  swarmlet could be created that runs periodically on a local network and publishes&#10; *  the URL of any discovered bridges to a key-value store. Then the KeyValueStore&#10; *  accessor could be used to provide the &lt;i&gt;bridgeIPAdress&lt;/i&gt; input to this accessor.&#10; *  &lt;/p&gt;&#10; *  @accessor Hue&#10; *  @input {string} bridgeIPAddress The bridge IP address (and port, if needed).&#10; *  @parameter {string} userName The user name for logging on to the Hue Bridge. This must be at least 11 characters, or the Hue regards it as invalid.&#10; *  @input {int} lightID The light identifier (an integer beginning with 1).&#10; *  @input {number} brightness The brightness (an integer between 0 and 255).&#10; *  @input {number} hue The hue (an integer between 0 and 62580).&#10; *  @input {number} saturation The saturation (an integer between 0 and 255).&#10; *  @output {boolean} on Whether the light is on (true) or off (false).&#10; *  @input {int} transitionTime The transition time, in multiples of 100ms.&#10; *  @input {int} trigger Triggers a PUT request with all the light settings. Can be any type.&#10; *  @author Edward A. Lee, Marcus Pan &#10; *  @version $$Id: Hue.js 231 2015-07-31 22:45:12Z mpanj@seas.upenn.edu $$ &#10; *&#10;*/&#10;&#10;&#10;// State variables.&#10;var timeout = 3000;&#10;var url = &quot;&quot;;&#10;var userName = &quot;&quot;;&#10;var reachableLights = [];&#10;var changedLights = [];&#10;var strReachableLights = &quot;&quot;;&#10;var handleRegisterUser;&#10;var registerInterval = 2000;&#10;var registerTimeout = 20000;&#10;var registerAttempts = 0;&#10;var handlers = [];&#10;var triggerHandle;&#10;&#10;// Uncomment the following to see the URL being used for the bridge.&#10;// alert(&quot;Connecting to: &quot; + bridge);&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  input('bridgeIPAddress', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;&quot;&#10;  });&#10;  parameter('userName', {&#10;    type: &quot;string&quot;,&#10;    value: &quot;ptolemyuser&quot;&#10;  });&#10;  input('lightID', {&#10;    type: &quot;int&quot;,&#10;    value: 1&#10;  });&#10;  input('brightness', {&#10;    type: &quot;number&quot;,&#10;    value: 255&#10;  });&#10;  input('hue', {&#10;    type: &quot;number&quot;,&#10;    value: 65280&#10;  });&#10;  input('saturation', {&#10;    type: &quot;number&quot;,&#10;    value: 255 &#10;  });&#10;  input('on', {&#10;    type: &quot;boolean&quot;,&#10;    value: false&#10;  });&#10;  input('transitionTime', {&#10;    type: &quot;int&quot;,&#10;    value: 4&#10;  });&#10;  input('trigger', {value: true})&#10;}&#10;/** Initialize connection. &#10; *  Register user if not registered &#10; *  Input handlers are not added here in case we need to wait for user to regiter */&#10;exports.initialize = function() {&#10;   var ipAddress = get('bridgeIPAddress');&#10;   userName = getParameter('userName');&#10;&#10;   if (userName.length &lt; 11) {&#10;      throw &quot;Username too short. Hue only accepts usernames that contain at least 11 characters.&quot;;&#10;   }&#10;&#10;   if (ipAddress == null || ipAddress.trim() == &quot;&quot;) {&#10;      throw &quot;No IP Address is given for the Hue Bridge.&quot;;&#10;   }&#10;&#10;   url = &quot;http://&quot; + ipAddress + &quot;/&quot;;&#10;&#10;   // First make sure the bridge is actually there and responding.&#10;   try {&#10;      httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout);&#10;   } catch ( ex) {&#10;      // FIXME: We should do a UPnP discovery here and find a bridge.&#10;      throw &quot;No Hue bridge responding at &quot; + url + &quot;\n&quot; + ex;&#10;   }&#10;   url = url + &quot;api/&quot;;&#10;&#10;   // Next, make sure that input username is an authorized user. If not, register the user.&#10;   var lights = JSON.parse(httpRequest(url + userName + &quot;/&quot;, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;&#10;   if (isNonEmptyArray(lights) &amp;&amp; lights[0].error) {&#10;      var description = lights[0].error.description;&#10;&#10;      if (description.match(&quot;unauthorized user&quot;)) {&#10;         // Add this user.&#10;         alert(userName + &quot; is not a registered user.\n&quot; + &#10;            &quot; Push the link button on the Hue bridge to register.&quot;); &#10;         registerUser();&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;      &#10;   } else if (lights.lights) {&#10;      //proceed to next stage of initialization&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Unknown error. Could not authorize user.&quot;;&#10;   }&#10;}&#10;&#10;/** Register a new user. &#10;  * This function repeats at registerInterval until registration is successful, or until registerTimeout. &#10;  * It does so because it needs to wait until the user clicks&#10;  * the button on the Hue bridge. */&#10;function registerUser() {&#10;   var registerData = '{&quot;devicetype&quot;:&quot;' + userName + '&quot;, &quot;username&quot;:&quot;' + userName + '&quot;}';&#10;   var response = JSON.parse(httpRequest(url, &quot;POST&quot;, null, registerData, timeout));&#10;   console.log(response);&#10;   if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;      var description = response[0].error.description;&#10;&#10;      if (description.match(&quot;link button not pressed&quot;)) {&#10;         //repeat registration attempt unless registerTimeout has been reached&#10;         console.log('link button');&#10;         registerAttempts++;&#10;         if ((registerAttempts * registerInterval) &gt; registerTimeout) {&#10;            throw &quot;Failed to create user after &quot; + registerTimeout/1000 + &#10;               &quot;s.&quot;;&#10;         }&#10;         handleRegisterUser = setTimeout(registerUser, registerInterval);&#10;         return;&#10;      }&#10;&#10;      else {&#10;         throw description;&#10;      }&#10;&#10;   } else if (isNonEmptyArray(response) &amp;&amp; response[0].success) {&#10;      //registration is successful - proceed to next stage of initialization&#10;      if (handleRegisterUser != null) {&#10;         clearTimeout(handleRegisterUser);&#10;      }&#10;      getReachableLights();&#10;&#10;   } else {&#10;      throw &quot;Error registering new user&quot;;&#10;   }&#10;}&#10;&#10;/** This function is only called after user has been registered. &#10;  * Get reachable lights. &#10;  * Add input handlers */&#10;function getReachableLights() {&#10;   url = url + userName + &quot;/&quot; + &quot;lights/&quot;;&#10;   var lights = JSON.parse(httpRequest(url, &quot;GET&quot;, null, &quot;&quot;, timeout));&#10;   console.log(lights);&#10;&#10;   try {&#10;      for (var id in lights) {&#10;         if (lights[id].state.reachable) {&#10;            reachableLights.push(id);&#10;           //record string of reachable lights &#10;            if (strReachableLights.length == 0) {&#10;               strReachableLights += id;&#10;            }&#10;            else {&#10;               strReachableLights += &quot;, &quot; + id;&#10;            }&#10;         }&#10;      }&#10;   } catch (e) {&#10;      throw &quot;Failed to access the state of light &quot;&#10;         &quot; at URL &quot; + url + &quot;\n&quot; + e;&#10;   }&#10;   if (strReachableLights.length == 0) {&#10;      strReachableLights = &quot;No lights are reachable&quot;;&#10;   }&#10;   strReachableLights += &quot;.&quot;;&#10;   console.log('reachable lights: ' + strReachableLights);&#10;/*&#10;   handlers.push(addInputHandler('brightness', inputHandler));&#10;   handlers.push(addInputHandler('hue', inputHandler));&#10;   handlers.push(addInputHandler('saturation', inputHandler));&#10;   handlers.push(addInputHandler('on', inputHandler));&#10;   handlers.push(addInputHandler('transitionTime', inputHandler));&#10;   handlers.push(addInputHandler('lightID', inputHandler));&#10;*/&#10;   triggerHandle = addInputHandler('trigger', inputHandler);&#10;}&#10;&#10;/** Get light settings from inputs and PUT */&#10;function inputHandler() {&#10;   //check if light is reachable&#10;   var lightID = get('lightID').toString();&#10;   if (reachableLights.indexOf(lightID) == -1) {&#10;      throw &quot;Light &quot; + lightID + &quot; is not reachable at &quot; + &#10;         url + &quot;.\n Reachable lights are &quot; + strReachableLights;&#10;   }&#10;   //keep track of changed lights to turn off during wrap up&#10;   if (changedLights.indexOf(lightID) == -1) {&#10;      changedLights.push(lightID);&#10;   }&#10;&#10;   //get inputs and send command to light&#10;   var command = {&#10;      on: get('on') == true,&#10;      bri: limit(get('brightness'), 0, 255),&#10;      hue: limit(get('hue'), 0, 65280),&#10;      sat: limit(get('saturation'), 0, 255),&#10;      transitiontime: limit(get('transitionTime'), 0, 65535)&#10;   }&#10;&#10;   var cmd = JSON.stringify(command);&#10;   try {&#10;      var response = httpRequest(url + lightID + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, cmd, timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         throw &quot;Server responds with error: &quot; + response[0].error.description;&#10;      }&#10;   } catch(e) {&#10;      throw &quot;Error accessing network: &quot; + e;&#10;   }&#10;}&#10;&#10;/** Turn off changed lights on wrapup. */&#10;exports.wrapup = function() {&#10;   /*&#10;   for (var i = 0; i &lt; handlers.length; i++) {&#10;      removeInputHandler(handlers[i]);&#10;   }&#10;   */&#10;   if (triggerHandle) {&#10;      removeInputHandler(triggerHandle);&#10;   }&#10;&#10;   var errorLights = [];&#10;   for (var i = 0; i &lt; changedLights.length; i++) {&#10;      var response = httpRequest(url + changedLights[i] + &quot;/state/&quot;, &quot;PUT&quot;, &#10;            null, '{&quot;on&quot;:false}', timeout);&#10;      console.log(response);&#10;      if (isNonEmptyArray(response) &amp;&amp; response[0].error) {&#10;         errorLights.push(lightID); &#10;      }&#10;   }&#10;&#10;   if (errorLights.length != 0) {&#10;      throw &quot;Error turning of lights &quot; + errorLights.toString();&#10;   }&#10;}&#10;&#10;/** utility function to check that an object is a nonempty array */&#10;function isNonEmptyArray(obj) {&#10;   return (obj instanceof Array &amp;&amp; obj.length &gt; 0);&#10;}&#10;&#10;/** Utility function to limit the range of a number&#10; * and to force it to be an integer. If the value argument&#10; * is a string, then it will be converted to a Number. */&#10;function limit(value, low, high) {&#10;   var parsed = parseInt(value);&#10;   if (!parsed) {&#10;      throw &quot;Expected a number between &quot; + low + &quot; and &quot; + high + &quot;, but got &quot; + value;&#10;   }&#10;   if (parsed &lt; low) {&#10;      return low;&#10;   } else if (parsed &gt; high) {&#10;      return high;&#10;   } else {&#10;      return parsed;&#10;   }&#10;}&#10;">
-            </property>
-            <property name="bridgeIPAddress" class="ptolemy.actor.parameters.PortParameter" value="${hueIP}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-            <property name="userName" class="ptolemy.data.expr.Parameter" value="${hueUsername}">
-                <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
-                </property>
-            </property>
-        </entity>
-    </entity>
-    <entity name="Display5" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={72, 522, 759, 306}, maximized=false}">
-        </property>
-        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
-        </property>
-        <property name="title" class="ptolemy.data.expr.StringParameter" value="robot statue">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1090.0, 1100.0]">
         </property>
     </entity>
     <entity name="OpAddKeyValue3" class="org.terraswarm.accessor.JSAccessor">
@@ -3174,6 +2351,71 @@
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
     </entity>
+    <entity name="WebSocketServer4" class="org.terraswarm.accessor.JSAccessor">
+        <display name="RobotStatusServer"/>
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of California.&#10;// All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** This accessor starts a server that listens for web socket&#10; *  connection requests on the specified hostInterface and port.  The&#10; *  hostInterface is needed only if the host machine has more than one&#10; *  network interface (e.g. Ethernet and WiFi) and 'localhost' does&#10; *  not resolve to the desired interface.&#10; *&#10; *  The output `connection` reports the when a&#10; *  connection is opened or closed.&#10; *&#10; *  When a message arrives on a connection, a `received`&#10; *  output is produced with that message. The maxFrameSize parameter limits the size&#10; *  of received messages, and any attempt to send to this client a larger message&#10; *  will cause an error.&#10; *&#10; *  When an input arrives on `toSend`, then a message is&#10; *  sent to one or all of the open socket connections.&#10; *&#10; *  When `wrapup()` is invoked, this accessor closes the&#10; *  server and all connections.&#10; *&#10; *  The default type for both sending and receiving&#10; *  is 'application/json', which allows sending and receiving anything that has&#10; *  a string representation in JSON. The types supported by this implementation&#10; *  include at least:&#10; *  * __application/json__: The send() function uses JSON.stringify() and sends the&#10; *    result with a UTF-8 encoding. An incoming byte stream will be parsed as JSON,&#10; *    and if the parsing fails, will be provided as a string interpretation of the byte&#10; *    stream.&#10; *  * __text/\*__: Any text type is sent as a string encoded in UTF-8.&#10; *  * __image/x__: Where __x__ is one of __json__, __png__, __gif__,&#10; *    and more.&#10; *    In this case, the data passed to send() is assumed to be an image, as encoded&#10; *    on the host, and the image will be encoded as a byte stream in the specified&#10; *    format before sending.  A received byte stream will be decoded as an image,&#10; *    if possible.&#10; *&#10; *  This accessor requires the module webSocket.&#10; *&#10; *  @accessor net/WebSocketServer&#10; *  @parameter {string} hostInterface The IP address or domain name of the&#10; *    network interface to listen to.&#10; *  @parameter {int} port The port to listen to for connections.&#10; *  @parameter {string} receiveType The MIME type for incoming messages, which defaults to 'application/json'.&#10; *  @parameter {string} sendType The MIME type for outgoing messages, which defaults to 'application/json'.&#10; *  @parameter {int} maxFrameSize The maximum frame size for a received message (default is 65536).&#10; *  @input toSend The data to be sent to open sockets. If this is an object with 'socketID' field and a 'message' field, then send the value of the message field to the socket identified by the socketID field. If the input has any other form, then the message is broadcast to all open socket connections.&#10; *  @output connection An output produced when a connection opens or closes. The output is an object with two fields, a 'socketID', which is a unique ID for this client connection, and a 'status' field, which is the string 'open' or 'closed'.&#10; *  @output received A message received a client in the form of an object with two fields, a 'socketID', which is a unique ID for this client connection, and a 'message' field, which is the message received from the client.&#10; *  @author Hokeun Kim, Edward Lee &#10; *  @version $$Id: WebSocketServer.js 282 2015-08-28 19:04:40Z eal $$ &#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;var server = null;&#10;var running = false;&#10;&#10;/** Sets up the accessor by defining inputs and outputs. */&#10;exports.setup = function() {&#10;    parameter('hostInterface', {&#10;        value: &quot;localhost&quot;, &#10;        type: &quot;string&quot; &#10;    });&#10;    parameter('port', {&#10;        value: 8080, &#10;        type: &quot;int&quot; &#10;    });&#10;    parameter('receiveType', {&#10;        type : 'string',&#10;        value : 'application/json'&#10;    });&#10;    parameter('sendType', {&#10;        type : 'string',&#10;        value : 'application/json'&#10;    });&#10;    parameter('maxFrameSize', {&#10;        value: 65536, &#10;        type: &quot;int&quot; &#10;    });&#10;    input('toSend');&#10;    output('received');&#10;    output('connection');&#10;}&#10;&#10;var handle;&#10;var sockets = [];&#10;&#10;/** Starts the web socket and attaches functions to inputs and outputs. &#10;  * Adds an input handler on toSend that sends the input received to the right socket. */ &#10;exports.initialize = function() {&#10;    if (!server) {&#10;        server = new WebSocket.Server({&#10;                'port':getParameter('port'),&#10;                'hostInterface':getParameter('hostInterface'),&#10;                'receiveType':getParameter('receiveType'),&#10;                'sendType':getParameter('sendType'),&#10;                'maxFrameSize':getParameter('maxFrameSize')&#10;        });&#10;        server.on('listening', onListening);&#10;        server.on('connection', onConnection);&#10;        server.on('error', function (message) {&#10;            error(message);&#10;        });&#10;        server.start();&#10;    }&#10;    running = true;&#10;&#10;    handle = addInputHandler('toSend', function() {&#10;        var data = get('toSend');&#10;        // Careful: Don't do if (data) because if data === 0, then data is false.&#10;        if (data !== null) {&#10;            if ((data.socketID != null)  &amp;&amp; (data.message != null)) {&#10;                // data has the right form for a point-to-point send.&#10;                if (sockets[data.socketID] &amp;&amp; sockets[data.socketID].isOpen()) {&#10;                    // id matches this socket.&#10;                    console.log(&quot;Sending to socket id &quot; &#10;                            + data.socketID&#10;                            + &quot; message: &quot;&#10;                            + data.message);&#10;                    sockets[data.socketID].send(data.message);&#10;                } else {&#10;                    console.log('Socket with ID ' + data.socketID&#10;                            + ' is not open. Discarding message: ' + data.message);&#10;                }&#10;            } else {&#10;                // No socketID or message, so this is a broadcast message.&#10;                var success = false;&#10;                for (var id = 0; id &lt; sockets.length; id++) {&#10;                    if (sockets[id].isOpen()) {&#10;                        console.log(&quot;Broadcasting to socket id &quot; + id &#10;                                + &quot; message: &quot; + data);&#10;                        sockets[id].send(data);&#10;                        success = true;&#10;                    }&#10;                }&#10;                if (!success) {&#10;                    console.log('No open sockets. Discarding message: ' + data.message);&#10;                }&#10;            }&#10;        }&#10;    });&#10;}&#10;&#10;function onListening() {&#10;    console.log('Server: Listening for socket connection requests.');&#10;}&#10;&#10;/** Executes when a connection has been establised.&lt;br&gt;&#10; *  Triggers an output on &lt;code&gt;'connection'&lt;/code&gt;.&#10; *  Adds an event listener to the socket. */&#10;function onConnection(socket) {&#10;   //socketID is the index of the socket in the sockets array. &#10;    var socketID = sockets.length;&#10;    console.log('Server: new socket established with ID: ' + socketID);&#10;    send('connection', {'socketID':socketID, 'status':'open'});&#10;    socket.on('message', function(message) {&#10;        send('received', {'socketID':socketID, 'message':message});&#10;    });&#10;    socket.on('close', function(message) {&#10;        send('connection', {'socketID':socketID, 'status':'closed'});&#10;    });&#10;    socket.on('error', function(message) {&#10;        error(message);&#10;    });&#10;&#10;    sockets.push(socket);    &#10;}&#10;&#10;/** Removes all inputHandlers from sockets.&lt;br&gt;&#10; * Unregisters event listeners from sockets.&lt;br&gt;&#10; * Closes server. */&#10;exports.wrapup = function(){&#10;    for (var i = 0; i &lt; sockets.length; i++) {&#10;        sockets[i].removeAllListeners();&#10;    }&#10;&#10;    sockets = [];&#10;    removeInputHandler(handle); &#10;&#10;    if (server != null) {&#10;        server.removeAllListeners();&#10;        server.close();&#10;        server = null;&#10;    }&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/svn/accessors/web/net/WebSocketServer.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[935.0, 1160.0]">
+        </property>
+        <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="localhost">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="port" class="ptolemy.data.expr.Parameter" value="8089">
+        </property>
+        <property name="receiveType" class="ptolemy.data.expr.Parameter" value="application/json">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="sendType" class="ptolemy.data.expr.Parameter" value="application/json">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="maxFrameSize" class="ptolemy.data.expr.Parameter" value="65536">
+        </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="toSend" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
+        <port name="received" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="connection" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
@@ -3236,29 +2478,11 @@
         <vertex name="vertex1" value="[760.0, 585.0]">
         </vertex>
     </relation>
-    <relation name="relation27" class="ptolemy.actor.TypedIORelation">
-        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
-        </property>
-        <vertex name="vertex1" value="[1385.0, 1160.0]">
-        </vertex>
-    </relation>
-    <relation name="relation36" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation37" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
         <vertex name="vertex1" value="[285.0, 585.0]">
         </vertex>
-    </relation>
-    <relation name="relation35" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation39" class="ptolemy.actor.TypedIORelation">
-        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
-        </property>
-        <vertex name="vertex1" value="[1030.0, 1160.0]">
-        </vertex>
-    </relation>
-    <relation name="relation29" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
@@ -3300,14 +2524,6 @@
         <vertex name="vertex1" value="[450.0, 1255.0]">
         </vertex>
     </relation>
-    <relation name="relation" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation38" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation30" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation31" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation19" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation32" class="ptolemy.actor.TypedIORelation">
@@ -3346,6 +2562,8 @@
     </relation>
     <relation name="relation12" class="ptolemy.actor.TypedIORelation">
     </relation>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+    </relation>
     <link port="Scarab.location" relation="relation8"/>
     <link port="Scarab.pose" relation="relation2"/>
     <link port="Scarab.cmdvel" relation="relation45"/>
@@ -3366,7 +2584,7 @@
     <link port="OpKeySwitching.Output3" relation="relation20"/>
     <link port="RoboCafeController.UserChoice" relation="relation16"/>
     <link port="RoboCafeController.SelectPhoneRobot" relation="relation17"/>
-    <link port="RoboCafeController.RobotStatus" relation="relation39"/>
+    <link port="RoboCafeController.RobotStatus" relation="relation"/>
     <link port="RoboCafeController.Applause" relation="relation55"/>
     <link port="Display7.input" relation="relation16"/>
     <link port="Scarab4.location" relation="relation12"/>
@@ -3407,20 +2625,8 @@
     <link port="OpAddKeyValue2.Output" relation="relation6"/>
     <link port="WebSocketServer2.received" relation="relation37"/>
     <link port="Display9.input" relation="relation37"/>
-    <link port="OpFilter.Input" relation="relation39"/>
-    <link port="OpFilter.Output" relation="relation36"/>
-    <link port="OpStripString.Input" relation="relation36"/>
-    <link port="OpStripString.Output" relation="relation27"/>
     <link port="OpStrip.Input" relation="relation37"/>
     <link port="OpStrip.Output" relation="relation4"/>
-    <link port="OpFilter2.Input" relation="relation39"/>
-    <link port="OpFilter2.Output" relation="relation35"/>
-    <link port="OpStripString2.Input" relation="relation35"/>
-    <link port="OpStripString2.Output" relation="relation"/>
-    <link port="OpFilter3.Input" relation="relation39"/>
-    <link port="OpFilter3.Output" relation="relation29"/>
-    <link port="OpStripString3.Input" relation="relation29"/>
-    <link port="OpStripString3.Output" relation="relation38"/>
     <link port="ContainerLocation.LocationIn" relation="relation54"/>
     <link port="ContainerLocation.LocationOut" relation="relation26"/>
     <link port="GoCommandFilter.CommandIn" relation="relation13"/>
@@ -3435,15 +2641,6 @@
     <link port="OpStrip2.Input" relation="relation50"/>
     <link port="OpStrip2.Output" relation="relation55"/>
     <link port="Display14.input" relation="relation55"/>
-    <link port="InstanceOflab11in.status" relation="relation"/>
-    <link port="InstanceOflab11in2.status" relation="relation38"/>
-    <link port="InstanceOflab11in3.status" relation="relation27"/>
-    <link port="OpFilter4.Input" relation="relation39"/>
-    <link port="OpFilter4.Output" relation="relation30"/>
-    <link port="OpStripString4.Input" relation="relation30"/>
-    <link port="OpStripString4.Output" relation="relation31"/>
-    <link port="InstanceOflab11in4.status" relation="relation31"/>
-    <link port="Display5.input" relation="relation39"/>
     <link port="OpAddKeyValue3.Input" relation="relation32"/>
     <link port="OpAddKeyValue3.Output" relation="relation26"/>
     <link port="OpAddKeyValue4.Input" relation="relation33"/>
@@ -3462,5 +2659,6 @@
     <link port="MicrostepDelay3.output" relation="relation9"/>
     <link port="MicrostepDelay4.input" relation="relation12"/>
     <link port="MicrostepDelay4.output" relation="relation10"/>
+    <link port="WebSocketServer4.toSend" relation="relation"/>
     <link relation1="relation28" relation2="relation6"/>
 </entity>
