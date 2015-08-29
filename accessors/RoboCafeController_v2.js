@@ -204,7 +204,8 @@ var Choice_in = function () {
             update_status(rbt_idx, STATE_IDLE); 
             rbt.servicing = null;
             // if no more events to be processed, send robot home.
-            if (rbt.queue.length == 0) { 
+            if (rbt.queue.length == 0 
+              && robot.state == STATE_IDLE) { 
                 // go back home 
                 // Send the robot home.
                 set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  
@@ -278,7 +279,8 @@ var Applause_in = function () {
       process_from_queue(robot_index);
       // if there are no more events to be processed for this robot, send it home.
       // otherwise, the poll will take care of the remaining events soon.
-      if (robot.queue.length == 0) { 
+      if (robot.queue.length == 0 
+        && robot.state == STATE_IDLE) { 
         // go back home 
         // Send the robot home.
         set_source_and_robot('Home'+robot_index, robot_index, 'add');  
