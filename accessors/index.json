@@ -14,6 +14,7 @@
     "OpSwitching.js",
     "OpKeySwitching.js",
     "OpAddKeyValue.js",
+    "OpMakeKeyValue.js",
     "OpStrip.js",
     "OpStripString.js",
     "CoordinateLinearTransform.js",
