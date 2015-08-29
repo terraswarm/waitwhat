@@ -205,7 +205,7 @@ var Choice_in = function () {
             rbt.servicing = null;
             // if no more events to be processed, send robot home.
             if (rbt.queue.length == 0 
-              && robot.state == STATE_IDLE) { 
+              && rbt.state == STATE_IDLE) { 
                 // go back home 
                 // Send the robot home.
                 set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  
