@@ -3,7 +3,7 @@
     "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
 <entity name="robocafe" class="ptolemy.actor.TypedCompositeActor">
     <property name="Rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="1290.0, 670.0">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1305.0, 670.0]">
         </property>
         <property name="lineWidth" class="ptolemy.data.expr.Parameter" value="2.0">
         </property>
@@ -27,16 +27,16 @@
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
         <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="true">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[805.0, 1370.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1345.0, 995.0]">
         </property>
     </property>
     <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 23, 1671, 1023}, maximized=true}">
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1437, 913]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.6218364360478384">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8509242695289206">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{890.07373046875, 982.6570161259416}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{969.5, 907.2821266479066}">
     </property>
     <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
     </property>
@@ -75,11 +75,11 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 29, 2015 2:56:45 AM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 29, 2015 3:20:20 AM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[210.0, 1395.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1335.0, 1175.0]">
         </property>
     </property>
     <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="false">
@@ -93,27 +93,31 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Control">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1300.0, 420.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1315.0, 420.0]">
         </property>
     </property>
     <property name="Annotation6" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.8,0.0,0.0,1.0}">
         </property>
         <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
         </property>
-        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Choice Mechanism">
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Choice Receiver">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[175.0, 1085.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[480.0, 1030.0]">
         </property>
     </property>
     <property name="Annotation7" class="ptolemy.vergil.kernel.attributes.TextAttribute">
         <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
         </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.8,0.0,0.0,1.0}">
+        </property>
         <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Main Controller">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[605.0, 1090.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[675.0, 965.0]">
         </property>
     </property>
     <property name="rosBridgeIP" class="ptolemy.data.expr.StringParameter" value="192.168.11.108">
@@ -132,7 +136,7 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[515.0, 1350.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1040.0]">
         </property>
     </property>
     <property name="poseUpdateThreshold" class="ptolemy.data.expr.Parameter" value="0.3">
@@ -151,7 +155,7 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[515.0, 1370.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1060.0]">
         </property>
     </property>
     <property name="spinDuration" class="ptolemy.data.expr.Parameter" value="7">
@@ -170,7 +174,7 @@
         </property>
         <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[515.0, 1390.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1080.0]">
         </property>
     </property>
     <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="false">
@@ -178,13 +182,15 @@
     <property name="_defaultInferredWidthTo1" class="ptolemy.data.expr.Parameter" value="true">
     </property>
     <property name="Annotation8" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.8,0.0,0.0,1.0}">
         </property>
         <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Applause Detection">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[180.0, 1205.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[470.0, 1190.0]">
         </property>
     </property>
     <property name="Line" class="ptolemy.vergil.kernel.attributes.LineAttribute">
@@ -215,6 +221,26 @@
         <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
         </property>
     </property>
+    <property name="Rectangle3" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="667.4997281426706, 1133.3336150076052">
+        </property>
+        <property name="lineWidth" class="ptolemy.data.expr.Parameter" value="2.0">
+        </property>
+        <property name="lineColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,0.6,0.6,1.0}">
+        </property>
+        <property name="width" class="ptolemy.data.expr.Parameter" value="604.9342105263156">
+        </property>
+        <property name="height" class="ptolemy.data.expr.Parameter" value="323.2786885245903">
+        </property>
+        <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.8,0.0,0.0,0.15}">
+        </property>
+        <property name="rounding" class="ptolemy.data.expr.Parameter" value="25">
+        </property>
+        <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+    </property>
     <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
         <display name="Lane"/>
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Scarab Accessor. &#10; *&#10; * Outputs battery charge percentage and &#10; *&#10; *  @accessor Scarab&#10; */&#10;&#10;var WebSocket = require('webSocket');&#10;&#10;/** Set up the accessor by defining the parameters, inputs, and outputs. */&#10;exports.setup = function() {&#10;&#10;  input('pose');&#10;  input('cmdvel');&#10;  input('cancel');&#10;&#10;  output('battery', {&#10;    type: 'int'&#10;  });&#10;  output('state', {&#10;    type: 'string'&#10;  });&#10;  output('location');&#10;&#10;  parameter('server', {&#10;    type: 'string',&#10;    value: 'localhost'&#10;  });&#10;  parameter('port', {&#10;    type: 'int',&#10;    value: 8080&#10;  });&#10;  parameter('topicPrefix', {&#10;    type: 'string',&#10;    value: '/scarab/lucy'&#10;  });&#10;}&#10;&#10;var batteryClient = null;&#10;var stateClient = null;&#10;var locationClient = null;&#10;var poseClient = null;&#10;var cmdvelClient = null;&#10;var cancelClient = null;&#10;&#10;var seq = 0;&#10;&#10;/** Initializes accessor by attaching functions to inputs. */&#10;exports.initialize = function() {&#10;&#10;  // Retreive the current battery charge status&#10;  batteryClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  batteryClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    batteryClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/diagnostics'&#10;    });&#10;  });&#10;  batteryClient.on('message', function (msg) {&#10;    // Quick hack to find the charge of the battery.&#10;    // Ideally this would be done in some better way, but this is all we&#10;    // need for now.&#10;    s = msg.msg.status[1].message;&#10;    charge = parseInt(s.substr(0, s.indexOf('%')));&#10;    if (!isNaN(charge)) {&#10;      send('battery', charge);&#10;    }&#10;  });&#10;  batteryClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Keep track of what the robot is doing&#10;  stateClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  stateClient.on('open', function () {&#10;    // Subscribe to /scarab/name/diagnostics&#10;    stateClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/state'&#10;    });&#10;  });&#10;  stateClient.on('message', function (msg) {&#10;    // one of: IDLE, BUSY, STUCK, FAILED&#10;    send('state', msg.msg.state);&#10;  });&#10;  stateClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Get location updates from the robot&#10;  locationClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  locationClient.on('open', function () {&#10;    // Subscribe to /scarab/name/pose&#10;    locationClient.send({&#10;        op: &quot;subscribe&quot;,&#10;        topic: getParameter('topicPrefix') + '/pose'&#10;    });&#10;  });&#10;  locationClient.on('message', function (msg) {&#10;    send('location', msg.msg.pose);&#10;  });&#10;  locationClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;&#10;  // Send poses to the robot&#10;  poseClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  poseClient.on('open', function () {&#10;    poseClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/goal',&#10;        type: 'geometry_msgs/PoseStamped'&#10;    });&#10;  });&#10;  poseClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('pose', pose_in);&#10;&#10;  // Send cmd_vel to the robot&#10;  cmdvelClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cmdvelClient.on('open', function () {&#10;    cmdvelClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/cmd_vel',&#10;        type: 'geometry_msgs/Twist'&#10;    });&#10;  });&#10;  cmdvelClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cmdvel', cmdvel_in);&#10;&#10;  // Send cancel to the robot&#10;  cancelClient = new WebSocket.Client({&#10;    host: getParameter('server'),&#10;    port: getParameter('port')&#10;  });&#10;  cancelClient.on('open', function () {&#10;    cancelClient.send({&#10;        op: 'advertise',&#10;        topic: getParameter('topicPrefix') + '/cancel',&#10;        type: 'std_msgs/Empty'&#10;    });&#10;  });&#10;  cancelClient.on('error', function(message) {&#10;    error(message)&#10;  });&#10;  addInputHandler('cancel', cancel_in);&#10;} &#10;&#10;var pose_in = function () {&#10;  var v = get('pose');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/goal',&#10;    msg: {&#10;      'header': {&#10;        'seq': seq++,&#10;        'stamp': {&#10;          'secs': 0,&#10;          'nsecs': 0&#10;        },&#10;        'frame_id': 'map_hokuyo'&#10;      },&#10;      'pose': v&#10;    }&#10;  };&#10;&#10;  poseClient.send(out);&#10;}&#10;&#10;var cmdvel_in = function () {&#10;  var c = get('cmdvel');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/cmd_vel',&#10;    msg: c&#10;  };&#10;&#10;  cmdvelClient.send(out);&#10;}&#10;&#10;var cancel_in = function () {&#10;  var c = get('cancel');&#10;&#10;  out = {&#10;    op: 'publish',&#10;    topic: getParameter('topicPrefix') + '/cancel',&#10;    msg: {}&#10;  };&#10;&#10;  cancelClient.send(out);&#10;}&#10;&#10;exports.wrapup = function() {&#10;  if (stateClient) {&#10;    stateClient.removeAllListeners('open');&#10;    stateClient.removeAllListeners('message');&#10;    stateClient.removeAllListeners('close');&#10;    stateClient.close();&#10;    stateClient = null;&#10;  }&#10;  if (batteryClient) {&#10;    batteryClient.removeAllListeners('open');&#10;    batteryClient.removeAllListeners('message');&#10;    batteryClient.removeAllListeners('close');&#10;    batteryClient.close();&#10;    batteryClient = null;&#10;  }&#10;  if (locationClient) {&#10;    locationClient.removeAllListeners('open');&#10;    locationClient.removeAllListeners('message');&#10;    locationClient.removeAllListeners('close');&#10;    locationClient.close();&#10;    locationClient = null;&#10;  }&#10;  if (poseClient) {&#10;    poseClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/goal'&#10;    });&#10;    poseClient.removeAllListeners('open');&#10;    poseClient.removeAllListeners('message');&#10;    poseClient.removeAllListeners('close');&#10;    poseClient.close();&#10;    poseClient = null;&#10;  }&#10;  if (cmdvelClient) {&#10;    cmdvelClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/cmd_vel'&#10;    });&#10;    cmdvelClient.removeAllListeners('open');&#10;    cmdvelClient.removeAllListeners('message');&#10;    cmdvelClient.removeAllListeners('close');&#10;    cmdvelClient.close();&#10;    cmdvelClient = null;&#10;  }&#10;  if (cancelClient) {&#10;    cancelClient.send({&#10;        op: 'unadvertise',&#10;        topic: getParameter('topicPrefix') + '/cancel'&#10;    });&#10;    cancelClient.removeAllListeners('open');&#10;    cancelClient.removeAllListeners('message');&#10;    cancelClient.removeAllListeners('close');&#10;    cancelClient.close();&#10;    cancelClient = null;&#10;  }&#10;}&#10;">
@@ -231,7 +257,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1225.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1240.0, 500.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -323,7 +349,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1225.0, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1240.0, 620.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -431,7 +457,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8081">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[130.0, 1140.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[475.0, 1085.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -442,7 +468,7 @@
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="false">
             </property>
         </port>
         <port name="received" class="ptolemy.actor.TypedIOPort">
@@ -459,14 +485,14 @@
         </port>
     </entity>
     <entity name="Display6" class="ptolemy.actor.lib.gui.Display">
-        <display name="Connection Commands"/>
+        <display name="Connections"/>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={285, 662, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="Connection Commands">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[895.0, 955.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[870.0, 835.0]">
         </property>
     </entity>
     <entity name="OpKeySwitching" class="org.terraswarm.accessor.JSAccessor">
@@ -531,48 +557,22 @@
         </port>
     </entity>
     <entity name="RoboCafeController" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 3;&#10;&#10;// STATES&#10;var STATE_IDLE = 'IDLE'; // Robot is currently just sitting there.&#10;var STATE_SERVING = 'SERVING'; // Robot has been requested and is going servering a person.&#10;var STATE_SPINNING = 'SPINNING';&#10;&#10;// MAPPING OF ITEM TO ROBOT NUM&#10;var ITEMS = {&#10;  Twix: 0,&#10;  SquirtGun: 1,&#10;  BouncyBalls: 2&#10;}&#10;&#10;// Array of robot structs&#10;var robots = [];&#10;&#10;&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;  input('Applause');&#10;&#10;  output('SelectPhoneRobot');&#10;  output('RobotStatus');&#10;&#10;&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  parameter('SpinRobotIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  parameter('SpinRobotDuration', {&#10;    type: 'number',&#10;    value: 5&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robot.queue = [];&#10;    robots[i] = robot;&#10;&#10;    // Output initial status&#10;    update_status(i, STATE_IDLE);&#10;  }&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;  addInputHandler('Applause', Applause_in);&#10;}&#10;&#10;function set_source_and_robot (phone_id, robot_index, operation) {&#10;  var out = {&#10;    type: operation,&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;function update_status (robot_index, state) {&#10;  send('RobotStatus', {&#10;    robotid: robot_index,&#10;    status: state&#10;  });&#10;}&#10;&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  console.log('got choice');&#10;  console.log(ws_payload);&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    // Get the unique identifier for what sent this packet&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Do some common operations for choice selections, cancellations,&#10;    // and done events&#10;    if (msg.type == 'selection' ||&#10;        msg.type == 'cancelled' ||&#10;        msg.type == 'finished') {&#10;&#10;      // What item/candy the user asked for&#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;        // Get the robot struct of the one that has what we are looking for&#10;        var rbt_idx = ITEMS[selection];&#10;        console.log('Got robot index: '+rbt_idx + ' for ' + selection);&#10;        var rbt = robots[rbt_idx];&#10;&#10;&#10;        // Now do what we want if this is a new selection&#10;        if (msg.type == 'selection') {&#10;          // We have a robot, check its state&#10;          if (rbt.state == STATE_IDLE) {&#10;            // Ok great!&#10;            // Put this one into service&#10;            rbt.state = STATE_SERVING;&#10;            // Keep track of which user this robot is attached to&#10;            rbt.servicing = phone_id;&#10;            // And send the robot to the person&#10;            set_source_and_robot(phone_id, rbt_idx, 'add');&#10;            // And update output status&#10;            update_status(rbt_idx, STATE_SERVING);&#10;          } else {&#10;&#10;            // We may want to queue&#10;            if (rbt.servicing != phone_id &amp;&amp; rbt.queue.indexOf(phone_id) == -1) {&#10;              // Robot not free, queue this request&#10;              rbt.queue.push(phone_id);&#10;            }&#10;          }&#10;        &#10;&#10;        } else if (msg.type == 'cancelled' || msg.type == 'finished') {&#10;          // We no longer need this robot to go to this person, send it&#10;          // back home&#10;&#10;          // Check that the correct robot was helping this person&#10;          if (rbt.state == STATE_SERVING &amp;&amp; rbt.servicing == phone_id) {&#10;            // This checks out. Stop the robot from what it was doing&#10;            // and send it home.&#10;&#10;&#10;            // Check if there is anyone in the queue&#10;            if (rbt.queue.length &gt; 0) {&#10;              var next_phone = rbt.queue.shift();&#10;              // Ok great!&#10;              // Put this one into service&#10;              rbt.state = STATE_SERVING;&#10;              // Keep track of which user this robot is attached to&#10;              rbt.servicing = next_phone;&#10;              // And send the robot to the person&#10;              set_source_and_robot(next_phone, rbt_idx, 'add');&#10;              // And update output status&#10;              update_status(rbt_idx, STATE_SERVING);&#10;            &#10;            } else {&#10;              // go back home&#10;              rbt.state = STATE_IDLE;&#10;              rbt.servicing = null;&#10;              set_source_and_robot(phone_id, rbt_idx, 'remove');&#10;              // Send the robot home.&#10;              set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');&#10;              // // And in a couple seconds, stop telling it to go home&#10;              // setTimeout(function () {&#10;              //   set_source_and_robot('Home', rbt_idx, 'remove');&#10;              // }, 3000);&#10;              // And update output status&#10;              update_status(rbt_idx, STATE_IDLE);&#10;&#10;            }&#10;          } else {&#10;            // Check if this phone in queue and remove it&#10;            if (rbt.queue.indexOf(phone_id) &gt; -1) {&#10;              rbt.queue.splice(rbt.queue.indexOf(phone_id), 1);&#10;            }&#10;          }&#10;&#10;        }&#10;&#10;&#10;      } else {&#10;        console.log('Could not find a robot that matched item ' + selection);&#10;      }&#10;&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;var Applause_in = function () {&#10;  var a = get('Applause');&#10;&#10;  if (a == 'no_applause') {&#10;    // ignore&#10;  &#10;  } else if (a == 'some_applause') {&#10;    // Make one robot spin&#10;&#10;    var robot_index = parseInt(getParameter('SpinRobotIndex'));&#10;    var robot = robots[robot_index];&#10;&#10;    var old_servicing = robot.servicing;&#10;    var old_state = robot.state;&#10;&#10;    // Robot is busy with spinning!&#10;    robot.state == STATE_SPINNING;&#10;    update_status(robot_index, STATE_SPINNING);&#10;&#10;    if (old_servicing != null) {&#10;      // Stop what ever was controlling the robot before&#10;      set_source_and_robot(old_servicing, robot_index, 'remove');&#10;    }&#10;&#10;    // Make it spin&#10;    set_source_and_robot('Spin', robot_index, 'add');&#10;&#10;    // After the spin is done, put it back&#10;    setTimeout(function () {&#10;      set_source_and_robot('Spin', robot_index, 'remove');&#10;      if (old_servicing != null) {&#10;        // Re setup what ever was controlling the robot before&#10;        set_source_and_robot(old_servicing, robot_index, 'add');&#10;      }&#10;&#10;      robot.state = old_state;&#10;      update_status(robot_index, old_state);&#10;    }, getParameter('SpinRobotDuration') * 1000);&#10;&#10;  }&#10;}&#10;">
+        <display name="ApplicationController"/>
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 3;&#10;&#10;// STATES&#10;var STATE_IDLE = 'IDLE'; // Robot is currently just sitting there.&#10;var STATE_SERVING = 'SERVING'; // Robot has been requested and is going servering a person.&#10;var STATE_SPINNING = 'SPINNING';&#10;&#10;// MAPPING OF ITEM TO ROBOT NUM&#10;var ITEMS = {&#10;  Twix: 0,&#10;  SquirtGun: 1,&#10;  BouncyBalls: 2&#10;}&#10;&#10;// Array of robot structs&#10;var robots = [];&#10;&#10;&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;  input('Applause');&#10;&#10;  output('SelectPhoneRobot');&#10;  output('RobotStatus');&#10;  output('AppState');&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  parameter('SpinRobotIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  parameter('SpinRobotDuration', {&#10;    type: 'number',&#10;    value: 5&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robot.queue = [];&#10;    robots[i] = robot;&#10;&#10;    // Output initial status&#10;    update_status(i, STATE_IDLE);&#10;  }&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;  addInputHandler('Applause', Applause_in);&#10;&#10;  // in case more than one request is received before a 'spin','cancelled' or&#10;  // 'finished' event, the second request ends up in the queue until the next&#10;  // event. To avoid this, poll queues and process events if robots are free.&#10;  setInterval(function() {&#10;    for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    if (robots[i].state == STATE_IDLE) {&#10;      process_from_queue(i);&#10;      // check if there are more events. if not, send the robot home &#10;    }&#10;  }&#10;  }, 1000);&#10;}&#10; &#10;function set_source_and_robot (phone_id, robot_index, operation) {&#10;  var out = {&#10;    type: operation,&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;function update_status (robot_index, state) {&#10;  send('RobotStatus', {&#10;    robotid: robot_index,&#10;    status: state&#10;  });&#10;}&#10;&#10;function queue_request (robot_index, phone_id, priorityIndex) {&#10;  // We may want to queue&#10;  rbt = robots[robot_index]; &#10;  if ((rbt.servicing == null || rbt.servicing != phone_id) &amp;&amp; rbt.queue.indexOf(phone_id) == -1) {&#10;    console.log(&quot;Queueing phone with id: &quot; + phone_id);&#10;&#10;    // if no priority has been specified, this is a reqular queueing event&#10;    // if it is not null, however, means that the specified phone has been&#10;    // interrupted by a spin, so put it at the top of the queue.&#10;    if (priorityIndex == null) {&#10;      // Robot not free, queue this request&#10;      rbt.queue.push(phone_id);&#10;    } else {&#10;      rbt.queue.unshift(phone_id); &#10;    }&#10;    return true;&#10;  } else { &#10;    console.log(&quot;Could not queue &quot; + phone_id  + &quot;. Robot Servicing= &quot; + rbt.servicing + &#10;    &quot; Queue Contents: &quot; + rbt.queue.toString()) ;&#10;  }&#10;  &#10;  return false;&#10;}&#10;&#10;function process_from_queue(robot_index) {&#10;  rbt = robots[robot_index];&#10;  if (rbt.queue.length &gt; 0 &amp;&amp; rbt.state == STATE_IDLE) { &#10;    var next_phone = rbt.queue.shift();&#10;    // Ok great!&#10;    // Put this one into service&#10;    rbt.state = STATE_SERVING;&#10;    // Keep track of which user this robot is attached to&#10;    rbt.servicing = next_phone;&#10;    // And send the robot to the person&#10;    set_source_and_robot(next_phone, robot_index, 'add');&#10;    // And update output status&#10;    update_status(robot_index, STATE_SERVING);&#10;    publish_state();&#10;    console.log(&quot;Processing event from the queue with id: &quot; + next_phone);&#10;    return true;&#10;  }&#10;  return false; &#10;}&#10;&#10;// Tell all listeners what's going on in the controller.&#10;function publish_state () {&#10;  send('AppState', robots);&#10;}&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  //console.log('got choice');&#10;  //console.log('ws_payload);&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    // Get the unique identifier for what sent this packet&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Do some common operations for choice selections, cancellations,&#10;    // and done events&#10;    if (msg.type == 'selection' ||&#10;        msg.type == 'cancelled' ||&#10;        msg.type == 'finished') {&#10;&#10;      // What item/candy the user asked for&#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;        // Get the robot struct of the one that has what we are looking for&#10;        var rbt_idx = ITEMS[selection];&#10;        console.log('Got robot index: '+rbt_idx + ' for ' + selection + ' on phone ' + phone_id);&#10;        var rbt = robots[rbt_idx];&#10;&#10;        // Now do what we want if this is a new selection&#10;        if (msg.type == 'selection') {&#10;          // We have a robot, check its state&#10;          if (rbt.state == STATE_IDLE) {&#10;            console.log(&quot;Robot &quot; + rbt_idx + &quot; was free, processing request&quot;);&#10;            // Ok great!&#10;            // Put this one into service&#10;            rbt.state = STATE_SERVING;&#10;            // Keep track of which user this robot is attached to&#10;            rbt.servicing = phone_id;&#10;            // And send the robot to the person&#10;            set_source_and_robot(phone_id, rbt_idx, 'add');&#10;            // And update output status&#10;            update_status(rbt_idx, STATE_SERVING);&#10;            publish_state();&#10;          } else {&#10;            // request to queue this request to be processed later&#10;            queue_request(rbt_idx, phone_id, null);&#10;          }&#10;        &#10;&#10;        } else if (msg.type == 'cancelled' || msg.type == 'finished') {&#10;          // We no longer need this robot to go to this person, send it&#10;          // back home&#10;&#10;          // Check that the correct robot was helping this person&#10;          if (rbt.state == STATE_SERVING &amp;&amp; rbt.servicing == phone_id) {&#10;            // This checks out. Stop the robot from what it was doing&#10;            // and send it home.&#10;            set_source_and_robot(phone_id, rbt_idx, 'remove');&#10;            rbt.state = STATE_IDLE;&#10;            update_status(rbt_idx, STATE_IDLE);&#10;            publish_state();&#10;            rbt.servicing = null;&#10;            // if no more events to be processed, send robot home.&#10;            if (rbt.queue.length == 0 &amp;&amp; rbt.state == STATE_IDLE) { &#10;                // go back home &#10;                // Send the robot home.&#10;                set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  &#10;            }&#10;            &#10;          } else {&#10;            // Check if this phone is in queue and remove it&#10;            if (rbt.queue.indexOf(phone_id) &gt; -1) {&#10;              rbt.queue.splice(rbt.queue.indexOf(phone_id), 1);&#10;            }&#10;          } &#10;        }&#10;&#10;&#10;      } else {&#10;        console.log('Could not find a robot that matched item ' + selection);&#10;      }&#10;&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;var Applause_in = function () {&#10;  var a = get('Applause');&#10;&#10;  if (a == 'no_applause') {&#10;    // ignore&#10;  &#10;  } else if (a == 'some_applause') {&#10;    // Make one robot spin&#10;&#10;    var robot_index = parseInt(getParameter('SpinRobotIndex'));&#10;    var robot = robots[robot_index];&#10;&#10;    //unset the service status.&#10;    var old_servicing = robot.servicing;&#10;    &#10;&#10;    // Robot is busy with spinning!&#10;    robot.state = STATE_SPINNING;&#10;    update_status(robot_index, STATE_SPINNING);&#10;&#10;    if (old_servicing != null) { &#10;      console.log(&quot;Will queue &quot; + old_servicing + &quot; to be processed later.&quot;);&#10;      robot.servicing = null;&#10;      // queue the previous request to be processed later,&#10;      // but  this should be the first thing to be processed since it was &#10;      // preempted by the spin so we add it to the top of the queue&#10;      queue_request (robot_index, old_servicing, 0); &#10;      // Stop what ever was controlling the robot before&#10;      set_source_and_robot(old_servicing, robot_index, 'remove');&#10;    }&#10;&#10;    // Make it spin&#10;    set_source_and_robot('Spin', robot_index, 'add');&#10;&#10;    // After the spin is done, put it back&#10;    setTimeout(function () {&#10;      set_source_and_robot('Spin', robot_index, 'remove');&#10;      // if (old_servicing != null) {&#10;      //   // Re setup what ever was controlling the robot before&#10;      //   set_source_and_robot(old_servicing, robot_index, 'add');&#10;      // }&#10;&#10;      robot.state = STATE_IDLE;&#10;      update_status(robot_index, robot.state);&#10;&#10;      // robot is idle now, try to process from queue&#10;      process_from_queue(robot_index);&#10;      // if there are no more events to be processed for this robot, send it home.&#10;      // otherwise, the poll will take care of the remaining events soon.&#10;      if (robot.queue.length == 0 &#10;        &amp;&amp; robot.state == STATE_IDLE) { &#10;        // go back home &#10;        // Send the robot home.&#10;        set_source_and_robot('Home'+robot_index, robot_index, 'add');  &#10;      }&#10;    }, getParameter('SpinRobotDuration') * 1000);&#10;&#10;   &#10;&#10;  }&#10;}&#10;">
         </property>
         <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/RoboCafeController.js">
         </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-36.0, -27.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="78.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="59.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.4,1.0,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="26">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,1.0,1.0,1.0}">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Café">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-28.0, -13.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={253, 274, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
-            </property>
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[580.0, 1150.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[695.0, 1095.0]">
         </property>
         <property name="SpinRobotIndex" class="ptolemy.data.expr.Parameter" value="2">
         </property>
         <property name="SpinRobotDuration" class="ptolemy.data.expr.Parameter" value="spinDuration">
         </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
         <port name="UserChoice" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
@@ -593,13 +593,23 @@
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
         </port>
+        <port name="AppState" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+            </property>
+        </port>
     </entity>
     <entity name="Display7" class="ptolemy.actor.lib.gui.Display">
+        <display name="User Choices"/>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={72, 522, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[325.0, 1090.0]">
+        <property name="title" class="ptolemy.data.expr.StringParameter" value="User Choices">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[650.0, 1015.0]">
         </property>
     </entity>
     <entity name="Scarab4" class="org.terraswarm.accessor.JSAccessor">
@@ -618,7 +628,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1225.0, 850.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1240.0, 850.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -678,7 +688,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1075.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1090.0, 500.0]">
         </property>
         <property name="SpinDuration" class="ptolemy.data.expr.Parameter" value="spinDuration">
         </property>
@@ -730,7 +740,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1075.0, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1090.0, 620.0]">
         </property>
         <property name="SpinDuration" class="ptolemy.data.expr.Parameter" value="spinDuration">
         </property>
@@ -782,7 +792,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1075.0, 735.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1090.0, 735.0]">
         </property>
         <property name="SpinDuration" class="ptolemy.data.expr.Parameter" value="7.0">
         </property>
@@ -834,7 +844,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1075.0, 850.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1090.0, 850.0]">
         </property>
         <property name="SpinDuration" class="ptolemy.data.expr.Parameter" value="7.0">
         </property>
@@ -920,7 +930,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1225.0, 735.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1240.0, 735.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1500,7 +1510,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[990.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1005.0, 500.0]">
         </property>
         <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
         </property>
@@ -1539,7 +1549,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[990.0, 620.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1005.0, 620.0]">
         </property>
         <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
         </property>
@@ -1576,7 +1586,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[990.0, 735.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1005.0, 735.0]">
         </property>
         <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
         </property>
@@ -1613,7 +1623,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[990.0, 850.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1005.0, 850.0]">
         </property>
         <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
         </property>
@@ -1698,7 +1708,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8084">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[130.0, 1255.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[420.0, 1240.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1744,7 +1754,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[320.0, 1255.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[535.0, 1240.0]">
         </property>
         <property name="_icon" class="ptolemy.vergil.icon.EditorIcon">
             <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
@@ -1782,25 +1792,31 @@
                 </property>
             </property>
         </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
         <port name="Input" class="ptolemy.actor.TypedIOPort">
             <property name="input"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
             </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
             </property>
         </port>
     </entity>
     <entity name="Display14" class="ptolemy.actor.lib.gui.Display">
+        <display name="Applause Status"/>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={72, 522, 759, 306}, maximized=false}">
         </property>
         <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[759, 262]">
         </property>
-        <property name="title" class="ptolemy.data.expr.StringParameter" value="applause">
+        <property name="title" class="ptolemy.data.expr.StringParameter" value="Applause Status">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[525.0, 1255.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[640.0, 1240.0]">
         </property>
     </entity>
     <entity name="OpAddKeyValue3" class="org.terraswarm.accessor.JSAccessor">
@@ -2313,7 +2329,7 @@
         </port>
     </entity>
     <entity name="MicrostepDelay" class="ptolemy.actor.lib.MicrostepDelay">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1150.0, 545.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1165.0, 545.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2321,7 +2337,7 @@
         </property>
     </entity>
     <entity name="MicrostepDelay2" class="ptolemy.actor.lib.MicrostepDelay">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1150.0, 665.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1165.0, 665.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2329,7 +2345,7 @@
         </property>
     </entity>
     <entity name="MicrostepDelay3" class="ptolemy.actor.lib.MicrostepDelay">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1150.0, 780.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1165.0, 780.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2337,7 +2353,7 @@
         </property>
     </entity>
     <entity name="MicrostepDelay4" class="ptolemy.actor.lib.MicrostepDelay">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1150.0, 895.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1165.0, 895.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2360,7 +2376,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[935.0, 1160.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[880.0, 1095.0]">
         </property>
         <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="localhost">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2424,7 +2440,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1345.0, 490.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1360.0, 490.0]">
         </property>
         <property name="Key" class="ptolemy.data.expr.Parameter" value="battery">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2475,7 +2491,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1440.0, 490.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 490.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2511,7 +2527,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1575.0, 665.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1590.0, 665.0]">
         </property>
         <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="localhost">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2569,7 +2585,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1345.0, 610.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1360.0, 610.0]">
         </property>
         <property name="Key" class="ptolemy.data.expr.Parameter" value="battery">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2616,7 +2632,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1440.0, 610.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 610.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2651,7 +2667,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1345.0, 725.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1360.0, 725.0]">
         </property>
         <property name="Key" class="ptolemy.data.expr.Parameter" value="battery">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2698,7 +2714,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1440.0, 725.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 725.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2733,7 +2749,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1345.0, 840.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1360.0, 840.0]">
         </property>
         <property name="Key" class="ptolemy.data.expr.Parameter" value="battery">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2780,7 +2796,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1440.0, 840.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[1455.0, 840.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -2800,6 +2816,14 @@
             </property>
         </port>
     </entity>
+    <entity name="MicrostepDelay5" class="ptolemy.actor.lib.MicrostepDelay">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[630.0, 1135.0]">
+        </property>
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+    </entity>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
@@ -2809,19 +2833,19 @@
     <relation name="relation16" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[250.0, 1140.0]">
+        <vertex name="vertex1" value="[575.0, 1085.0]">
         </vertex>
     </relation>
     <relation name="relation13" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[930.0, 500.0]">
+        <vertex name="vertex1" value="[945.0, 500.0]">
         </vertex>
     </relation>
     <relation name="relation20" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[930.0, 850.0]">
+        <vertex name="vertex1" value="[945.0, 850.0]">
         </vertex>
     </relation>
     <relation name="relation26" class="ptolemy.actor.TypedIORelation">
@@ -2881,7 +2905,7 @@
     <relation name="relation55" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[450.0, 1255.0]">
+        <vertex name="vertex1" value="[590.0, 1240.0]">
         </vertex>
     </relation>
     <relation name="relation19" class="ptolemy.actor.TypedIORelation">
@@ -2901,11 +2925,11 @@
     <relation name="relation4" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation22" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="[940.0, 670.0]">
+        <vertex name="vertex1" value="[955.0, 670.0]">
         </vertex>
     </relation>
     <relation name="relation24" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="[950.0, 680.0]">
+        <vertex name="vertex1" value="[965.0, 680.0]">
         </vertex>
     </relation>
     <relation name="relation2" class="ptolemy.actor.TypedIORelation">
@@ -2937,7 +2961,7 @@
     <relation name="relation10" class="ptolemy.actor.TypedIORelation">
     </relation>
     <relation name="relation30" class="ptolemy.actor.TypedIORelation">
-        <vertex name="vertex1" value="[1500.0, 665.0]">
+        <vertex name="vertex1" value="[1515.0, 665.0]">
         </vertex>
     </relation>
     <relation name="relation31" class="ptolemy.actor.TypedIORelation">
@@ -2952,6 +2976,10 @@
     </relation>
     <relation name="relation41" class="ptolemy.actor.TypedIORelation">
     </relation>
+    <relation name="relation42" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation49" class="ptolemy.actor.TypedIORelation">
+    </relation>
     <link port="Scarab.battery" relation="relation27"/>
     <link port="Scarab.location" relation="relation8"/>
     <link port="Scarab.pose" relation="relation2"/>
@@ -2964,6 +2992,7 @@
     <link port="Scarab2.pose" relation="relation40"/>
     <link port="Scarab2.cmdvel" relation="relation46"/>
     <link port="Scarab2.cancel" relation="relation52"/>
+    <link port="WebSocketServer.toSend" relation="relation49"/>
     <link port="WebSocketServer.received" relation="relation16"/>
     <link port="Display6.input" relation="relation17"/>
     <link port="OpKeySwitching.Input" relation="relation28"/>
@@ -2976,6 +3005,7 @@
     <link port="RoboCafeController.SelectPhoneRobot" relation="relation17"/>
     <link port="RoboCafeController.RobotStatus" relation="relation"/>
     <link port="RoboCafeController.Applause" relation="relation55"/>
+    <link port="RoboCafeController.AppState" relation="relation42"/>
     <link port="Display7.input" relation="relation16"/>
     <link port="Scarab4.battery" relation="relation36"/>
     <link port="Scarab4.location" relation="relation12"/>
@@ -3069,5 +3099,7 @@
     <link port="OpMakeKeyValue4.Output" relation="relation41"/>
     <link port="OpAddKeyValue9.Input" relation="relation41"/>
     <link port="OpAddKeyValue9.Output" relation="relation30"/>
+    <link port="MicrostepDelay5.input" relation="relation42"/>
+    <link port="MicrostepDelay5.output" relation="relation49"/>
     <link relation1="relation28" relation2="relation6"/>
 </entity>

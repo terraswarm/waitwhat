@@ -37,8 +37,7 @@ exports.setup = function () {
 
   output('SelectPhoneRobot');
   output('RobotStatus');
-
-
+  output('AppState');
 
   //
   // Parameters
@@ -135,10 +134,16 @@ function process_from_queue(robot_index) {
     set_source_and_robot(next_phone, robot_index, 'add');
     // And update output status
     update_status(robot_index, STATE_SERVING);
+    publish_state();
     console.log("Processing event from the queue with id: " + next_phone);
     return true;
   }
   return false; 
+}
+
+// Tell all listeners what's going on in the controller.
+function publish_state () {
+  send('AppState', robots);
 }
 
 var Choice_in = function () {
@@ -185,6 +190,7 @@ var Choice_in = function () {
             set_source_and_robot(phone_id, rbt_idx, 'add');
             // And update output status
             update_status(rbt_idx, STATE_SERVING);
+            publish_state();
           } else {
             // request to queue this request to be processed later
             queue_request(rbt_idx, phone_id, null);
@@ -201,11 +207,11 @@ var Choice_in = function () {
             // and send it home.
             set_source_and_robot(phone_id, rbt_idx, 'remove');
             rbt.state = STATE_IDLE;
-            update_status(rbt_idx, STATE_IDLE); 
+            update_status(rbt_idx, STATE_IDLE);
+            publish_state();
             rbt.servicing = null;
             // if no more events to be processed, send robot home.
-            if (rbt.queue.length == 0 
-              && rbt.state == STATE_IDLE) { 
+            if (rbt.queue.length == 0 && rbt.state == STATE_IDLE) { 
                 // go back home 
                 // Send the robot home.
                 set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  
