@@ -1,0 +1,1326 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="robocafe_debug_visual" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.devel">
+    </property>
+    <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
+        <property name="stopTime" class="ptolemy.data.expr.Parameter" value="50.0">
+        </property>
+        <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-325.0, 10.0}">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1490, 275, 1307, 927}, maximized=false}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1073, 817]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.491519408142199">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{702.4970703125, 794.928827784584}">
+    </property>
+    <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
+    </property>
+    <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Localization Information">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-80.0, 65.0}">
+        </property>
+    </property>
+    <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Spin Command">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-60.0, 0.0}">
+        </property>
+    </property>
+    <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
+        <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
+        </property>
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 28, 2015 7:32:09 PM">
+        </property>
+        <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{285.0, 105.0}">
+        </property>
+    </property>
+    <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="false">
+    </property>
+    <property name="Annotation4" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Control">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{380.0, 0.0}">
+        </property>
+    </property>
+    <property name="Annotation7" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Main Controller">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{895.0, 0.0}">
+        </property>
+    </property>
+    <property name="rosBridgeIP" class="ptolemy.data.expr.StringParameter" value="192.168.11.108">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1605.0, -10.0}">
+        </property>
+    </property>
+    <property name="hueBulbIP" class="ptolemy.data.expr.StringParameter" value="192.168.11.117">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1400.0, -10.0}">
+        </property>
+    </property>
+    <property name="hueUsername" class="ptolemy.data.expr.StringParameter" value="lab11in4908">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1195.0, -10.0}">
+        </property>
+    </property>
+    <property name="poseUpdateThreshold" class="ptolemy.data.expr.Parameter" value="0.3">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1000.0, -10.0}">
+        </property>
+    </property>
+    <property name="spinDuration" class="ptolemy.data.expr.Parameter" value="3">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-235.0, -10.0}">
+        </property>
+    </property>
+    <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="false">
+    </property>
+    <property name="_defaultInferredWidthTo1" class="ptolemy.data.expr.Parameter" value="true">
+    </property>
+    <property name="Annotation8" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Applause Detection">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-295.0, 70.0}">
+        </property>
+    </property>
+    <property name="Annotation5" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="This is a test model that is used to test the correctness of request/spin interleavings&#10;Test Schedule:&#10;&#10;Phone1: Request Twix at t=2.2s + every requestPeriod seconds thereafter&#10;Phone1: Receive Twix at  t=8.2s + every requestPeriod seconds thereafter&#10;&#10;Phone2: Request Twix at t=2.3s + every requestPeriod seconds thereafter&#10;Phone2: Receive Twix at  t=15s + every requestPeriod seconds thereafter&#10;&#10;Applause       at  t=3.2s + every applausePeriod seconds thereafter&#10;&#10;ALPS location is sampled inside a 20x20 box each tick&#10;Home location is fixed&#10;The robot always reports a location of x=0.0,y=0.0&#10;&#10;Stops at t=50 s">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{915.0, 305.0}">
+        </property>
+    </property>
+    <property name="applausePeriod" class="ptolemy.data.expr.Parameter" value="20">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{175.0, -10.0}">
+        </property>
+    </property>
+    <property name="fake_phone_id" class="ptolemy.data.expr.Parameter" value="&quot;AB12&quot;">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{480.0, -10.0}">
+        </property>
+    </property>
+    <property name="requestPeriod" class="ptolemy.data.expr.Parameter" value="30">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{25.0, -10.0}">
+        </property>
+    </property>
+    <property name="fake_phone_id2" class="ptolemy.data.expr.Parameter" value="&quot;AB1C&quot;">
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{650.0, -10.0}">
+        </property>
+    </property>
+    <entity name="OpKeySwitching" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Switching Network&#10; *&#10; * Takes in control assignments in the form of {input: key_value,&#10; *                                              output: output_index,&#10; *                                              type: add|remove}&#10; * and maps inputs to outputs&#10; *&#10; *  @accessor OpSwitching&#10; *&#10;*/&#10;&#10;var key;&#10;&#10;var matrix = {};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;&#10;  input('Select');&#10;&#10;  output('Output0');&#10;  output('Output1');&#10;  output('Output2');&#10;  output('Output3');&#10;  output('Output4');&#10;  output('Output5');&#10;&#10;  parameter('Key', {&#10;    type: 'string',&#10;    value: 'id'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  key = getParameter('Key');&#10;&#10;  addInputHandler('Select', Select_in);&#10;  addInputHandler('Input', Input_in);&#10;}&#10;&#10;var Select_in = function () {&#10;  var s = get('Select');&#10;&#10;  var t = s['type'];&#10;  var i = s['input'];&#10;  var o = 'Output' + s['output'];&#10;&#10;  if (!(i in matrix &amp;&amp; matrix.hasOwnProperty(i))) {&#10;    // Create the array if it doesn't exist&#10;    matrix[i] = [];&#10;  }&#10;&#10;  if (t == 'remove') {&#10;    // Get rid of this connection&#10;    var destarr = matrix[i];&#10;    var index = destarr.indexOf(o);&#10;    if (index &gt; -1) {&#10;        destarr.splice(index, 1);&#10;    }&#10;  &#10;  } else if (t == 'add') {&#10;&#10;    // Make sure this output isn't connected already&#10;    for (var input in matrix) {&#10;      if (matrix.hasOwnProperty(input)) {&#10;        for (var j=0; j&lt;matrix[input].length; j++) {&#10;          var outp = matrix[input][j];&#10;          if (outp == o) {&#10;            matrix[input].splice(j, 1);&#10;            break;&#10;          }&#10;        }      &#10;      }&#10;    }&#10;&#10;    // New connection!&#10;    var destarr = matrix[i];&#10;    var index = destarr.indexOf(o);&#10;    if (index == -1) {&#10;      // Not already there, so let's add it&#10;      destarr.push(o);&#10;    }&#10;  }&#10;&#10;  console.log(matrix);&#10;  &#10;}&#10;&#10;var Input_in = function () {&#10;  var i = get('Input');&#10;&#10;  if (typeof i === 'object' &amp;&amp; key in i &amp;&amp; i.hasOwnProperty(key)) {&#10;    var val = i[key];&#10;    if (val in matrix &amp;&amp; matrix.hasOwnProperty(val)) {&#10;      var out = matrix[val];&#10;      // Send to all connected outputs&#10;      for (var j=0; j&lt;out.length; j++) {&#10;        send(out[j], i);&#10;      }&#10;    }&#10;  }&#10;}&#10;&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/OpKeySwitching.js">
+        </property>
+        <property name="checkoutOrUpdateAccessorsRepository" class="ptolemy.actor.parameters.SharedParameter" value="true">
+        </property>
+        <property name="Key" class="ptolemy.data.expr.Parameter" value="id">
+            <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{710.0, 620.0}">
+        </property>
+        <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Select" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
+            </property>
+        </port>
+        <port name="Output0" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output1" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output2" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output3" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output4" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Output5" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="RoboCafeController" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** RoboCafe Controller&#10; *&#10; *  @accessor RoboCafeController&#10; *&#10;*/&#10;&#10;&#10;var NUM_ROBOTS = 3;&#10;&#10;// STATES&#10;var STATE_IDLE = 'IDLE'; // Robot is currently just sitting there.&#10;var STATE_SERVING = 'SERVING'; // Robot has been requested and is going servering a person.&#10;var STATE_SPINNING = 'SPINNING';&#10;&#10;// MAPPING OF ITEM TO ROBOT NUM&#10;var ITEMS = {&#10;  Twix: 0,&#10;  SquirtGun: 1,&#10;  BouncyBalls: 2&#10;}&#10;&#10;// Array of robot structs&#10;var robots = [];&#10;&#10;&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function () {&#10;  //&#10;  // I/O&#10;  //&#10;  input('UserChoice');&#10;  input('Applause');&#10;&#10;  output('SelectPhoneRobot');&#10;  output('RobotStatus');&#10;&#10;&#10;&#10;  //&#10;  // Parameters&#10;  //&#10;  parameter('SpinRobotIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  parameter('SpinRobotDuration', {&#10;    type: 'number',&#10;    value: 5&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;&#10;  // Initialize all robots&#10;  for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    var robot = {};&#10;    robot.state = STATE_IDLE;&#10;    robot.queue = [];&#10;    robots[i] = robot;&#10;&#10;    // Output initial status&#10;    update_status(i, STATE_IDLE);&#10;  }&#10;&#10;  addInputHandler('UserChoice', Choice_in);&#10;  addInputHandler('Applause', Applause_in);&#10;&#10;  // in case more than one request is received before a 'spin','cancelled' or&#10;  // 'finished' event, the second request ends up in the queue until the next&#10;  // event. To avoid this, poll queues and process events if robots are free.&#10;  setInterval(function() {&#10;    for (var i=0; i&lt;NUM_ROBOTS; i++) {&#10;    if (robots[i].state == STATE_IDLE) {&#10;      process_from_queue(i);&#10;    }&#10;  }&#10;  }, 1000);&#10;}&#10; &#10;function set_source_and_robot (phone_id, robot_index, operation) {&#10;  var out = {&#10;    type: operation,&#10;    input: phone_id,&#10;    output: robot_index&#10;  }&#10;  send('SelectPhoneRobot', out);&#10;}&#10;&#10;function update_status (robot_index, state) {&#10;  send('RobotStatus', {&#10;    robotid: robot_index,&#10;    status: state&#10;  });&#10;}&#10;&#10;function queue_request (robot_index, phone_id, priorityIndex) {&#10;  // We may want to queue&#10;  rbt = robots[robot_index]; &#10;  if ((rbt.servicing == null || rbt.servicing != phone_id) &amp;&amp; rbt.queue.indexOf(phone_id) == -1) {&#10;    console.log(&quot;Queueing phone with id: &quot; + phone_id);&#10;&#10;    // if no priority has been specified, this is a reqular queueing event&#10;    // if it is not null, however, means that the specified phone has been&#10;    // interrupted by a spin, so put it at the top of the queue.&#10;    if (priorityIndex == null) {&#10;      // Robot not free, queue this request&#10;      rbt.queue.push(phone_id);&#10;    } else {&#10;      rbt.queue.unshift(phone_id); &#10;    }&#10;    return true;&#10;  } else { &#10;    console.log(&quot;Could not queue &quot; + phone_id  + &quot;. Robot Servicing= &quot; + rbt.servicing + &#10;    &quot; Queue Contents: &quot; + rbt.queue.toString()) ;&#10;  }&#10;  &#10;  return false;&#10;}&#10;&#10;function process_from_queue(robot_index) {&#10;  rbt = robots[robot_index];&#10;  if (rbt.queue.length &gt; 0 &amp;&amp; rbt.state == STATE_IDLE) { &#10;    var next_phone = rbt.queue.shift();&#10;    // Ok great!&#10;    // Put this one into service&#10;    rbt.state = STATE_SERVING;&#10;    // Keep track of which user this robot is attached to&#10;    rbt.servicing = next_phone;&#10;    // And send the robot to the person&#10;    set_source_and_robot(next_phone, robot_index, 'add');&#10;    // And update output status&#10;    update_status(robot_index, STATE_SERVING);&#10;    console.log(&quot;Processing event from the queue with id: &quot; + next_phone);&#10;    return true;&#10;  }&#10;  return false; &#10;}&#10;&#10;var Choice_in = function () {&#10;  var ws_payload = get('UserChoice');&#10;&#10;  //console.log('got choice');&#10;  //console.log('ws_payload);&#10;&#10;  // Check if this is a normal message from a client or a status message&#10;  if ('message' in ws_payload) {&#10;    var msg = ws_payload.message;&#10;&#10;    // Get the unique identifier for what sent this packet&#10;    var phone_id = msg.phone_id;&#10;&#10;    // Do some common operations for choice selections, cancellations,&#10;    // and done events&#10;    if (msg.type == 'selection' ||&#10;        msg.type == 'cancelled' ||&#10;        msg.type == 'finished') {&#10;&#10;      // What item/candy the user asked for&#10;      var selection = msg.selection;&#10;&#10;      // Now that we know what the user wants, figure out if we can satisfy&#10;      // the request&#10;      if (selection in ITEMS) {&#10;        // Get the robot struct of the one that has what we are looking for&#10;        var rbt_idx = ITEMS[selection];&#10;        console.log('Got robot index: '+rbt_idx + ' for ' + selection + ' on phone ' + phone_id);&#10;        var rbt = robots[rbt_idx];&#10;&#10;        // Now do what we want if this is a new selection&#10;        if (msg.type == 'selection') {&#10;          // We have a robot, check its state&#10;          if (rbt.state == STATE_IDLE) {&#10;            console.log(&quot;Robot &quot; + rbt_idx + &quot; was free, processing request&quot;);&#10;            // Ok great!&#10;            // Put this one into service&#10;            rbt.state = STATE_SERVING;&#10;            // Keep track of which user this robot is attached to&#10;            rbt.servicing = phone_id;&#10;            // And send the robot to the person&#10;            set_source_and_robot(phone_id, rbt_idx, 'add');&#10;            // And update output status&#10;            update_status(rbt_idx, STATE_SERVING);&#10;          } else {&#10;            // request to queue this request to be processed later&#10;            queue_request(rbt_idx, phone_id, null);&#10;          }&#10;        &#10;&#10;        } else if (msg.type == 'cancelled' || msg.type == 'finished') {&#10;          // We no longer need this robot to go to this person, send it&#10;          // back home&#10;&#10;          // Check that the correct robot was helping this person&#10;          if (rbt.state == STATE_SERVING &amp;&amp; rbt.servicing == phone_id) {&#10;            // This checks out. Stop the robot from what it was doing&#10;            // and send it home.&#10;&#10;            var anythingToProcess = process_from_queue(rbt_idx);&#10;            // Check if there is anyone in the queue&#10;            if (anythingToProcess) {&#10;               // serving the next phone from queue. Do nothing. &#10;            } else {&#10;              // go back home&#10;              rbt.state = STATE_IDLE;&#10;              rbt.servicing = null;&#10;              set_source_and_robot(phone_id, rbt_idx, 'remove');&#10;              // Send the robot home.&#10;              set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');&#10;              // // And in a couple seconds, stop telling it to go home&#10;              // setTimeout(function () {&#10;              //   set_source_and_robot('Home', rbt_idx, 'remove');&#10;              // }, 3000);&#10;              // And update output status&#10;              update_status(rbt_idx, STATE_IDLE);&#10;&#10;            }&#10;          } else {&#10;            // Check if this phone in queue and remove it&#10;            if (rbt.queue.indexOf(phone_id) &gt; -1) {&#10;              rbt.queue.splice(rbt.queue.indexOf(phone_id), 1);&#10;            }&#10;          } &#10;        }&#10;&#10;&#10;      } else {&#10;        console.log('Could not find a robot that matched item ' + selection);&#10;      }&#10;&#10;    }&#10;&#10;  }&#10;&#10;}&#10;&#10;var Applause_in = function () {&#10;  var a = get('Applause');&#10;&#10;  if (a == 'no_applause') {&#10;    // ignore&#10;  &#10;  } else if (a == 'some_applause') {&#10;    // Make one robot spin&#10;&#10;    var robot_index = parseInt(getParameter('SpinRobotIndex'));&#10;    var robot = robots[robot_index];&#10;&#10;    //unset the service status.&#10;    var old_servicing = robot.servicing;&#10;    &#10;&#10;    // Robot is busy with spinning!&#10;    robot.state = STATE_SPINNING;&#10;    update_status(robot_index, STATE_SPINNING);&#10;&#10;    if (old_servicing != null) { &#10;      console.log(&quot;Will queue &quot; + old_servicing + &quot; to be processed later.&quot;);&#10;      robot.servicing = null;&#10;      // queue the previous request to be processed later,&#10;      // but  this should be the first thing to be processed since it was &#10;      // preempted by the spin so we add it to the top of the queue&#10;      queue_request (robot_index, old_servicing, 0); &#10;      // Stop what ever was controlling the robot before&#10;      set_source_and_robot(old_servicing, robot_index, 'remove');&#10;    }&#10;&#10;    // Make it spin&#10;    set_source_and_robot('Spin', robot_index, 'add');&#10;&#10;    // After the spin is done, put it back&#10;    setTimeout(function () {&#10;      set_source_and_robot('Spin', robot_index, 'remove');&#10;      // if (old_servicing != null) {&#10;      //   // Re setup what ever was controlling the robot before&#10;      //   set_source_and_robot(old_servicing, robot_index, 'add');&#10;      // }&#10;&#10;      robot.state = STATE_IDLE;&#10;      update_status(robot_index, robot.state);&#10;&#10;      // robot is idle now, try to process from queue&#10;      process_from_queue(robot_index);&#10;    }, getParameter('SpinRobotDuration') * 1000);&#10;&#10;  }&#10;}&#10;">
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/oldilge/waitwhat/accessors/RoboCafeController.js">
+        </property>
+        <property name="checkoutOrUpdateAccessorsRepository" class="ptolemy.actor.parameters.SharedParameter" value="true">
+        </property>
+        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
+            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-36.0, -27.0]">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="78.0">
+                </property>
+                <property name="height" class="ptolemy.data.expr.Parameter" value="59.0">
+                </property>
+                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.4,1.0,1.0}">
+                </property>
+            </property>
+            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+                <property name="textSize" class="ptolemy.data.expr.Parameter" value="26">
+                </property>
+                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,1.0,1.0,1.0}">
+                </property>
+                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Café">
+                </property>
+                <property name="_location" class="ptolemy.kernel.util.Location" value="[-28.0, -13.0]">
+                </property>
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={253, 274, 934, 634}, maximized=false}">
+            </property>
+            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+            </property>
+            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
+            </property>
+            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{315.0, 1085.0}">
+        </property>
+        <property name="SpinRobotIndex" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+        <property name="SpinRobotDuration" class="ptolemy.data.expr.Parameter" value="spinDuration">
+        </property>
+        <port name="UserChoice" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="SelectPhoneRobot" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="RobotStatus" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Applause" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="Command2Pose" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a ROS message from an X,Y,Z coordinate.&#10; *&#10; *  @accessor Command2PoseVel&#10; *&#10;*/&#10;&#10;// Set default&#10;var last_location = {&#10;  position: {&#10;    x: 0,&#10;    y: 0,&#10;    z: 0&#10;  },&#10;  orientation: {&#10;    x: 0,&#10;    y: 0,&#10;    z: 0,&#10;    w: 1&#10;  }&#10;};&#10;&#10;// Variables for spin&#10;var timer = null;&#10;var currently_spinning = false;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  // Input command of what the robot should do.&#10;  //  {&#10;  //    command: Go|Spin&#10;  //    X: Y: Z:   // only if Go command&#10;  //  }&#10;  input('Command');&#10;&#10;  // Current location of the robot&#10;  input('Location');&#10;&#10;  // Direct the robot&#10;  output('Pose');&#10;&#10;  // Raw access&#10;  output('CmdVel');&#10;  output('Cancel');&#10;   &#10;&#10;  // How long to let the robot spin&#10;  parameter('SpinDuration', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Command', Command_in);&#10;  addInputHandler('Location', Location_in);&#10;}&#10;&#10;var Command_in = function () {&#10;  // Now parse the incoming command&#10;  var cmd = get('Command');&#10;&#10;  if (cmd.command == 'Go') {&#10;&#10;    // Upon new command we need to stop any internal timers&#10;    if (timer != null) {&#10;      clearTimeout(timer); &#10;    }&#10;&#10;    // Send the robot to the given location&#10;  &#10;    var x = cmd.X || 0; &#10;    var y = cmd.Y || 0; &#10;    var z = cmd.Z || 0; &#10;&#10;    out = {&#10;      'position': {&#10;        'x': x,&#10;        'y': y,&#10;        'z': 0.0&#10;      },&#10;      'orientation': last_location.orientation&#10;    }&#10;    send('Pose', out);&#10;&#10;  } else if (cmd.command == 'Spin') {&#10;    if (!currently_spinning) {&#10;      currently_spinning  = true;&#10;&#10;      // Start by cancelling wherever it was going&#10;      send('Cancel', true);&#10;&#10;      // Wait for a quick second to make sure the cancel command has a &#10;      // chance to go through&#10;      setTimeout(function () {&#10;&#10;        // Now power the wheels to spin&#10;        var spin_vel = {&#10;          linear: {&#10;            x: 0,&#10;            y: 0,&#10;            z: 0&#10;          },&#10;          angular: {&#10;            x: 0,&#10;            y: 0,&#10;            z: 1.0&#10;          }&#10;        };&#10;&#10;        send('CmdVel', spin_vel);&#10;&#10;        // Now stop the spin at some point&#10;        timer = setTimeout(function () {&#10;          var spin_no = {&#10;            linear: {&#10;              x: 0,&#10;              y: 0,&#10;              z: 0&#10;            },&#10;            angular: {&#10;              x: 0,&#10;              y: 0,&#10;              z: 0&#10;            }&#10;          };&#10;&#10;          send('CmdVel', spin_no);&#10;          currently_spinning = false;&#10;        }, getParameter('SpinDuration')*1000);&#10;        timer = null;&#10;      }, 50); &#10;    } &#10;  } &#10;}&#10;&#10;// Save the last location&#10;var Location_in = function () {&#10;  last_location = get('Location');&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/oldilge/waitwhat/accessors/Command2PoseVel.js">
+        </property>
+        <property name="checkoutOrUpdateAccessorsRepository" class="ptolemy.actor.parameters.SharedParameter" value="true">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1070.0, 465.0}">
+        </property>
+        <property name="SpinDuration" class="ptolemy.data.expr.Parameter" value="spinDuration">
+        </property>
+        <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <port name="Command" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Location" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="NORTH">
+            </property>
+        </port>
+        <port name="Pose" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="CmdVel" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Cancel" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="Location2Command" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Create a Command from a location. Make a Go command.&#10; *&#10; *  @accessor Location2Command&#10; *&#10;*/&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Location');&#10;  output('Command');&#10;}&#10;&#10;exports.initialize = function () {&#10;  addInputHandler('Location', Location_in);&#10;}&#10;&#10;// Add command&#10;var Location_in = function () {&#10;  var l = get('Location');&#10;  l.command = 'Go';&#10;  send('Command', l);&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/Location2Command.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{310.0, 620.0}">
+        </property>
+        <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <port name="Location" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="Command" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="GoCommandFilter" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Filter location updates that are close to each other&#10; *&#10; *&#10; *  @accessor GoCommandFilter&#10; *&#10;*/&#10;&#10;var thresh;&#10;&#10;var last_sent_cmd = null;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('CommandIn');&#10;  output('CommandOut');&#10;&#10;  parameter('Threshold', {&#10;    type: 'number'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  thresh = getParameter('Threshold');&#10;&#10;  addInputHandler('CommandIn', CommandIn_In);&#10;}&#10;&#10;function dist (x1, y1, x2, y2) {&#10;  var dx = x2-x1;&#10;  var dy = y2-y1;&#10;  return Math.sqrt(dx*dx + dy*dy);&#10;}&#10;&#10;var CommandIn_In = function () {&#10;  var c = get('CommandIn');&#10;&#10;  if (c.command == 'Go') {&#10;    // We only care about filtering &quot;Go&quot; packets&#10;&#10;    if (last_sent_cmd == null) {&#10;      // Got first packet&#10;      last_sent_cmd = c;&#10;      send('CommandOut', c);&#10;    &#10;    } else {&#10;&#10;      // See if this is too close to the last point we sent.&#10;      // If it is, don't send it, otherwise do.&#10;      var old_x = last_sent_cmd.X;&#10;      var old_y = last_sent_cmd.Y;&#10;      var new_x = c.X;&#10;      var new_y = c.Y;&#10;&#10;      var d = dist(old_x, old_y, new_x, new_y);&#10;&#10;      if (d &gt; thresh) {&#10;        // Actually send this point&#10;        last_sent_cmd = c;&#10;        send('CommandOut', c);&#10;      }&#10;&#10;    }&#10;&#10;  } else {&#10;    // We just forward all other commands&#10;    send('CommandOut', c);&#10;  }&#10;&#10;}&#10;&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/Users/bradjc/git/waitwhat/accessors/GoCommandFilter.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{890.0, 590.0}">
+        </property>
+        <property name="Threshold" class="ptolemy.data.expr.Parameter" value="poseUpdateThreshold">
+        </property>
+        <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <port name="CommandIn" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="CommandOut" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="ApplauseDetected" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="applausePeriod">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{3.5}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{&quot;some_applause&quot;}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-220.0, 1095.0}">
+        </property>
+    </entity>
+    <entity name="Home0Stream" class="ptolemy.actor.lib.DiscreteClock">
+        <display name="Home0 Stream"/>
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="1.0">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{0.0}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{{X=3, Y=5, Z=0.0,id=&quot;Home0&quot;}}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-30.0, 390.0}">
+        </property>
+    </entity>
+    <entity name="Merge" class="ptolemy.domains.de.lib.Merge">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{155.0, 620.0}">
+        </property>
+    </entity>
+    <entity name="Spin Stream" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="stopTimeIsLocal" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="1.0">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{1.0}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{{command=&quot;Spin&quot;,id=&quot;Spin&quot;}}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{380.0, 480.0}">
+        </property>
+    </entity>
+    <entity name="Merge2" class="ptolemy.domains.de.lib.Merge">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{510.0, 620.0}">
+        </property>
+    </entity>
+    <entity name="GotTwix" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="requestPeriod">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{8.2}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{{message={type=&quot;finished&quot;, selection=&quot;Twix&quot;,phone_id=fake_phone_id}}}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-165.0, 795.0}">
+        </property>
+    </entity>
+    <entity name="Merge3" class="ptolemy.domains.de.lib.Merge">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{155.0, 895.0}">
+        </property>
+    </entity>
+    <entity name="RequestTwix" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="requestPeriod">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{2.2}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{{message={type=&quot;selection&quot;, selection=&quot;Twix&quot;,phone_id=fake_phone_id}}}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-190.0, 710.0}">
+        </property>
+    </entity>
+    <entity name="ALPSClock" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="1.0">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{0.0}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{1}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-325.0, 620.0}">
+        </property>
+    </entity>
+    <entity name="RandomALPSLoc" class="ptolemy.actor.lib.Expression">
+        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="{X=random()*10.0,&#10;Y=random()*10.0,&#10;Z=0.0, &#10;id=fake_phone_id}">
+            <property name="style" class="ptolemy.actor.gui.style.TextStyle">
+                <property name="height" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="30">
+                </property>
+            </property>
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-40.0, 490.0}">
+        </property>
+        <port name="in" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="MicrostepDelay" class="ptolemy.actor.lib.MicrostepDelay">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1540.0, 475.0}">
+        </property>
+    </entity>
+    <entity name="FakeLucy" class="ptolemy.actor.lib.Expression">
+        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="{position={x=0.0,y=0.0,z=0.0},&#10;orientation={w=1.0,x=0.4,y=0.7,z=0.0}}">
+            <property name="style" class="ptolemy.actor.gui.style.TextStyle">
+                <property name="height" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="30">
+                </property>
+            </property>
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1370.0, 350.0}">
+        </property>
+        <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <port name="in" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="Merge4" class="ptolemy.domains.de.lib.Merge">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1330.0, 475.0}">
+        </property>
+    </entity>
+    <entity name="HomeIndicator4" class="ptolemy.actor.lib.Expression">
+        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in.toString() + &quot; &quot; + time">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{720.0, 1015.0}">
+        </property>
+        <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <port name="in" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="Display" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={987, 39, 436, 314}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{845.0, 1015.0}">
+        </property>
+    </entity>
+    <entity name="Plot" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{1270.0, 570.0}">
+        </property>
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={402, 229, 934, 634}, maximized=false}">
+        </property>
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+        </property>
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
+        </property>
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{347.0, 428.013671875}">
+        </property>
+        <port name="cmdVel" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{315.0, 260.0}">
+            </property>
+        </port>
+        <port name="port_5" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{425.0, 200.0}">
+            </property>
+        </port>
+        <port name="Pose" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{330.0, 395.0}">
+            </property>
+        </port>
+        <port name="GoCommandFilterOut" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 460.0}">
+            </property>
+        </port>
+        <entity name="TimedPlotter2" class="ptolemy.actor.lib.gui.TimedPlotter">
+            <property name="fillOnWrapup" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="cancel waypoint, initiate spin, stop spin,moving toward phone, going home">
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={45, 305, 907, 343}, maximized=false}">
+            </property>
+            <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[907, 299]">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{825.0, 330.0}">
+            </property>
+            <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>Output Events</title>
+<xLabel></xLabel>
+<yLabel></yLabel>
+<xRange min="3.0" max="50.0"/>
+<yRange min="0.0" max="3.2"/>
+<yTicks>
+  <tick label="GoingHome" position="1.0"/>
+  <tick label="Delivering" position="2.0"/>
+  <tick label="Spin" position="3.0"/>
+</yTicks>
+<default connected="no" marks="bigdots"/>
+</plot>?>
+            </configure>
+        </entity>
+        <entity name="Cancel" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="3.2">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 200.0}">
+            </property>
+            <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="SpinInitiate" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in.toString().contains(&quot;z = 1&quot;) ? 3.0 : 0.0">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 260.0}">
+            </property>
+            <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="SpinEnd" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in.toString().contains(&quot;z = 0},&quot;) ? 3.0 : 0.0">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{605.0, 320.0}">
+            </property>
+            <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="HomeIndicator" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in.toString().contains(&quot;Home0&quot;) ">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{245.0, 460.0}">
+            </property>
+            <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="BooleanSwitch" class="ptolemy.actor.lib.BooleanSwitch">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{385.0, 395.0}">
+            </property>
+        </entity>
+        <entity name="PoseSent2" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="1.0">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{595.0, 385.0}">
+            </property>
+            <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <entity name="PoseSent" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="2.0">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{600.0, 455.0}">
+            </property>
+            <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <port name="in" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+            </port>
+        </entity>
+        <relation name="relation23" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;TimedPlotter2.input&quot;,x=825.0,y=330.0,index=5}, tail={id=&quot;Cancel.output&quot;,x=605.0,y=200.0}, points={760.0,310.0,760.0,200.0} } }">
+            </property>
+        </relation>
+        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;TimedPlotter2.input&quot;,x=825.0,y=330.0,index=5}, tail={id=&quot;SpinInitiate.output&quot;,x=605.0,y=260.0}, points={745.0,315.0,745.0,260.0} } }">
+            </property>
+        </relation>
+        <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;TimedPlotter2.input&quot;,x=825.0,y=330.0,index=5}, tail={id=&quot;SpinEnd.output&quot;,x=605.0,y=320.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;HomeIndicator.output&quot;,x=245.0,y=460.0}, tail={id=&quot;BooleanSwitch.control&quot;,x=385.0,y=395.0}, points={385.0,460.0} } }">
+            </property>
+        </relation>
+        <relation name="relation25" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;BooleanSwitch.trueOutput&quot;,x=385.0,y=395.0}, tail={id=&quot;PoseSent2.in&quot;,x=595.0,y=385.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation31" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;TimedPlotter2.input&quot;,x=825.0,y=330.0,index=5}, tail={id=&quot;PoseSent2.output&quot;,x=595.0,y=385.0}, points={745.0,325.0,745.0,385.0} } }">
+            </property>
+        </relation>
+        <relation name="relation11" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;BooleanSwitch.falseOutput&quot;,x=385.0,y=395.0}, tail={id=&quot;PoseSent.in&quot;,x=600.0,y=455.0}, points={460.0,405.0,460.0,455.0} } }">
+            </property>
+        </relation>
+        <relation name="relation30" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;TimedPlotter2.input&quot;,x=825.0,y=330.0,index=5}, tail={id=&quot;PoseSent.output&quot;,x=600.0,y=455.0}, points={760.0,330.0,760.0,455.0} } }">
+            </property>
+        </relation>
+        <relation name="relation27_5" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Cancel.in&quot;,x=605.0,y=200.0}, tail={id=&quot;port_5._location&quot;,x=425.0,y=200.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation29" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;BooleanSwitch.input&quot;,x=385.0,y=395.0}, tail={id=&quot;Pose._location&quot;,x=330.0,y=395.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation24_9" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;HomeIndicator.in&quot;,x=245.0,y=460.0}, tail={id=&quot;GoCommandFilterOut._location&quot;,x=20.0,y=460.0}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation" class="ptolemy.actor.TypedIORelation">
+            <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+            </property>
+            <vertex name="vertex1" value="{460.0, 260.0}">
+            </vertex>
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;SpinInitiate.in&quot;,x=605.0,y=260.0}, tail={id=&quot;relation.vertex1&quot;,x=460.0,y=260.0}, points={} },{ head={id=&quot;SpinEnd.in&quot;,x=605.0,y=320.0}, tail={id=&quot;relation.vertex1&quot;,x=460.0,y=260.0}, points={460.0,320.0} },{ head={id=&quot;cmdVel._location&quot;,x=315.0,y=260.0}, tail={id=&quot;relation.vertex1&quot;,x=460.0,y=260.0}, points={} } }">
+            </property>
+        </relation>
+        <link port="cmdVel" relation="relation"/>
+        <link port="port_5" relation="relation27_5"/>
+        <link port="Pose" relation="relation29"/>
+        <link port="GoCommandFilterOut" relation="relation24_9"/>
+        <link port="TimedPlotter2.input" relation="relation23"/>
+        <link port="TimedPlotter2.input" relation="relation3"/>
+        <link port="TimedPlotter2.input" relation="relation7"/>
+        <link port="TimedPlotter2.input" relation="relation31"/>
+        <link port="TimedPlotter2.input" relation="relation30"/>
+        <link port="Cancel.output" relation="relation23"/>
+        <link port="Cancel.in" relation="relation27_5"/>
+        <link port="SpinInitiate.output" relation="relation3"/>
+        <link port="SpinInitiate.in" relation="relation"/>
+        <link port="SpinEnd.output" relation="relation7"/>
+        <link port="SpinEnd.in" relation="relation"/>
+        <link port="HomeIndicator.output" relation="relation8"/>
+        <link port="HomeIndicator.in" relation="relation24_9"/>
+        <link port="BooleanSwitch.input" relation="relation29"/>
+        <link port="BooleanSwitch.control" relation="relation8"/>
+        <link port="BooleanSwitch.trueOutput" relation="relation25"/>
+        <link port="BooleanSwitch.falseOutput" relation="relation11"/>
+        <link port="PoseSent2.output" relation="relation31"/>
+        <link port="PoseSent2.in" relation="relation25"/>
+        <link port="PoseSent.output" relation="relation30"/>
+        <link port="PoseSent.in" relation="relation11"/>
+    </entity>
+    <entity name="PlotRequest" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{165.0, 980.0}">
+        </property>
+        <port name="port_0" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="multiport"/>
+        </port>
+        <port name="port_3" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="multiport"/>
+        </port>
+        <port name="port_5" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="multiport"/>
+        </port>
+        <entity name="Requested" class="ptolemy.actor.lib.Const">
+            <doc>Create a constant sequence.</doc>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{230.0, 665.0}">
+            </property>
+        </entity>
+        <entity name="Received" class="ptolemy.actor.lib.Const">
+            <property name="value" class="ptolemy.data.expr.Parameter" value="2">
+            </property>
+            <doc>Create a constant sequence.</doc>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{235.0, 745.0}">
+            </property>
+        </entity>
+        <entity name="Applause" class="ptolemy.actor.lib.Const">
+            <property name="value" class="ptolemy.data.expr.Parameter" value="3">
+            </property>
+            <doc>Create a constant sequence.</doc>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{230.0, 800.0}">
+            </property>
+        </entity>
+        <entity name="TimedPlotter" class="ptolemy.actor.lib.gui.TimedPlotter">
+            <property name="fillOnWrapup" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={32, 22, 813, 289}, maximized=false}">
+            </property>
+            <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[813, 245]">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{345.0, 800.0}">
+            </property>
+            <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>Input Events</title>
+<xLabel></xLabel>
+<yLabel></yLabel>
+<xRange min="0.0" max="50.0"/>
+<yRange min="1.0" max="3.0"/>
+<yTicks>
+  <tick label="ItemRequested" position="1.0"/>
+  <tick label="ItemReceived" position="2.0"/>
+  <tick label="Applause" position="3.0"/>
+</yTicks>
+<default connected="no" marks="bigdots" stems="yes"/>
+</plot>?>
+            </configure>
+        </entity>
+        <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Requested.output&quot;,x=230.0,y=665.0}, tail={id=&quot;TimedPlotter.input&quot;,x=345.0,y=800.0,index=3}, points={295.0,665.0,295.0,790.0} } }">
+            </property>
+        </relation>
+        <relation name="relation21" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Received.output&quot;,x=235.0,y=745.0}, tail={id=&quot;TimedPlotter.input&quot;,x=345.0,y=800.0,index=3}, points={280.0,745.0,280.0,795.0} } }">
+            </property>
+        </relation>
+        <relation name="relation22" class="ptolemy.actor.TypedIORelation">
+            <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Applause.output&quot;,x=230.0,y=800.0}, tail={id=&quot;TimedPlotter.input&quot;,x=345.0,y=800.0,index=3}, points={} } }">
+            </property>
+        </relation>
+        <relation name="relation17_0" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation18_3" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation20_5" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <link port="port_0" relation="relation17_0"/>
+        <link port="port_3" relation="relation18_3"/>
+        <link port="port_5" relation="relation20_5"/>
+        <link port="Requested.output" relation="relation4"/>
+        <link port="Requested.trigger" relation="relation18_3"/>
+        <link port="Received.output" relation="relation21"/>
+        <link port="Received.trigger" relation="relation20_5"/>
+        <link port="Applause.output" relation="relation22"/>
+        <link port="Applause.trigger" relation="relation17_0"/>
+        <link port="TimedPlotter.input" relation="relation4"/>
+        <link port="TimedPlotter.input" relation="relation21"/>
+        <link port="TimedPlotter.input" relation="relation22"/>
+    </entity>
+    <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={931, 496, 499, 402}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{665.0, 1095.0}">
+        </property>
+    </entity>
+    <entity name="HomeIndicator" class="ptolemy.actor.lib.Expression">
+        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="in.toString() + &quot; &quot; + time">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{530.0, 1095.0}">
+        </property>
+        <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <port name="in" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <entity name="RequestTwix2" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="requestPeriod">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{2.3}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{{message={type=&quot;selection&quot;, selection=&quot;Twix&quot;,phone_id=fake_phone_id2}}}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-195.0, 890.0}">
+        </property>
+    </entity>
+    <entity name="GotTwix2" class="ptolemy.actor.lib.DiscreteClock">
+        <property name="period" class="ptolemy.actor.parameters.PortParameter" value="requestPeriod">
+        </property>
+        <property name="offsets" class="ptolemy.data.expr.Parameter" value="{15.0}">
+        </property>
+        <property name="values" class="ptolemy.data.expr.Parameter" value="{{message={type=&quot;finished&quot;, selection=&quot;Twix&quot;,phone_id=fake_phone_id2}}}">
+        </property>
+        <doc>Create periodic timed events.</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-170.0, 990.0}">
+        </property>
+    </entity>
+    <entity name="RandomALPSLoc2" class="ptolemy.actor.lib.Expression">
+        <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="{X=random()*10.0,&#10;Y=random()*10.0,&#10;Z=0.0, &#10;id=fake_phone_id2}">
+            <property name="style" class="ptolemy.actor.gui.style.TextStyle">
+                <property name="height" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="30">
+                </property>
+            </property>
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+            <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{-40.0, 620.0}">
+        </property>
+        <port name="in" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+        </port>
+    </entity>
+    <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Home0Stream.output&quot;,x=-30.0,y=390.0}, tail={id=&quot;Merge.input&quot;,x=155.0,y=620.0,index=3}, points={60.0,390.0,60.0,610.0} } }">
+        </property>
+    </relation>
+    <relation name="relation14" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Spin Stream.output&quot;,x=380.0,y=480.0}, tail={id=&quot;Merge2.input&quot;,x=510.0,y=620.0,index=2}, points={435.0,480.0,435.0,615.0} } }">
+        </property>
+    </relation>
+    <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Merge.input&quot;,x=155.0,y=620.0,index=3}, tail={id=&quot;RandomALPSLoc.output&quot;,x=-40.0,y=490.0}, points={45.0,615.0,45.0,490.0} } }">
+        </property>
+    </relation>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;MicrostepDelay.output&quot;,x=1540.0,y=475.0}, tail={id=&quot;FakeLucy.in&quot;,x=1370.0,y=350.0}, points={1630.0,475.0,1630.0,350.0} } }">
+        </property>
+    </relation>
+    <relation name="relation16" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Command2Pose.Location&quot;,x=1070.0,y=465.0}, tail={id=&quot;FakeLucy.output&quot;,x=1370.0,y=350.0}, points={1070.0,350.0} } }">
+        </property>
+    </relation>
+    <relation name="relation15" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;OpKeySwitching.Input&quot;,x=710.0,y=620.0}, tail={id=&quot;Merge2.output&quot;,x=510.0,y=620.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation19" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;RoboCafeController.UserChoice&quot;,x=315.0,y=1085.0}, tail={id=&quot;Merge3.output&quot;,x=155.0,y=895.0}, points={215.0,1075.0,215.0,895.0} } }">
+        </property>
+    </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Location2Command.Location&quot;,x=310.0,y=620.0}, tail={id=&quot;Merge.output&quot;,x=155.0,y=620.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation12" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Location2Command.Command&quot;,x=310.0,y=620.0}, tail={id=&quot;Merge2.input&quot;,x=510.0,y=620.0,index=2}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation18" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{105.0, 710.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;.Requested.trigger&quot;,x=230.0,y=665.0}, tail={id=&quot;relation18.vertex1&quot;,x=165.0,y=665.0}, points={} },{ head={id=&quot;RequestTwix.output&quot;,x=-190.0,y=710.0}, tail={id=&quot;relation18.vertex1&quot;,x=105.0,y=710.0}, points={} },{ head={id=&quot;Merge3.input&quot;,x=155.0,y=895.0,index=4}, tail={id=&quot;relation18.vertex1&quot;,x=105.0,y=710.0}, points={105.0,880.0} },{ head={id=&quot;PlotRequest.port_3&quot;,x=165.0,y=980.0,index=2}, tail={id=&quot;relation18.vertex1&quot;,x=105.0,y=710.0}, points={105.0,975.0} } }">
+        </property>
+    </relation>
+    <relation name="relation20" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{45.0, 795.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;.Received.trigger&quot;,x=235.0,y=745.0}, tail={id=&quot;relation20.vertex1&quot;,x=135.0,y=870.0}, points={135.0,745.0} },{ head={id=&quot;PlotRequest.port_5&quot;,x=165.0,y=980.0,index=2}, tail={id=&quot;relation20.vertex1&quot;,x=45.0,y=795.0}, points={45.0,985.0} },{ head={id=&quot;GotTwix.output&quot;,x=-165.0,y=795.0}, tail={id=&quot;relation20.vertex1&quot;,x=45.0,y=795.0}, points={} },{ head={id=&quot;Merge3.input&quot;,x=155.0,y=895.0,index=4}, tail={id=&quot;relation20.vertex1&quot;,x=45.0,y=795.0}, points={45.0,885.0} } }">
+        </property>
+    </relation>
+    <relation name="relation17" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{90.0, 1095.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;.Applause.trigger&quot;,x=230.0,y=800.0}, tail={id=&quot;relation17.vertex1&quot;,x=150.0,y=980.0}, points={150.0,800.0} },{ head={id=&quot;RoboCafeController.Applause&quot;,x=315.0,y=1085.0}, tail={id=&quot;relation17.vertex1&quot;,x=90.0,y=1095.0}, points={} },{ head={id=&quot;ApplauseDetected.output&quot;,x=-220.0,y=1095.0}, tail={id=&quot;relation17.vertex1&quot;,x=90.0,y=1095.0}, points={} },{ head={id=&quot;PlotRequest.port_0&quot;,x=165.0,y=980.0}, tail={id=&quot;relation17.vertex1&quot;,x=90.0,y=1095.0}, points={90.0,970.0} } }">
+        </property>
+    </relation>
+    <relation name="relation27" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{1205.0, 475.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation27.vertex1&quot;,x=1205.0,y=475.0}, tail={id=&quot;Command2Pose.Cancel&quot;,x=1070.0,y=465.0}, points={} },{ head={id=&quot;Merge4.input&quot;,x=1330.0,y=475.0,index=2}, tail={id=&quot;relation27.vertex1&quot;,x=1205.0,y=475.0}, points={} },{ head={id=&quot;Plot.port_5&quot;,x=1270.0,y=570.0}, tail={id=&quot;relation27.vertex1&quot;,x=1205.0,y=475.0}, points={1205.0,560.0} } }">
+        </property>
+    </relation>
+    <relation name="relation28" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{1220.0, 390.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation28.vertex1&quot;,x=1570.0,y=355.0}, tail={id=&quot;.HomeIndicator2.in&quot;,x=1715.0,y=460.0}, points={1570.0,460.0} },{ head={id=&quot;relation28.vertex1&quot;,x=1570.0,y=355.0}, tail={id=&quot;.HomeIndicator3.in&quot;,x=1715.0,y=510.0}, points={1570.0,510.0} },{ head={id=&quot;Plot.cmdVel&quot;,x=1270.0,y=570.0}, tail={id=&quot;relation28.vertex1&quot;,x=1220.0,y=390.0}, points={1220.0,550.0} },{ head={id=&quot;Merge4.input&quot;,x=1330.0,y=475.0,index=2}, tail={id=&quot;relation28.vertex1&quot;,x=1220.0,y=390.0}, points={1220.0,470.0} },{ head={id=&quot;Command2Pose.CmdVel&quot;,x=1070.0,y=465.0}, tail={id=&quot;relation28.vertex1&quot;,x=1220.0,y=390.0}, points={1155.0,465.0,1155.0,390.0} } }">
+        </property>
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;GoCommandFilter.CommandIn&quot;,x=890.0,y=590.0}, tail={id=&quot;OpKeySwitching.Output0&quot;,x=710.0,y=620.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation13" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;MicrostepDelay.input&quot;,x=1540.0,y=475.0}, tail={id=&quot;Merge4.output&quot;,x=1330.0,y=475.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation24" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{995.0, 590.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation24.vertex1&quot;,x=1215.0,y=355.0}, tail={id=&quot;.HomeIndicator.in&quot;,x=1330.0,y=650.0}, points={1215.0,650.0} },{ head={id=&quot;GoCommandFilter.CommandOut&quot;,x=890.0,y=590.0}, tail={id=&quot;relation24.vertex1&quot;,x=995.0,y=590.0}, points={} },{ head={id=&quot;Command2Pose.Command&quot;,x=1070.0,y=465.0}, tail={id=&quot;relation24.vertex1&quot;,x=995.0,y=590.0}, points={995.0,465.0} },{ head={id=&quot;Plot.GoCommandFilterOut&quot;,x=1270.0,y=570.0}, tail={id=&quot;relation24.vertex1&quot;,x=995.0,y=590.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation32" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{625.0, 1015.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation32.vertex1&quot;,x=625.0,y=1015.0}, tail={id=&quot;HomeIndicator4.in&quot;,x=720.0,y=1015.0}, points={} },{ head={id=&quot;OpKeySwitching.Select&quot;,x=710.0,y=620.0}, tail={id=&quot;relation32.vertex1&quot;,x=625.0,y=1015.0}, points={710.0,975.0,625.0,975.0} },{ head={id=&quot;RoboCafeController.SelectPhoneRobot&quot;,x=315.0,y=1085.0}, tail={id=&quot;relation32.vertex1&quot;,x=625.0,y=1015.0}, points={435.0,1075.0,435.0,1015.0} } }">
+        </property>
+    </relation>
+    <relation name="relation26" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;HomeIndicator4.output&quot;,x=720.0,y=1015.0}, tail={id=&quot;Display.input&quot;,x=845.0,y=1015.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation29_7" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Command2Pose.Pose&quot;,x=1070.0,y=465.0}, tail={id=&quot;Plot.Pose&quot;,x=1270.0,y=570.0}, points={1170.0,455.0,1170.0,520.0,1190.0,520.0,1190.0,580.0} } }">
+        </property>
+    </relation>
+    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;RoboCafeController.RobotStatus&quot;,x=315.0,y=1085.0}, tail={id=&quot;HomeIndicator.in&quot;,x=530.0,y=1095.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;HomeIndicator.output&quot;,x=530.0,y=1095.0}, tail={id=&quot;Display2.input&quot;,x=665.0,y=1095.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation11" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{75.0, 890.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation11.vertex1&quot;,x=75.0,y=890.0}, tail={id=&quot;PlotRequest.port_3&quot;,x=165.0,y=980.0,index=2}, points={75.0,980.0} },{ head={id=&quot;Merge3.input&quot;,x=155.0,y=895.0,index=4}, tail={id=&quot;relation11.vertex1&quot;,x=75.0,y=890.0}, points={} },{ head={id=&quot;RequestTwix2.output&quot;,x=-195.0,y=890.0}, tail={id=&quot;relation11.vertex1&quot;,x=75.0,y=890.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{60.0, 990.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation7.vertex1&quot;,x=60.0,y=990.0}, tail={id=&quot;PlotRequest.port_5&quot;,x=165.0,y=980.0,index=2}, points={} },{ head={id=&quot;GotTwix2.output&quot;,x=-170.0,y=990.0}, tail={id=&quot;relation7.vertex1&quot;,x=60.0,y=990.0}, points={} },{ head={id=&quot;Merge3.input&quot;,x=155.0,y=895.0,index=4}, tail={id=&quot;relation7.vertex1&quot;,x=60.0,y=990.0}, points={60.0,895.0} } }">
+        </property>
+    </relation>
+    <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="{-125.0, 620.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;relation8.vertex1&quot;,x=-125.0,y=620.0}, tail={id=&quot;RandomALPSLoc2.in&quot;,x=-40.0,y=620.0}, points={} },{ head={id=&quot;ALPSClock.output&quot;,x=-325.0,y=620.0}, tail={id=&quot;relation8.vertex1&quot;,x=-125.0,y=620.0}, points={} },{ head={id=&quot;RandomALPSLoc.in&quot;,x=-40.0,y=490.0}, tail={id=&quot;relation8.vertex1&quot;,x=-125.0,y=620.0}, points={-125.0,490.0} } }">
+        </property>
+    </relation>
+    <relation name="relation10" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.basic.layout.kieler.LayoutHint" value="{ { head={id=&quot;Merge.input&quot;,x=155.0,y=620.0,index=3}, tail={id=&quot;RandomALPSLoc2.output&quot;,x=-40.0,y=620.0}, points={} } }">
+        </property>
+    </relation>
+    <link port="OpKeySwitching.Input" relation="relation15"/>
+    <link port="OpKeySwitching.Select" relation="relation32"/>
+    <link port="OpKeySwitching.Output0" relation="relation2"/>
+    <link port="RoboCafeController.UserChoice" relation="relation19"/>
+    <link port="RoboCafeController.SelectPhoneRobot" relation="relation32"/>
+    <link port="RoboCafeController.RobotStatus" relation="relation4"/>
+    <link port="RoboCafeController.Applause" relation="relation17"/>
+    <link port="Command2Pose.Command" relation="relation24"/>
+    <link port="Command2Pose.Location" relation="relation16"/>
+    <link port="Command2Pose.Pose" relation="relation29_7"/>
+    <link port="Command2Pose.CmdVel" relation="relation28"/>
+    <link port="Command2Pose.Cancel" relation="relation27"/>
+    <link port="Location2Command.Location" relation="relation5"/>
+    <link port="Location2Command.Command" relation="relation12"/>
+    <link port="GoCommandFilter.CommandIn" relation="relation2"/>
+    <link port="GoCommandFilter.CommandOut" relation="relation24"/>
+    <link port="ApplauseDetected.output" relation="relation17"/>
+    <link port="Home0Stream.output" relation="relation9"/>
+    <link port="Merge.input" relation="relation9"/>
+    <link port="Merge.input" relation="relation6"/>
+    <link port="Merge.input" relation="relation10"/>
+    <link port="Merge.output" relation="relation5"/>
+    <link port="Spin Stream.output" relation="relation14"/>
+    <link port="Merge2.input" relation="relation14"/>
+    <link port="Merge2.input" relation="relation12"/>
+    <link port="Merge2.output" relation="relation15"/>
+    <link port="GotTwix.output" relation="relation20"/>
+    <link port="Merge3.input" relation="relation18"/>
+    <link port="Merge3.input" relation="relation20"/>
+    <link port="Merge3.input" relation="relation11"/>
+    <link port="Merge3.input" relation="relation7"/>
+    <link port="Merge3.output" relation="relation19"/>
+    <link port="RequestTwix.output" relation="relation18"/>
+    <link port="ALPSClock.output" relation="relation8"/>
+    <link port="RandomALPSLoc.output" relation="relation6"/>
+    <link port="RandomALPSLoc.in" relation="relation8"/>
+    <link port="MicrostepDelay.input" relation="relation13"/>
+    <link port="MicrostepDelay.output" relation="relation"/>
+    <link port="FakeLucy.output" relation="relation16"/>
+    <link port="FakeLucy.in" relation="relation"/>
+    <link port="Merge4.input" relation="relation28"/>
+    <link port="Merge4.input" relation="relation27"/>
+    <link port="Merge4.output" relation="relation13"/>
+    <link port="HomeIndicator4.output" relation="relation26"/>
+    <link port="HomeIndicator4.in" relation="relation32"/>
+    <link port="Display.input" relation="relation26"/>
+    <link port="Plot.cmdVel" relation="relation28"/>
+    <link port="Plot.port_5" relation="relation27"/>
+    <link port="Plot.Pose" relation="relation29_7"/>
+    <link port="Plot.GoCommandFilterOut" relation="relation24"/>
+    <link port="PlotRequest.port_0" relation="relation17"/>
+    <link port="PlotRequest.port_3" relation="relation18"/>
+    <link port="PlotRequest.port_3" relation="relation11"/>
+    <link port="PlotRequest.port_5" relation="relation20"/>
+    <link port="PlotRequest.port_5" relation="relation7"/>
+    <link port="Display2.input" relation="relation3"/>
+    <link port="HomeIndicator.output" relation="relation3"/>
+    <link port="HomeIndicator.in" relation="relation4"/>
+    <link port="RequestTwix2.output" relation="relation11"/>
+    <link port="GotTwix2.output" relation="relation7"/>
+    <link port="RandomALPSLoc2.output" relation="relation10"/>
+    <link port="RandomALPSLoc2.in" relation="relation8"/>
+</entity>
