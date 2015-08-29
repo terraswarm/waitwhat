@@ -76,6 +76,7 @@ exports.initialize = function () {
     for (var i=0; i<NUM_ROBOTS; i++) {
     if (robots[i].state == STATE_IDLE) {
       process_from_queue(i);
+      // check if there are more events. if not, send the robot home 
     }
   }
   }, 1000);
@@ -198,28 +199,19 @@ var Choice_in = function () {
           if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
             // This checks out. Stop the robot from what it was doing
             // and send it home.
-
-            var anythingToProcess = process_from_queue(rbt_idx);
-            // Check if there is anyone in the queue
-            if (anythingToProcess) {
-               // serving the next phone from queue. Do nothing. 
-            } else {
-              // go back home
-              rbt.state = STATE_IDLE;
-              rbt.servicing = null;
-              set_source_and_robot(phone_id, rbt_idx, 'remove');
-              // Send the robot home.
-              set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');
-              // // And in a couple seconds, stop telling it to go home
-              // setTimeout(function () {
-              //   set_source_and_robot('Home', rbt_idx, 'remove');
-              // }, 3000);
-              // And update output status
-              update_status(rbt_idx, STATE_IDLE);
-
+            set_source_and_robot(phone_id, rbt_idx, 'remove');
+            rbt.state = STATE_IDLE;
+            update_status(rbt_idx, STATE_IDLE); 
+            rbt.servicing = null;
+            // if no more events to be processed, send robot home.
+            if (rbt.queue.length == 0) { 
+                // go back home 
+                // Send the robot home.
+                set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  
             }
+            
           } else {
-            // Check if this phone in queue and remove it
+            // Check if this phone is in queue and remove it
             if (rbt.queue.indexOf(phone_id) > -1) {
               rbt.queue.splice(rbt.queue.indexOf(phone_id), 1);
             }
@@ -284,7 +276,16 @@ var Applause_in = function () {
 
       // robot is idle now, try to process from queue
       process_from_queue(robot_index);
+      // if there are no more events to be processed for this robot, send it home.
+      // otherwise, the poll will take care of the remaining events soon.
+      if (robot.queue.length == 0) { 
+        // go back home 
+        // Send the robot home.
+        set_source_and_robot('Home'+robot_index, robot_index, 'add');  
+      }
     }, getParameter('SpinRobotDuration') * 1000);
+
+   
 
   }
 }
