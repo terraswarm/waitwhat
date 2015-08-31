@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2015 The Regents of the University of Michigan
 
-/** Take a value in a range and make it a hue, saturation color.
+/** Take a value in [0,100] and make it a hue, saturation color.
  *
  *
  *  @accessor Value2Color
@@ -13,12 +13,13 @@ exports.setup = function() {
   // I/O
   //
   input('Value');
-  output('Hue');
-  output('Saturation');
-
-  parameter('ValueMax', {
+  output('Hue', {
     type: 'number'
   });
+  output('Saturation', {
+    type: 'number'
+  });
+
   parameter('HueScale', {
     type: 'number'
   });
@@ -31,21 +32,28 @@ exports.initialize = function () {
   addInputHandler('Value', Value_In);
 }
 
+
+// Fade from green to red
 var Value_In = function () {
-  var v = parseFloat(get('Value'));
-  var max = getParameter('ValueMax');
-  if (v == max) {
-    // no divide by zero
-    v = max - 1;
-  }
+  var val = parseFloat(get('Value'));
 
+  var hu = Math.floor((val/100) * 120)/360;
+  var sa = Math.abs(val - 50)/50;
 
-  var hue = Math.floor((max-v) * 120 / max);  // go from green to red
-  var saturation = Math.abs(v - (max/2))/(max/2);
+  var h = Math.round(hu * (getParameter('HueScale')/1));
+  var s = Math.round(sa * getParameter('SaturationScale'));
 
-  var h = hue * getParameter('HueScale');
-  var s = saturation * getParameter('SaturationScale');
+  // hack, set saturation to 255, works a little better
+  s = 255;
+
+  if (h == 0) h = 1;
+  if (s == 0) s = 1;
 
   send('Hue', h);
   send('Saturation', s);
 }
+
+
+
+
+
