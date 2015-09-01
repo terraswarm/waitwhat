@@ -34,9 +34,9 @@
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1437, 913]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8509242695289206">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.9188667095943336">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{969.5, 907.2821266479066}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{907.4999999999999, 893.0487699555449}">
     </property>
     <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
     </property>
@@ -49,7 +49,7 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Localization Information">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[435.0, 395.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[440.0, 420.0]">
         </property>
     </property>
     <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
@@ -75,7 +75,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 31, 2015 12:15:46 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 31, 2015 8:24:23 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -193,16 +193,8 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[470.0, 1190.0]">
         </property>
     </property>
-    <property name="Line" class="ptolemy.vergil.kernel.attributes.LineAttribute">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[1805.0, 475.0]">
-        </property>
-        <property name="x" class="ptolemy.data.expr.Parameter" value="0">
-        </property>
-        <property name="y" class="ptolemy.data.expr.Parameter" value="400">
-        </property>
-    </property>
     <property name="Rectangle2" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[450.0, 660.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="450.0, 672.5">
         </property>
         <property name="lineWidth" class="ptolemy.data.expr.Parameter" value="2.0">
         </property>
@@ -210,7 +202,7 @@
         </property>
         <property name="width" class="ptolemy.data.expr.Parameter" value="630.0">
         </property>
-        <property name="height" class="ptolemy.data.expr.Parameter" value="520.0">
+        <property name="height" class="ptolemy.data.expr.Parameter" value="495.0">
         </property>
         <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
         </property>
@@ -1435,7 +1427,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8082">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[185.0, 585.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[190.0, 585.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -2227,7 +2219,7 @@
         </port>
     </entity>
     <entity name="LocationRosPublisher" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2015 The Regents of the University of Michigan.&#10;// All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** Publish location X,Y,Z coordinates as a PointCloud to a ROS topic.&#10; *&#10; *  Incoming packets should have at least these keys:&#10; *     {&#10; *       X: &lt;x coordinate&gt;,&#10; *       Y: &lt;y coordinate&gt;,&#10; *       id: &lt;unique id for this location&gt;  &#10; *     }&#10; *&#10; *  All locations are published as a PointCloud so that the ROS visualization&#10; *  only needs to subscribe to one topic.&#10; *&#10; *  @accessor robotics/LocationRosPublisher&#10; *  @parameter {string} topic The ROS topic to publish to.&#10; *  @parameter {string} frame_id The frame_id of the header (only needed if a header is required).&#10; *  @author Brad Campbell &#10; *  @version $$Id: RosPublisher.js 271 2015-08-22 08:23:01Z eal $$ &#10; */&#10;&#10;&#10;ROS_TYPE = 'sensor_msgs/PointCloud';&#10;&#10;// location_id -&gt; {position: {X, Y, Z}, color: &lt;some color as a float&gt;}&#10;locations = {};&#10;&#10;/** Sets up by accessor by inheriting inputs from setup() in WebSocketClient. Adds additional parameters regarding the ROS topic to publish to. */ &#10;exports.setup = function() {&#10;   extend('net/WebSocketClient');&#10;   parameter('topic', {&#10;      type: &quot;string&quot;&#10;   });&#10;   parameter('frame_id', {&#10;      type: &quot;string&quot;,&#10;      value: &quot;&quot;&#10;   });&#10;}&#10;&#10;/**  Inherits initialize from WebSocketClient. &#10; *   Advertise the topic we are publishing to.*/ &#10;exports.initialize = function() {&#10;   this.ssuper.initialize.apply(this);&#10;&#10;   var advertise = {&#10;      &quot;op&quot;: &quot;advertise&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;type&quot;: ROS_TYPE&#10;   };&#10;   exports.sendToWebSocket(advertise);&#10;}&#10;&#10;function random_color () {&#10;   var letters = '0123456789ABCDEF'.split('');&#10;   var color = '0x';&#10;   for (var i = 0; i &lt; 6; i++ ) {&#10;      color += letters[Math.floor(Math.random() * 16)];&#10;   }&#10;   return parseInt(color, 16);&#10;&#10;}&#10;&#10;/** Override inputHandler on 'toSend' from WebSocketClient */&#10;exports.toSendInputHandler = function() {&#10;   var msg = get('toSend');&#10;&#10;   // Update the current location map with this incoming packet&#10;   var id = msg.id;&#10;   var x = msg.X || 0;&#10;   var y = msg.Y || 0;&#10;   var z = msg.Z || 0;&#10;&#10;   // Check if this ID already has a color&#10;   var color = 0.0;&#10;   if (id in locations) {&#10;      color = locations[id].color;&#10;   } else {&#10;      color = random_color();&#10;   }&#10;&#10;   // Actually update the record&#10;   locations[id] = {&#10;      position: {&#10;         x: x,&#10;         y: y,&#10;         z: z&#10;      },&#10;      color: color&#10;   };&#10;&#10;   // Create arrays we can publish&#10;   var location_points = [];&#10;   var colors = [];&#10;   Object.keys(locations).forEach(function (key) {&#10;      location_points.push(locations[key].position);&#10;      colors.push(locations[key].color);&#10;   });&#10;&#10;   var out = {&#10;      header: {&#10;         frame_id: getParameter('fram_id')&#10;      },&#10;      points: location_points,&#10;      channels: [&#10;         {&#10;            name: 'rgb',&#10;            values: colors&#10;         }&#10;      ]&#10;   };&#10;      &#10;   var data = {&#10;      &quot;op&quot;: &quot;publish&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;msg&quot;: out &#10;   }&#10;&#10;   exports.sendToWebSocket(data);&#10;}&#10;&#10;&#10;&#10;/** Unadvertise the topic and inherit wrapup from WebSocketClient */&#10;exports.wrapup = function() {&#10;   var unadvertise = {&#10;      &quot;op&quot;: &quot;unadvertise&quot;,&#10;      &quot;topic&quot;: getParameter('topic')&#10;   };&#10;   exports.sendToWebSocket(unadvertise);&#10;   this.ssuper.wrapup();&#10;}&#10;">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2015 The Regents of the University of Michigan.&#10;// All rights reserved.&#10;&#10;// Permission is hereby granted, without written agreement and without&#10;// license or royalty fees, to use, copy, modify, and distribute this&#10;// software and its documentation for any purpose, provided that the above&#10;// copyright notice and the following two paragraphs appear in all copies&#10;// of this software.&#10;&#10;// IN NO EVENT SHALL THE UNIVERSITY OF CALIFORNIA BE LIABLE TO ANY PARTY&#10;// FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES&#10;// ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF&#10;// THE UNIVERSITY OF CALIFORNIA HAS BEEN ADVISED OF THE POSSIBILITY OF&#10;// SUCH DAMAGE.&#10;&#10;// THE UNIVERSITY OF CALIFORNIA SPECIFICALLY DISCLAIMS ANY WARRANTIES,&#10;// INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF&#10;// MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE&#10;// PROVIDED HEREUNDER IS ON AN &quot;AS IS&quot; BASIS, AND THE UNIVERSITY OF&#10;// CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,&#10;// ENHANCEMENTS, OR MODIFICATIONS.&#10;&#10;/** Publish location X,Y,Z coordinates as a PointCloud to a ROS topic.&#10; *&#10; *  Incoming packets should have at least these keys:&#10; *     {&#10; *       X: &lt;x coordinate&gt;,&#10; *       Y: &lt;y coordinate&gt;,&#10; *       id: &lt;unique id for this location&gt;  &#10; *     }&#10; *&#10; *  All locations are published as a PointCloud so that the ROS visualization&#10; *  only needs to subscribe to one topic.&#10; *&#10; *  @accessor robotics/LocationRosPublisher&#10; *  @parameter {string} topic The ROS topic to publish to.&#10; *  @parameter {string} frame_id The frame_id of the header (only needed if a header is required).&#10; *  @author Brad Campbell &#10; *  @version $$Id: RosPublisher.js 271 2015-08-22 08:23:01Z eal $$ &#10; */&#10;&#10;&#10;ROS_TYPE = 'sensor_msgs/PointCloud';&#10;&#10;// location_id -&gt; {position: {X, Y, Z}, color: &lt;some color as a float&gt;}&#10;locations = {};&#10;&#10;/** Sets up by accessor by inheriting inputs from setup() in WebSocketClient. Adds additional parameters regarding the ROS topic to publish to. */ &#10;exports.setup = function() {&#10;   extend('net/WebSocketClient');&#10;   parameter('topic', {&#10;      type: &quot;string&quot;&#10;   });&#10;   parameter('frame_id', {&#10;      type: &quot;string&quot;,&#10;      value: &quot;&quot;&#10;   });&#10;}&#10;&#10;/**  Inherits initialize from WebSocketClient. &#10; *   Advertise the topic we are publishing to.*/ &#10;exports.initialize = function() {&#10;   this.ssuper.initialize.apply(this);&#10;&#10;   var advertise = {&#10;      &quot;op&quot;: &quot;advertise&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;type&quot;: ROS_TYPE&#10;   };&#10;   exports.sendToWebSocket(advertise);&#10;}&#10;&#10;function random_color () {&#10;   var letters = '0123456789ABCDEF'.split('');&#10;   var color = '0x';&#10;   for (var i = 0; i &lt; 6; i++ ) {&#10;      color += letters[Math.floor(Math.random() * 16)];&#10;   }&#10;   return parseInt(color, 16);&#10;&#10;}&#10;&#10;/** Override inputHandler on 'toSend' from WebSocketClient */&#10;exports.toSendInputHandler = function() {&#10;   var msg = get('toSend');&#10;&#10;   // Update the current location map with this incoming packet&#10;   var id = msg.id;&#10;   var x = msg.X || 0;&#10;   var y = msg.Y || 0;&#10;   var z = msg.Z || 0;&#10;&#10;   // Check if this ID already has a color&#10;   var color = 0.0;&#10;   if (id in locations) {&#10;      color = locations[id].color;&#10;   } else {&#10;      color = random_color();&#10;   }&#10;&#10;   // Actually update the record&#10;   locations[id] = {&#10;      position: {&#10;         x: x,&#10;         y: y,&#10;         z: z&#10;      },&#10;      color: color&#10;   };&#10;&#10;   // Create arrays we can publish&#10;   var location_points = [];&#10;   var colors = [];&#10;   Object.keys(locations).forEach(function (key) {&#10;      location_points.push(locations[key].position);&#10;      colors.push(locations[key].color);&#10;   });&#10;&#10;   var out = {&#10;      header: {&#10;         frame_id: getParameter('frame_id')&#10;      },&#10;      points: location_points,&#10;      channels: [&#10;         {&#10;            name: 'rgb',&#10;            values: colors&#10;         }&#10;      ]&#10;   };&#10;      &#10;   var data = {&#10;      &quot;op&quot;: &quot;publish&quot;,&#10;      &quot;topic&quot;: getParameter('topic'),&#10;      &quot;msg&quot;: out &#10;   }&#10;&#10;   exports.sendToWebSocket(data);&#10;}&#10;&#10;&#10;&#10;/** Unadvertise the topic and inherit wrapup from WebSocketClient */&#10;exports.wrapup = function() {&#10;   var unadvertise = {&#10;      &quot;op&quot;: &quot;unadvertise&quot;,&#10;      &quot;topic&quot;: getParameter('topic')&#10;   };&#10;   exports.sendToWebSocket(unadvertise);&#10;   this.ssuper.wrapup();&#10;}&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
                 <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
                 </property>
@@ -2241,7 +2233,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[600.0, 455.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[595.0, 480.0]">
         </property>
         <property name="server" class="ptolemy.data.expr.Parameter" value="192.168.11.108">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2357,6 +2349,18 @@
             <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="4.0">
             </property>
             <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{12.5, 9.25}">
+            </property>
+        </property>
+        <property name="documentation" class="ptolemy.vergil.basic.DocAttribute">
+            <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&lt;p&gt;Publish location X,Y,Z coordinates as a PointCloud to a ROS topic.&lt;/p&gt;&#10;&lt;p&gt; Incoming packets should have at least these keys:&#10;    {&#10;      X: &lt;x coordinate&gt;,&#10;      Y: &lt;y coordinate&gt;,&#10;      id: &lt;unique id for this location&gt;&lt;br&gt;    }&lt;/p&gt;&#10;&lt;p&gt; All locations are published as a PointCloud so that the ROS visualization&#10; only needs to subscribe to one topic.&lt;/p&gt;">
+            </property>
+            <property name="author" class="ptolemy.kernel.util.StringAttribute" value="Brad Campbell">
+            </property>
+            <property name="version" class="ptolemy.kernel.util.StringAttribute" value="$Id: RosPublisher.js 271 2015-08-22 08:23:01Z eal $">
+            </property>
+            <property name="topic (parameter)" class="ptolemy.kernel.util.StringAttribute" value="({names:[&quot;string&quot;]}) The ROS topic to publish to.">
+            </property>
+            <property name="frame_id (parameter)" class="ptolemy.kernel.util.StringAttribute" value="({names:[&quot;string&quot;]}) The frame_id of the header (only needed if a header is required).">
             </property>
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">

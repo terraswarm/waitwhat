@@ -42,13 +42,13 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[380.0, 100.0]">
         </property>
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={373, 208, 934, 634}, maximized=false}">
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={373, 208, 1060, 748}, maximized=false}">
     </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[826, 638]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8673790069138906">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.8882602545968883">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{425.25, 308.4765681612319}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{506.8248407643312, 247.5}">
     </property>
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
         <property name="stopWhenQueueIsEmpty" class="ptolemy.data.expr.Parameter" value="false">
@@ -56,6 +56,22 @@
         <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="true">
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[465.0, 45.0]">
+        </property>
+    </property>
+    <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="22">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Battery Percentage to Hue Bulbs">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[195.0, -90.0]">
+        </property>
+    </property>
+    <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="The battery level of each robot is displayed&#10;on the Hue light bulbs. Green means fully charged,&#10;and red means the battery is almost dead.">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[160.0, -50.0]">
         </property>
     </property>
     <entity name="Hue" class="org.terraswarm.accessor.JSAccessor">
@@ -663,7 +679,7 @@
         </property>
         <property name="brightness" class="ptolemy.actor.parameters.PortParameter" value="255.0">
         </property>
-        <property name="hue" class="ptolemy.actor.parameters.PortParameter" value="7797.0">
+        <property name="hue" class="ptolemy.actor.parameters.PortParameter" value="21397.0">
         </property>
         <property name="saturation" class="ptolemy.actor.parameters.PortParameter" value="255.0">
         </property>
