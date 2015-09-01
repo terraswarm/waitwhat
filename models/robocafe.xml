@@ -75,7 +75,7 @@
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 31, 2015 8:24:23 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 31, 2015 8:34:42 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -2438,7 +2438,7 @@
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[880.0, 1095.0]">
         </property>
-        <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="localhost">
+        <property name="hostInterface" class="ptolemy.data.expr.Parameter" value="0.0.0.0">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
