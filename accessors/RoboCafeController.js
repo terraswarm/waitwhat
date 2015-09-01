@@ -7,24 +7,31 @@
 */
 
 
-var NUM_ROBOTS = 3;
+var NUM_ROBOTS = 4;
 
 // STATES
-var STATE_IDLE = 'IDLE'; // Robot is currently just sitting there.
-var STATE_SERVING = 'SERVING'; // Robot has been requested and is going servering a person.
-var STATE_SPINNING = 'SPINNING';
+var STATE_IDLE = 'IDLE';         // Robot is currently just sitting there.
+var STATE_SERVING = 'SERVING';   // Robot has been requested and is going to a person.
+var STATE_SPINNING = 'SPINNING'; // Applause was detected and the robot is interrupted to spin.
 
-// MAPPING OF ITEM TO ROBOT NUM
+// MAPPING OF ITEM TO ROBOTS and the queue for that item
 var ITEMS = {
-  Twix: 0,
-  SquirtGun: 1,
-  BouncyBalls: 2
+  Twix:        {
+    robots: [0, 3],
+    queue: []
+  },
+  SquirtGun:   {
+    robots: [1],
+    queue: []
+  },
+  BouncyBalls: {
+    robots: [2],
+    queue: []
+  }
 }
 
-// Array of robot structs
+// Array of robot structs with state on each one.
 var robots = [];
-
-
 
 
 /** Define inputs and outputs. */
@@ -42,10 +49,12 @@ exports.setup = function () {
   //
   // Parameters
   //
+  // Which robot to make spin.
   parameter('SpinRobotIndex', {
     type: 'number',
     value: 0
   });
+  // Number of seconds the robot will spin for.
   parameter('SpinRobotDuration', {
     type: 'number',
     value: 5
@@ -58,7 +67,7 @@ exports.initialize = function () {
   for (var i=0; i<NUM_ROBOTS; i++) {
     var robot = {};
     robot.state = STATE_IDLE;
-    robot.queue = [];
+    robot.servicing = null;
     robots[i] = robot;
 
     // Output initial status
@@ -71,16 +80,14 @@ exports.initialize = function () {
   // in case more than one request is received before a 'spin','cancelled' or
   // 'finished' event, the second request ends up in the queue until the next
   // event. To avoid this, poll queues and process events if robots are free.
-  setInterval(function() {
-    for (var i=0; i<NUM_ROBOTS; i++) {
-    if (robots[i].state == STATE_IDLE) {
-      process_from_queue(i);
-      // check if there are more events. if not, send the robot home 
-    }
-  }
-  }, 1000);
+  setInterval(process_queue, 1000);
 }
- 
+
+
+// Effectively connect an incoming location stream to a robot's
+// /goal topic.
+// operation is whether to connect ('add') or disconnect ('remove')
+// the connection between the phone and robot.
 function set_source_and_robot (phone_id, robot_index, operation) {
   var out = {
     type: operation,
@@ -90,55 +97,13 @@ function set_source_and_robot (phone_id, robot_index, operation) {
   send('SelectPhoneRobot', out);
 }
 
+// Publish on the status output a robot's state change
 function update_status (robot_index, state) {
+  robots[robot_index].state = state;
   send('RobotStatus', {
     robotid: robot_index,
     status: state
   });
-}
-
-function queue_request (robot_index, phone_id, priorityIndex) {
-  // We may want to queue
-  rbt = robots[robot_index]; 
-  if ((rbt.servicing == null || rbt.servicing != phone_id) && rbt.queue.indexOf(phone_id) == -1) {
-    console.log("Queueing phone with id: " + phone_id);
-
-    // if no priority has been specified, this is a reqular queueing event
-    // if it is not null, however, means that the specified phone has been
-    // interrupted by a spin, so put it at the top of the queue.
-    if (priorityIndex == null) {
-      // Robot not free, queue this request
-      rbt.queue.push(phone_id);
-    } else {
-      rbt.queue.unshift(phone_id); 
-    }
-    return true;
-  } else { 
-    console.log("Could not queue " + phone_id  + ". Robot Servicing= " + rbt.servicing + 
-    " Queue Contents: " + rbt.queue.toString()) ;
-  }
-  
-  return false;
-}
-
-function process_from_queue(robot_index) {
-  rbt = robots[robot_index];
-  if (rbt.queue.length > 0 && rbt.state == STATE_IDLE) { 
-    var next_phone = rbt.queue.shift();
-    // Ok great!
-    // Put this one into service
-    rbt.state = STATE_SERVING;
-    // Keep track of which user this robot is attached to
-    rbt.servicing = next_phone;
-    // And send the robot to the person
-    set_source_and_robot(next_phone, robot_index, 'add');
-    // And update output status
-    update_status(robot_index, STATE_SERVING);
-    publish_state();
-    console.log("Processing event from the queue with id: " + next_phone);
-    return true;
-  }
-  return false; 
 }
 
 // Tell all listeners what's going on in the controller.
@@ -146,11 +111,107 @@ function publish_state () {
   send('AppState', robots);
 }
 
+// // Add a phone id to the robot's queue of things to service.
+// function queue_request (robot_index, phone_id, priorityIndex) {
+//   // Get the robot
+//   rbt = robots[robot_index]; 
+
+//   // Check that the given robot
+//   if ((rbt.servicing == null || rbt.servicing != phone_id) && rbt.queue.indexOf(phone_id) == -1) {
+//     console.log("Queueing phone with id: " + phone_id);
+
+//     // if no priority has been specified, this is a reqular queueing event
+//     // if it is not null, however, means that the specified phone has been
+//     // interrupted by a spin, so put it at the top of the queue.
+//     if (priorityIndex == null) {
+//       // Robot not free, queue this request
+//       rbt.queue.push(phone_id);
+//     } else {
+//       rbt.queue.unshift(phone_id); 
+//     }
+//     return true;
+//   } else { 
+//     console.log("Could not queue " + phone_id  + ". Robot Servicing= " + rbt.servicing + 
+//     " Queue Contents: " + rbt.queue.toString()) ;
+//   }
+  
+//   return false;
+// }
+
+function process_queue () {
+
+  // Iterate over items, and in turn each robot
+  for (var item in ITEMS) {
+    var item_obj = ITEMS[item];
+
+    // Each robot for the item
+    for (var i=0; i<item_obj.robots.length; i++) {
+      var rbt_idx = i;
+      var rbt = robots[rbt_idx];
+
+      // Our options are to send this robot to someone in the queue,
+      // leave it alone, or send it home.
+      if (rbt.status != STATE_IDLE) {
+        // Robot is busy, leave it alone
+      
+      } else {
+        // Robot is idle.
+        if (item_obj.queue.length > 0) {
+          // Aha! Someone is waiting for this item, and this robot is idle.
+          // Send it!
+          var next_phone = item_obj.queue.shift();
+          rbt.state = STATE_SERVING;
+          // Keep track of which user this robot is attached to
+          rbt.servicing = next_phone;
+          // And send the robot to the person
+          set_source_and_robot(next_phone, rbt_idx, 'add');
+          // And update output status
+          update_status(rbt_idx, STATE_SERVING);
+          publish_state();
+
+        } else {
+          // This robot is idle and no one wants anything from it.
+          // Make sure it is going home. It's entirely possible this line
+          // of code gets called multiple times. This is OK as the switch
+          // handles that.
+          set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  
+        }
+      }
+    }
+  }
+
+  //   // Check to see if there is anyone in the queue
+  //   if (item_obj.queue.length > 0) {
+
+
+  //   } else {
+  //     // Make sure this robot is going home
+
+  //   }
+  // }
+
+
+  // rbt = robots[robot_index];
+  // if (rbt.queue.length > 0 && rbt.state == STATE_IDLE) { 
+  //   var next_phone = rbt.queue.shift();
+  //   // Ok great!
+  //   // Put this one into service
+  //   rbt.state = STATE_SERVING;
+  //   // Keep track of which user this robot is attached to
+  //   rbt.servicing = next_phone;
+  //   // And send the robot to the person
+  //   set_source_and_robot(next_phone, robot_index, 'add');
+  //   // And update output status
+  //   update_status(robot_index, STATE_SERVING);
+  //   publish_state();
+  //   console.log("Processing event from the queue with id: " + next_phone);
+  //   return true;
+  // }
+  // return false; 
+}
+
 var Choice_in = function () {
   var ws_payload = get('UserChoice');
-
-  //console.log('got choice');
-  //console.log('ws_payload);
 
   // Check if this is a normal message from a client or a status message
   if ('message' in ws_payload) {
@@ -171,59 +232,110 @@ var Choice_in = function () {
       // Now that we know what the user wants, figure out if we can satisfy
       // the request
       if (selection in ITEMS) {
-        // Get the robot struct of the one that has what we are looking for
-        var rbt_idx = ITEMS[selection];
-        console.log('Got robot index: '+rbt_idx + ' for ' + selection + ' on phone ' + phone_id);
-        var rbt = robots[rbt_idx];
-
-        // Now do what we want if this is a new selection
+        
+        // We know what this is. If the user wants it we add them to the queue
+        // and we'll process the queue to dispatch a robot.
         if (msg.type == 'selection') {
-          // We have a robot, check its state
-          if (rbt.state == STATE_IDLE) {
-            console.log("Robot " + rbt_idx + " was free, processing request");
-            // Ok great!
-            // Put this one into service
-            rbt.state = STATE_SERVING;
-            // Keep track of which user this robot is attached to
-            rbt.servicing = phone_id;
-            // And send the robot to the person
-            set_source_and_robot(phone_id, rbt_idx, 'add');
-            // And update output status
-            update_status(rbt_idx, STATE_SERVING);
-            publish_state();
-          } else {
-            // request to queue this request to be processed later
-            queue_request(rbt_idx, phone_id, null);
+          // Add the request to the queue for that item, if the user is not
+          // already in the queue.
+          if (ITEMS[selection].queue.indexOf(phone_id) == -1) {
+            ITEMS[selection].queue.push(phone_id);
           }
         
-
         } else if (msg.type == 'cancelled' || msg.type == 'finished') {
-          // We no longer need this robot to go to this person, send it
-          // back home
+          // User got the item or doesn't want it
 
-          // Check that the correct robot was helping this person
-          if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
-            // This checks out. Stop the robot from what it was doing
-            // and send it home.
-            set_source_and_robot(phone_id, rbt_idx, 'remove');
-            rbt.state = STATE_IDLE;
-            update_status(rbt_idx, STATE_IDLE);
-            publish_state();
-            rbt.servicing = null;
-            // if no more events to be processed, send robot home.
-            if (rbt.queue.length == 0 && rbt.state == STATE_IDLE) { 
-                // go back home 
-                // Send the robot home.
-                set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  
+          // Get the list of robots that may have been navigating to the user
+          var robot_indexes = ITEMS[selection].robots;
+
+          // Iterate each robot, checking to see if it was heading for that
+          // user. If so, stop the robot from doing that.
+          for (var i=0; i<robot_indexes.length; i++) {
+            var rbt_idx = robot_indexes[i];
+            var rbt = robots[rbt_idx];
+          
+            // Check if this robot was helping this person
+            if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
+              // This checks out. Stop the robot from what it was doing
+              // and send it home.
+              set_source_and_robot(phone_id, rbt_idx, 'remove');
+              update_status(rbt_idx, STATE_IDLE);
+              rbt.servicing = null;
+              publish_state();
             }
-            
-          } else {
-            // Check if this phone is in queue and remove it
-            if (rbt.queue.indexOf(phone_id) > -1) {
-              rbt.queue.splice(rbt.queue.indexOf(phone_id), 1);
-            }
-          } 
+          }
+
+          // Now check that this user wasn't queued for a robot with that
+          // item. If it was, remove it.
+          var item_queue = ITEMS[selection].queue;
+          if (item_queue.indexOf(phone_id) > -1) {
+            item_queue.splice(item_queue.indexOf(phone_id), 1);
+          }
         }
+
+        // And take care of our queues to see if we should dispatch robots
+        // anywhere.
+        process_queue();
+
+
+
+
+
+
+
+        // // Get the robot struct of the one that has what we are looking for
+        // var rbt_idx = ITEMS[selection];
+        // console.log('Got robot index: '+rbt_idx + ' for ' + selection + ' on phone ' + phone_id);
+        // var rbt = robots[rbt_idx];
+
+        // // Now do what we want if this is a new selection
+        // if (msg.type == 'selection') {
+        //   // We have a robot, check its state
+        //   if (rbt.state == STATE_IDLE) {
+        //     console.log("Robot " + rbt_idx + " was free, processing request");
+        //     // Ok great!
+        //     // Put this one into service
+        //     rbt.state = STATE_SERVING;
+        //     // Keep track of which user this robot is attached to
+        //     rbt.servicing = phone_id;
+        //     // And send the robot to the person
+        //     set_source_and_robot(phone_id, rbt_idx, 'add');
+        //     // And update output status
+        //     update_status(rbt_idx, STATE_SERVING);
+        //     publish_state();
+        //   } else {
+        //     // request to queue this request to be processed later
+        //     queue_request(rbt_idx, phone_id, null);
+        //   }
+        
+
+        // } else if (msg.type == 'cancelled' || msg.type == 'finished') {
+        //   // We no longer need this robot to go to this person, send it
+        //   // back home
+
+        //   // Check that the correct robot was helping this person
+        //   if (rbt.state == STATE_SERVING && rbt.servicing == phone_id) {
+        //     // This checks out. Stop the robot from what it was doing
+        //     // and send it home.
+        //     set_source_and_robot(phone_id, rbt_idx, 'remove');
+        //     rbt.state = STATE_IDLE;
+        //     update_status(rbt_idx, STATE_IDLE);
+        //     publish_state();
+        //     rbt.servicing = null;
+        //     // if no more events to be processed, send robot home.
+        //     if (rbt.queue.length == 0 && rbt.state == STATE_IDLE) { 
+        //         // go back home 
+        //         // Send the robot home.
+        //         set_source_and_robot('Home'+rbt_idx, rbt_idx, 'add');  
+        //     }
+            
+        //   } else {
+        //     // Check if this phone is in queue and remove it
+        //     if (rbt.queue.indexOf(phone_id) > -1) {
+        //       rbt.queue.splice(rbt.queue.indexOf(phone_id), 1);
+        //     }
+        //   } 
+        // }
 
 
       } else {
@@ -249,22 +361,26 @@ var Applause_in = function () {
     var robot = robots[robot_index];
 
     //unset the service status.
-    var old_servicing = robot.servicing;
+    // var old_servicing = robot.servicing;
     
-
     // Robot is busy with spinning!
-    robot.state = STATE_SPINNING;
     update_status(robot_index, STATE_SPINNING);
 
-    if (old_servicing != null) { 
-      console.log("Will queue " + old_servicing + " to be processed later.");
-      robot.servicing = null;
-      // queue the previous request to be processed later,
-      // but  this should be the first thing to be processed since it was 
-      // preempted by the spin so we add it to the top of the queue
-      queue_request (robot_index, old_servicing, 0); 
+    if (robot.servicing != null) { 
+      console.log("Will queue " + robot.servicing + " to be processed later.");
+      // Find which item this robot is carrying, and add this user to that
+      // queue.
+      for (var item in ITEMS) {
+        if (ITEMS[item].robots.indexOf(robot_index) != -1) {
+          ITEMS[item].queue.unshift(robot.servicing);
+        }
+      }
+
       // Stop what ever was controlling the robot before
-      set_source_and_robot(old_servicing, robot_index, 'remove');
+      set_source_and_robot(robot.servicing, robot_index, 'remove');
+
+      // Clear this
+      robot.servicing = null;
     }
 
     // Make it spin
@@ -272,28 +388,18 @@ var Applause_in = function () {
 
     // After the spin is done, put it back
     setTimeout(function () {
+      // Stop the spin command
       set_source_and_robot('Spin', robot_index, 'remove');
-      // if (old_servicing != null) {
-      //   // Re setup what ever was controlling the robot before
-      //   set_source_and_robot(old_servicing, robot_index, 'add');
-      // }
 
-      robot.state = STATE_IDLE;
-      update_status(robot_index, robot.state);
+      // Go idle for now
+      update_status(robot_index, STATE_IDLE);
 
-      // robot is idle now, try to process from queue
-      process_from_queue(robot_index);
-      // if there are no more events to be processed for this robot, send it home.
-      // otherwise, the poll will take care of the remaining events soon.
-      if (robot.queue.length == 0 
-        && robot.state == STATE_IDLE) { 
-        // go back home 
-        // Send the robot home.
-        set_source_and_robot('Home'+robot_index, robot_index, 'add');  
-      }
+      // Keep all of the update logic in one place. Since we added the previous
+      // user to the front of the queue we can just use that to reconfigure the
+      // robot.
+      process_queue();
     }, getParameter('SpinRobotDuration') * 1000);
 
-   
 
   }
 }

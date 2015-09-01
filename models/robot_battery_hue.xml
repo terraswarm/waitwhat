@@ -679,7 +679,7 @@
         </property>
         <property name="brightness" class="ptolemy.actor.parameters.PortParameter" value="255.0">
         </property>
-        <property name="hue" class="ptolemy.actor.parameters.PortParameter" value="21397.0">
+        <property name="hue" class="ptolemy.actor.parameters.PortParameter" value="21760.0">
         </property>
         <property name="saturation" class="ptolemy.actor.parameters.PortParameter" value="255.0">
         </property>
