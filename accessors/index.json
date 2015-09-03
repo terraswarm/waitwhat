@@ -22,5 +22,6 @@
     "GoalMessage.js",
     "MoveActionGoalMessage.js",
     "ConstantLocation.js",
+    "IndexedLocation.js",
     "ConstantKeyValue.js"
 ]

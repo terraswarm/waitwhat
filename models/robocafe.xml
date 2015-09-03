@@ -30,13 +30,13 @@
         <property name="_location" class="ptolemy.kernel.util.Location" value="[1345.0, 995.0]">
         </property>
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 23, 1671, 1023}, maximized=true}">
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-1, 27, 2562, 1414}, maximized=true}">
     </property>
-    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1437, 913]">
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[2335, 1282]">
     </property>
-    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="0.9188667095943336">
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.5625000000000027">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{907.4999999999999, 893.0487699555449}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{780.005476051402, 683.2015917056074}">
     </property>
     <property name="_layoutConfiguration" class="ptolemy.vergil.basic.layout.LayoutConfiguration">
     </property>
@@ -49,33 +49,25 @@
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Localization Information">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[440.0, 420.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[430.0, 385.0]">
         </property>
     </property>
     <property name="Annotation2" class="ptolemy.vergil.kernel.attributes.TextAttribute">
         <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
         </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.6,0.0,1.0}">
+        </property>
         <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
         </property>
         <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Spin Command">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[520.0, 855.0]">
-        </property>
-    </property>
-    <property name="Annotation3" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-        <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
-        </property>
-        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
-        </property>
-        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Home Coordinates">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[490.0, 660.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[245.0, 880.0]">
         </property>
     </property>
     <property name="ModelID" class="ptolemy.vergil.kernel.attributes.IDAttribute">
         <property name="created" class="ptolemy.kernel.util.StringAttribute" value="Aug 12, 2015 4:54:58 PM">
         </property>
-        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Aug 31, 2015 9:38:45 PM">
+        <property name="lastUpdated" class="ptolemy.kernel.util.StringAttribute" value="Sep 2, 2015 8:15:52 PM">
         </property>
         <property name="author" class="ptolemy.kernel.util.StringAttribute" value="bradjc">
         </property>
@@ -194,15 +186,15 @@
         </property>
     </property>
     <property name="Rectangle2" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-        <property name="_location" class="ptolemy.kernel.util.Location" value="450.0, 672.5">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[440.0, 645.0]">
         </property>
         <property name="lineWidth" class="ptolemy.data.expr.Parameter" value="2.0">
         </property>
         <property name="lineColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.6,0.6,0.6,1.0}">
         </property>
-        <property name="width" class="ptolemy.data.expr.Parameter" value="630.0">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="650.0">
         </property>
-        <property name="height" class="ptolemy.data.expr.Parameter" value="495.0">
+        <property name="height" class="ptolemy.data.expr.Parameter" value="519.8311444652909">
         </property>
         <property name="centered" class="ptolemy.data.expr.Parameter" value="true">
         </property>
@@ -231,6 +223,18 @@
         <property name="rounding" class="ptolemy.data.expr.Parameter" value="25">
         </property>
         <property name="_renderFirst" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+    </property>
+    <property name="Annotation3" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textSize" class="ptolemy.data.expr.Parameter" value="14">
+        </property>
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.6,0.0,1.0}">
+        </property>
+        <property name="anchor" class="ptolemy.data.expr.StringParameter" value="south">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Robot Idle Pattern&#10;   &quot;Sentry Mode&quot;">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[295.0, 725.0]">
         </property>
     </property>
     <entity name="Scarab" class="org.terraswarm.accessor.JSAccessor">
@@ -326,7 +330,7 @@
         </property>
         <property name="Zshift" class="ptolemy.data.expr.Parameter" value="0.0">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[395.0, 585.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[385.0, 550.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -956,7 +960,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[675.0, 585.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[665.0, 550.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1045,78 +1049,6 @@
             </property>
         </port>
     </entity>
-    <entity name="ConstantLocation" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a constant location.&#10; *&#10; *&#10; *  @accessor ConstantLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('Period', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;  parameter('X', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  parameter('Y', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  pose.X = getParameter('X');&#10;  pose.Y = getParameter('Y');&#10;&#10;  setInterval(function () {&#10;    send('pose', pose);&#10;  }, getParameter('Period')*1000);&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="../accessors/ConstantLocation.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-45.0, -16.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="93.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="31.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.4,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,1.0,1.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Home">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-29.0, -12.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={208, 123, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="2.0480000000000005">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="Period" class="ptolemy.data.expr.Parameter" value="1.0">
-        </property>
-        <property name="X" class="ptolemy.data.expr.Parameter" value="3.0">
-        </property>
-        <property name="Y" class="ptolemy.data.expr.Parameter" value="2.83">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[435.0, 685.0]">
-        </property>
-        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
-        </property>
-        <port name="error" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="pose" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
-        </port>
-    </entity>
     <entity name="OpAddKeyValue" class="org.terraswarm.accessor.JSAccessor">
         <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Add a key value pair to the input &#10; *&#10; *&#10; *  @accessor OpAddKeyValue&#10; *&#10;*/&#10;&#10;var key;&#10;var val;&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  input('Input');&#10;  output('Output');&#10;&#10;  parameter('Key', {&#10;    type: 'string'&#10;  });&#10;  parameter('Value', {&#10;    type: 'string'&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  key = getParameter('Key');&#10;  val = getParameter('Value');&#10;&#10;  addInputHandler('Input', Input_In);&#10;}&#10;&#10;var Input_In = function () {&#10;  var i = get('Input');&#10;&#10;  i[key] = val;&#10;  send('Output', i);&#10;}&#10;">
             <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
@@ -1140,7 +1072,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[545.0, 685.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[535.0, 640.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -1267,7 +1199,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[420.0, 890.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{410.0, 870.0}">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1335,7 +1267,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[590.0, 890.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 870.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1427,7 +1359,7 @@
         </property>
         <property name="port" class="ptolemy.data.expr.Parameter" value="8082">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[190.0, 585.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[180.0, 550.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1462,7 +1394,7 @@
         </property>
         <property name="title" class="ptolemy.data.expr.StringParameter" value="ALPS Location">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[295.0, 500.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[285.0, 465.0]">
         </property>
     </entity>
     <entity name="OpStrip" class="org.terraswarm.accessor.JSAccessor">
@@ -1484,7 +1416,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[305.0, 585.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[295.0, 550.0]">
         </property>
         <port name="error" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
@@ -1517,7 +1449,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[545.0, 585.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[535.0, 550.0]">
         </property>
         <property name="Boundary" class="ptolemy.data.expr.Parameter" value="5.18,-0.06,-7.9,-0.06,-7.9,7.822,-1.07,7.822,-1.07,4.94,5.18,4.94">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -1896,7 +1828,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[545.0, 720.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[535.0, 690.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -1939,7 +1871,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[545.0, 755.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[535.0, 740.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -1982,7 +1914,7 @@
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[545.0, 790.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[535.0, 790.0]">
         </property>
         <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
         </property>
@@ -1997,222 +1929,6 @@
             </property>
         </port>
         <port name="Output" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
-        </port>
-    </entity>
-    <entity name="ConstantLocation2" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a constant location.&#10; *&#10; *&#10; *  @accessor ConstantLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('Period', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;  parameter('X', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  parameter('Y', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  pose.X = getParameter('X');&#10;  pose.Y = getParameter('Y');&#10;&#10;  setInterval(function () {&#10;    send('pose', pose);&#10;  }, getParameter('Period')*1000);&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="../accessors/ConstantLocation.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-45.0, -16.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="93.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="31.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.4,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,1.0,1.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Home">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-29.0, -12.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={208, 123, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="2.0480000000000005">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="Period" class="ptolemy.data.expr.Parameter" value="1.0">
-        </property>
-        <property name="X" class="ptolemy.data.expr.Parameter" value="-6.3">
-        </property>
-        <property name="Y" class="ptolemy.data.expr.Parameter" value="4.7">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[435.0, 720.0]">
-        </property>
-        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
-        </property>
-        <port name="error" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="pose" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
-        </port>
-    </entity>
-    <entity name="ConstantLocation3" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a constant location.&#10; *&#10; *&#10; *  @accessor ConstantLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('Period', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;  parameter('X', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  parameter('Y', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  pose.X = getParameter('X');&#10;  pose.Y = getParameter('Y');&#10;&#10;  setInterval(function () {&#10;    send('pose', pose);&#10;  }, getParameter('Period')*1000);&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="../accessors/ConstantLocation.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-45.0, -16.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="93.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="31.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.4,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,1.0,1.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Home">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-29.0, -12.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={208, 123, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="2.0480000000000005">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="Period" class="ptolemy.data.expr.Parameter" value="1.0">
-        </property>
-        <property name="X" class="ptolemy.data.expr.Parameter" value="-0.33">
-        </property>
-        <property name="Y" class="ptolemy.data.expr.Parameter" value="4.4">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[435.0, 755.0]">
-        </property>
-        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
-        </property>
-        <port name="error" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="pose" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
-            </property>
-        </port>
-    </entity>
-    <entity name="ConstantLocation4" class="org.terraswarm.accessor.JSAccessor">
-        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a constant location.&#10; *&#10; *&#10; *  @accessor ConstantLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('Period', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;  parameter('X', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;  parameter('Y', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  pose.X = getParameter('X');&#10;  pose.Y = getParameter('Y');&#10;&#10;  setInterval(function () {&#10;    send('pose', pose);&#10;  }, getParameter('Period')*1000);&#10;}&#10;">
-            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
-                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
-                </property>
-            </property>
-        </property>
-        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="../accessors/ConstantLocation.js">
-        </property>
-        <property name="JSAccessorIcon" class="ptolemy.vergil.icon.EditorIcon">
-            <property name="rectangle" class="ptolemy.vergil.kernel.attributes.RectangleAttribute">
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-45.0, -16.0]">
-                </property>
-                <property name="width" class="ptolemy.data.expr.Parameter" value="93.0">
-                </property>
-                <property name="height" class="ptolemy.data.expr.Parameter" value="31.0">
-                </property>
-                <property name="fillColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.4,0.4,0.4,1.0}">
-                </property>
-            </property>
-            <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
-                <property name="textSize" class="ptolemy.data.expr.Parameter" value="18">
-                </property>
-                <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{1.0,1.0,1.0,1.0}">
-                </property>
-                <property name="fontFamily" class="ptolemy.data.expr.StringParameter" value="sans-Serif">
-                </property>
-                <property name="bold" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="italic" class="ptolemy.data.expr.Parameter" value="false">
-                </property>
-                <property name="text" class="ptolemy.kernel.util.StringAttribute" value="Home">
-                </property>
-                <property name="_location" class="ptolemy.kernel.util.Location" value="[-29.0, -12.0]">
-                </property>
-            </property>
-            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={208, 123, 934, 634}, maximized=false}">
-            </property>
-            <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[700, 524]">
-            </property>
-            <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="2.0480000000000005">
-            </property>
-            <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{0.0, 0.0}">
-            </property>
-        </property>
-        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
-            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
-            </property>
-            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
-            </property>
-        </property>
-        <property name="Period" class="ptolemy.data.expr.Parameter" value="1.0">
-        </property>
-        <property name="X" class="ptolemy.data.expr.Parameter" value="-6.02">
-        </property>
-        <property name="Y" class="ptolemy.data.expr.Parameter" value="0.95">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[435.0, 790.0]">
-        </property>
-        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
-        </property>
-        <port name="error" class="ptolemy.actor.TypedIOPort">
-            <property name="output"/>
-            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
-            </property>
-        </port>
-        <port name="pose" class="ptolemy.actor.TypedIOPort">
             <property name="output"/>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="false">
             </property>
@@ -2233,7 +1949,7 @@
             <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
             </property>
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[595.0, 480.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 445.0]">
         </property>
         <property name="server" class="ptolemy.data.expr.Parameter" value="192.168.11.108">
             <property name="_stringMode" class="ptolemy.kernel.util.SingletonAttribute">
@@ -2874,6 +2590,150 @@
         <property name="_flipPortsHorizontal" class="ptolemy.data.expr.Parameter" value="true">
         </property>
     </entity>
+    <entity name="IndexedLocation" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a location given an index&#10; *&#10; *&#10; *  @accessor IndexedLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;var locations = [&#10;  [10, 10],&#10;  [10, 20],&#10;  [20, 20],&#10;];&#10;&#10;var currentIndex = 0;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('SendPosePeriod', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;&#10;  parameter('NewLocationPeriod', {&#10;    type: 'number',&#10;    value: 20&#10;  });&#10;&#10;  parameter('InitialPositionIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;&#10;  parameter('ReverseDirection', {&#10;    type: 'boolean',&#10;    value: false&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  currentIndex = getParameter('InitialPositionIndex');&#10;&#10;  setInterval(function () {&#10;    sendPoseHandler();&#10;  }, getParameter('SendPosePeriod')*1000);&#10;  setInterval(function () {&#10;    newLocationHandler();&#10;  }, getParameter('NewLocationPeriod')*1000);&#10;}&#10;&#10;var newLocationHandler = function() {&#10;  if (getParameter('ReverseDirection')) {&#10;    currentIndex -= 1;&#10;  } else {&#10;    currentIndex += 1;&#10;  }&#10;  currentIndex = currentIndex % locations.length;&#10;}&#10;&#10;var triggerHandler = function() {&#10;  pose.X = locations[currentIndex][0];&#10;  pose.Y = locations[currentIndex][1];&#10;  send('pose', pose);&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/home/ppannuto/code/terraswarm/waitwhat/accessors/IndexedLocation.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[400.0, 640.0]">
+        </property>
+        <property name="SendPosePeriod" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="NewLocationPeriod" class="ptolemy.data.expr.Parameter" value="20.0">
+        </property>
+        <property name="InitialPositionIndex" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="ReverseDirection" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="pose" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="IndexedLocation2" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a location given an index&#10; *&#10; *&#10; *  @accessor IndexedLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;var locations = [&#10;  [10, 10],&#10;  [10, 20],&#10;  [20, 20],&#10;];&#10;&#10;var currentIndex = 0;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('SendPosePeriod', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;&#10;  parameter('NewLocationPeriod', {&#10;    type: 'number',&#10;    value: 20&#10;  });&#10;&#10;  parameter('InitialPositionIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;&#10;  parameter('ReverseDirection', {&#10;    type: 'boolean',&#10;    value: false&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  currentIndex = getParameter('InitialPositionIndex');&#10;&#10;  setInterval(function () {&#10;    sendPoseHandler();&#10;  }, getParameter('SendPosePeriod')*1000);&#10;  setInterval(function () {&#10;    newLocationHandler();&#10;  }, getParameter('NewLocationPeriod')*1000);&#10;}&#10;&#10;var newLocationHandler = function() {&#10;  if (getParameter('ReverseDirection')) {&#10;    currentIndex -= 1;&#10;  } else {&#10;    currentIndex += 1;&#10;  }&#10;  currentIndex = currentIndex % locations.length;&#10;}&#10;&#10;var triggerHandler = function() {&#10;  pose.X = locations[currentIndex][0];&#10;  pose.Y = locations[currentIndex][1];&#10;  send('pose', pose);&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/home/ppannuto/code/terraswarm/waitwhat/accessors/IndexedLocation.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[400.0, 690.0]">
+        </property>
+        <property name="SendPosePeriod" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="NewLocationPeriod" class="ptolemy.data.expr.Parameter" value="20.0">
+        </property>
+        <property name="InitialPositionIndex" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="ReverseDirection" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="pose" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="IndexedLocation3" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a location given an index&#10; *&#10; *&#10; *  @accessor IndexedLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;var locations = [&#10;  [10, 10],&#10;  [10, 20],&#10;  [20, 20],&#10;];&#10;&#10;var currentIndex = 0;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('SendPosePeriod', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;&#10;  parameter('NewLocationPeriod', {&#10;    type: 'number',&#10;    value: 20&#10;  });&#10;&#10;  parameter('InitialPositionIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;&#10;  parameter('ReverseDirection', {&#10;    type: 'boolean',&#10;    value: false&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  currentIndex = getParameter('InitialPositionIndex');&#10;&#10;  setInterval(function () {&#10;    sendPoseHandler();&#10;  }, getParameter('SendPosePeriod')*1000);&#10;  setInterval(function () {&#10;    newLocationHandler();&#10;  }, getParameter('NewLocationPeriod')*1000);&#10;}&#10;&#10;var newLocationHandler = function() {&#10;  if (getParameter('ReverseDirection')) {&#10;    currentIndex -= 1;&#10;  } else {&#10;    currentIndex += 1;&#10;  }&#10;  currentIndex = currentIndex % locations.length;&#10;}&#10;&#10;var triggerHandler = function() {&#10;  pose.X = locations[currentIndex][0];&#10;  pose.Y = locations[currentIndex][1];&#10;  send('pose', pose);&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/home/ppannuto/code/terraswarm/waitwhat/accessors/IndexedLocation.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[400.0, 740.0]">
+        </property>
+        <property name="SendPosePeriod" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="NewLocationPeriod" class="ptolemy.data.expr.Parameter" value="20.0">
+        </property>
+        <property name="InitialPositionIndex" class="ptolemy.data.expr.Parameter" value="2.0">
+        </property>
+        <property name="ReverseDirection" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="pose" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="IndexedLocation4" class="org.terraswarm.accessor.JSAccessor">
+        <property name="script" class="ptolemy.actor.parameters.PortParameter" value="// Copyright (c) 2014-2015 The Regents of the University of Michigan&#10;&#10;/** Output a location given an index&#10; *&#10; *&#10; *  @accessor IndexedLocation&#10; *&#10;*/&#10;&#10;var pose = {&#10;  X: 0,&#10;  Y: 0,&#10;  Z: 0.0&#10;};&#10;&#10;var locations = [&#10;  [10, 10],&#10;  [10, 20],&#10;  [20, 20],&#10;];&#10;&#10;var currentIndex = 0;&#10;&#10;/** Define inputs and outputs. */&#10;exports.setup = function() {&#10;  //&#10;  // I/O&#10;  //&#10;  output('pose');&#10;&#10;  parameter('SendPosePeriod', {&#10;    type: 'number',&#10;    value: 1&#10;  });&#10;&#10;  parameter('NewLocationPeriod', {&#10;    type: 'number',&#10;    value: 20&#10;  });&#10;&#10;  parameter('InitialPositionIndex', {&#10;    type: 'number',&#10;    value: 0&#10;  });&#10;&#10;  parameter('ReverseDirection', {&#10;    type: 'boolean',&#10;    value: false&#10;  });&#10;}&#10;&#10;exports.initialize = function () {&#10;  currentIndex = getParameter('InitialPositionIndex');&#10;&#10;  setInterval(function () {&#10;    sendPoseHandler();&#10;  }, getParameter('SendPosePeriod')*1000);&#10;  setInterval(function () {&#10;    newLocationHandler();&#10;  }, getParameter('NewLocationPeriod')*1000);&#10;}&#10;&#10;var newLocationHandler = function() {&#10;  if (getParameter('ReverseDirection')) {&#10;    currentIndex -= 1;&#10;  } else {&#10;    currentIndex += 1;&#10;  }&#10;  currentIndex = currentIndex % locations.length;&#10;}&#10;&#10;var triggerHandler = function() {&#10;  pose.X = locations[currentIndex][0];&#10;  pose.Y = locations[currentIndex][1];&#10;  send('pose', pose);&#10;}&#10;">
+            <property name="style" class="ptolemy.actor.gui.style.NoteStyle">
+                <property name="note" class="ptolemy.kernel.util.StringAttribute" value="NOTE: To see the script, invoke Open Actor">
+                </property>
+            </property>
+        </property>
+        <property name="accessorSource" class="org.terraswarm.accessor.JSAccessor$ActionableAttribute" value="/home/ppannuto/code/terraswarm/waitwhat/accessors/IndexedLocation.js">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.vergil.toolbox.TextEditorTableauFactory">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="script">
+            </property>
+            <property name="syntaxStyle" class="ptolemy.kernel.util.StringAttribute" value="text/javascript">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[400.0, 790.0]">
+        </property>
+        <property name="SendPosePeriod" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="NewLocationPeriod" class="ptolemy.data.expr.Parameter" value="20.0">
+        </property>
+        <property name="InitialPositionIndex" class="ptolemy.data.expr.Parameter" value="3.0">
+        </property>
+        <property name="ReverseDirection" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_hide" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="pose" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
     <relation name="relation17" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
@@ -2901,7 +2761,7 @@
     <relation name="relation26" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[620.0, 585.0]">
+        <vertex name="vertex1" value="[610.0, 550.0]">
         </vertex>
     </relation>
     <relation name="relation23" class="ptolemy.actor.TypedIORelation">
@@ -2909,19 +2769,19 @@
     <relation name="relation28" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[730.0, 585.0]">
+        <vertex name="vertex1" value="[720.0, 550.0]">
         </vertex>
     </relation>
     <relation name="relation37" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[255.0, 585.0]">
+        <vertex name="vertex1" value="[245.0, 550.0]">
         </vertex>
     </relation>
     <relation name="relation6" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[730.0, 890.0]">
+        <vertex name="vertex1" value="[720.0, 870.0]">
         </vertex>
     </relation>
     <relation name="relation5" class="ptolemy.actor.TypedIORelation">
@@ -2958,18 +2818,10 @@
         <vertex name="vertex1" value="[590.0, 1240.0]">
         </vertex>
     </relation>
-    <relation name="relation19" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation32" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation33" class="ptolemy.actor.TypedIORelation">
-    </relation>
-    <relation name="relation34" class="ptolemy.actor.TypedIORelation">
-    </relation>
     <relation name="relation54" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[475.0, 585.0]">
+        <vertex name="vertex1" value="[465.0, 550.0]">
         </vertex>
     </relation>
     <relation name="relation4" class="ptolemy.actor.TypedIORelation">
@@ -3030,6 +2882,14 @@
     </relation>
     <relation name="relation49" class="ptolemy.actor.TypedIORelation">
     </relation>
+    <relation name="relation19" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation32" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation33" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation34" class="ptolemy.actor.TypedIORelation">
+    </relation>
     <link port="Scarab.battery" relation="relation27"/>
     <link port="Scarab.location" relation="relation8"/>
     <link port="Scarab.pose" relation="relation2"/>
@@ -3089,7 +2949,6 @@
     <link port="Scarab3.pose" relation="relation43"/>
     <link port="Scarab3.cmdvel" relation="relation11"/>
     <link port="Scarab3.cancel" relation="relation47"/>
-    <link port="ConstantLocation.pose" relation="relation19"/>
     <link port="OpAddKeyValue.Input" relation="relation19"/>
     <link port="OpAddKeyValue.Output" relation="relation26"/>
     <link port="ConstantKeyValue.kv" relation="relation23"/>
@@ -3119,9 +2978,6 @@
     <link port="OpAddKeyValue4.Output" relation="relation26"/>
     <link port="OpAddKeyValue5.Input" relation="relation34"/>
     <link port="OpAddKeyValue5.Output" relation="relation26"/>
-    <link port="ConstantLocation2.pose" relation="relation32"/>
-    <link port="ConstantLocation3.pose" relation="relation33"/>
-    <link port="ConstantLocation4.pose" relation="relation34"/>
     <link port="LocationRosPublisher.toSend" relation="relation54"/>
     <link port="MicrostepDelay.input" relation="relation8"/>
     <link port="MicrostepDelay.output" relation="relation25"/>
@@ -3151,5 +3007,9 @@
     <link port="OpAddKeyValue9.Output" relation="relation30"/>
     <link port="MicrostepDelay5.input" relation="relation42"/>
     <link port="MicrostepDelay5.output" relation="relation49"/>
+    <link port="IndexedLocation.pose" relation="relation19"/>
+    <link port="IndexedLocation2.pose" relation="relation32"/>
+    <link port="IndexedLocation3.pose" relation="relation33"/>
+    <link port="IndexedLocation4.pose" relation="relation34"/>
     <link relation1="relation28" relation2="relation6"/>
 </entity>
