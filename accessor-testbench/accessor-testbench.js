@@ -1,4 +1,32 @@
 
+var WebSocketServer = require('ws').Server;
+var cafe_ws_server = new WebSocketServer({ port: 8081 });
+var  loc_ws_server = new WebSocketServer({ port: 8082 });
+
+var cafe_ws = null;
+var  loc_ws = null;
+
+cafe_ws_server.on('connection', function connection(ws) {
+	console.log("@@ CAFE_WS CONNECTED @@");
+	cafe_ws = ws;
+	cafe_ws.on('message', function incoming(message) {
+		console.log("@@ CAFE_WS RX @@: %s", message);
+		inputs['UserChoice'] = {
+			message: JSON.parse(message)
+		};
+		handlers['UserChoice']();
+	});
+});
+
+loc_ws_server.on('connection', function connection(ws) {
+	console.log("@@  LOC_WS CONNECTED @@");
+	loc_ws = ws;
+	loc_ws.on('message', function incoming(message) {
+		console.log("@@  LOC_WS RX @@: %s", message);
+	});
+});
+
+
 var accessor_path = '../accessors/RoboCafeController';
 
 // Constants for the accessor
@@ -51,6 +79,10 @@ GLOBAL.send = function (name, val) {
 	}
 	var t = now()-start;
 	console.log('## SEND ## (' + t + ') [' + name + ']: ' + val);
+
+	if ((name == 'AppState') && (cafe_ws !== null)) {
+		cafe_ws.send(val);
+	}
 }
 
 GLOBAL.get = function (name) {
